@@ -1,4 +1,4 @@
-### README
+#### About
 This is the source code for my personal website.
 I love the idea of things being open source where people can poke and prod at other's work,
 which is why I put all my files up here on GitHub, instead of just pushing changes to a repo on my webserver.
