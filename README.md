@@ -4,7 +4,7 @@ I love the idea of things being open source where people can poke and prod at ot
 which is why I put all my files up here on GitHub, instead of just pushing changes to a repo on my webserver.
 
 #### Contributing
-You can contribute to my work in a number of different ways. Sending me feedback, constructive critisism, pull requests, I want it all!
+You can help me out in a number of different ways. From giving me critique on my markup, styling and code, submitting issues and sending pull requests.
 I love learning new things, if you have any contributions you feel you could make, don't hesitate to send them my way!
 
 #### Setup
