@@ -49,5 +49,5 @@ if ($title != "") {
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 // If Google's jQuery cannot be accessed, use a local copy.
-if (!window.jQuery) {document.write('<script src="lib/js/libs/jquery-1.9.1.min.js"><'+'/script>');}
+if (!window.jQuery) {document.write('<script src="lib/js/jquery-1.9.1.min.js"><'+'/script>');}
 </script>

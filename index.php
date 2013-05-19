@@ -8,8 +8,6 @@ $page = basename($path, '.php');
 $title           = "Home"; // Page Title
 $keywords        = "";     // Keywords
 $description     = "";     // Description
-$no_desc         = true;  // Should Description be used?
-$no_keywords     = true;  // Should Keywords be used?
 ?>
 
 <!DOCTYPE html>
