@@ -1,0 +1,122 @@
+/*=================================*/
+/* Written for voxeldavid.com
+ * By David Minnerly - me@voxeldavid.com
+ * Last updated: April 2013
+/*=================================*/
+
+/**
+ * All @imports are in the master.css file
+ *
+ * @todo Fix the little issue with #home.
+ * @todo Add some default classes.
+ */
+
+/* CLASSES
+===================================*/
+.clearfix {
+  }
+
+
+/* LINKS & TYPOGRAPHY
+===================================*/
+body {
+  color: #fff;
+  font-size: 1em;
+  font-family: Calibri, sans-serif;
+  text-shadow: 0px 1px rgba(212,212,212, 0.8);}
+
+h1,h2,h3 {
+  margin: 0;
+  color: #fff;
+  font-family: "Lato", "Trebuchet MS", sans-serif;
+  font-weight: normal;}
+  h1 {font-size: 2.2em;}
+  h2 {font-size: 1.85em;}
+  h3 {font-size: 1.5em;}
+
+a:link, a:visited {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  -webkit-transition: all 0.1s ease;
+  -moz-transition:    all 0.1s ease;
+  -ms-transition:     all 0.1s ease;
+  -o-transition:      all 0.1s ease;
+  transition:         all 0.1s ease;}
+  a:hover, a:active {
+    border-bottom: 1px solid #fff;}
+
+
+/* STRUCTURE
+===================================*/
+#home {
+  /**
+   * Quick fix to make the page work properly.
+   *
+   * The footer is fixed to the bottom and when using normalize.css, the background only covers the top divs of the page.
+   * Until I have another way to fix it these three lines will have to stay.
+   */
+  position: absolute;
+  height: 100%; width: 100%;
+  overflow: hidden;
+
+  background: #161619 url(../img/bg-desk.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -ms-background-size:     cover;
+  -o-background-size:      cover;
+  background-size:         cover;}
+
+#content {
+  padding: 4em;
+}
+
+#intro,
+#links {
+  /**
+   * Used for the slide/fade-in effect.
+   */
+  position: relative;}
+
+#links {
+  padding-top: 1em;}
+  #links a {
+    margin-right: 1em;
+    font-size: 1.25em;
+    border-bottom: 2px solid rgba(0,0,0, 0);
+    -webkit-transition: all 0.15s ease;
+    -moz-transition:    all 0.15s ease;
+    -ms-transition:     all 0.15s ease;
+    -o-transition:      all 0.15s ease;
+    transition:         all 0.15s ease;}
+  #links a:hover {
+    border-bottom: 2px solid #fff;}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 3em;
+  text-shadow: none;}
+  footer a {
+    margin-right: 0.6em;}
+  footer p {
+    /* Removes the Margin added by normalize.css for paragraphs */
+    margin: 0;}
+
+
+/* MEDIA QUERIES
+===================================*/
+@media all and (max-width: 620px){
+  #content {
+    padding: 2em;
+  }
+}
+
+@media all and (max-width: 540px){
+  body {
+    font-size: 0.8em;
+  }
+  #content {
+    padding: 2em;
+  }
+}
