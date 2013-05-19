@@ -60,7 +60,7 @@ a:link, a:visited {
   height: 100%; width: 100%;
   overflow: hidden;
 
-  background: #161619 url(../img/bg-desk.jpg) no-repeat center center fixed;
+  background: #161619 url('../img/bg-desk.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size:    cover;
   -ms-background-size:     cover;
