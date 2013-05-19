@@ -28,10 +28,10 @@ $description     = "";     // Description
 	</header>
 
 	<div id="links">
-		<a href="mailto:me@voxeldavid.com"><span>me@voxeldavid.com</span></a>
-		<a target="_blank" href="//twitter.com/voxeldavid"><span>Twitter</span></a>
-		<a target="_blank" href="//github.com/voxeldavid"><span>Github</span></a>
-		<a target="_blank" href="//gist.github.com/voxeldavid"><span>Gists</span></a>
+		<a href="mailto:me@voxeldavid.com" title="Send me an Email"><span>me@voxeldavid.com</span></a>
+		<a target="_blank" href="//twitter.com/voxeldavid" title="Miscellaneous Tweets"><span>Twitter</span></a>
+		<a target="_blank" href="//github.com/voxeldavid" title="View this website's source and other projects I've worked on"><span>Github</span></a>
+		<a target="_blank" href="//gist.github.com/voxeldavid"title="Little snippets of code"><span>Gists</span></a>
 	</div>
 
 	<footer>
