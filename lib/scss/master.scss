@@ -1,0 +1,118 @@
+/*!
+ * -------------------------------------------
+ * Authored by David Minnerly <me@voxeldavid.com>
+ * Last updated: April 2013
+ * 
+ * This Stylesheet was created using Compass and Sass and compressed
+ * for production use. If you would like to see the stylesheet
+ * in it's original formatting, visit the github repo at:
+ * 
+ * http://github.com/VoxelDavid/voxeldavid.git
+ * -------------------------------------------
+ */
+
+/* Todo:
+ *  + Fix the little issue with #home.
+ *  + Add some default classes.
+ */
+
+// Partials
+@import "base";      // Variables and Utilities
+@import "normalize"; // normalize.css v2.1.1 | git.io/normalize
+
+/* LINKS & TYPOGRAPHY
+===================================*/
+body {
+  color: $base-font-color;
+  font-size: 1em;
+  font-family: $base-font-family, sans-serif;
+  text-shadow: 0px 1px $text-shadow-color;
+}
+
+h1,h2,h3 {
+  margin: 0;
+  color: $header-font-color;
+  font-family: $header-font-family, sans-serif;
+  font-weight: normal; }
+  h1 {font-size: 2.2em;}
+  h2 {font-size: 1.85em;}
+  h3 {font-size: 1.5em;}
+
+a:link, a:visited {
+  color: $link-font-color;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255, 0.25);
+  @include transition(all, 0.2s, ease); }
+  a:hover, a:active {
+    border-bottom: 1px solid $link-font-color; }
+
+
+/* STRUCTURE
+===================================*/
+#home {
+  /**
+   * Quick fix to make the page work properly.
+   *
+   * The footer is fixed to the bottom and when using normalize.css, the background only covers the top divs of the page.
+   * Until I have another way to fix it these three lines will have to stay.
+   */
+  position: absolute;
+  height: 100%; width: 100%;
+  overflow: hidden;
+
+  background: #161619 url('../img/bg-desk.jpg') no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+#content {
+  padding: 4em;
+}
+
+#intro,
+#links {
+  /**
+   * Used for the slide/fade-in effect.
+   */
+  position: relative;
+}
+
+#links {
+  padding-top: 1em;
+  a {
+    margin-right: 1em;
+    font-size: 1.25em;
+    border-bottom: 2px solid rgba(0,0,0, 0);
+    @include transition(all, 0.2s, ease);
+    &:hover {
+     border-bottom: 2px solid #fff; }
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 3em;
+  text-shadow: none;
+  a {
+    margin-right: 0.6em; }
+  p {
+    /* Removes the Margin added by normalize.css for paragraphs */
+    margin: 0; }
+}
+
+/* MEDIA QUERIES
+===================================*/
+@media all and (max-width: 620px){
+  #content {
+    padding: 2em;
+  }
+}
+
+@media all and (max-width: 540px){
+  body {
+    font-size: 0.8em;
+  }
+  #content {
+    padding: 2em;
+  }
+}

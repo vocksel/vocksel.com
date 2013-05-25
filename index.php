@@ -10,7 +10,7 @@ $keywords        = "";     // Keywords
 $description     = "";     // Description
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
