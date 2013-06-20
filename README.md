@@ -1,18 +1,17 @@
 ### About
 This is the source code for my personal website.
-I love the idea of things being open source where people can poke and prod at other's work,
-which is why I put all my files up here on GitHub, instead of just pushing changes to a repo on my webserver.
+
+I love the idea of things being open source where people can poke and prod at
+others work, which is why I put all my files up here on GitHub instead of just
+pushing changes to a repo on my webserver.
 
 ### Contributing
-I would love some feedback on my markup, styling, coding style, etc. as well as tips and advice I could make use of.
-I love learning new things, if you have any contributions you feel you could make, don't hesitate to send them my way! :)
 
-### Setup
-1. Setup couldn't be more simple, as my project is by no means complex.
+You should have a general knowledge of the
+[Ruby](http://ruby-lang.org) language and the
+[Nanoc](http://nanoc.ws) static site generator before continuing.
 
-		cd /example/directory
-		git clone git@github.com:VoxelDavid/voxeldavid.git
+After cloning the repository run `bundle` on it to get the required gems.
 
-2. (Optional) An installation of [Compass](http://compass-style.org/), if you want to edit the SCSS
-
-3. And you're done! It's that easy.
+If you're editing anything in the content directory use `bundle exec guard &
+nanoc view` to automatically compile changes and have them viewable at localhost:3000

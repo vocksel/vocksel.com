@@ -1,5 +1,5 @@
-.sass-cache
-_old-files
-archive
-showcase
-work
+.sass-cache/
+tmp/
+output/
+crash.log
+output.diff
