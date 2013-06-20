@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!--
+ * You can check out the website's source code up on Github. :)
+ * http://github.com/VoxelDavid/voxeldavid
+-->
+
+<head>
+	<meta charset="utf-8">
+	<title><%= @item[:title] %> - VoxelDavid.com</title>
+	<meta name="author" content="<%= @item[:author] %>">
+	<meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+	<link rel="stylesheet" href="assets/css/master.css">
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

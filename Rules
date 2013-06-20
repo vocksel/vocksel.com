@@ -1,0 +1,65 @@
+#!/usr/bin/env ruby
+
+require 'compass'
+
+Compass.add_project_configuration 'config/compass_config.rb'
+
+### Compilation ##############################################################
+
+compile 'assets/css/_*/' do
+  # don’t compile partials
+end
+
+compile 'assets/css/*' do
+  # compile scss to css.
+  filter :sass, Compass.sass_engine_options
+end
+
+compile '/' do
+  # use the home layout on the root index.
+  filter :erb
+  layout 'home'
+end
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    filter :kramdown if item[:extension] == 'md'
+    layout 'default'
+  end
+end
+
+### Routing ##################################################################
+
+route 'assets/css/_*/' do
+  # don't output partials.
+end
+
+route 'assets/css/*/' do
+  # change stylesheet extention to css
+  item.identifier.chop + '.css'
+end
+
+route 'assets/js/*/' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+route '/' do
+  '/index.html'
+end
+
+route '*' do
+  if item.binary?
+    # Write item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  else
+    # Write item with identifier /foo/ to /foo/index.html
+    item.identifier + 'index.html'
+  end
+end
+
+### Layouting ################################################################
+
+layout '*', :erb
