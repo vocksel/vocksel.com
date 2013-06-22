@@ -1,0 +1,15 @@
+<% render 'blog' do %>
+  <div class='post'>
+    <h1><%= item[:title] %></h1>
+    <aside>
+    	<p>Posted on <%= item[:author_date] %> by <%= item[:author] %></p>
+    </aside>
+    <article>
+      <%= yield %>
+    </article>
+
+    <% if item[:comments] %>
+    <%= render "include/disqus" %>
+    <% end %>
+  </div>
+<% end %>
