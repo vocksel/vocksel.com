@@ -19,7 +19,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	</head>
 
-	<body id="<%= item[:title].downcase %>">
+	<body id="<%= item[:title].to_s.downcase %>">
 		<%= yield %>
 
 		<% if item[:analytics] %>
