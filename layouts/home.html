@@ -11,17 +11,34 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title><%= @item[:title] %> - VoxelDavid.com</title>
-		<meta name="author" content="<%= @item[:author] %>">
+		<title><%= item[:title] %> - VoxelDavid.com</title>
+		<meta name="author" content="<%= item[:author] %>">
 		<meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
 		<link rel="shortcut icon" href="assets/img/favicon.png">
 		<link rel="stylesheet" href="assets/css/master.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	</head>
 
-	<body id="<%= @item[:title].downcase %>">
+	<body id="<%= item[:title].downcase %>">
 		<div id="content">
-			<%= yield %>
+			<header id="intro">
+				<h1>Hi, I'm David.</h1>
+				<h3>I build websites and have a ton of fun doing it.</h3>
+			</header>
+
+			<div id="links">
+				<a href="mailto:me@voxeldavid.com"><span>me@voxeldavid.com</span></a>
+				<a target="_blank" href="//twitter.com/voxeldavid" ><span>Twitter</span></a>
+				<a target="_blank" href="//github.com/voxeldavid"><span>Github</span></a>
+				<a target="_blank" href="//gist.github.com/voxeldavid"><span>Gists</span></a>
+			</div>
+
+			<footer>
+				<p>VoxelDavid.com - All Rights Reserved</p>
+				<a href="blog/"><span>Blog</span></a>
+				<a href="work/"><span>Work</span></a>
+				<a href="archive/"><span>Site Archive</span></a>
+			</footer>
 		</div>
 
 		<script src="js/scripts.js"></script>
