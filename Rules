@@ -24,17 +24,22 @@ route 'assets/css/*/' do
   item.identifier.chop + '.css'
 end
 
-### JavaScript ###############################################################
+### Assets ###################################################################
 
-route 'assets/js/*/' do
+route 'assets/*/' do
   item.identifier.chop + '.' + item[:extension]
 end
 
 ### Blog #####################################################################
 
+compile '/blog/' do
+  filter :erb
+  layout 'blog'
+end
+
 compile '/blog/*/' do
   filter :erb
-  filter :kramdown
+  filter :kramdown if item[:kind] == 'article'
   layout 'blog-post'
 end
 
@@ -46,12 +51,6 @@ end
 
 ### Default Handling #########################################################
 
-compile '/' do
-  # use the home layout on the root index.
-  filter :erb
-  layout 'home'
-end
-
 compile '*' do
   unless item.binary?
     filter :erb
@@ -60,8 +59,9 @@ compile '*' do
     end
     if item[:layout]
       layout item[:layout]
+    else
+      layout 'default'
     end
-    layout 'default'
   end
 end
 
