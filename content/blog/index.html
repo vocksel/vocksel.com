@@ -3,4 +3,16 @@ title  : / Blog
 author : David Minnerly
 ---
 
-Blog Homepage!
+<!-- Nanoc's version of the WordPress Loop -->
+<% sorted_articles.each do |post| %>
+	<div class='post'>
+		<h1 class="entry-title"><%= link_to post[:title], post.path %></h1>
+		<aside class="entry-meta">
+			<p><a href="<%= post.path + '#disqus-thread' %>">Comments</a></p>
+			<p>Posted on <%= post[:author_date] %> by <%= post[:author] %></p>
+		</aside>
+		<article class="entry-post">
+			<%= post.compiled_content %>
+		</article>
+	</div>
+<% end %>
