@@ -1,6 +1,7 @@
 ---
 title  : "Work"
 author : "David Minnerly"
+analytics : true
 ---
 
 ## My Work

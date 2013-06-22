@@ -1,6 +1,7 @@
 ---
 title  : "Archive"
 author : "David Minnerly"
+analytics : true
 ---
 
 ## Old Versions of my site
