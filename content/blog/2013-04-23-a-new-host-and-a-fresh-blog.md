@@ -6,7 +6,7 @@ comments    : true
 kind        : article
 ---
 
-My website is now hosted on [VPSCheap](vpscheap.net)*. I'm loving all of the
+My website is now hosted on [VPSCheap](https://vpscheap.net)*. I'm loving all of the
 freedom and control I have over my environment. Some stuff is hard to figure
 out but it's a really great learning experience. I'm never going back to
 Shared hosting.
