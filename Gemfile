@@ -8,6 +8,7 @@ gem 'listen'      # for watching for changes
 gem 'nanoc'       # for compiling the site
 gem 'nokogiri'    # for parsing HTML
 gem 'rainpress'   # for compact CSS
+gem 'rake'        # for custom tasks
 gem 'rubypants'   # for pretty typography
 gem 'systemu'     # for invoking rsync etc
 gem 'wdm'         # guard dependency
