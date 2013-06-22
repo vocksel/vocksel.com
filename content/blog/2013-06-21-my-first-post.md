@@ -1,7 +1,7 @@
 ---
-title       : "My First Post"
-author      : "David Minnerly"
-author_date : "June 21st, 2013"
+title       : My First Post
+author      : David Minnerly
+author_date : June 21st, 2013
 comments    : true
 kind        : article
 ---
