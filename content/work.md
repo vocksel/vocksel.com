@@ -1,7 +1,6 @@
 ---
-title  : "Work"
-author : "David Minnerly"
-analytics : true
+title  : Work
+author : David Minnerly
 ---
 
 ## My Work
