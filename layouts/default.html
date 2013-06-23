@@ -22,8 +22,6 @@
 	<body id="<%= item[:title].to_s.downcase %>">
 		<%= yield %>
 
-		<% if item[:analytics] %>
 		<%= render "include/analytics" %>
-		<% end %>
 	</body>
 </html>
