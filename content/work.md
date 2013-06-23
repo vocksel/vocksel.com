@@ -1,6 +1,5 @@
 ---
-title  : Work
-author : David Minnerly
+title : Work
 ---
 
 ## My Work
