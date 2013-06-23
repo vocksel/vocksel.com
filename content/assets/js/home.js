@@ -1,6 +1,3 @@
-/**
- * This file could use some cleaning up.
- */
 
 $(document).ready(function() {
     // Set all elements to be invisible.
