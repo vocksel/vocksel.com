@@ -4,7 +4,7 @@ author : David Minnerly
 ---
 
 <!-- Nanoc's version of the WordPress Loop -->
-<% sorted_articles.each do |post| %>
+<% sorted_articles[0, 4].each do |post| %>
 	<div class='post'>
 		<h1 class="entry-title"><%= link_to post[:title], post.path %></h1>
 		<aside class="entry-meta">
