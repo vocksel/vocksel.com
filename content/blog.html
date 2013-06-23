@@ -6,11 +6,11 @@ title : Blog
 <% sorted_articles[0, 4].each do |post| %>
 	<div class='post'>
 		<h1 class="entry-title"><%= link_to post[:title], post.path %></h1>
-		<aside class="entry-meta">
-			<p><a href="<%= post.path + '#disqus-thread' %>">Comments</a></p>
-			<p>Posted on <%= post[:author_date] %> by <%= post[:author] %></p>
+		<aside class="post-meta">
+			<p class="comments"><a href="<%= post.path + '#disqus-thread' %>">Comments</a></p>
+			<p class="date-posted">Posted on <%= post[:author_date] %> by <%= post[:author] %></p>
 		</aside>
-		<article class="entry-post">
+		<article class="post-body">
 			<%= post.compiled_content %>
 		</article>
 	</div>
