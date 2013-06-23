@@ -1,6 +1,5 @@
 ---
-title  : Archive
-author : David Minnerly
+title : Archive
 ---
 
 ## Old Versions of my site
