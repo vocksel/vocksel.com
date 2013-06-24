@@ -4,6 +4,11 @@ require 'compass'
 
 Compass.add_project_configuration 'config/compass.rb'
 
+preprocess do
+  # Used with blog posts so I can keep Drafts that won't be output until ready.
+  items.delete_if {|item| item[:publish] == false }
+end
+
 ### Stylesheets ##############################################################
 
 compile '/assets/css/_*/' do
