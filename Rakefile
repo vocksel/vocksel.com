@@ -20,8 +20,6 @@ namespace :create do
     @path = "content/blog/"    # Where your blog posts live.
     @author = "David Minnerly" # Author to use if one isn't specified.
 
-    @ymd = Time.now.to_s(:db).split(' ')[0]
-
     # Checking if the title was set.
     if !ENV['title']
      puts "- Missing title argument.\n- Usage: rake create:article title=\"Article Title\""
@@ -56,7 +54,7 @@ namespace :create do
 ---
 author     : "#{@author}"
 category   : [uncategorized]
-created_at : #{@ymd}
+created_at : #{Time.now}
 excerpt    :
 kind       : article # Do not change.
 publish    : false # Change to true when blog post is ready to go public.
