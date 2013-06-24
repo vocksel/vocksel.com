@@ -11,6 +11,8 @@ namespace :create do
 
   desc "Creates a new article"
   task :article do
+  	# Adapted from: https://github.com/mgutz/nanoc3_blog/blob/master/Rakefile
+
     require 'active_support/core_ext'
     require 'active_support/multibyte'
 
@@ -28,7 +30,7 @@ namespace :create do
 
     # Getting the article author.
     if !ENV['author']
-    	puts "- No author specified. Using default (#{@author})."
+    	puts "- No author specified, using default (#{@author})."
     else
     	@author = ENV['author']
     	puts "- Author set to \"#{@author}\""
@@ -36,7 +38,7 @@ namespace :create do
 
     # Setting the file extension.
     if !ENV['ext']
-    	puts "- No extension specified. Using default (#{@ext})."
+    	puts "- No extension specified, using default (#{@ext})."
     else
     	@ext = ENV['ext']
     	puts "- Extension set to \"#{@ext}\""
@@ -46,28 +48,28 @@ namespace :create do
     path, filename, full_path = calc_path(title)
 
     if File.exists?(full_path)
-      puts "- An article with that name already exists."
+      puts "- An article with that name already exists!"
       exit 1
     end
 
     template = <<TEMPLATE
 ---
-author     : #{@author.titleize}
+author     : "#{@author}"
 category   : [uncategorized]
 created_at : #{@ymd}
 excerpt    :
 kind       : article # Do not change.
-publish    : true
+publish    : false # Change to true when blog post is ready to go public.
 tags       : [misc]
 title      : "#{title.titleize}"
 ---
 
-TODO: Add content to `#{full_path}.`
+Add your content here!
 TEMPLATE
 
     FileUtils.mkdir_p(path) if !File.exists?(path)
     File.open(full_path, 'w') { |f| f.write(template) }
-    puts "- Navigate to \"#{full_path}\" too add your content."
+    puts "- Your article has been output to: \"#{full_path}\""
   end
 
   def calc_path(title)
