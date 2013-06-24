@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'adsf'        # for viewing
+gem 'colorize'    # for prettifying outputs
 gem 'compass'     # for advanced CSS
 gem 'guard-nanoc' # for automatic compilation
 gem 'kramdown'    # for advanced markdown
