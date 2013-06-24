@@ -7,8 +7,9 @@ title : Blog
 		<h1 class="entry-title">
 			<%= link_to article[:title], article.path %>
 		</h1>
-		<div class="entry-date">
-			<p><%= pretty_time(article[:created_at]) %></p>
+		<div class="entry-meta">
+			<p class="entry-date">Posted on <%= pretty_time(article[:created_at]) %></p>
+			<p class="entry-author">By <%= article[:author]%></p>
 		</div>
 		<article class="entry-body">
 			<%= article[:excerpt] %>
