@@ -1,9 +1,12 @@
 ---
-title       : Same Host, Even Fresher Blog
-author      : David Minnerly
-author_date : June 22nd, 2013
-comments    : true
-kind        : article
+author     : "David Minnerly"
+category   : [uncategorized]
+created_at : 2013-06-24 17:02:31 -0400
+excerpt    :
+kind       : article # Do not change.
+publish    : true # Change to true when blog post is ready to go public.
+tags       : [misc]
+title      : "Same Host, Even Fresher Blog"
 ---
 
 About a week or so ago I was doing some searching for a framework I
