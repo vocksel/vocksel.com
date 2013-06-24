@@ -1,7 +1,6 @@
 
 require 'nanoc3/tasks'
 require 'fileutils'
-require 'colorize' # For getting prettier outputs. :)
 
 desc "Automatically compile changes and run the webserver."
 task :watch do
@@ -15,33 +14,45 @@ namespace :create do
     require 'active_support/core_ext'
     require 'active_support/multibyte'
 
-    @ymd = Time.now.to_s(:db).split(' ')[0]
-    @default_author = "David Minnerly"
+    @ext = "md"                # File extenion to use on Articles.
+    @path = "content/blog/"    # Where your blog posts live.
+    @author = "David Minnerly" # Author to use if one isn't specified.
 
+    @ymd = Time.now.to_s(:db).split(' ')[0]
+
+    # Checking if the title was set.
     if !ENV['title']
-     puts "\t[error] Missing title argument.\n\tusage: rake create:article title='article title'"
-      exit 1
+     puts "- Missing title argument.\n- Usage: rake create:article title=\"Article Title\""
+     exit 1
     end
 
+    # Getting the article author.
     if !ENV['author']
-    	puts "\t[warn] No author specified. Using default."
-    	author = @default_author
+    	puts "- No author specified. Using default (#{@author})."
     else
-    	author = ENV['author']
-    	puts "\t[note] Author set to \"#{author}\""
+    	@author = ENV['author']
+    	puts "- Author set to \"#{@author}\""
+    end
+
+    # Setting the file extension.
+    if !ENV['ext']
+    	puts "- No extension specified. Using default (#{@ext})."
+    else
+    	@ext = ENV['ext']
+    	puts "- Extension set to \"#{@ext}\""
     end
 
     title = ENV['title'].capitalize
     path, filename, full_path = calc_path(title)
 
     if File.exists?(full_path)
-      puts "\t[error] `#{full_path}` already exists."
+      puts "- An article with that name already exists."
       exit 1
     end
 
     template = <<TEMPLATE
 ---
-author     : #{author.titleize}
+author     : #{@author.titleize}
 category   : [uncategorized]
 created_at : #{@ymd}
 excerpt    :
@@ -56,12 +67,13 @@ TEMPLATE
 
     FileUtils.mkdir_p(path) if !File.exists?(path)
     File.open(full_path, 'w') { |f| f.write(template) }
-    $stdout.puts "\t[done] Navigate to `#{full_path}` too add your content."
+    puts "- Navigate to \"#{full_path}\" too add your content."
   end
 
   def calc_path(title)
-    path = "content/blog/"
-    filename = title.parameterize('-') + ".md"
-    [path, filename, path + filename]
+  	# Output the new article.
+    filename = title.parameterize('-') + '.' + @ext
+    [@path, filename, @path + filename]
   end
+
 end
