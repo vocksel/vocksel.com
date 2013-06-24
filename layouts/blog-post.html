@@ -1,17 +1,17 @@
 <% render 'blog' do %>
-  <div class='post'>
+  <div class='blog-entry'>
     <h1 class="entry-title"><%= item[:title] %></h1>
-    <aside class="post-data">
-    	<p class="date-posted">Posted on <%= item[:author_date] %> by <%= item[:author] %></p>
+    <aside class="entry-meta">
+    	<p class="entry-date">Posted on <%= item[:author_date] %> by <%= item[:author] %></p>
     </aside> <!-- end .post-data -->
-    <article class="post-body">
+    <article class="entry-body">
       <%= yield %>
-    </article>
+    </article> <!-- end .entry-body -->
+
+    <a href="..">Back to Blog</a>
 
     <div id="disqus_thread"></div>
   </div> <!-- end .post -->
 
-  <% if item[:comments] %>
   <%= render "include/disqus" %>
-  <% end %>
 <% end %>

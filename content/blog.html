@@ -2,16 +2,16 @@
 title : Blog
 ---
 
-<!-- Nanoc's version of the WordPress Loop -->
-<% sorted_articles[0, 4].each do |post| %>
-	<div class='post'>
-		<h1 class="entry-title"><%= link_to post[:title], post.path %></h1>
-		<aside class="post-meta">
-			<p class="comments"><a href="<%= post.path + '#disqus-thread' %>">Comments</a></p>
-			<p class="date-posted">Posted on <%= post[:author_date] %> by <%= post[:author] %></p>
-		</aside>
-		<article class="post-body">
-			<%= post.compiled_content %>
+<% sorted_articles.each do |article| %>
+	<div class="blog-entry">
+		<h1 class="entry-title">
+			<%= link_to article[:title], article.path %>
+		</h1>
+		<div class="entry-date">
+			<p><%= pretty_time(article[:created_at]) %></p>
+		</div>
+		<article class="entry-body">
+			<%= article[:excerpt] %>
 		</article>
 	</div>
 <% end %>
