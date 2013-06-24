@@ -1,5 +1,11 @@
-include Nanoc3::Helpers::Blogging
-include Nanoc3::Helpers::LinkTo
-include Nanoc3::Helpers::Tagging
-include Nanoc3::Helpers::Text
-include Nanoc3::Helpers::Rendering
+require 'time'
+
+include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::Tagging
+include Nanoc::Helpers::Text
+
+def pretty_time(time)
+  Time.parse(time.to_s).strftime("%B %-d, %Y") if !time.nil?
+end
