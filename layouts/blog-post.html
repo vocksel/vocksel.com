@@ -1,4 +1,4 @@
-<% render 'blog' do %>
+<% render 'default' do %>
   <div class='blog-entry'>
     <h1 class="entry-title"><%= item[:title] %></h1>
     <aside class="entry-meta">
@@ -13,5 +13,8 @@
     <div id="disqus_thread"></div>
   </div> <!-- end .post -->
 
-  <%= render "include/disqus" %>
+  <script src="/assets/js/disqus.js"></script>
+  <noscript>
+    <div class="no-js disqus">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></div>
+  </noscript>
 <% end %>
