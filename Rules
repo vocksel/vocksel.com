@@ -43,7 +43,7 @@ end
 compile '/blog/*/' do
   filter :erb
   filter :kramdown
-  layout 'blog-post'
+  layout 'article'
 end
 
 ### Default Handling #########################################################
