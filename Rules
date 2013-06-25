@@ -15,7 +15,7 @@ compile '/assets/css/_*/' do
   # don’t compile partials
 end
 
-compile '/assets/css/*' do
+compile '/assets/css/*/' do
   # compile scss to css.
   filter :sass, Compass.sass_engine_options
 end
@@ -30,6 +30,9 @@ route '/assets/css/*/' do
 end
 
 ### Assets ###################################################################
+
+compile '/assets/*/' do
+end
 
 route '/assets/*/' do
   item.identifier.chop + '.' + item[:extension]
@@ -49,15 +52,12 @@ compile '*' do
   unless item.binary?
     ext = item[:extension]
 
-    filter :erb
     if ext == 'md' or ext == 'markdown'
       filter :kramdown
     end
-    if item[:layout]
-      layout item[:layout]
-    else
-      layout 'default'
-    end
+
+    filter :erb
+    layout 'default'
   end
 end
 
