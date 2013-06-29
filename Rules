@@ -38,6 +38,11 @@ route '/assets/*/' do
   item.identifier.chop + '.' + item[:extension]
 end
 
+### Home #####################################################################
+compile '/' do
+  layout 'home'
+end
+
 ### Blog #####################################################################
 
 compile '/blog/*/' do
