@@ -2,17 +2,17 @@
 title : Blog
 ---
 
-<% sorted_articles.each do |article| %>
+<% sorted_articles.each do |post| %>
 	<div class="blog-entry">
 		<h1 class="entry-title">
-			<%= link_to article[:title], article.path %>
+			<%= link_to post[:title], post.path %>
 		</h1>
 		<div class="entry-meta">
-			<span class="entry-date">Posted on <%= pretty_time(article[:created_at]) %></span>
-			<span class="entry-author">by <%= article[:author]%></span>
+			<span class="entry-date">Posted on <%= pretty_time(post[:created_at]) %></span>
+			<span class="entry-author">by <%= post[:author]%></span>
 		</div>
 		<article class="entry-body">
-			<%= article[:excerpt] %>
+			<%= get_post_start(post) %>
 		</article>
 	</div>
 <% end %>
