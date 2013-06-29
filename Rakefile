@@ -55,14 +55,18 @@ namespace :create do
 author     : "#{@author}"
 category   : [uncategorized]
 created_at : #{Time.now}
-excerpt    :
 kind       : article # Do not change.
 publish    : false # Change to true when blog post is ready to go public.
 tags       : [misc]
 title      : "#{title.titleize}"
 ---
 
-Add your content here!
+Add some content here.
+
+<!-- more -->
+
+And even more content below!
+
 TEMPLATE
 
     FileUtils.mkdir_p(path) if !File.exists?(path)
