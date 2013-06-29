@@ -20,7 +20,11 @@
 	</head>
 
 	<body id="<%= item[:title].to_s.downcase %>">
-		<%= yield %>
+		<% if @item[:kind] == 'article' %>
+			<%= render('_article', :item => @item, :content => yield) %>
+		<% else %>
+			<%= yield %>
+		<% end %>
 
 		<script src="/assets/js/analytics.js"></script>
 	</body>
