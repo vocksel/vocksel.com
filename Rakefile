@@ -26,6 +26,14 @@ namespace :create do
      exit 1
     end
 
+    title = ENV['title'].capitalize
+    path, filename, full_path = calc_path(title)
+
+    if File.exists?(full_path)
+      puts "- An article with that name already exists!"
+      exit 1
+    end
+
     # Getting the article author.
     if !ENV['author']
     	puts "- No author specified, using default (#{@author})."
@@ -40,14 +48,6 @@ namespace :create do
     else
     	@ext = ENV['ext']
     	puts "- Extension set to \"#{@ext}\""
-    end
-
-    title = ENV['title'].capitalize
-    path, filename, full_path = calc_path(title)
-
-    if File.exists?(full_path)
-      puts "- An article with that name already exists!"
-      exit 1
     end
 
     template = <<TEMPLATE
