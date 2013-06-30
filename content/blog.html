@@ -8,15 +8,17 @@ title : Blog
 			<a href="<%= post.path %>"><%= post[:title] %></a>
 		</h1>
 
+		<aside class="entry-meta">
+			<span class="entry-date">Posted on <%= pretty_time(post[:created_at]) %></span>
+			<span class="entry-author">by <%= post[:author]%></span>
+		</aside>
+
 		<article class="entry-body">
 			<%= get_post_start(post) %>
 		</article>
 
-		<aside class="entry-meta">
-			<span class="entry-date">Posted on <%= pretty_time(post[:created_at]) %></span>
-			<span class="entry-author">by <%= post[:author]%></span>
-			-
-			<span class="entry-comments"><a href="<%= post.path %>#disqus_thread">Comments</a></span>
-		</aside>
+		<span class="leave-reply">
+			<a href="<%= post.path %>#disqus_thread">Leave a Reply</a>
+		</span>
 	</div>
 <% end %>
