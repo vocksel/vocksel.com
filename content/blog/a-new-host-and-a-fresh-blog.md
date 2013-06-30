@@ -2,7 +2,6 @@
 author     : "David Minnerly"
 category   : [uncategorized]
 created_at : 2013-04-23 16:57:07 -0400
-excerpt    :
 kind       : article # Do not change.
 publish    : true # Change to true when blog post is ready to go public.
 tags       : [misc]
