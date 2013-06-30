@@ -1,52 +1,84 @@
 
 @import "compass";
-
-/*!
- * -------------------------------------------
- * Authored by David Minnerly <me@voxeldavid.com>
- * Last updated: April 2013
- *
- * This Stylesheet was created using Compass and Sass and compressed
- * for production use. If you would like to see the stylesheet
- * in it's original formatting, visit the github repo at:
- *
- * http://github.com/VoxelDavid/voxeldavid.git
- * -------------------------------------------
- */
-
-/* Todo:
- *  + Fix the little issue with #home.
- *  + Add some default classes.
- */
-
-// Partials
 @import "normalize"; // normalize.css v2.1.1 | git.io/normalize
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-/* LINKS & TYPOGRAPHY
-===================================*/
+$base-color        : #3A4E54;
+$base-font         : "Open Sans";
+$link-color        : #44ADC9;
+$link-hover        : #ED8E21;
+$text-shadow-color : rgba(212,212,212, 0.8);
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
 
-/* STRUCTURE
-===================================*/
 html {
-  background: url('/assets/img/temp/wallpaper-2.jpg');
+  color: $base-color;
+  overflow-y: scroll;
 }
 
 body {
   width: 600px;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 auto 4em auto;
 }
 
+h1 {font-size: 2.0em;}
+h2 {font-size: 1.6em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 0.8em;}
+h5 {font-size: 0.4em;}
+
+.title {
+  margin: 1em 0 0.1em 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  @include transition(all 0.2s ease);
+
+  &:visited {
+
+  }
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+blockquote {
+  border-left: 1px solid #A8AFB2;
+  font-style: italic;
+  margin-bottom: 20px;
+  padding-left: 19px;
+}
+
+/* Blog
+====================================*/
 .blog-entry {
-  // ...
+  text-align: justify;
+}
 
-  .entry-title {
-    // ...
-  }
+.entry-title {
+  font-size: 1.8em;
+  margin: 1.2em 0 0 0;
+}
 
-  .entry-meta {
-    // ...
-  }
-
-  .entry-body {}
+.entry-body {
 
 }
+
+.entry-meta {
+  color: #7E8487;
+  margin-top: 1em;
+}
+
+.entry-date {}
+.entry-author {}
+
+.entry-comments {}
