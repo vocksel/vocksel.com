@@ -5,14 +5,18 @@ title : Blog
 <% sorted_articles.each do |post| %>
 	<div class="blog-entry">
 		<h1 class="entry-title">
-			<%= link_to post[:title], post.path %>
+			<a href="<%= post.path %>"><%= post[:title] %></a>
 		</h1>
-		<div class="entry-meta">
-			<span class="entry-date">Posted on <%= pretty_time(post[:created_at]) %></span>
-			<span class="entry-author">by <%= post[:author]%></span>
-		</div>
+
 		<article class="entry-body">
 			<%= get_post_start(post) %>
 		</article>
+
+		<aside class="entry-meta">
+			<span class="entry-date">Posted on <%= pretty_time(post[:created_at]) %></span>
+			<span class="entry-author">by <%= post[:author]%></span>
+			-
+			<span class="entry-comments"><a href="<%= post.path %>#disqus_thread">Comments</a></span>
+		</aside>
 	</div>
 <% end %>
