@@ -10,7 +10,7 @@ title      : "Same Host, Even Fresher Blog"
 
 About a week or so ago I was doing some searching for a framework I
 could make use of to keep my site organized. During my search I came
-across this nifty little thing called [Nanoc](https://nanoc.ws).
+across this nifty little thing called [Nanoc](http://nanoc.ws/).
 
 Nanoc is a Static Site Generator that uses the Ruby programming
 language to make magic happen. It can really be as simple or as
