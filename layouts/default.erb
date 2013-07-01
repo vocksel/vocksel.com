@@ -21,6 +21,7 @@
 
 	<body>
 		<% if @item[:kind] == 'article' %>
+			<%= render '_blog-nav' %>
 			<%= render('_article', :item => @item, :content => yield) %>
 		<% else %>
 			<%= yield %>
