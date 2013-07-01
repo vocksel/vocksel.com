@@ -1,88 +1,88 @@
 
 @import "compass";
-@import "normalize"; // normalize.css v2.1.1 | git.io/normalize
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-$base-color        : #575757;
-$base-font         : "Open Sans";
-$link-color        : #2189B8;
-$link-hover        : #435259;
-$text-shadow-color : rgba(212,212,212, 0.8);
+@import "normalize"; // normalize.css v2.1.1 | git.io/normalize
+@import "base";      // Variables used throughout the stylesheet.
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Orienta|Ubuntu");
+
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing:    border-box;
-  box-sizing:         border-box;
+  @include box-sizing(border-box);
 }
 
 html {
-  color: $base-color;
+  color: $text_color;
   overflow-y: scroll;
 }
 
 body {
-  max-width: 600px;
+  max-width: $max_width;
   font-size: 1em;
-  font-family: "Open Sans", sans-serif;
+  font-family: $text_font, sans-serif;
   margin: 0 auto 4em auto;
 }
 
-h1 {font-size: 2.0em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.2em;}
-h4 {font-size: 0.8em;}
-h5 {font-size: 0.4em;}
-
-.title {
-  margin: 1em 0 0.1em 0;
+h1, h2, h3, h4 {
+  font-family: $header_font, sans-serif;
+  margin: 0.1em, 0;
+  padding: 0;
 }
 
+h1 { font-size: 2.0em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+
 a {
-  color: $link-color;
+  color: $link_color;
   text-decoration: none;
   @include transition(all 0.2s ease);
 
-  &:visited {
-
-  }
-
   &:hover {
-    color: $link-hover;
+    color: $link_hover_color;
   }
-}
-
-blockquote {
-  border-left: 1px solid #A8AFB2;
-  font-style: italic;
-  margin-bottom: 20px;
-  padding-left: 19px;
 }
 
 /* Blog
 ====================================*/
-.blog-entry {
-  text-align: justify;
-}
-
 .entry-title {
-  font-size: 1.8em;
-  margin: 1.2em 0 0.5em 0;
+  font-size: 2.2em;
+  margin: 1em 0 0.1em 0;
 }
 
 .entry-body {
+
+  h1, h2, h3, h4 {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+  }
+
+  // Use smaller headers for the entry so they don't overpower other headers.
+  h1 { font-size: 1.7em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.5em; }
+  h4 { font-size: 1.3em; }
+
   a {
     font-weight: 700;
   }
+
+  img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 2px 2px 8px 1px rgba(31, 31, 31, 0.6);
+    @include border-radius(4px);
+  }
+
 }
 
 .entry-meta {
   color: #7E8487;
-  margin-top: 1em;
+  margin: 0.5em 0;
+
+  a {
+
+  }
 }
-
-.entry-date {}
-.entry-author {}
-
-.entry-comments {}
-
-.leave-reply {}
