@@ -1,5 +1,3 @@
-@import "compass";
-
 /*!
  * -------------------------------------------
  * Authored by David Minnerly <me@voxeldavid.com>
@@ -13,9 +11,22 @@
  * -------------------------------------------
  */
 
-// Partials
-@import "base";      // Variables and Utilities
+@import "compass";
 @import "normalize"; // normalize.css v2.1.1 | git.io/normalize
+
+// Variables
+$font-list: unquote("Lato:300");
+
+// Typography
+$base-font-color    : #fff;
+$base-font-family   : unquote("Calibri");
+$header-font-family : unquote("Lato");
+$header-font-color  : $base-font-color;
+$link-font-color    : $base-font-color;
+$text-shadow-color  : rgba(212,212,212, 0.8);
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=#{$font-list}");
 
 /* LINKS & TYPOGRAPHY
 ===================================*/
