@@ -4,35 +4,47 @@
 @import "normalize"; // normalize.css v2.1.1 | git.io/normalize
 @import "base";      // Variables used throughout the stylesheet.
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Orienta|Ubuntu");
+@import "blog";
 
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
+
+
+/** $MAIN
+ *
+ */
 
 * {
   @include box-sizing(border-box);
 }
+
 
 html {
   color: $text_color;
   overflow-y: scroll;
 }
 
+
 body {
+  margin: 0 auto 4em auto;
   max-width: $max_width;
   font-size: 1em;
   font-family: $text_font, sans-serif;
-  margin: 0 auto 4em auto;
+  text-shadow: 0 1px $text_shadow_color;
 }
 
+
 h1, h2, h3, h4 {
-  font-family: $header_font, sans-serif;
   margin: 0.1em, 0;
   padding: 0;
+  font-family: $header_font, sans-serif;
+  color: $header_color;
 }
 
 h1 { font-size: 2.0em; }
 h2 { font-size: 1.8em; }
 h3 { font-size: 1.6em; }
 h4 { font-size: 1.4em; }
+
 
 a {
   color: $link_color;
@@ -41,48 +53,5 @@ a {
 
   &:hover {
     color: $link_hover_color;
-  }
-}
-
-/* Blog
-====================================*/
-.entry-title {
-  font-size: 2.2em;
-  margin: 1em 0 0.1em 0;
-}
-
-.entry-body {
-
-  h1, h2, h3, h4 {
-    font-family: "Open Sans", sans-serif;
-    margin: 0;
-  }
-
-  // Use smaller headers for the entry so they don't overpower other headers.
-  h1 { font-size: 1.7em; }
-  h2 { font-size: 1.6em; }
-  h3 { font-size: 1.5em; }
-  h4 { font-size: 1.3em; }
-
-  a {
-    font-weight: 700;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    box-shadow: 2px 2px 8px 1px rgba(31, 31, 31, 0.6);
-    @include border-radius(4px);
-  }
-
-}
-
-.entry-meta {
-  color: #7E8487;
-  margin: 0.5em 0;
-
-  a {
-
   }
 }
