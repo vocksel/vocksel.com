@@ -1,15 +1,49 @@
-$max_width            : 600px;
 
-// Colors
-$med_gray             : #575757;
-$med_blue             : #2189B8;
-$dark_gray_blue       : #435259;
+$max_width            : 600px;           // Page Width
 
-$text_color           : $med_gray;
-$link_color           : $med_blue;
-$link_visited_color   : $med_blue;
-$link_hover_color     : $dark_gray_blue;
 
-// Fonts
-$text_font            : "Open Sans";
-$header_font          : "Ubuntu";
+// == Fonts == //
+$text_font            : "Open Sans";     // Font for general text
+$header_font          : "Open Sans";     // Font for headers
+
+
+// == Font Sizes == //
+$text_size            : 12px;
+
+
+// == Colors == //
+// B&W
+$black                : #000;            // Black
+$white                : #fff;            // White
+
+// Grey
+$grey                 : #828282;         // Grey
+$med_dark_grey        : #575757;         // Medium Dark Grey
+$dark_grey            : #303030;         // Dark Grey
+$med_light_grey       : #c2c2c2;         // Medium Light Grey
+$light_grey           : #e0e0e0;         // Light Grey
+// Alternate spelling
+$gray                 : $grey;
+$med_dark_gray        : $med_dark_grey;
+$dark_gray            : $dark_grey;
+$med_light_gray       : $med_light_grey;
+$light_gray           : $light_grey;
+
+// Blue
+$med_blue             : #2189B8;         // Medium Blue
+$dark_grey_blue       : #435259;         // Dark Grey-Blue
+$dark_gray_blue       : $dark_grey_blue;
+
+
+// == Apply colors == //
+$text_color           : $med_dark_gray;  // General text
+$header_color         : $med_dark_grey;  // Header
+
+$link_color           : $med_blue;       // Link
+$link_visited_color   : $med_blue;       // Link Visited
+$link_hover_color     : $dark_gray_blue; // Link Hover
+
+$text_shadow_color    : $white;          // Text shadow for general text
+$header_shadow_color  : #ccc;            // Header text shadow.
+
+$blog_header          : $med_dark_grey;  // Headers used in Blog entries.
