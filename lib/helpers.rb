@@ -1,10 +1,21 @@
+
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Tagging
 
-# Takes the standard Time.now output and makes it look nicer.
-def pretty_time(time)
-  Time.parse(time.to_s).strftime("%B %-d, %Y at %l:%M%P") if !time.nil?
+# # # # #
+# Formats the standard "Time.now" output to make it nicer to read.
+#
+# The `type` parameter can be either "Short" or "Long".
+#
+# The `time` parameter is parsed through Ruby's Time class, turned
+# to a string and output with either short or long month and
+# concatinated with the day and year.
+# # # # #
+def format_time(type, time)
+	@format = "%b" if type == "short" # Short month, eg. "Feb"
+	@format = "%B" if type == "long" # Long month, eg. "February"
+	Time.parse(time.to_s).strftime(@format + " %-d, %Y.") if !time.nil?
 end
 
 # http://clarkdave.net/2012/02/building-a-static-blog-with-nanoc/
