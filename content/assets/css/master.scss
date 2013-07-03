@@ -1,17 +1,32 @@
 
-@import "compass";
+// **
+// The Master CSS file works as a sort of module loader, every major CSS
+// section is given it's own partial for easier maintainability and
+// to make it extremely easy to load it in to the main file.
+//
+// Remember, load order is important! If you load the main styles after
+// another layout there could be some issues!
+// **
 
-@import "normalize"; // normalize.css v2.1.1 | git.io/normalize
-@import "base";      // Variables used throughout the stylesheet.
+// Only import nessecary compass modules just to be clear on what's being
+// used throughout the project.
+@import "compass/css3";
 
-@import "blog";
+// Every variable used throughout the stylesheets can be found here.
+@import "base";
 
-@import "https://fonts.googleapis.com/css?family=Open+Sans";
+// Fonts, seperated by pipes (|) and spaces substitutued with pluses (+).
+// eg: Comic+Sans.
+@import "https://fonts.googleapis.com/css?family=
+          Open+Sans";
+
+// normalize.css v2.1.2 | git.io/normalize
+@import "normalize-2.1.2";
 
 
-/** $MAIN
- *
- */
+// @ToDo:
+//  Move all of the below CSS to it's own Partial to import along with
+//  everything else.
 
 * {
   @include box-sizing(border-box);
@@ -55,3 +70,6 @@ a {
     color: $link_hover_color;
   }
 }
+
+// Blog Layout
+@import "blog";
