@@ -6,7 +6,7 @@
   <h1 class="entry-title"><%= item[:title] %></h1>
 
   <div class="entry-meta">
-    <span class="entry-date">Posted on <%= pretty_time(item[:created_at]) %></span>
+    <span class="entry-date">Posted on <%= format_time("long", item[:created_at]) %></span>
   </div> <!-- end .post-data -->
 
   <article class="entry-body">
