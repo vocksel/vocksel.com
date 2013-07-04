@@ -3,19 +3,20 @@ include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Tagging
 
-# # # # #
+# ===
 # Formats the standard "Time.now" output to make it nicer to read.
 #
-# The `type` parameter can be either "Short" or "Long".
+# Takes two parameters, `format` and `time`, time is what is output
+# by "Time.now" and format is how it should appear.
 #
-# The `time` parameter is parsed through Ruby's Time class, turned
-# to a string and output with either short or long month and
-# concatinated with the day and year.
-# # # # #
-def format_time(type, time)
-	@format = "%b" if type == "short" # Short month, eg. "Feb"
-	@format = "%B" if type == "long" # Long month, eg. "February"
-	Time.parse(time.to_s).strftime(@format + " %-d, %Y.") if !time.nil?
+# Example use from the Article layout:
+# format_time("%B %-d, %Y", post[:created_at])
+# > July 3, 2013
+#
+# Reference: http://www.ruby-doc.org/core-2.0/Time.html#strftime-method
+# ===
+def format_time(format, time)
+	Time.parse(time.to_s).strftime(format) if !time.nil?
 end
 
 # http://clarkdave.net/2012/02/building-a-static-blog-with-nanoc/

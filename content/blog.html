@@ -11,7 +11,7 @@ title : Blog
 		</h1>
 
 		<aside class="entry-meta">
-			<span class="entry-date">Posted on <%= format_time("long", post[:created_at]) %></span>
+			<span class="entry-date">Posted on <%= format_time("%b %-d, %Y", post[:created_at]) %></span>
 		</aside>
 
 		<article class="entry-body">
