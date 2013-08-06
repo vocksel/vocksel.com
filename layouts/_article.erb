@@ -1,0 +1,24 @@
+---
+# Template for Articles (Blog Posts)
+---
+
+<div class='blog-entry'>
+  <h1 class="entry-title"><%= item[:title] %></h1>
+
+  <article class="entry-body">
+    <%= yield %>
+  </article> <!--/entry-body -->
+
+  <div class="entry-meta">
+    <p class="entry-date">Posted on <%= format_time("%B %-d, %Y", item[:created_at]) %></p>
+  </div> <!-- /entry-meta -->
+
+  <a href="/blog/">Back to Blog</a>
+
+  <div id="disqus_thread"></div>
+</div> <!-- /blog-entry -->
+
+<script src="/assets/js/disqus.js"></script>
+<noscript>
+  <div class="no-js disqus">Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></div>
+</noscript>

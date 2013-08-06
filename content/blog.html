@@ -1,0 +1,18 @@
+---
+title : Blog
+kind  : blog-home
+---
+
+<div id="header">
+	<h1 class="">A Journal of Sorts</h1>
+</div>
+
+<ol class="post-list">
+<% sorted_articles.each do |post| %>
+	<li class="post-list-item">
+		<a class="post-list-title" href="<%= post.path %>" title="<%= post[:title] %>">
+			<%= post[:title] %>
+		</a>
+	</li> <!-- /post-list-item -->
+<% end %>
+</ol> <!-- /post-list -->
