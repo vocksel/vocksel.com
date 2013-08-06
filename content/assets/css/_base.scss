@@ -1,49 +1,40 @@
 
-$max_width            : 600px;           // Page Width
+// ## Sizes ## //
 
+$max_width            : 800px;
+$blog_width           : 680px;           // Width of Blog posts.
 
-// == Fonts == //
-$text_font            : "Open Sans";     // Font for general text
-$header_font          : "Open Sans";     // Font for headers
+// ## Colors ## //
 
+// Black              : #000
+// White              : #fff
+//
+// Grey               : #828282
+// Medium Dark Grey   : #575757
+// Dark Grey          : #303030
+// Medium Light Grey  : #c2c2c2
+// Light Grey         : #e0e0e0
+//
+// Medium Blue        : #2189B8
+// Dark Grey-Blue     : #435259
 
-// == Font Sizes == //
-$text_size            : 12px;
+$text_color           : #575757;         // General text
+$header_color         : #575757;         // Header
 
+$link_color           : #2189B8;         // Link
+$link_visited_color   : #2189B8;         // Link Visited
+$link_hover_color     : #435259;         // Link Hover
 
-// == Colors == //
-// B&W
-$black                : #000;            // Black
-$white                : #fff;            // White
-
-// Grey
-$grey                 : #828282;         // Grey
-$med_dark_grey        : #575757;         // Medium Dark Grey
-$dark_grey            : #303030;         // Dark Grey
-$med_light_grey       : #c2c2c2;         // Medium Light Grey
-$light_grey           : #e0e0e0;         // Light Grey
-// Alternate spelling
-$gray                 : $grey;
-$med_dark_gray        : $med_dark_grey;
-$dark_gray            : $dark_grey;
-$med_light_gray       : $med_light_grey;
-$light_gray           : $light_grey;
-
-// Blue
-$med_blue             : #2189B8;         // Medium Blue
-$dark_grey_blue       : #435259;         // Dark Grey-Blue
-$dark_gray_blue       : $dark_grey_blue;
-
-
-// == Apply colors == //
-$text_color           : $med_dark_gray;  // General text
-$header_color         : $med_dark_grey;  // Header
-
-$link_color           : $med_blue;       // Link
-$link_visited_color   : $med_blue;       // Link Visited
-$link_hover_color     : $dark_gray_blue; // Link Hover
-
-$text_shadow_color    : $white;          // Text shadow for general text
+$text_shadow_color    : #fff;            // Text shadow for general text
 $header_shadow_color  : #ccc;            // Header text shadow.
 
-$blog_header          : $med_dark_grey;  // Headers used in Blog entries.
+$blog_title_color     : #333333;         // The Blog post's Title
+$blog_header_color    : #404040;         // Headers used in Blog posts.
+$blog_text_color      : #404040;         // General text color
+$blog_meta_color      : #c2c2c2;         // Metadata of the post.
+
+// ## Fonts ## //
+
+$text_font            : "Open Sans";     // Font for general text
+$header_font          : "Open Sans";     // Font for headers
+$blog_header_font     : "Open Sans";
