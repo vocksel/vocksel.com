@@ -40,7 +40,6 @@ html {
 
 body {
   margin: 0 auto 4em auto;
-  max-width: $max_width;
   font-size: 1em;
   font-family: $text_font, sans-serif;
   text-shadow: 0 1px $text_shadow_color;
@@ -69,6 +68,3 @@ a {
     color: $link_hover_color;
   }
 }
-
-// Blog Layout
-@import "blog";
