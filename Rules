@@ -43,14 +43,6 @@ compile '/' do
   layout 'home'
 end
 
-### Blog #####################################################################
-
-compile '/blog/*/' do
-  filter :erb
-  filter :kramdown
-  layout 'default'
-end
-
 ### Default Handling #########################################################
 
 compile '*' do
