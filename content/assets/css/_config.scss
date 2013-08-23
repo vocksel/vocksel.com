@@ -1,10 +1,22 @@
 
-// ## Sizes ## //
+/**
+ * These are all of the configurable variables used in the stylesheet.
+ *
+ * Loaded in `master.css`
+ */
+
+
+/* ========================================================================== *
+   $ Sizes
+ * ========================================================================== */
 
 $max_width            : 800px;
 $blog_width           : 680px;           // Width of Blog posts.
 
-// ## Colors ## //
+
+/* ========================================================================== *
+   $ Colors
+ * ========================================================================== */
 
 // Black              : #000
 // White              : #fff
@@ -33,7 +45,18 @@ $blog_header_color    : #404040;         // Headers used in Blog posts.
 $blog_text_color      : #404040;         // General text color
 $blog_meta_color      : #c2c2c2;         // Metadata of the post.
 
-// ## Fonts ## //
+
+/* ========================================================================== *
+   $ Fonts
+ * ========================================================================== */
+
+/**
+ * Google Webfonts:
+ *
+ * Fonts are separated by pipes (|), and spaces substituted with pluses (+).
+ * eg: Open+Sans|Ubuntu.
+ */
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
 
 $text_font            : "Open Sans";     // Font for general text
 $header_font          : "Open Sans";     // Font for headers
