@@ -1,15 +1,23 @@
-#!/usr/bin/env ruby
+#!/usr//env ruby
 
 require 'compass'
 
-Compass.add_project_configuration 'config/compass.rb'
+
+#
+## Preprocessing
+#
 
 preprocess do
-  # Used with blog posts so I can keep Drafts that won't be output until ready.
+  # Used for keeping drafts of articles before publishing them.
   items.delete_if {|item| item[:publish] == false }
 end
 
-### Stylesheets ##############################################################
+
+#
+## Stylesheets
+#
+
+Compass.add_project_cobinnfiguration 'config/compass.rb'
 
 compile '/assets/css/_*/' do
   # don’t compile partials
@@ -29,7 +37,10 @@ route '/assets/css/*/' do
   item.identifier.chop + '.css'
 end
 
-### Assets ###################################################################
+
+#
+## Assets
+#
 
 compile '/assets/*/' do
 end
@@ -38,12 +49,20 @@ route '/assets/*/' do
   item.identifier.chop + '.' + item[:extension]
 end
 
-### Home #####################################################################
+
+#
+## Layouts
+#
+
+# Home
 compile '/' do
   layout 'home'
 end
 
-### Default Handling #########################################################
+
+#
+## Default Handling
+#
 
 compile '*' do
   unless item.binary?
