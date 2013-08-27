@@ -9,7 +9,7 @@ require 'compass'
 
 preprocess do
   # Used for keeping drafts of articles before publishing them.
-  items.delete_if {|item| item[:publish] == false }
+  items.delete_if {|item| item[:published] == false }
 end
 
 

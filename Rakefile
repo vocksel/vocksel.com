@@ -52,13 +52,14 @@ namespace :create do
 
     template = <<TEMPLATE
 ---
+kind       : article # Do not change.
+created_at : #{Time.now}
+published  : false # Change to true when blog post is ready to go public.
+
+title      : "#{title.titleize}"
 author     : "#{@author}"
 category   : [uncategorized]
-created_at : #{Time.now}
-kind       : article # Do not change.
-publish    : false # Change to true when blog post is ready to go public.
 tags       : [misc]
-title      : "#{title.titleize}"
 ---
 
 Add some content here.
