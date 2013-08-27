@@ -17,7 +17,7 @@ end
 ## Stylesheets
 #
 
-Compass.add_project_cobinnfiguration 'config/compass.rb'
+Compass.add_project_configuration 'config/compass.rb'
 
 compile '/assets/css/_*/' do
   # don’t compile partials
