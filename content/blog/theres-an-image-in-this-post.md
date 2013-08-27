@@ -19,5 +19,5 @@ And here's another picture to test the sizing:
 <!-- This time using the regular image tag! -->
 <img src="http://i.imgur.com/HS1xZbJ.jpg" alt="Cat mid-sneeze" width="300">
 
-Doesn't strech! Perfect! And I just learned I can change the Width of
-an image and not the height so it keeps it's original aspect ratio!
+Doesn't strech! Perfect! And I just learned I can change the Width of an image
+and not the height so it keeps it's original aspect ratio!
