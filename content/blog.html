@@ -13,6 +13,9 @@ kind  : blog-home
 		<a class="post-list-title" href="<%= post.path %>" title="<%= post[:title] %>">
 			<%= post[:title] %>
 		</a>
+		<time class="post-list-timestamp" title="">
+			<%= format_time("%b %-d, %Y", post[:created_at]) %>
+		</time>
 	</li> <!-- /post-list-item -->
 <% end %>
 </ol> <!-- /post-list -->
