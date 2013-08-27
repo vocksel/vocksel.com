@@ -1,5 +1,20 @@
+
+#
+## Compass
+#
+
 .sass-cache/
-tmp/
+
+
+#
+## Nanoc
+#
+
+# Default location for output, needs to match `output_dir` in nanoc's configuration file.
 output/
+
+# Temporary file directory
+tmp/
+
 crash.log
 output.diff
