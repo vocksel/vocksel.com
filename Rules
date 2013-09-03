@@ -1,15 +1,38 @@
 #!/usr/bin/env ruby
 
+# A few helpful tips about the Rules file:
+#
+# * The string given to #compile and #route are matching patterns for
+#   identifiers--not for paths. Therefore, you can’t match on extension.
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
 require 'compass'
 
-Compass.add_project_configuration 'config/compass.rb'
+
+##
+## Preprocessing
+##
 
 preprocess do
-  # Used with blog posts so I can keep Drafts that won't be output until ready.
+  # Used for keeping drafts of articles before publishing them.
   items.delete_if {|item| item[:publish] == false }
 end
 
-### Stylesheets ##############################################################
+
+##
+## Assets
+##
+
+## Stylesheets
+
+Compass.add_project_configuration 'config/compass.rb'
 
 compile '/assets/css/_*/' do
   # don’t compile partials
@@ -29,7 +52,7 @@ route '/assets/css/*/' do
   item.identifier.chop + '.css'
 end
 
-### Assets ###################################################################
+## Default
 
 compile '/assets/*/' do
 end
@@ -38,12 +61,21 @@ route '/assets/*/' do
   item.identifier.chop + '.' + item[:extension]
 end
 
-### Home #####################################################################
+
+##
+## Layouts
+##
+
+## Home
+
 compile '/' do
   layout 'home'
 end
 
-### Default Handling #########################################################
+
+##
+## Default Handling
+##
 
 compile '*' do
   unless item.binary?
