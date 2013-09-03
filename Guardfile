@@ -1,7 +1,11 @@
 
 guard 'nanoc' do
-  watch('nanoc.yaml')
-  watch('Rules')
+	# files
+  watch(%r{^(nanoc.yaml|Rules)$})
+
+  # directories
   watch(%r{^(content|layouts|lib)/.*$})
+
+  # disable notification souns
   notification :off
 end
