@@ -54,6 +54,7 @@ namespace :create do
 ---
 kind       : article # Do not change.
 created_at : #{Time.now}
+
 published  : false # Change to true when blog post is ready to go public.
 
 title      : "#{title.titleize}"
