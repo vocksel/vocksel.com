@@ -1,0 +1,132 @@
+
+
+/**
+ * This is the styling for the Home layout.
+ *
+ * Configuration is found in _config.scss.
+ */
+
+// Referance for later:
+//
+// #home {
+//   /**
+//    * Quick fix to make the page work properly.
+//    *
+//    * The footer is fixed to the bottom and when using normalize.css, the background
+//    * only covers the top divs of the page. Until I have another way to fix it these
+//    * three lines will have to stay.
+//    */
+//   position: absolute;
+//   height: 100%; width: 100%;
+//   overflow: hidden;
+// }
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+
+/* ========================================================================== *
+   $ Main
+ * ========================================================================== */
+
+.home {
+  color: $color__home__text;
+  font-size: 1em;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  text-shadow: 0px 1px #fff;
+
+  background: #161619 url('../img/bg-desk.jpg') no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+
+/* ========================================================================== *
+   $ Typography
+ * ========================================================================== */
+
+.home h1,
+.home h2,
+.home h3 {
+  margin: 0;
+  color: $color__home__header;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+}
+
+.home h1 { font-size: 2.2em; }
+.home h2 { font-size: 1.85em; }
+.home h3 { font-size: 1.5em; }
+
+.home a {
+  color: $color__home__link;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255, 0.25);
+  @include transition(all, 0.2s, ease);
+}
+
+.home a:hover {
+  border-bottom: 1px solid $color__home__link--hover;
+}
+
+
+/* ========================================================================== *
+   $ Structure
+ * ========================================================================== */
+
+.home__content {
+  padding: 4em;
+}
+
+.home__content__intro,
+.home__content__links {
+  // For jQuery transition
+  position: relative;
+}
+
+.home__content__links {
+  padding-top: 1em;
+}
+
+.home__content__links a {
+  margin-right: 1em;
+  font-size: 1.25em;
+  border-bottom: 2px solid rgba(0,0,0, 0);
+  @include transition(all, 0.2s, ease);
+}
+
+.home__content__links a:hover {
+  border-bottom: 2px solid $color__home__link--hover;
+}
+
+
+.home__footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 3em;
+  text-shadow: none;
+}
+
+.home__footer a {
+  margin-right: 0.6em;
+}
+
+
+/* ========================================================================== *
+   $ Media Queries
+ * ========================================================================== */
+
+@media all and (max-width: 620px){
+  #content {
+    padding: 2em;
+  }
+}
+
+@media all and (max-width: 540px){
+  body {
+    font-size: 0.8em;
+  }
+  #content {
+    padding: 2em;
+  }
+}
