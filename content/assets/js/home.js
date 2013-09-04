@@ -1,17 +1,17 @@
 
 $(document).ready(function() {
     // Set all elements to be invisible.
-    $('#intro').css({
+    $('.home__content__intro').css({
         'opacity' : '0',
         'top' : '-20px'
     });
 
-    $('#links').css({
+    $('.home__content__links').css({
         'opacity' : '0',
         'left' : '-14px'
     });
 
-    $('footer').css({
+    $('.home__footer').css({
         'opacity' : '0',
         'bottom' : '-18px'
     });
@@ -22,18 +22,18 @@ $(window).load(function () {
     // and using the type of direction you want them to come in from (or none).
 
     // Home Transitions
-    $('#intro').delay(400).animate({
+    $('.home__content__intro').delay(400).animate({
          'opacity' : '1',
          'top' : '+=20px'
     }, {duration: 600});
 
-    $('#links').delay(800).animate({
+    $('.home__content__links').delay(800).animate({
     	'opacity' : '1',
     	'left' : '+=14px'
     }, {duration: 500});
 
     //Footer Transition
-    $('footer').delay(920).animate({
+    $('.home__footer').delay(920).animate({
     	'opacity' : '1',
     	'bottom' : '+=18px'
     }, {duration: 800});

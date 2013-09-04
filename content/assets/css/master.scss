@@ -1,73 +1,63 @@
 
-// **
-// The Master CSS file works as a sort of module loader, every major CSS
-// section is given it's own partial for easier maintainability and
-// to make it extremely easy to load it in to the main file.
-//
-// Remember, load order is important! If you load the main styles after
-// another layout there could be some issues!
-// **
+/**
+ * The Master CSS file works as a sort of module loader.
+ *
+ * Every major CSS section is given it's own Partial for easier
+ * maintainability and to make it extremely easy to load it in to the main file.
+ *
+ * Remember: load order is important! If you load the main styles after another
+ * layout, there could be some issues.
+ *
+ * Authored by: David Minnerly.
+ * http://github.com/voxeldavid/voxeldavid-website.git
+ */
 
-// Only import nessecary compass modules just to be clear on what's being
-// used throughout the project.
+
+/* ========================================================================== *
+   $ Compass Modules
+ * ========================================================================== */
+
+/**
+ * Only import modules that are necessary to the project so we're clear on what is
+ * being used.
+ */
+
 @import "compass/css3";
 
-// Every variable used throughout the stylesheets can be found here.
-@import "base";
 
-// Fonts, seperated by pipes (|) and spaces substitutued with pluses (+).
-// eg: Open+Sans|Ubuntu.
-@import "https://fonts.googleapis.com/css?family=Open+Sans";
+/* ========================================================================== *
+   $ Config
+ * ========================================================================== */
 
-// normalize.css v2.1.2 | git.io/normalize
-@import "normalize-2.1.2";
+/**
+ * Everything for configuration of the stylesheet is located here. Fonts, Colors,
+ * you name it. Its all stored here.
+ */
 
-
-// @ToDo:
-//  Move all of the below CSS to it's own Partial to import along with
-//  everything else.
-
-* {
-  @include box-sizing(border-box);
-}
+@import "config";
 
 
-html {
-  color: $text_color;
-  overflow-y: scroll;
-}
+/* ========================================================================== *
+   $ Normalize (v2.1.2)
+ * ========================================================================== */
+
+@import "normalize";
 
 
-body {
-  margin: 0 auto 4em auto;
-  font-size: 1em;
-  font-family: $text_font, sans-serif;
-  text-shadow: 0 1px $text_shadow_color;
-}
+/* ========================================================================== *
+   $ Elements
+ * ========================================================================== */
+
+/**
+ * All unclassed Elements not belonging to a CSS Layout.
+ */
+
+//@import "elements";
 
 
-h1, h2, h3, h4 {
-  margin: 0.1em, 0;
-  padding: 0;
-  font-family: $header_font, sans-serif;
-  color: $header_color;
-}
+/* ========================================================================== *
+   $ Layouts
+ * ========================================================================== */
 
-h1 { font-size: 2.0em; }
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.6em; }
-h4 { font-size: 1.4em; }
-
-
-a {
-  color: $link_color;
-  text-decoration: none;
-  @include transition(all 0.2s ease);
-
-  &:hover {
-    color: $link_hover_color;
-  }
-}
-
-// Blog Layout
-@import "blog";
+@import "layout_home";
+@import "layout_blog";
