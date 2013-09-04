@@ -2,11 +2,14 @@
 /**
  * The Master CSS file works as a sort of module loader.
  *
- * Every major CSS section is given it's own partial for easier
+ * Every major CSS section is given it's own Partial for easier
  * maintainability and to make it extremely easy to load it in to the main file.
  *
  * Remember: load order is important! If you load the main styles after another
  * layout, there could be some issues.
+ *
+ * Authored by: David Minnerly.
+ * http://github.com/voxeldavid/voxeldavid-website.git
  */
 
 
@@ -46,7 +49,7 @@
  * ========================================================================== */
 
 /**
- * Styling of all unclassed elements. Things like 'h1', 'a', 'ul', etc.
+ * All unclassed Elements not belonging to a CSS Layout.
  */
 
 @import "elements";
@@ -56,10 +59,5 @@
    $ Layouts
  * ========================================================================== */
 
- /**
-  *
-  */
-
- // @import "home";
-
- // @import "blog";
+@import "layout_home";
+@import "layout_blog";

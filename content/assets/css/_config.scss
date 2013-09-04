@@ -1,8 +1,6 @@
 
 /**
  * These are all of the configurable variables used in the stylesheet.
- *
- * Loaded in `master.css`
  */
 
 
@@ -10,40 +8,56 @@
    $ Sizes
  * ========================================================================== */
 
-$max_width            : 800px;
-$blog_width           : 680px;           // Width of Blog posts.
+$max_width:  800px;
+$blog_width: 680px; // Width of Blog *posts*, not the entire Blog.
 
 
 /* ========================================================================== *
    $ Colors
  * ========================================================================== */
 
-// Black              : #000
-// White              : #fff
-//
-// Grey               : #828282
-// Medium Dark Grey   : #575757
-// Dark Grey          : #303030
-// Medium Light Grey  : #c2c2c2
-// Light Grey         : #e0e0e0
-//
-// Medium Blue        : #2189B8
-// Dark Grey-Blue     : #435259
+/**
+ * # Color Pallete:
+ *
+ * Black               #000
+ * White               #fff
+ * ---------------------------
+ * Grey                #828282
+ * Medium Dark Grey    #575757
+ * Dark Grey           #303030
+ * Medium Light Grey   #c2c2c2
+ * Light Grey          #e0e0e0
+ * ---------------------------
+ * Medium Blue         #2189B8
+ * Dark Grey-Blue      #435259
+ *
+ */
 
-$text_color           : #575757;         // General text
-$header_color         : #575757;         // Header
+// General Text
+$color__text:                #575757;
+$color__text__shadow:        #fff;
 
-$link_color           : #2189B8;         // Link
-$link_visited_color   : #2189B8;         // Link Visited
-$link_hover_color     : #435259;         // Link Hover
+// Headers (h1-h6)
+$color__header:              #575757;
+$color__header__shadow:      #ccc;
 
-$text_shadow_color    : #fff;            // Text shadow for general text
-$header_shadow_color  : #ccc;            // Header text shadow.
+// Links
+$color__link:                #2189B8;
+$color__link--hover:         #435259;
+$color__link--visited:       #2189B8;
 
-$blog_title_color     : #333333;         // The Blog post's Title
-$blog_header_color    : #404040;         // Headers used in Blog posts.
-$blog_text_color      : #404040;         // General text color
-$blog_meta_color      : #c2c2c2;         // Metadata of the post.
+// Home
+$color__home__text:          #fff;
+$color__home__text__shadow:  #fff;
+$color__home__header:        #fff;
+$color__home__link:          #fff;
+$color__home__link--hover:   #fff;
+
+// Blog
+$color__blog__text:          #404040;
+$color__blog__header:        #404040;
+$color__blog__meta:          #c2c2c2;
+$color__blog__header--title: #333333;
 
 
 /* ========================================================================== *
@@ -56,8 +70,14 @@ $blog_meta_color      : #c2c2c2;         // Metadata of the post.
  * Fonts are separated by pipes (|), and spaces substituted with pluses (+).
  * eg: Open+Sans|Ubuntu.
  */
-@import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import "https://fonts.googleapis.com/css?family=Open+Sans|Lato:300";
 
-$text_font            : "Open Sans";     // Font for general text
-$header_font          : "Open Sans";     // Font for headers
-$blog_header_font     : "Open Sans";
+// General
+$font__text:         "Open Sans";
+$font__header:       "Open Sans";
+
+// Blog
+$font__blog__header: "Open Sans";
+
+// Home
+$font__home__header: "Lato";
