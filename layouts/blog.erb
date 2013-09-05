@@ -23,7 +23,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	</head>
 
-	<body>
+	<body class="blog">
+	<% if @item[:kind] == 'blog-home' %>
+
+		<%= render '_blog-nav' %>
 		<%= yield %>
+
+	<% elsif @item[:kind] == 'article' %>
+
+		<%= render '_blog-nav' %>
+		<%= render('_article', :item => @item, :content => yield) %>
+
+	<% end %>
 	</body>
 </html>
