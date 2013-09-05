@@ -72,11 +72,12 @@ compile '/' do
   layout 'home'
 end
 
-# Blog
-compile '/blog/*/' do
+## Blog
+
+compile '/blog/*' do
   filter :erb
   filter :kramdown
-  layout 'default'
+  layout 'blog'
 end
 
 
