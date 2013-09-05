@@ -6,6 +6,6 @@ guard 'nanoc' do
   # directories
   watch(%r{^(content|layouts|lib)/.*$})
 
-  # disable notification souns
+  # disable notification sounds
   notification :off
 end
