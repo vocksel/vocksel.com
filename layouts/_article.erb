@@ -2,16 +2,16 @@
 # Template for Articles (Blog Posts)
 ---
 
-<div class='blog-entry'>
-  <h1 class="entry-title"><%= item[:title] %></h1>
+<div class="blog__entry">
+  <h1 class="blog__entry__title"><%= item[:title] %></h1>
 
-  <article class="entry-body">
+  <article class="blog__entry__body">
     <%= yield %>
-  </article> <!--/entry-body -->
+  </article> <!--.blog__entry__body -->
 
-  <div class="entry-meta">
-    <p class="entry-date">Posted on <%= format_time("%B %-d, %Y", item[:created_at]) %></p>
-  </div> <!-- /entry-meta -->
+  <div class="blog__entry__meta">
+    <p class="blog__entry__date">Posted on <%= format_time("%B %-d, %Y", item[:created_at]) %></p>
+  </div> <!-- .blog__entry__meta -->
 
   <a href="/blog/">Back to Blog</a>
 
