@@ -4,13 +4,6 @@
    $ Blog Layout
  * ========================================================================== */
 
-
-.blog {
-  max-width: $blog_width;
-  margin: 0 auto 4em auto;
-}
-
-
 /*
 .blog__navigation {
 
@@ -42,6 +35,15 @@
   float: right;
 }
 
+
+.blog__entry {
+
+}
+
+.blog__entry__wrapper {
+  width: $blog_width;
+  margin: 0 auto;
+}
 
 .blog__entry__title {
   font-size: 34px;

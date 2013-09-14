@@ -23,17 +23,24 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	</head>
 
-	<body class="blog">
-	<% if @item[:kind] == 'blog-home' %>
+	<body>
+		<div class="blog">
+			<nav class="blog__navigation">
+				<a href="/">Home</a>
+				<a href="/blog">Blog</a>
+				<a href="https://twitter.com/voxeldavid">Twitter</a>
+				<a href="https://github.com/voxeldavid">GitHub</a>
+			</nav>
 
-		<%= render '_blog-nav' %>
-		<%= yield %>
+		<% if @item[:kind] == 'article' %>
 
-	<% elsif @item[:kind] == 'article' %>
+			<%= render('_blog__article', :item => @item, :content => yield) %>
 
-		<%= render '_blog-nav' %>
-		<%= render('_article', :item => @item, :content => yield) %>
+		<% else %>
 
-	<% end %>
+			<%= render('_blog__homepage', :item => @item, :content => yield) %>
+
+		<% end %>
+		</div>
 	</body>
 </html>
