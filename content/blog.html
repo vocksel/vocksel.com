@@ -1,21 +1,4 @@
 ---
-title: Blog
-kind:  blog-home
+title: "Blog"
+kind: blog
 ---
-
-<div class="blog__title">
-	<h1 class="">A Journal of Sorts</h1>
-</div>
-
-<ol class="blog__post-list">
-<% sorted_articles.each do |post| %>
-	<li class="blog__post-list__item">
-		<a class="blog__post-list__title" href="<%= post.path %>" title="<%= post[:title] %>">
-			<%= post[:title] %>
-		</a>
-		<time class="blog__post-list__timestamp" title="">
-			<%= format_time("%b %-d, %Y", post[:created_at]) %>
-		</time>
-	</li> <!-- .blog__post-list__item -->
-<% end %>
-</ol> <!-- .blog__post-list -->
