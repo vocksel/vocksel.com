@@ -34,9 +34,17 @@
 
 activate :directory_indexes
 
-set :css_dir,    'assets/css'
-set :images_dir, 'assets/img'
-set :js_dir,     'assets/js'
+# Special directories in the project root
+set :data_dir,    'data'
+set :helpers_dir, 'helpers'
+
+# Special directories in source/
+set :layouts_dir, '_layouts'
+
+# Assets
+set :css_dir,     'assets/css'
+set :js_dir,      'assets/js'
+set :images_dir,  'assets/img'
 
 # Build-specific configuration
 configure :build do
