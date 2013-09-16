@@ -27,13 +27,14 @@ end
 activate :directory_indexes
 
 # Special directories in the project root
+set :build_dir,   'build'
 set :data_dir,    'data'
 set :helpers_dir, 'helpers'
 
 # Special directories in source/
 set :layouts_dir, '_layouts'
 
-# Assets
+# Assets in source/
 set :css_dir,     'assets/css'
 set :js_dir,      'assets/js'
 set :images_dir,  'assets/img'
