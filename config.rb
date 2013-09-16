@@ -24,6 +24,9 @@ end
 ## Helpers
 ##
 
+## All custom helpers are loaded automatically from the Helpers directory.
+
+# Turns files into directories. /foo.html -> /foo/index.html
 activate :directory_indexes
 
 # Special directories in the project root
