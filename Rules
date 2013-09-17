@@ -1,0 +1,110 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The string given to #compile and #route are matching patterns for
+#   identifiers--not for paths. Therefore, you can’t match on extension.
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+require 'compass'
+
+
+##
+## Preprocessing
+##
+
+preprocess do
+  # Used for keeping drafts of articles before publishing them.
+  items.delete_if {|item| item[:published] == false }
+end
+
+
+##
+## Assets
+##
+
+## Stylesheets
+
+Compass.add_project_configuration 'config/compass.rb'
+
+compile '/assets/css/_*/' do
+  # don’t compile partials
+end
+
+compile '/assets/css/*/' do
+  # compile scss to css.
+  filter :sass, Compass.sass_engine_options
+end
+
+route '/assets/css/_*/' do
+  # don't output partials.
+end
+
+route '/assets/css/*/' do
+  # change stylesheet extension to css
+  item.identifier.chop + '.css'
+end
+
+## Default
+
+compile '/assets/*/' do
+end
+
+route '/assets/*/' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+
+##
+## Layouts
+##
+
+## Home
+
+compile '/' do
+  layout 'home'
+end
+
+## Blog
+
+compile '/blog/*' do
+  filter :erb
+  filter :kramdown
+  layout 'blog'
+end
+
+
+##
+## Default Handling
+##
+
+compile '*' do
+  unless item.binary?
+    ext = item[:extension]
+
+    if ext == 'md' or ext == 'markdown'
+      filter :kramdown
+    end
+
+    filter :erb
+    layout 'default'
+  end
+end
+
+route '*' do
+  if item.binary?
+    item.identifier.chop + '.' + item[:extension]
+  else
+    # Write item with identifier /foo/ to /foo/index.html
+    item.identifier + 'index.html'
+  end
+end
+
+layout '*', :erb
