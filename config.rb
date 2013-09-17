@@ -1,11 +1,13 @@
+
 ##
 ## Compass
 ##
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+	require "susy"
+  config.output_style = :compact
+end
 
 
 ##
@@ -24,7 +26,7 @@ end
 ## Helpers
 ##
 
-## All custom helpers are loaded automatically from the Helpers directory.
+## All custom helpers are loaded automatically from the 'helpers' directory.
 
 # Turns files into directories. /foo.html -> /foo/index.html
 activate :directory_indexes
