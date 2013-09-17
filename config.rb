@@ -1,3 +1,4 @@
+
 ##
 ## Compass
 ##
@@ -25,6 +26,22 @@ end
 ##
 
 ## All custom helpers are loaded automatically from the Helpers directory.
+
+# Blog configuration
+activate :blog do |blog|
+	blog.prefix            = "blog/"
+	blog.permalink         = ":year/:month/:title.html"
+	blog.sources           = "/articles/:title.html"
+	blog.default_extension = ".md"
+	blog.layout            = "layout"
+
+	blog.year_link         = ":year.html"
+	blog.month_link        = ":year/:month.html"
+	blog.day_link          = ":year/:month/:day.html"
+
+	blog.tag_template      = "/blog/tag.html"
+	blog.calendar_template = "/blog/archive.html"
+end
 
 # Turns files into directories. /foo.html -> /foo/index.html
 activate :directory_indexes
