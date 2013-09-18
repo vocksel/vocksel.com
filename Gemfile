@@ -10,9 +10,6 @@ gem "middleman-livereload", "~> 3.1.0"
 # Responsive Compass grid system
 gem "susy", "~> 1.0.9"
 
-# Rack middleware for rewriting URIs
-gem 'rack-rewrite', '~> 1.2.1'
-
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 
