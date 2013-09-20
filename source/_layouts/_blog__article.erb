@@ -1,0 +1,35 @@
+
+<div class="blog__entry">
+	<h1 class="blog__entry__title">
+		<%= current_page.data[:title] %>
+	</h1>
+
+	<article class="blog__entry__body">
+		<%= current_article.body %>
+	</article>
+
+  <aside class="blog__entry__meta">
+    <p class="blog__entry__meta__timestamp">
+      Posted on <%= format_time("%B %-d, %Y", current_article.date) %>
+      by <%= current_article.data.author %>
+    </p>
+
+    <p class="blog__entry__meta__tags">
+      Tagged with
+      <% current_article.tags.each do |tag| %>
+      	<%= link_to tag, tag_path(tag) %>
+      <% end %>
+    </p>
+  </aside>
+
+	<a href="/blog/">
+		Back to Blog
+	</a>
+
+	<div id="disqus_thread"></div>
+</div>
+
+<script src="/assets/js/disqus.js"></script>
+<noscript>
+	<div class="no-js disqus">Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></div>
+</noscript>
