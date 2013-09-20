@@ -31,9 +31,12 @@ end
 activate :blog do |blog|
 	blog.prefix            = "blog/"
 	blog.permalink         = ":year/:month/:title.html"
-	blog.sources           = "/articles/:title.html"
+	blog.sources           = "/articles/:year-:month-:day-:title.html"
 	blog.default_extension = ".md"
-	blog.layout            = "layout"
+	blog.layout            = "blog"
+
+	blog.paginate          = true
+	blog.per_page          = 10
 
 	blog.year_link         = ":year.html"
 	blog.month_link        = ":year/:month.html"
