@@ -1,36 +1,44 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-  </head>
-  <body>
-    
-    <div id="main" role="main">
-      <%= yield %>
-    </div>
-    
-    <aside>
-      <h2>Recent Articles</h2>
-      <ol>
-        <% blog.articles[0...10].each do |article| %>
-          <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-        <% end %>
-      </ol>
+<!DOCTYPE HTML>
+<html lang="en">
 
-      <h2>Tags</h2>
-      <ol>
-        <% blog.tags.each do |tag, articles| %>
-          <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</a></li>
-        <% end %>
-      </ol>
+	<!--
+	 * Some of the markup's spacing and tabbing might look a bit funny.
+	 * That's because this site was created using the static site generator Middleman.
+	 *
+	 * You can check out the website's source up on Github. :)
+	 * https://github.com/VoxelDavid/voxeldavid-website
+	-->
 
-      <h2>By Year</h2>
-      <ol>
-        <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-          <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a></li>
-        <% end %>
-      </ol>
-    </aside>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="The personal website of David Minnerly.">
+
+		<title>voxeldavid.com / <%= current_page.data[:title] %></title>
+
+		<link rel="shortcut icon" href="/assets/img/favicon.png">
+		<link rel="stylesheet" href="/assets/css/master.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	</head>
+
+	<body class="blog">
+		<header class="blog__header">
+			<nav class="blog__navigation--main">
+				<a href="/">Home</a>
+				<a href="/blog">Blog</a>
+				<a href="https://twitter.com/voxeldavid">Twitter</a>
+				<a href="https://github.com/voxeldavid">GitHub</a>
+			</nav>
+		</header>
+
+		<div class="content">
+			<% if is_blog_article? %>
+				<%= partial "_layouts/blog__article" %>
+			<% else %>
+				<%= partial "_layouts/blog__home" %>
+			<% end %>
+		</div>
+
+		<%= partial("_layouts/blog__meta") %>
+	</body>
 </html>

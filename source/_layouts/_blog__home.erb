@@ -1,0 +1,26 @@
+
+<div class="blog__entry">
+	<% page_articles.each_with_index do |article, i| %>
+		<h1 class="blog__entry__title">
+			<%= link_to article.title, article %>
+		</h1>
+
+		<div class="blog__entry__body">
+			<%= article.body %>
+		</div>
+	<% end %>
+</div>
+
+<% if paginate %>
+	<% if prev_page %>
+		<p class="blog__prev_page"><%= link_to 'Previous page', prev_page %></p>
+	<% else %>
+		<p class="blog__prev_page">Previous page</p>
+	<% end %>
+
+	<% if next_page %>
+		<p class="blog__next_page"><%= link_to 'Next page', next_page %></p>
+	<% else %>
+		<p class="blog__next_page">Next page</p>
+	<% end %>
+<% end %>
