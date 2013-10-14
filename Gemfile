@@ -1,13 +1,19 @@
+# If you have OpenSSL installed, we recommend updating
+# the following line to use "https"
+source 'http://rubygems.org'
 
-source 'https://rubygems.org'
+gem "middleman",            "~> 3.1.5"
+gem "middleman-blog",       "~> 3.3.0"
+gem "middleman-deploy",     "~> 0.1.2"
+gem "middleman-livereload", "~> 3.1.0"
 
-gem "adsf",        "~> 1.1.1"
-gem "compass",     "~> 0.12.2"
-gem "guard",       "~> 1.8.2"
-gem "guard-nanoc", "~> 1.0.1"
-gem "guard-shell", "~> 0.5.1"
-gem "kramdown",    "~> 1.1.0"
-gem "listen",      "~> 1.2.3"
-gem "nanoc",       "~> 3.6.4"
-gem "rake",        "~> 10.1.0"
-gem "wdm",         "~> 0.1.0"
+# Responcive Compass grid system
+gem "susy", "~> 1.0.9"
+
+# For faster file watcher updates on Windows:
+gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
+
+# Cross-templating language block fix for Ruby 1.8
+platforms :mri_18 do
+  gem "ruby18_source_location"
+end

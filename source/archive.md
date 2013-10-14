@@ -1,5 +1,5 @@
 ---
-title : Archive
+title: Archive
 ---
 
 ## Old Versions of my site
