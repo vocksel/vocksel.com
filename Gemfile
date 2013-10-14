@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 # The Middleman
 gem "middleman", "~> 3.1.5"
 gem "middleman-blog", "~> 3.3.0"
+gem "middleman-disqus", "~> 0.0.3"
 gem "middleman-deploy", "~> 0.1.2"
 gem "middleman-livereload", "~> 3.1.0"
 
