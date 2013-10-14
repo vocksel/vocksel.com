@@ -16,14 +16,17 @@ GEM
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
+    eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffi (1.9.0)
     ffi (1.9.0-x86-mingw32)
     fssm (0.2.10)
     haml (4.0.3)
       tilt
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     http_parser.rb (0.5.3-x86-mingw32)
     i18n (0.6.5)
     kramdown (1.1.0)
@@ -59,6 +62,8 @@ GEM
       middleman-core (>= 3.0.0)
       net-sftp
       ptools
+    middleman-disqus (0.0.3)
+      middleman-core (>= 3.1.0)
     middleman-livereload (3.1.0)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -128,6 +133,7 @@ DEPENDENCIES
   middleman (~> 3.1.5)
   middleman-blog (~> 3.3.0)
   middleman-deploy (~> 0.1.2)
+  middleman-disqus (~> 0.0.3)
   middleman-livereload (~> 3.1.0)
   ruby18_source_location
   susy (~> 1.0.9)

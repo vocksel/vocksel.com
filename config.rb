@@ -46,6 +46,11 @@ activate :blog do |blog|
 	blog.calendar_template = "/blog/archive.html"
 end
 
+# Disqus comment system for the blog
+activate :disqus do |disqus|
+	disqus.shortname = "voxeldavid"
+end
+
 # Turns files into directories. /foo.html -> /foo/index.html
 activate :directory_indexes
 
