@@ -1,0 +1,26 @@
+---
+title: Home
+kind: homepage
+---
+
+.home__content
+	%header.home__content__intro
+		%h1 Hi, I'm David.
+		%h3 I build websites and have a ton of fun doing it.
+
+	.home__content__links
+		%a{:target => "_blank", :href => "mailto:me@voxeldavid.com"}
+			%span me@voxeldavid.com
+		%a{:target => "_blank", :href => "https://twitter.com/voxeldavid"}
+			%span Twitter
+		%a{:target => "_blank", :href => "https://github.com/voxeldavid"}
+			%span Github
+		%a{:target => "_blank", :href => "https://gist.github.com/voxeldavid"}
+			%span Gists
+
+	%footer.home__footer
+		%a{:href => "blog/"} Blog
+		%a{:href => "work/"} Work
+		%a{:href => "archive/"} Site Archive
+
+%script{:src => "/assets/js/home.js", :type => "text/javascript"}
