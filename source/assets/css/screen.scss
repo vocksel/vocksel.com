@@ -1,0 +1,141 @@
+
+/* ========================================================================== *
+   Config
+ * ========================================================================== */
+
+@import "susy";
+
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+@import "compass/utilities/general/clearfix";
+
+// Partials
+
+@import "normalize";
+
+// Fonts
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+// Variables
+
+$base-font-size     : 16px;
+$base-line-height   : 26px;
+
+$color__text        : #353b3d;
+$color__header      : #242626;
+$color__link        : #7A2AB7;
+$color__link--hover : #6E15AB;
+
+
+/* ========================================================================== *
+   Main
+ * ========================================================================== */
+
+@include establish-baseline;
+
+* {
+	@include box-sizing(border-box);
+}
+
+html {
+	color: $color__text;
+	font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+	// Add some whitespace to the top of the page
+	margin-top: 2em;
+
+  // Have the scroll bar displayed at all times for consistency between pages.
+	overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd,
+p, figure,
+pre, table, fieldset, hr {
+	margin-bottom: rhythm(1, $base-line-height);
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	text-decoration: block;
+}
+
+li > li {
+	padding-left: rhythm(1, $base-line-height);
+}
+
+/* ========================================================================== *
+   Typography
+ * ========================================================================== */
+
+// Massive Type -- For things like Mastheads
+
+.giga {
+	@include adjust-font-size-to(80px)
+}
+
+.mega {
+	@include adjust-font-size-to(64px)
+}
+
+.kilo {
+	@include adjust-font-size-to(48px)
+}
+
+// Headers
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color__header;
+	font-weight: 600;
+}
+
+h1, .alpha {
+	@include adjust-font-size-to(32px)
+}
+
+h2, .beta {
+	@include adjust-font-size-to(24px)
+}
+
+h3, .gamma {
+	@include adjust-font-size-to(20px)
+}
+
+h4, .delta {
+	@include adjust-font-size-to(18px)
+}
+
+h5, .epsilon {
+	@include adjust-font-size-to(16px)
+}
+
+h6, .zeta {
+	@include adjust-font-size-to(16px)
+}
+
+// Links
+
+a:link, a:visited {
+	color: $color__link;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: $color__link--hover;
+	@include transition(color, 0.25s)
+}
+
+// Testing out the new styles. Not intended for production
+.temp_style_view {
+	width: 560px;
+	margin: 0 auto;
+}
