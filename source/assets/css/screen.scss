@@ -41,24 +41,24 @@ $color__blockquote  : tint($color__text, 30%);
 @include establish-baseline;
 
 html {
-	color: $color__text;
-	font-family: "Open Sans", Verdana, Geneva, sans-serif;
+  color: $color__text;
+  font-family: "Open Sans", Verdana, Geneva, sans-serif;
 
-	// Have the scroll bar displayed at all times for consistency between pages.
-	overflow-y: scroll;
+  // Have the scroll bar displayed at all times for consistency between pages.
+  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, dd,
 p, figure, blockquote,
 pre, table, fieldset, hr {
-	margin-bottom: rhythm(1);
+  margin-bottom: rhythm(1);
 }
 
 ul, ol,
 blockquote, {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -77,8 +77,8 @@ blockquote, {
 // == Headers == //
 
 h1, h2, h3, h4, h5, h6 {
-	color: $color__header;
-	font-weight: 600;
+  color: $color__header;
+  font-weight: 600;
 }
 
 h1, .alpha   { @include adjust-font-size-to(38px); }
@@ -93,53 +93,53 @@ h6, .zeta    { @include adjust-font-size-to(16px); }
 // == Links == //
 
 a:link, a:visited {
-	color: $color__link;
-	font-weight: 600;
-	text-decoration: none;
-	@include transition(all 0.25s);
+  color: $color__link;
+  font-weight: 600;
+  text-decoration: none;
+  @include transition(all 0.25s);
 }
 
 a:hover, a:active {
-	color: $color__link--hover;
+  color: $color__link--hover;
 }
 
 
 // == Lists == //
 
 ul {
-	list-style: square outside;
+  list-style: square outside;
 }
 
 li {
-	padding-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 ul ul,
 ol ol {
-	margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 
 // == Quotes == //
 
 blockquote {
-	color: $color__blockquote;
-	font-weight: 600;
-	margin-left: 1.5rem;
-	padding-left: 1rem;
-	border-left: 5px solid #dbdbdb;
+  color: $color__blockquote;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  border-left: 5px solid #dbdbdb;
 }
 
 
 // == Horizontal Rule == //
 
 hr {
-	margin: rhythm(1) 0;
-	border: 1px solid #e4e4e4;
+  margin: rhythm(1) 0;
+  border: 1px solid #e4e4e4;
 }
 
 .hr__gradient {
-	@include background-image(linear-gradient(left center, #e6e6e6, #d4d4d4, #e6e6e6));
+  @include background-image(linear-gradient(left center, #e6e6e6, #d4d4d4, #e6e6e6));
 }
 
 
@@ -149,6 +149,6 @@ hr {
 
 // Testing out the new styles. Not intended for production
 .temp_style_view {
-	width: 560px;
-	margin: 0 auto;
+  width: 560px;
+  margin: 0 auto;
 }
