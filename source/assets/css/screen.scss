@@ -118,3 +118,30 @@ hr {
   width: 560px;
   margin: 0 auto;
 }
+
+
+/* ========================================================== *
+   $ Responsive Rules
+ * ========================================================== */
+
+@-ms-viewport {
+  zoom: 0.85;
+  user-zoom: fixed;
+}
+
+@-o-viewport {
+  zoom: 0.85;
+  user-zoom: fixed;
+}
+
+@viewport {
+  zoom: 0.85;
+  user-zoom: fixed;
+}
+
+@media (max-width: 620px) {
+  .temp_style_view {
+    width: auto;
+    padding: 1rem 2rem;
+  }
+}
