@@ -26,9 +26,9 @@ $base-line-height   : 24px;
 // == Colors == //
 
 $color__text        : #353b3d;
-$color__header      : #22262B;
-$color__link        : #7E46E0;
-$color__link--hover : shade($color__link, 50%);
+$color__header      : #3A3E42;
+$color__link        : #9215AB; // 2995D9
+$color__link--hover : shade($color__link, 40%); // EDAE00
 $color__blockquote  : tint($color__text, 30%);
 
 // == Typography == //
