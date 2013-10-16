@@ -1,0 +1,44 @@
+
+/* ========================================================================== *
+   $ Imports
+ * ========================================================================== */
+
+// Compass
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+
+// Susy grid system
+@import "susy";
+
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+
+/* ========================================================================== *
+   $ Variables
+ * ========================================================================== */
+
+// == Font Sizes == //
+
+$base-font-size     : 16px;
+$base-line-height   : 24px;
+
+// == Colors == //
+
+$color__text        : #353b3d;
+$color__header      : #22262B;
+$color__link        : #7E46E0;
+$color__link--hover : shade($color__link, 50%);
+$color__blockquote  : tint($color__text, 30%);
+
+// == Typography == //
+
+// These values are picked up by _normalize.scss which then handles the vertical
+// rhythm for headers.
+
+$font_size__h1: 2.5;
+$font_size__h2: 2;
+$font_size__h3: 1.5;
+$font_size__h4: 1.17;
+$font_size__h5: 1;
+$font_size__h6: 0.83;
