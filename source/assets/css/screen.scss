@@ -24,14 +24,14 @@
 
 // == Variables == //
 
-$base-font-size     : 16px;
+$base-font-size     : 18px;
 $base-line-height   : 26px;
 
 $color__text        : #353b3d;
 $color__header      : #22262B;
 $color__link        : #7E46E0;
 $color__link--hover : shade($color__link, 50%);
-$color__blockquote  : tint($color__text, 35%);
+$color__blockquote  : tint($color__text, 30%);
 
 
 /* ========================================================================== *
@@ -42,20 +42,17 @@ $color__blockquote  : tint($color__text, 35%);
 
 html {
 	color: $color__text;
-  font-family: "Open Sans", Verdana, Geneva, sans-serif;
+	font-family: "Open Sans", Verdana, Geneva, sans-serif;
 
-	// Add some whitespace to the top of the page
-	margin-top: 2em;
-
-  // Have the scroll bar displayed at all times for consistency between pages.
+	// Have the scroll bar displayed at all times for consistency between pages.
 	overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, dd,
-p, figure,
+p, figure, blockquote,
 pre, table, fieldset, hr {
-	margin-bottom: rhythm(1, $base-line-height);
+	margin-bottom: rhythm(1);
 }
 
 ul, ol,
@@ -84,12 +81,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 }
 
-h1, .alpha   { @include adjust-font-size-to(32px); }
-h2, .beta    { @include adjust-font-size-to(24px); }
-h3, .gamma   { @include adjust-font-size-to(20px); }
-h4, .delta   { @include adjust-font-size-to(18px); }
-h5, .epsilon { @include adjust-font-size-to(16px); }
+h1, .alpha   { @include adjust-font-size-to(38px); }
+h2, .beta    { @include adjust-font-size-to(32px); }
+h3, .gamma   { @include adjust-font-size-to(24px); }
+h4, .delta   { @include adjust-font-size-to(20px); }
+h5, .epsilon { @include adjust-font-size-to(18px); }
 h6, .zeta    { @include adjust-font-size-to(16px); }
+
 
 
 // == Links == //
@@ -109,16 +107,16 @@ a:hover, a:active {
 // == Lists == //
 
 ul {
-  list-style: square outside;
+	list-style: square outside;
 }
 
 li {
-	padding-left: rhythm(0.5);
+	padding-left: 0.5rem;
 }
 
 ul ul,
 ol ol {
-  margin-left: rhythm(2, $base-line-height);
+	margin-left: 2rem;
 }
 
 
@@ -127,8 +125,8 @@ ol ol {
 blockquote {
 	color: $color__blockquote;
 	font-weight: 600;
-	margin-left: rhythm(0.5);
-  padding-left: rhythm(1);
+	margin-left: 1.5rem;
+	padding-left: 1rem;
 	border-left: 5px solid #dbdbdb;
 }
 
@@ -136,12 +134,8 @@ blockquote {
 // == Horizontal Rule == //
 
 hr {
-	margin: rhythm(1.5) 0;
+	margin: rhythm(1) 0;
 	border: 1px solid #e4e4e4;
-	// border-style: solid;
-	// border-width: 1px 0;
-	// border-top-color: #e4e4e4;
-	// border-bottom-color: #f2f2f2;
 }
 
 .hr__gradient {
