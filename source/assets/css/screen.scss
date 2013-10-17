@@ -48,14 +48,6 @@ pre, table, fieldset, hr {
    ^ Typography
  * ========================================================================== */
 
-// == Massive Type == //
-// For less commonly used Type such as Mastheads
-
-.giga { @include adjust-font-size-to(80px); }
-.mega { @include adjust-font-size-to(64px); }
-.kilo { @include adjust-font-size-to(48px); }
-
-
 // == Headers == //
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,10 +62,10 @@ h4, .delta   { @include adjust-font-size-to(20px); }
 h5, .epsilon { @include adjust-font-size-to(18px); }
 h6, .zeta    { @include adjust-font-size-to(16px); }
 
-
-// == Small Type == //
-
-small, .milli { @include adjust-font-size-to(12px, 0); }
+// For less commonly used Type such as Mastheads
+.giga { @include adjust-font-size-to(80px); }
+.mega { @include adjust-font-size-to(64px); }
+.kilo { @include adjust-font-size-to(48px); }
 
 
 // == Links == //
