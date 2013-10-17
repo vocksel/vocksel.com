@@ -135,10 +135,21 @@ hr {
    ^ Page Structure
  * ========================================================================== */
 
-// Testing out the new styles. Not intended for production
-.temp_style_view {
-  width: 560px;
-  margin: 0 auto;
+// ==
+// The below styling is going to be a bit messy as I haven't worked with
+// the Susy grid system before and I'm not the best with page structure.
+//
+// I predict this section will need heavy revision at a later date.
+// ==
+
+// Susy grid container
+.container {
+  @include container;
+
+  &:hover {
+    // Show the grid on container hover for debugging.
+    @include susy-grid-background;
+  }
 }
 
 
@@ -162,8 +173,11 @@ hr {
 }
 
 @media (max-width: 640px) {
-  .temp_style_view {
-    width: auto;
-    padding: 0 2rem;
+  ul {
+    list-style: square inside;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 }
