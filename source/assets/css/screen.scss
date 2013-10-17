@@ -116,10 +116,12 @@ hr {
   @include trailing-border;
 }
 
-.hr--gradient {
-  border: 0;
-  @extend hr;
-  @include background-image(linear-gradient(left center, rgba(250,250,250,0.5), #d4d4d4, rgba(250,250,250,0.5)));
+.hr--gradient:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 auto rhythm(1);
+  @include background-image(linear-gradient(left center, #fff, #d4d4d4, #fff));
 }
 
 
