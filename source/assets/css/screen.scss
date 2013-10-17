@@ -7,30 +7,40 @@
 @import "base";
 @import "normalize";
 
+
 /* ========================================================================== *
    Main
  * ========================================================================== */
 
 @include establish-baseline;
 
-html {
+body {
   color: $color__text;
   font-family: "Open Sans", Verdana, Geneva, sans-serif;
+
+  // Add some padding to the top and bottom of the page.
+  padding: rhythm(2) 0 rhythm(3) 0;
 
   // Have the scroll bar displayed at all times for consistency between pages.
   overflow-y: scroll;
 }
 
 // Minor reset for some elements
-ul, ol {
+ul, ol,
+blockquote,
+hr {
+  border: 0;
   padding: 0;
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, dd,
 p, figure, blockquote,
 pre, table, fieldset, hr {
-  margin-bottom: rhythm(1);
+  // Make sure our main elements adhere to the baseline grid.
+  @include rhythm(0, 0, 0, 1, 1em);
+  @include box-sizing(border-box)
 }
 
 
@@ -48,12 +58,22 @@ pre, table, fieldset, hr {
 
 // == Headers == //
 
-// View _base.scss to adjust header font sizes
-
 h1, h2, h3, h4, h5, h6 {
   color: $color__header;
   font-weight: 600;
 }
+
+h1, .alpha   { @include adjust-font-size-to(40px); }
+h2, .beta    { @include adjust-font-size-to(32px); }
+h3, .gamma   { @include adjust-font-size-to(24px); }
+h4, .delta   { @include adjust-font-size-to(20px); }
+h5, .epsilon { @include adjust-font-size-to(18px); }
+h6, .zeta    { @include adjust-font-size-to(16px); }
+
+
+// == Small Type == //
+
+small, .milli { @include adjust-font-size-to(12px, 0); }
 
 
 // == Links == //
@@ -91,7 +111,7 @@ ol ol {
 blockquote {
   color: $color__blockquote;
   font-weight: 600;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   padding-left: 1rem;
   border-left: 5px solid #dbdbdb;
 }
@@ -100,12 +120,14 @@ blockquote {
 // == Horizontal Rule == //
 
 hr {
-  margin: rhythm(1) 0;
-  border: 1px solid #e4e4e4;
+  border-color: #dbdbdb;
+  @include trailing-border;
 }
 
 .hr--gradient {
-  @include background-image(linear-gradient(left center, #e6e6e6, #d4d4d4, #e6e6e6));
+  border: 0;
+  @extend hr;
+  @include background-image(linear-gradient(left center, rgba(250,250,250,0.5), #d4d4d4, rgba(250,250,250,0.5)));
 }
 
 
@@ -139,9 +161,9 @@ hr {
   user-zoom: fixed;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 640px) {
   .temp_style_view {
     width: auto;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
   }
 }
