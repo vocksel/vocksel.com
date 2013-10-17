@@ -1,13 +1,12 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
+
 source 'http://rubygems.org'
 
-gem "middleman",            "~> 3.1.5"
+gem "middleman",            "~> 3.1.6"
 gem "middleman-blog",       "~> 3.3.0"
 gem "middleman-deploy",     "~> 0.1.2"
 gem "middleman-livereload", "~> 3.1.0"
 
-# Responcive Compass grid system
+# Responsive Compass grid system
 gem "susy", "~> 1.0.9"
 
 # For faster file watcher updates on Windows:
