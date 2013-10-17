@@ -21,6 +21,14 @@
    ^ Variables
  * ========================================================================== */
 
+// == Susy Grid == //
+
+$total-columns  : 8;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
+
 // == Font Sizes == //
 
 $base-font-size     : 16px;
