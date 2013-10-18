@@ -39,6 +39,7 @@ $base-line-height   : 26px;
 
 $color__text        : #353b3d;
 $color__header      : #3A3E42;
-$color__link        : #9215AB;                  // 2995D9
-$color__link--hover : shade($color__link, 40%); // EDAE00
+$color__link        : #9215AB;                  // 2995D9;
+$color__link--hover : shade($color__link, 40%); // EDAE00;
 $color__blockquote  : tint($color__text, 30%);
+$color__pre         : #202020;
