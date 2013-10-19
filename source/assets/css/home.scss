@@ -83,7 +83,7 @@ a:hover, a:active {
 }
 
 .home__intro {
-
+  @extend %animated;
 }
 
 .home__intro__title {
@@ -93,6 +93,29 @@ a:hover, a:active {
 .home__intro__tagline {
   font-family: Lato;
   font-size: 1.5rem;
+.home__content {
+  margin-bottom: 4rem;
+  @extend %animated;
+}
+
+.home__footer {
+  font-size: 0.85rem;
+  @extend %animated;
+}
+
+.home__links--prime a {
+  margin-right: 1rem; // Push the links away from eachother
+  border-bottom: 2px solid rgba(0,0,0, 0);
+  @extend %animated;
+  @include transition(all 0.2s);
+}
+
+.home__links--prime a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.home__links--sub a {
+  margin-right: 0.6em;
 }
 
 
