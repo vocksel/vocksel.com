@@ -53,6 +53,7 @@ pre, table, fieldset, hr {
 h1, h2, h3, h4, h5, h6 {
   color: $color__header;
   font-weight: 600;
+  @include rhythm(0, 0.5, 0.5, 0, 1em);
 }
 
 h1, .alpha   { @include adjust-font-size-to(40px); }
@@ -115,9 +116,8 @@ pre {
   color: $color__pre;
   font-family: Consolas, monospace, serif;
   padding: 0 1rem;
-  margin-left: 1rem;
   background-color: #f2f2f2;
-  border-left: 5px solid #dbdbdb;
+  @include border-radius(6px);
 }
 
 
