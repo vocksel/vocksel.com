@@ -24,10 +24,10 @@ $color__link--hover  : #fff;
  * ========================================================================== */
 
 body {
-	color: $color__text;
-	font-size: 1rem;
-	line-height: 1.5;
-	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  color: $color__text;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   background: #161619 url('/assets//img/bg-desk.jpg') no-repeat center center fixed;
   @include background-size(cover);
 }
@@ -50,9 +50,9 @@ pre, table, fieldset, hr {
 // == Headers == //
 
 h1, h2, h3 {
-	color: $color__header;
-	font-family: Lato;
-	font-weight: 400;
+  color: $color__header;
+  font-family: Lato;
+  font-weight: 400;
 }
 
 h1 { font-size: 2.2rem;  }
@@ -70,7 +70,7 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-	border-bottom: 1px solid $color__link--hover;
+  border-bottom: 1px solid $color__link--hover;
 }
 
 
@@ -79,7 +79,7 @@ a:hover, a:active {
  * ========================================================================== */
 
 .container {
-	padding: 4rem;
+  padding: 4rem;
 }
 
 .home__intro {
@@ -87,20 +87,20 @@ a:hover, a:active {
 }
 
 .home__intro__title {
-	margin: 0;
+  margin: 0;
 }
 
 .home__intro__tagline {
-	font-family: Lato;
-	font-size: 1.5rem;
+  font-family: Lato;
+  font-size: 1.5rem;
 }
 
 
 // == Extenders == //
 
 %animated {
-	// Applied to elements that will be animated on page load.
-	position: relative;
+  // Applied to elements that will be animated on page load.
+  position: relative;
 }
 
 
