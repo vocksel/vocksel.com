@@ -47,9 +47,9 @@ $color__pre         : #202020;
  * ========================================================================== */
 
 // Baseline grid for debugging vertical rhythm
-@import url("http://basehold.it/26/");
+// @import url("http://basehold.it/26/");
 
 // Show the susy grid background on container hover
-.container:hover {
-	@include susy-grid-background;
-}
+// .container:hover {
+// 	@include susy-grid-background;
+// }
