@@ -11,7 +11,7 @@
 		%link{:rel => "shortcut icon", :href => "/assets/img/favicon.png"}
 
 		-# Check page's frontmatter to decide which stylesheet to use.
-		- if current_page.data.type == "homepage" then
+		- if current_page.data.type == "homepage"
 			%link{:rel => "stylesheet", :href => "/assets/css/home.css"}
 		- else
 			%link{:rel => "stylesheet", :href => "/assets/css/screen.css"}
@@ -22,4 +22,3 @@
 	%body
 		.container
 			= yield
-
