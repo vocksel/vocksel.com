@@ -28,6 +28,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Open Sans", Verdana, Geneva, sans-serif;
+
   background: #161619 url('/assets//img/bg-desk.jpg') no-repeat center center fixed;
   @include background-size(cover);
 }
@@ -66,7 +67,7 @@ a:link, a:visited {
   color: $color__link;
   text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255, 0.25);
-  @include transition(all, 0.2s, ease);
+  @include transition(all 0.2s);
 }
 
 a:hover, a:active {
@@ -78,9 +79,14 @@ a:hover, a:active {
    ^ Page Structure
  * ========================================================================== */
 
+// == Container == //
+
 .container {
   padding: 4rem;
 }
+
+
+// == Introduction == //
 
 .home__intro {
   @extend %animated;
@@ -91,17 +97,27 @@ a:hover, a:active {
 }
 
 .home__intro__tagline {
-  font-family: Lato;
-  font-size: 1.5rem;
+  @extend h3;
+}
+
+
+// == Content == //
+
 .home__content {
   margin-bottom: 4rem;
   @extend %animated;
 }
 
+
+// == Footer == //
+//
 .home__footer {
   font-size: 0.85rem;
   @extend %animated;
 }
+
+
+// == Links == //
 
 .home__links--prime a {
   margin-right: 1rem; // Push the links away from eachother
