@@ -9,9 +9,14 @@
 		%title voxeldavid.com / #{current_page.data.title}
 
 		%link{:rel => "shortcut icon", :href => "/assets/img/favicon.png"}
-		%link{:rel => "stylesheet", :href => "/assets/css/screen.css"}
 
+		-# Check page's frontmatter to decide which stylesheet to use.
+		- if current_page.data.type == "homepage" then
+			%link{:rel => "stylesheet", :href => "/assets/css/home.css"}
+		- else
+			%link{:rel => "stylesheet", :href => "/assets/css/screen.css"}
 
+		-# Google jQuery with local fallback
 		%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
 		%script{:src => "window.jQuery || document.write('<script src=\"/assets/js/jquery.js\"><\/script>')"}
 	%body
