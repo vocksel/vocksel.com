@@ -15,8 +15,6 @@ end
 ##
 
 # Apply alternate layouts
-page "/index.html", :layout => :homepage
-
 with_layout :blog do
 	page "/blog/*"
 end

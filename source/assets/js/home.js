@@ -1,12 +1,12 @@
 
 $(document).ready(function() {
     // Set all elements to be invisible.
-    $('.home__content__intro').css({
+    $('.home__intro').css({
         'opacity' : '0',
         'top' : '-20px'
     });
 
-    $('.home__content__links').css({
+    $('.home__content').css({
         'opacity' : '0',
         'left' : '-14px'
     });
@@ -22,12 +22,12 @@ $(window).load(function () {
     // and using the type of direction you want them to come in from (or none).
 
     // Home Transitions
-    $('.home__content__intro').delay(400).animate({
+    $('.home__intro').delay(400).animate({
          'opacity' : '1',
          'top' : '+=20px'
     }, {duration: 600});
 
-    $('.home__content__links').delay(800).animate({
+    $('.home__content').delay(800).animate({
     	'opacity' : '1',
     	'left' : '+=14px'
     }, {duration: 500});
