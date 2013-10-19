@@ -151,11 +151,6 @@ hr {
 // Susy grid container
 .container {
   @include container;
-
-  &:hover {
-    // Show the grid on container hover for debugging.
-    @include susy-grid-background;
-  }
 }
 
 
