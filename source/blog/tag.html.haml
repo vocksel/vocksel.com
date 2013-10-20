@@ -6,40 +6,18 @@ per_page: 12
 
 %h1 Articles tagged &ldquo;#{tagmname}&rdquo;
 
-/ <h1>Articles tagged &ldquo;<%= tagname %>&rdquo;</h1>
-
-
 - if paginate && num_pages > 1
-  %p Page #{page_number} of #{num_pages}
+	%p Page #{page_number} of #{num_pages}
 - if prev_page
-  %p= link_to 'Previous page', prev_page
-
-/ <% if paginate && num_pages > 1 %>
-/   <p>Page <%= page_number %> of <%= num_pages %></p>
-/
-/   <% if prev_page %>
-/     <p><%= link_to 'Previous page', prev_page %></p>
-/   <% end %>
-/ <% end %>
-
+	%p= link_to 'Previous page', prev_page
 
 %ul
-  - page_articles.each_wotj_index do |article, i|
-  %li= link_to article.title, article
-    %span= article.data.strftime('%b %e')
-
-/ <ul>
-/   <% page_articles.each_with_index do |article, i| %>
-/     <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-/   <% end %>
-/ </ul>
-
+	- page_articles.each_wotj_index do |article, i|
+	%li
+		= link_to article.title, article
+		%span
+			= article.date.strftime('%b %e')
 
 - if paginate && next_page
-%p= link_to 'Next page', next_page
-
-/ <% if paginate %>
-/   <% if next_page %>
-/     <p><%= link_to 'Next page', next_page %></p>
-/   <% end %>
-/ <% end %>
+	%p
+		= link_to 'Next page', next_page
