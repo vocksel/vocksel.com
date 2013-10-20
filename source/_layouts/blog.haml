@@ -10,7 +10,7 @@
 
 		%link{:rel => "shortcut icon", :href => "/assets/img/favicon.png"}
 
-		-# Check page's frontmatter to decide which stylesheet to use.
+		- # Check page's frontmatter to decide which stylesheet to use.
 		- if current_page.data.type == "homepage"
 			%link{:rel => "stylesheet", :href => "/assets/css/home.css"}
 		- else
@@ -33,7 +33,7 @@
 
 			= partial "_layouts/blog__meta"
 
-		-# Google jQuery with local fallback
+		- # Google jQuery with local fallback
 		%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
 		%script{:src => "window.jQuery || document.write('<script src=\"/assets/js/jquery.js\"><\/script>')"}
 
