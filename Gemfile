@@ -1,15 +1,17 @@
 
 source 'http://rubygems.org'
 
-# The Middleman
-gem "middleman", "~> 3.1.5"
-gem "middleman-blog", "~> 3.3.0"
-gem "middleman-disqus", "~> 0.0.3"
-gem "middleman-deploy", "~> 0.1.2"
-gem "middleman-livereload", "~> 3.1.0"
+gem "middleman",            "~> 3.1.6"
+gem "middleman-blog",       "~> 3.3.0"
+gem "middleman-disqus",     "~> 0.0.3"
+gem "middleman-syntax",     "~> 1.2.1"
+gem "middleman-deploy",     "~> 0.1.2"
 
 # Responsive Compass grid system
 gem "susy", "~> 1.0.9"
+
+# Markdown to HTML parser
+gem "redcarpet", "~> 3.0.0"
 
 # For faster file watcher updates on Windows:
 gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
