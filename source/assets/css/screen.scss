@@ -40,7 +40,7 @@ p, figure, blockquote,
 pre, table, fieldset, hr {
   // Make sure our main elements adhere to the baseline grid.
   @include rhythm(0, 0, 0, 1, 1em);
-  @include box-sizing(border-box)
+  @include box-sizing(border-box);
 }
 
 
@@ -173,9 +173,24 @@ hr {
   user-zoom: fixed;
 }
 
+@media (max-width: 720px) {
+  body {
+    padding: rhythm(1) 0 rhythm(2) 0;
+  }
+}
+
 @media (max-width: 680px) {
+  body {
+    padding: rhythm(0) 0 rhythm(1) 0;
+  }
+
   ul {
     list-style: square inside;
+  }
+
+  pre {
+    // margin: rhythm(1) -100%;
+    // padding: rhythm(0) 100%;
   }
 
   .container {
