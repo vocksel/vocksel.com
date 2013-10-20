@@ -1,0 +1,199 @@
+
+/* ========================================================================== *
+   ^ Config
+ * ========================================================================== */
+
+// View _base.scss for imports and variables
+@import "base";
+@import "normalize";
+
+
+/* ========================================================================== *
+   ^ Main
+ * ========================================================================== */
+
+@include establish-baseline;
+
+body {
+  color: $color__text;
+  font-family: "Open Sans", Verdana, Geneva, sans-serif;
+
+  // Add some padding to the top and bottom of the page.
+  padding: rhythm(2) 0 rhythm(3) 0;
+
+  // Have the scroll bar displayed at all times for consistency between pages.
+  overflow-y: scroll;
+}
+
+// Minor reset for some elements
+ul, ol,
+blockquote,
+hr {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure, blockquote,
+pre, table, fieldset, hr {
+  // Make sure our main elements adhere to the baseline grid.
+  @include rhythm(0, 0, 0, 1, 1em);
+  @include box-sizing(border-box);
+}
+
+
+/* ========================================================================== *
+   ^ Typography
+ * ========================================================================== */
+
+// == Headers == //
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color__header;
+  font-weight: 600;
+  @include rhythm(0, 0.5, 0.5, 0, 1em);
+}
+
+h1, .alpha   { @include adjust-font-size-to(40px); }
+h2, .beta    { @include adjust-font-size-to(32px); }
+h3, .gamma   { @include adjust-font-size-to(24px); }
+h4, .delta   { @include adjust-font-size-to(20px); }
+h5, .epsilon { @include adjust-font-size-to(18px); }
+h6, .zeta    { @include adjust-font-size-to(16px); }
+
+// For less commonly used Type such as Mastheads
+.giga { @include adjust-font-size-to(80px); }
+.mega { @include adjust-font-size-to(64px); }
+.kilo { @include adjust-font-size-to(48px); }
+
+
+// == Links == //
+
+a:link, a:visited {
+  color: $color__link;
+  font-weight: 600;
+  text-decoration: none;
+  @include transition(all 0.25s);
+}
+
+a:hover, a:active {
+  color: $color__link--hover;
+}
+
+
+// == Lists == //
+
+ul {
+  list-style: square outside;
+}
+
+li {
+  padding-left: 0.5rem;
+}
+
+ul ul,
+ol ol {
+  margin-left: 2rem;
+}
+
+
+// == Quotes == //
+
+blockquote {
+  color: $color__blockquote;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 5px solid #dbdbdb;
+}
+
+
+// == Preserved Text== //
+
+pre {
+  color: $color__pre;
+  font-family: Consolas, monospace, serif;
+  padding: 0 1rem;
+  background-color: #f2f2f2;
+  @include border-radius(6px);
+}
+
+
+// == Horizontal Rule == //
+
+hr {
+  border-color: #dbdbdb;
+  @include trailing-border;
+}
+
+.hr--gradient:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 auto rhythm(1);
+  @include background-image(linear-gradient(left center, #fff, #d4d4d4, #fff));
+}
+
+
+/* ========================================================================== *
+   ^ Page Structure
+ * ========================================================================== */
+
+// ==
+// The below styling is going to be a bit messy as I haven't worked with
+// the Susy grid system before and I'm not the best with page structure.
+//
+// I predict this section will need heavy revision at a later date.
+// ==
+
+// Susy grid container
+.container {
+  @include container;
+}
+
+
+/* ========================================================== *
+   ^ Responsive Rules
+ * ========================================================== */
+
+@-ms-viewport {
+  zoom: 0.85;
+  user-zoom: fixed;
+}
+
+@-o-viewport {
+  zoom: 0.85;
+  user-zoom: fixed;
+}
+
+@viewport {
+  zoom: 0.85;
+  user-zoom: fixed;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: rhythm(1) 0 rhythm(2) 0;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    padding: rhythm(0) 0 rhythm(1) 0;
+  }
+
+  ul {
+    list-style: square inside;
+  }
+
+  pre {
+    // margin: rhythm(1) -100%;
+    // padding: rhythm(0) 100%;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,154 @@
+
+/* ========================================================================== *
+   ^ Imports
+ * ========================================================================== */
+
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Open+Sans);
+
+
+/* ========================================================================== *
+   ^ Variables
+ * ========================================================================== */
+
+$color__text         : #fff;
+$color__header       : #fff;
+$color__link         : #fff;
+$color__link--hover  : #fff;
+
+
+/* ========================================================================== *
+   ^ Main
+ * ========================================================================== */
+
+body {
+  color: $color__text;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Open Sans", Verdana, Geneva, sans-serif;
+
+  background: #161619 url('/assets//img/bg-desk.jpg') no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure, blockquote,
+pre, table, fieldset, hr {
+  // Make sure our main elements adhere to the baseline grid.
+  @include rhythm(0, 0, 0, 1, 1em);
+  @include box-sizing(border-box)
+}
+
+
+/* ========================================================================== *
+   ^ Typography
+ * ========================================================================== */
+
+// == Headers == //
+
+h1, h2, h3 {
+  color: $color__header;
+  font-family: Lato;
+  font-weight: 400;
+}
+
+h1 { font-size: 2.2rem;  }
+h2 { font-size: 1.85rem; }
+h3 { font-size: 1.5rem;  }
+
+
+// == Links == //
+
+a:link, a:visited {
+  color: $color__link;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255, 0.25);
+  @include transition(all 0.2s);
+}
+
+a:hover, a:active {
+  border-bottom: 1px solid $color__link--hover;
+}
+
+
+/* ========================================================================== *
+   ^ Page Structure
+ * ========================================================================== */
+
+// == Container == //
+
+.container {
+  padding: 4rem;
+}
+
+
+// == Introduction == //
+
+.home__intro {
+  @extend %animated;
+}
+
+.home__intro__title {
+  margin: 0;
+}
+
+.home__intro__tagline {
+  @extend h3;
+}
+
+
+// == Content == //
+
+.home__content {
+  margin-bottom: 4rem;
+  @extend %animated;
+}
+
+
+// == Footer == //
+//
+.home__footer {
+  font-size: 0.85rem;
+  @extend %animated;
+}
+
+
+// == Links == //
+
+.home__links--prime a {
+  margin-right: 1rem; // Push the links away from eachother
+  border-bottom: 2px solid rgba(0,0,0, 0);
+  @extend %animated;
+  @include transition(all 0.2s);
+}
+
+.home__links--prime a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.home__links--sub a {
+  margin-right: 0.6em;
+}
+
+
+// == Extenders == //
+
+%animated {
+  // Applied to elements that will be animated on page load.
+  position: relative;
+}
+
+
+/* ========================================================================== *
+   ^ Responsive Rules
+ * ========================================================================== */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+}

@@ -4,9 +4,10 @@
 ##
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+	require "susy"
+  config.output_style = :compact
+end
 
 
 ##
@@ -14,8 +15,6 @@
 ##
 
 # Apply alternate layouts
-page "/index.html", :layout => :homepage
-
 with_layout :blog do
 	page "/blog/*"
 end
@@ -25,7 +24,7 @@ end
 ## Helpers
 ##
 
-## All custom helpers are loaded automatically from the Helpers directory.
+## All custom helpers are loaded automatically from the 'helpers' directory.
 
 # Blog configuration
 activate :blog do |blog|
