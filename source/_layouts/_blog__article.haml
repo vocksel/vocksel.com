@@ -1,0 +1,24 @@
+
+.blog__entry
+  %h1.blog__entry__title
+    = current_page.data.title
+
+  %article.blog__entry__body
+    = current_article.body
+
+  %aside.blog__entry__meta
+    %p.blog__entry__meta__timestamp
+      Posted on
+      = format_time("%B %-d %Y", current_article.date)
+      by
+      = current_article.data.author
+
+    %p.blog__entry__meta__tags
+      Tagged with
+      - current_article.tags.each do |tag|
+        = link_to tag, tag_path(tag)
+
+    %a{:href => "/blog/"} Back to blog
+
+    = disqus
+

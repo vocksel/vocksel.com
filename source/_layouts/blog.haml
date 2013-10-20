@@ -1,0 +1,40 @@
+!!! html
+
+%html{:lang => "en"}
+	%head
+		%meta{:charset => "utf-8"}
+		%meta{:name => "description", :content => "The personal website of David Minnerly."}
+		%meta{:name => "viewport", :content => "width=device-width,initial-scale=1.0,maximum-scale=1.0"}
+
+		%title voxeldavid.com / #{current_page.data.title}
+
+		%link{:rel => "shortcut icon", :href => "/assets/img/favicon.png"}
+
+		-# Check page's frontmatter to decide which stylesheet to use.
+		- if current_page.data.type == "homepage"
+			%link{:rel => "stylesheet", :href => "/assets/css/home.css"}
+		- else
+			%link{:rel => "stylesheet", :href => "/assets/css/screen.css"}
+
+	%body
+		.container
+			%header.blog__header
+				%nav.blog__navigation--main
+					%a{:href => "#"} Home
+					%a{:href => "#"} Blog
+					%a{:href => "#"} Twitter
+					%a{:href => "#"} GitHub
+
+			.container
+				- if is_blog_article?
+					= partial "_layouts/blog__article"
+				- else
+					= partial "_layouts/blog__home"
+
+			= partial "_layouts/blog__meta"
+
+		-# Google jQuery with local fallback
+		%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+		%script{:src => "window.jQuery || document.write('<script src=\"/assets/js/jquery.js\"><\/script>')"}
+
+

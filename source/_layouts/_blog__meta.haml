@@ -1,0 +1,25 @@
+
+%aside.blog__meta
+	.blog__meta__recent-articles
+		%h2 Recent Articles
+		%ol
+			- blog.articles[0...5].each do |article|
+				%li
+					= link_to article.title, article
+					%span article.date.strftime('%b %e')
+
+	.blog__meta__tags
+		%h2 Tags
+		%ol
+			- blog.tags.each do |tag, article|
+				%li
+					= link_to tag, tag_path(tag)
+					= article.size
+
+	.blog__meta__archive
+		%h2 By Year
+		%ol
+			- blog.articles.group_by {|a| a.date.year}.each do |year, articles|
+				%li
+					= link_to year, blog_year_path(year)
+					= articles.size
