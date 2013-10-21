@@ -14,7 +14,7 @@ end
 ## Page options, layouts, aliases and proxies
 ##
 
-page "/feed.xml", :layout => false
+page "/blog/feed.xml", :layout => false
 
 
 ##
