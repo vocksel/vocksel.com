@@ -6,15 +6,15 @@
 			- blog.articles[0...5].each do |article|
 				%li
 					= link_to article.title, article
-					%span article.date.strftime('%b %e')
+					= "(" + format_time("%b %e", article.date) + ")"
 
 	.blog__meta__tags
 		%h2 Tags
 		%ol
-			- blog.tags.each do |tag, article|
+			- blog.tags.each do |tag, articles|
 				%li
 					= link_to tag, tag_path(tag)
-					= article.size
+					= "(" + articles.size.to_s + ")"
 
 	.blog__meta__archive
 		%h2 By Year
@@ -22,4 +22,4 @@
 			- blog.articles.group_by {|a| a.date.year}.each do |year, articles|
 				%li
 					= link_to year, blog_year_path(year)
-					= articles.size
+					= "(" + articles.size.to_s + ")"
