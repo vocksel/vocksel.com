@@ -21,7 +21,7 @@
 			- if is_blog_article?
 				= partial "_layouts/blog__article"
 			- else
-				= partial "_layouts/blog__home"
+				= yield
 
 			= partial "_layouts/blog__meta"
 
