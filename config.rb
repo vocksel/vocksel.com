@@ -14,12 +14,8 @@ end
 ## Page options, layouts, aliases and proxies
 ##
 
-# Apply alternate layouts
-with_layout :blog do
-	page "/blog/*"
-end
-
 page "/feed.xml", :layout => false
+
 
 ##
 ## Helpers
