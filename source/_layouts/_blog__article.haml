@@ -9,7 +9,7 @@
   %aside.blog__entry__meta
     %p.blog__entry__meta__timestamp
       Posted on
-      = format_time("%B %-d %Y", current_article.date)
+      = format_time("%B #{current_article.data.date.day.ordinalize}, %Y", current_article.data.date)
       by
       = current_article.data.author
 

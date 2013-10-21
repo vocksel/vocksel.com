@@ -6,7 +6,7 @@
 			- blog.articles[0...5].each do |article|
 				%li
 					= link_to article.title, article
-					= "(" + format_time("%b %e", article.date) + ")"
+					= "(" + format_time("%B #{article.date.day.ordinalize}", article.date) + ")"
 
 	.blog__meta__tags
 		%h2 Tags
