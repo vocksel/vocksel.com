@@ -7,13 +7,13 @@
     = current_article.body
 
   %aside.blog__entry__meta
-    %p.blog__entry__meta__timestamp
+    %p.blog__entry__timestamp
       Posted on
       = format_time("%B #{current_article.data.date.day.ordinalize}, %Y", current_article.data.date)
       by
       = current_article.data.author
 
-    %p.blog__entry__meta__tags
+    %p.blog__entry__tags
       Tagged with
       - current_article.tags.each do |tag|
         = link_to tag, tag_path(tag)
