@@ -17,7 +17,7 @@ per_page: 12
 		%li
 			= link_to article.title, article
 			%span
-				= article.date.strftime('%b %e')
+				= "(" + format_time("%B #{article.date.day.ordinalize}", article.date) + ")"
 
 - if paginate && next_page
 	%p= link_to 'Next page', next_page
