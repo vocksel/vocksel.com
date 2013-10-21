@@ -4,7 +4,7 @@ pageable: true
 per_page: 12
 ---
 
-%h1 Articles tagged &ldquo;#{tagmname}&rdquo;
+%h1 Articles tagged &ldquo;#{ }&rdquo;
 
 - if paginate && num_pages > 1
 	%p Page #{page_number} of #{num_pages}
@@ -14,10 +14,10 @@ per_page: 12
 
 %ul
 	- page_articles.each_with_index do |article, i|
-	%li
-		= link_to article.title, article
-		%span
-			= article.date.strftime('%b %e')
+		%li
+			= link_to article.title, article
+			%span
+				= article.date.strftime('%b %e')
 
 - if paginate && next_page
 	%p= link_to 'Next page', next_page
