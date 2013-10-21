@@ -18,18 +18,10 @@
 
 	%body
 		.container
-			%header.blog__header
-				%nav.blog__navigation--main
-					%a{:href => "#"} Home
-					%a{:href => "#"} Blog
-					%a{:href => "#"} Twitter
-					%a{:href => "#"} GitHub
-
-			.container
-				- if is_blog_article?
-					= partial "_layouts/blog__article"
-				- else
-					= partial "_layouts/blog__home"
+			- if is_blog_article?
+				= partial "_layouts/blog__article"
+			- else
+				= partial "_layouts/blog__home"
 
 			= partial "_layouts/blog__meta"
 
