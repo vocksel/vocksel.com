@@ -50,6 +50,9 @@ end
 # Turns files into directories. /foo.html -> /foo/index.html
 activate :directory_indexes
 
+# Middleman syntax highlighter
+activate :syntax
+
 # Special directories in the project root
 set :build_dir,   'build'
 set :data_dir,    'data'
