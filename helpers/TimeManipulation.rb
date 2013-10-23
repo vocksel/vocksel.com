@@ -18,7 +18,7 @@ module TimeManipulation
   # Reference: http://www.ruby-doc.org/core-2.0/Time.html#strftime-method
   # ===
   def format_time(format, time)
-    Time.parse(time.to_s).strftime(format)
+    time.strftime(format)
   end
 
 end
