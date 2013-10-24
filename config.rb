@@ -53,6 +53,11 @@ activate :directory_indexes
 # Middleman syntax highlighter
 activate :syntax
 
+
+# Markdown engine
+set :markdown_engine, :redcarpet
+set :markdown, fenced_code_blocks: true
+
 # Special directories in the project root
 set :build_dir,   'build'
 set :data_dir,    'data'
@@ -65,6 +70,7 @@ set :layouts_dir, '_layouts'
 set :css_dir,     'assets/css'
 set :js_dir,      'assets/js'
 set :images_dir,  'assets/img'
+
 
 # Build-specific configuration
 configure :build do
