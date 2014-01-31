@@ -1,0 +1,41 @@
+
+<div class="post">
+	<h1 class="post__title">
+		<%= current_page.data.title %>
+	</h1>
+
+	<article class="post__contents">
+		<%= current_article.body %>
+	</article>
+
+	<footer class="post__meta">
+		<!-- <p class="post__author">
+			by <%= current_page.data.author %>
+		</p> -->
+
+		<p class="post__date">
+			<%= format_time("%B %d, %Y", current_page.date) %>
+		</p>
+
+		<p class="post__tags">
+			Tagged with
+			<% current_article.tags.each do |tag| %>
+				<%= link_to tag, tag_path(tag) %>
+			<% end %>
+		</p>
+
+		<a href="/blog/">Back to blog</a>
+	</footer>
+
+	<div class="post__comments">
+		<%= disqus %>
+	</div>
+</div>
+
+<!--
+
+	%a{:href => "/blog/"} Back to blog
+
+  .post__comments
+	= disqus
+ -->
