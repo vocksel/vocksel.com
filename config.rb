@@ -6,7 +6,7 @@
 # Change Compass configuration
 compass_config do |config|
 	require "susy"
-  config.output_style = :compact
+	config.output_style = :compact
 end
 
 
@@ -23,36 +23,8 @@ page "/blog/feed.xml", :layout => false
 
 ## All custom helpers are loaded automatically from the 'helpers' directory.
 
-# Blog configuration
-activate :blog do |blog|
-	blog.prefix            = "blog/"
-	blog.permalink         = ":year/:month/:title.html"
-	blog.sources           = "/articles/:year-:month-:day-:title.html"
-	blog.default_extension = ".md"
-	blog.layout            = "blog"
-
-	blog.paginate          = true
-	blog.per_page          = 10
-
-	blog.year_link         = ":year.html"
-	blog.month_link        = ":year/:month.html"
-	blog.day_link          = ":year/:month/:day.html"
-
-	blog.tag_template      = "/blog/tag.html"
-	blog.calendar_template = "/blog/archive.html"
-end
-
-# Disqus comment system for the blog
-activate :disqus do |disqus|
-	disqus.shortname = "voxeldavid"
-end
-
 # Turns files into directories. /foo.html -> /foo/index.html
 activate :directory_indexes
-
-# Middleman syntax highlighter
-activate :syntax
-
 
 # Markdown engine
 set :markdown_engine, :redcarpet
