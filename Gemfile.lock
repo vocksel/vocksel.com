@@ -89,8 +89,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  builder (~> 3.2.2)
+  builder
   middleman
-  redcarpet (~> 3.0.0)
+  redcarpet
   susy
-  wdm (~> 0.1.0)
+  wdm
