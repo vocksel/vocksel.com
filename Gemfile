@@ -8,10 +8,10 @@ gem "middleman"
 gem "susy"
 
 # Markdown to HTML parser
-gem "redcarpet", "~> 3.0.0"
+gem "redcarpet"
 
 # For compiling the atom feed
-gem "builder", "~> 3.2.2"
+gem "builder"
 
 # For faster file watcher updates on Windows:
-gem "wdm", "~> 0.1.0"
+gem "wdm"
