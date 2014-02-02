@@ -53,6 +53,8 @@ GEM
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
+    modular-scale (2.0.0.alpha5)
+      compass (>= 0.12.0)
     multi_json (1.8.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -91,6 +93,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   middleman
+  modular-scale (~> 2.0.0.alpha)
   redcarpet
   susy
   wdm
