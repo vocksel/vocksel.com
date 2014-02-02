@@ -24,9 +24,22 @@
 @import "normalize";
 
 
-/* 2. General
+/* 2. General - Setting up the main styles
    ========================================================================== */
 
 body {
+    font-size: ms(0);
+    line-height: ms(1);
     font-family: $font-stack;
+
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
+}
+/* 3. Utilities - Things used all over the place
+   ========================================================================== */
+
+.container {
+    @include container;
+}
+
