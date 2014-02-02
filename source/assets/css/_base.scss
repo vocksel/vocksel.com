@@ -3,8 +3,9 @@
    ========================================================================== */
 
 /*
-	1. Compass
-	2. Fonts
+
+    1. Compass
+    2. Fonts
  */
 
 
@@ -26,10 +27,13 @@ $gutter-width  : 1em;
 $grid-padding  : $gutter-width;
 
 
-/* 2. Fonts
+/* 2. Fonts - Directly from Google
    ========================================================================== */
 
 /* Droid Sans for regular text and Roboto Slab for headers. */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Roboto+Slab);
 
 $font-stack: "Droid Sans", sans-serif;
+$header-font-stack: "Roboto Slab", serif;
+$mono-font-stack: "Lucida Console", monospace;
+
