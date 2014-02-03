@@ -29,14 +29,6 @@ $gutter-width  : 1em;
 $grid-padding  : $gutter-width;
 
 
-/* Modular Scale - Version 2.0+ is required */
-
-@import "modular-scale";
-
-$ms-base: 1em;
-$ms-ratio: $fifth;
-
-
 /* 2. Fonts - Directly from Google
    ========================================================================== */
 

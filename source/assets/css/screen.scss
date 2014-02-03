@@ -1,6 +1,15 @@
 /*! Copyright 2013-2014 David Minnerly. Licensed under the MIT License. */
 
 
+/* Modular Scale
+----------------------
+16px @ 1:1.5
+26px @ 1:1.5
+
+http://modularscale.com/scale/?px1=16&px2=26&ra1=1.5&ra2=0
+----------------------*/
+
+
 /* Table of Contents
    ========================================================================== */
 
@@ -28,8 +37,8 @@
    ========================================================================== */
 
 body {
-    font-size: ms(0);
-    line-height: ms(1);
+    font-size: 1em;
+    line-height: 1.5;
     font-family: $font-stack;
 
     margin-top: 2em;
