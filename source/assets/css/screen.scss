@@ -17,6 +17,8 @@ http://modularscale.com/scale/?px1=16&px2=26&ra1=1.5&ra2=0
 
     1. Includes
     2. General
+    3. Utilities
+    4. Theme
 
  */
 
@@ -44,11 +46,46 @@ body {
     margin-top: 2em;
     margin-bottom: 3em;
 }
+
+h1, h2, h3, h4, h5, h6,
+ul, ol, dd,
+p, figure, blockquote,
+pre, table, fieldset, hr {
+    margin-bottom: ms(1);
 }
+
+h1, h2, h3,
+h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    font-family: $header-font-stack;
+}
+
+h1, .alpha {
+    font-size: 3.586em;
+}
+
+h2, .beta {
+    font-size: 2.391em;
+}
+
+h3, .gamma {
+    font-size: 1.594em;
+}
+
+h4, h5, h6,
+.delta, .epsilon, .zeta {
+    font-size: 1.063em;
+}
+
+
 /* 3. Utilities - Things used all over the place
    ========================================================================== */
 
 .container {
     @include container;
 }
+
+
+/* 4. Theme - The look and feel of the site
+   ========================================================================== */
 
