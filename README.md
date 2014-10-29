@@ -1,15 +1,5 @@
+## We'll Be Right Back
 
-This is the source code for my personal website!
+I'm currently in the process of transitioning from my [Middleman](http://middlemanapp.com) site ([release 4.3.0](https://github.com/VoxelDavid/voxeldavid-website/releases/tag/v4.3.0)).
 
-I love the idea of things being open source where people can poke and prod at
-others work, which is why I put all my files up here on GitHub instead of just
-pushing changes to a repo on my webserver.
-
-I encourage you to take a look through everything and send me pull requests if
-you find something that could use improving.
-
-All you need is Ruby and Ruby Gems installed so you can download and run
-[Bundler](http://gembundler.com) to get all the necessary gems for working on
-the project.
-
-Cheers. :)
+It's going to be a little while before I have anything presentable. I'm still experimenting with [Metalsmith](http://metalsmith.io), and I need to decide on which template engine I want to use (a toss up between Handlebars and Jade).
