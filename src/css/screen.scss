@@ -1,0 +1,33 @@
+
+@import "normalize";
+
+html {
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  color: #222222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", sans-serif;
+}
+
+a {
+  color: #277cd1;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  width: 30rem;
+  margin: 5rem auto 2rem auto;
+}
+
+.copyright {
+  font-size: .8em;
+  color: #666;
+  text-align: center;
+}

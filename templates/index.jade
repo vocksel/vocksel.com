@@ -3,13 +3,16 @@ html(lang="en")
   head
     meta(charset="utf-8")
     title= title
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab")
+    link(rel="stylesheet", href="css/screen.css")
 
   body
-    header
-      h1= title
+    div(class="container")
+      header
+        h1= title
 
-    main(role="main")
-      != contents
+      main(role="main")
+        != contents
 
-    footer
-      p Copyright &copy; 2013-2014 David Minnerly
+      footer
+        p(class="copyright") Copyright &copy; 2013-2014 David Minnerly
