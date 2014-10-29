@@ -10,7 +10,7 @@ Metalsmith(__dirname)
     gfm: true,
     tables: true
   }))
-  .use(templates('handlebars'))
+  .use(templates('jade'))
   .use(permalinks({
     relative: false
   }))
