@@ -1,6 +1,6 @@
 ---
 title: Helllo, World
-template: index.hbt
+template: index.jade
 permalink: false
 ---
 
