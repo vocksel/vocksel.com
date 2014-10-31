@@ -1,11 +1,15 @@
-var Metalsmith = require('metalsmith'),
-    markdown   = require('metalsmith-markdown'),
-    permalinks = require('metalsmith-permalinks'),
-    templates  = require('metalsmith-templates'),
-    sass       = require('metalsmith-sass'),
-    serve      = require('metalsmith-serve'),
-    watch      = require('metalsmith-watch');
-var argv       = require('yargs').argv;
+
+// Metalsmith
+var Metalsmith  = require('metalsmith');
+var markdown    = require('metalsmith-markdown');
+var permalinks  = require('metalsmith-permalinks');
+var templates   = require('metalsmith-templates');
+var sass        = require('metalsmith-sass');
+var serve       = require('metalsmith-serve');
+var watch       = require('metalsmith-watch');
+
+// Utilities
+var argv        = require('yargs').argv;
 
 var Smithy = Metalsmith(__dirname);
 
