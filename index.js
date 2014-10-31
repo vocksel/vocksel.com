@@ -8,11 +8,15 @@ var sass        = require('metalsmith-sass');
 var watch       = require('metalsmith-watch');
 
 // Utilities
-var argv        = require('yargs').argv;
+var yargs       = require('yargs');
 
 // Server
 var connect     = require('connect');
 var serveStatic = require('serve-static');
+
+var argv = yargs
+  .default('serve', true)
+  .argv;
 
 Metalsmith(__dirname)
   .use(sass())
@@ -29,7 +33,7 @@ Metalsmith(__dirname)
     if (err) throw err;
   });
 
-// Optionally run a webserver if --serve is passed on the command line
+// Pass --no-serve if you don't want to run the web server
 if (argv.serve) {
   connect()
     .use(serveStatic(__dirname + '/build'))
