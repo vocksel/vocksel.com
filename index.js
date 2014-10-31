@@ -5,15 +5,16 @@ var markdown    = require('metalsmith-markdown');
 var permalinks  = require('metalsmith-permalinks');
 var templates   = require('metalsmith-templates');
 var sass        = require('metalsmith-sass');
-var serve       = require('metalsmith-serve');
 var watch       = require('metalsmith-watch');
 
 // Utilities
 var argv        = require('yargs').argv;
 
-var Smithy = Metalsmith(__dirname);
+// Server
+var connect     = require('connect');
+var serveStatic = require('serve-static');
 
-Smithy
+Metalsmith(__dirname)
   .use(sass())
   .use(markdown({
     gfm: true,
@@ -22,15 +23,15 @@ Smithy
   .use(templates('jade'))
   .use(permalinks({
     relative: false
-  }));
-
-if (argv.serve) {
-  Smithy
-    .use(serve())
-    .use(watch());
-}
-
-Smithy
+  }))
+  .use(watch())
   .build(function(err) {
     if (err) throw err;
   });
+
+// Optionally run a webserver if --serve is passed on the command line
+if (argv.serve) {
+  connect()
+    .use(serveStatic(__dirname + '/build'))
+    .listen(80);
+}
