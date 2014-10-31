@@ -1,5 +1,18 @@
-## We'll Be Right Back
+## Stay Tuned
 
-I'm currently in the process of transitioning from my [Middleman](http://middlemanapp.com) site ([release 4.3.0](https://github.com/VoxelDavid/voxeldavid-website/releases/tag/v4.3.0)).
+This is the source code for my personal website, [davidminnerly.com](http://davidminnerly.com). I'm currently in the process of transitioning from my [Middleman](http://middlemanapp.com) site ([release 4.3.0](https://github.com/VoxelDavid/voxeldavid-website/releases/tag/v4.3.0)). It's going to be a little while before I have anything presentable.
 
-It's going to be a little while before I have anything presentable. I'm still experimenting with [Metalsmith](http://metalsmith.io), and I need to decide on which template engine I want to use (a toss up between Handlebars and Jade).
+## Contributing
+
+First things first, make sure you have [Node/NPM](http://nodejs.org) and [Bower](http://bower.io) installed, and then gather all of the dependencies.
+
+```bash
+$ npm install
+$ bower install
+```
+
+Now you're all set to build the project. You can pass `--no-serve` as an argument to prevent the webserver from starting.
+
+```bash
+$ node build.js [--no-serve]
+```
