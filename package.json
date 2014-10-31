@@ -4,6 +4,7 @@
   "version": "5.0.0",
   "author": "David Minnerly",
   "license": "MIT",
+  "main": "build.js",
   "homepage": "https://github.com/VoxelDavid/voxeldavid-website",
   "repository": {
     "type": "git",
