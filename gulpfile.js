@@ -112,7 +112,11 @@ gulp.task('watch', function() {
 
 gulp.task('build', function() {
   // Always clean the directory before compiling
-  runSequence('clean', ['styles', 'images', 'metalsmith']);
+  runSequence('clean', [
+    'styles',
+    'images',
+    'metalsmith'
+  ]);
 });
 
 gulp.task('serve', [
