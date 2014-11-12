@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/VoxelDavid/voxeldavid/issues"
   },
-  "dependencies": {
+  "devDependencies": {
     "connect": "^3.3.2",
     "del": "^0.1.3",
     "gulp": "^3.8.10",
