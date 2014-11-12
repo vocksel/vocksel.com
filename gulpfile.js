@@ -1,4 +1,5 @@
 var gulp        = require('gulp');
+var connect     = require('gulp-connect');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-sass');
 var frontMatter = require('gulp-front-matter');
@@ -8,10 +9,8 @@ var markdown    = require('metalsmith-markdown');
 var templates   = require('metalsmith-templates');
 var permalinks  = require('metalsmith-permalinks');
 
-var connect     = require('connect');
 var del         = require('del');
 var path        = require('path');
-var serveStatic = require('serve-static');
 var runSequence = require('run-sequence');
 var jade        = require('jade');
 var assign      = require('lodash.assign');
@@ -91,11 +90,10 @@ gulp.task('metalsmith', function() {
 // =============================================================================
 
 gulp.task('server', function() {
-  var root = join(__dirname, paths.dest);
-
-  connect()
-    .use(serveStatic(root))
-    .listen(80);
+  connect.server({
+    root: paths.dest,
+    port: 80
+  });
 });
 
 gulp.task('watch', function() {
