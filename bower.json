@@ -1,6 +1,6 @@
 {
   "name": "my-website",
-  "main": "build.js",
+  "main": "gulpfile.js",
   "version": "5.0.0",
   "homepage": "https://github.com/VoxelDavid/voxeldavid",
   "authors": [
