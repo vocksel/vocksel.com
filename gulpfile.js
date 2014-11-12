@@ -30,12 +30,21 @@ var paths = {
   dest: 'build'
 }
 
+// Temporary files, like the Sass cache.
+var temp = [
+  '.sass-cache'
+]
+
 
 // Clean Up
 // =============================================================================
 
-gulp.task('clean', function(callback) {
-  del(paths.dest, callback);
+gulp.task('clean', function(cb) {
+  del(paths.dest, cb);
+});
+
+gulp.task('clean-temp', function(cb) {
+  del(temp, cb);
 });
 
 
