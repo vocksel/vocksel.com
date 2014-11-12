@@ -1,7 +1,15 @@
-
+###
+## Project Specific
+##
 build/
 
+##
+## Node
+##
 node_modules/
 *.log
 
+##
+## Bower
+##
 src/components
