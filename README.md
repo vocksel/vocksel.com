@@ -4,15 +4,17 @@ This is the source code for my personal website, [davidminnerly.com](http://davi
 
 ## Contributing
 
-First things first, make sure you have [Node/NPM](http://nodejs.org) and [Bower](http://bower.io) installed, and then gather all of the dependencies.
+This project uses the [Gulp](http://gulpjs.com) build system for all of it's tasks. You'll need Node and optionally Ruby if you'd like to work on the [Sass](http://sass-lang.com) files.
 
 ```bash
+# You need Gulp installed globally so you can run the gulpfile from the command line.
+$ npm install -g gulp
 $ npm install
 $ bower install
 ```
 
-Now you're all set to build the project. You can pass `--no-serve` as an argument to prevent the webserver from starting.
+The main task you'll be interested in is `gulp serve` which will build all of the files under `src/` and serve them up in the browser at http://localhost
 
-```bash
-$ node build.js [--no-serve]
-```
+From there it's just a matter of expanding upon the existing content.
+
+Happy coding!
