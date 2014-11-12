@@ -1,5 +1,4 @@
 var gulp        = require('gulp');
-var cache       = require('gulp-cache');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-sass');
 var connect     = require('connect');
@@ -46,10 +45,10 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
   return gulp.src(join(paths.img, '**'), { base: paths.src })
-    .pipe(cache(imagemin({
+    .pipe(imagemin({
       optimizationLevel: 5,
       progressive: true
-    })))
+    }))
     .pipe(gulp.dest(paths.dest));
 });
 
