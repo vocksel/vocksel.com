@@ -75,7 +75,9 @@ gulp.task('images', function() {
  * for my build system.
  */
 gulp.task('metalsmith', function() {
-  return gulp.src(join(paths.src, '**/*.md'))
+  // Only markdown files directly in the source are being handled. This is to
+  // prevent docs included with Bower components from being compiled.
+  return gulp.src(join(paths.src, '*.md'))
     .pipe(frontMatter()).on('data', function(file) {
       assign(file, file.frontMatter);
       delete file.frontMatter;
@@ -94,6 +96,7 @@ gulp.task('metalsmith', function() {
       })))
     .pipe(gulp.dest(paths.dest));
 });
+
 
 // Development
 // =============================================================================
