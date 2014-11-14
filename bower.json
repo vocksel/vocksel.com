@@ -9,6 +9,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "typecsset": "csswizardry/typecsset#~0.3.0"
+    "inuit-starter-kit": "~0.2.8"
   }
 }
