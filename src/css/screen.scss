@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Slab", sans-serif;
 }
 
+h1, p {
+  margin-bottom: $inuit-base-spacing-unit;
+}
+
 a {
   color: #277cd1;
   text-decoration: none;
@@ -33,7 +37,7 @@ a {
 }
 
 .copyright {
-  font-size: .8em;
+  @include inuit-font-size(14px);
   color: #666;
   text-align: center;
 }
