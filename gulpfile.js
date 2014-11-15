@@ -50,13 +50,13 @@ var paths = {
   // Static files that don't require any pre-processing
   static: [
     'src/favicon.ico'
+  ],
+
+  // Temporary files, like the Sass cache.
+  temp: [
+    '.sass-cache'
   ]
 }
-
-// Temporary files, like the Sass cache.
-var temp = [
-  '.sass-cache'
-]
 
 
 // Clean Up
@@ -67,7 +67,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('clean-temp', function(cb) {
-  del(temp, cb);
+  del(paths.temp, cb);
 });
 
 
