@@ -4,6 +4,7 @@
 @import "settings.type";
 
 @import "../bower_components/inuit-mixins/tools.mixins";
+@import "tools.aliases";
 
 @import "../bower_components/inuit-normalize/generic.normalize";
 @import "../bower_components/inuit-box-sizing/generic.box-sizing";
@@ -19,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, p {
-  margin-bottom: $inuit-base-spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 
 a {
@@ -38,7 +39,7 @@ a {
 }
 
 .copyright {
-  @include inuit-font-size(14px);
+  @include font-size(14px);
   color: $copyright-color;
   text-align: center;
 }
