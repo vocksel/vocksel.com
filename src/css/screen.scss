@@ -1,5 +1,7 @@
 
 @import "../bower_components/inuit-defaults/settings.defaults";
+@import "settings.colors";
+@import "settings.type";
 
 @import "../bower_components/inuit-mixins/tools.mixins";
 
@@ -9,11 +11,11 @@
 @import "../bower_components/inuit-page/base.page";
 
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: $font-stack;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: $font-stack--headers;
 }
 
 h1, p {
@@ -21,11 +23,11 @@ h1, p {
 }
 
 a {
-  color: #277cd1;
+  color: $link-color;
   text-decoration: none;
 
   &:hover {
-    color: #1d63a8;
+    color: $link-color--hover;
     text-decoration: underline;
   }
 }
@@ -37,6 +39,6 @@ a {
 
 .copyright {
   @include inuit-font-size(14px);
-  color: #666;
+  color: $copyright-color;
   text-align: center;
 }
