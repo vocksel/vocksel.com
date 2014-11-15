@@ -3,6 +3,8 @@ var connect     = require('gulp-connect');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-sass');
 var frontMatter = require('gulp-front-matter');
+var plumber     = require('gulp-plumber');
+var notify      = require('gulp-notify');
 
 var gulpsmith   = require('gulpsmith');
 var markdown    = require('metalsmith-markdown');
@@ -16,6 +18,22 @@ var jade        = require('jade');
 var assign      = require('lodash.assign');
 
 var join = path.join;
+
+
+// Helpers
+// =============================================================================
+
+// Used with Plumber to handle errors
+function onError(err) {
+  notify.onError({
+    title: "Gulp",
+    subtitle: "Failure!",
+    message: "Error: <%= error.message %>",
+    sound: "Beep"
+  })(err);
+
+  this.emit('end');
+}
 
 
 // Configuration
@@ -53,6 +71,7 @@ gulp.task('clean-temp', function(cb) {
 
 gulp.task('styles', function() {
   return gulp.src(join(paths.css, '**/*.scss'), { base: paths.src })
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(sass({
       sourcemap: false,
       style: 'compressed'
@@ -62,6 +81,7 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
   return gulp.src(join(paths.img, '**'), { base: paths.src })
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(imagemin({
       optimizationLevel: 5,
       progressive: true
@@ -78,6 +98,7 @@ gulp.task('metalsmith', function() {
   // Only markdown files directly in the source are being handled. This is to
   // prevent docs included with Bower components from being compiled.
   return gulp.src(join(paths.src, '*.md'))
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(frontMatter()).on('data', function(file) {
       assign(file, file.frontMatter);
       delete file.frontMatter;
@@ -109,6 +130,11 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function() {
+  // All watched tasks should include `.pipe(plumber())` at the beginning of the
+  // stream. This prevents you from having to rerun tasks if an error occurs.
+  //
+  // If you mess up a variable name or path you don't need to worry.
+
   gulp.watch(join(paths.css, '**'), ['styles']);
 
   gulp.watch(join(paths.img, '**'), ['images']);
