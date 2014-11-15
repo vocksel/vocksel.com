@@ -45,7 +45,12 @@ var paths = {
   src: 'src',
   css: 'src/css',
   img: 'src/img',
-  dest: 'build'
+  dest: 'build',
+
+  // Static files that don't require any pre-processing
+  static: [
+    'src/favicon.ico'
+  ]
 }
 
 // Temporary files, like the Sass cache.
@@ -118,6 +123,12 @@ gulp.task('metalsmith', function() {
     .pipe(gulp.dest(paths.dest));
 });
 
+// Moving files that aren't processed by the above tasks.
+gulp.task('move', function() {
+  return gulp.src(paths.static)
+    .pipe(gulp.dest(paths.dest));
+})
+
 
 // Development
 // =============================================================================
@@ -135,6 +146,8 @@ gulp.task('watch', function() {
   //
   // If you mess up a variable name or path you don't need to worry.
 
+  gulp.watch(paths.static, ['move']);
+
   gulp.watch(join(paths.css, '**'), ['styles']);
 
   gulp.watch(join(paths.img, '**'), ['images']);
@@ -149,6 +162,7 @@ gulp.task('watch', function() {
 gulp.task('build', function() {
   // Always clean the directory before compiling
   runSequence('clean', [
+    'move',
     'styles',
     'images',
     'metalsmith'
