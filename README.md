@@ -4,7 +4,9 @@ This is the source code for my personal website, [davidminnerly.com](http://davi
 
 ## Contributing
 
-This project uses the [Gulp](http://gulpjs.com) build system for all of it's tasks. You'll need Node and optionally Ruby if you'd like to work on the [Sass](http://sass-lang.com) files.
+This project uses the [Gulp](http://gulpjs.com) build system for all of its tasks. Go grab a copy of [Node](http://nodejs.org) if you don't already have it installed.
+
+Now you can download all of the dependencies:
 
 ```bash
 # You need Gulp installed globally so you can run the gulpfile from the command line.
