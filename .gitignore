@@ -4,11 +4,6 @@
 build/
 
 ##
-## Sass
-##
-.sass-cache/
-
-##
 ## Node
 ##
 node_modules/
