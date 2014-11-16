@@ -1,0 +1,9 @@
+/*------------------------------------*\
+  #COPYRIGHT
+\*------------------------------------*/
+
+.copyright {
+  @include font-size(14px);
+  color: $copyright-color;
+  text-align: center;
+}
