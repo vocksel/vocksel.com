@@ -1,20 +1,91 @@
+/**
+ * TABLE OF CONTENTS
+ *
+ * SETTINGS
+ * Default..............inuitcss' default settings.
+ * Global...............Variables used throughout the css
+ *
+ * TOOLS
+ * Mixins...............inuitcss' default mixins.
+ * Aliases..............Aliases for long inuitcss variables and mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default box-sizing.
+ *
+ * BASE
+ * Page.................Page-level styles (HTML element).
+ * Page.................Out extension of the inuitcss page module.
+ * Headings.............Heading styles.
+ * Type.................Misc type styles.
+ * Links................Hyperlink styles.
+ * Images...............inuitcss images.
+ *
+ * OBJECTS
+ * Wrappers.............Wrappers and page constraints.
+ *
+ * COMPONENTS
+ * Copyright............A declaration of ownership.
+ */
 
+
+
+
+
+/**
+ * #SETTINGS
+ */
 @import "../bower_components/inuit-defaults/settings.defaults";
 @import "settings.global";
 
+
+
+
+
+/**
+ * #TOOLS
+ */
 @import "../bower_components/inuit-mixins/tools.mixins";
 @import "tools.aliases";
 
+
+
+
+
+/**
+ * #GENERIC
+ */
 @import "../bower_components/inuit-normalize/generic.normalize";
 @import "../bower_components/inuit-box-sizing/generic.box-sizing";
 
-@import "../bower_components/inuit-page/base.page";
-@import "../bower_components/inuit-headings/base.headings";
-@import "../bower_components/inuit-images/base.images";
-@import "base.links";
-@import "base.page";
-@import "base.type";
 
+
+
+
+/**
+ * #BASE
+ */
+@import "../bower_components/inuit-page/base.page";
+@import "base.page";
+@import "../bower_components/inuit-headings/base.headings";
+@import "base.type";
+@import "base.links";
+@import "../bower_components/inuit-images/base.images";
+
+
+
+
+
+/**
+ * #OBJECTS
+ */
 @import "objects.wrappers";
 
+
+
+
+
+/**
+ * COMPONENTS
+ */
 @import "components.copyright";
