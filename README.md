@@ -15,7 +15,7 @@ $ npm install
 $ bower install
 ```
 
-The main task you'll be interested in is `gulp serve` which will build all of the files under `src/` and serve them up in the browser at http://localhost
+The main task you'll be interested in is `gulp serve` which will build all of the files under `src/` and serve them up in the browser at [localhost](http://localhost)
 
 From there it's just a matter of expanding upon the existing content.
 
