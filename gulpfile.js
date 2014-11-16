@@ -99,8 +99,9 @@ gulp.task('jade', function() {
 // Moving files that aren't processed by the above tasks.
 gulp.task('move', function() {
   return gulp.src(paths.static)
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(gulp.dest(paths.dest));
-})
+});
 
 
 // Development
