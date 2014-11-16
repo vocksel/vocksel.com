@@ -2,20 +2,13 @@ var gulp        = require('gulp');
 var connect     = require('gulp-connect');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-sass');
-var frontMatter = require('gulp-front-matter');
+var jade        = require('gulp-jade');
 var plumber     = require('gulp-plumber');
 var notify      = require('gulp-notify');
-
-var gulpsmith   = require('gulpsmith');
-var markdown    = require('metalsmith-markdown');
-var templates   = require('metalsmith-templates');
-var permalinks  = require('metalsmith-permalinks');
 
 var del         = require('del');
 var path        = require('path');
 var runSequence = require('run-sequence');
-var jade        = require('jade');
-var assign      = require('lodash.assign');
 
 var join = path.join;
 
@@ -94,32 +87,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest(paths.dest));
 });
 
-/**
- * I intend to only use Metalsmith temporarily. It was a great stand-alone
- * solution, but now that I have the power of Gulp, I'd like to use it solely
- * for my build system.
- */
-gulp.task('metalsmith', function() {
-  // Only markdown files directly in the source are being handled. This is to
-  // prevent docs included with Bower components from being compiled.
-  return gulp.src(join(paths.src, '*.md'))
+gulp.task('jade', function() {
+  return gulp.src(join(paths.src, '*.jade'))
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(frontMatter()).on('data', function(file) {
-      assign(file, file.frontMatter);
-      delete file.frontMatter;
-    })
-    .pipe(gulpsmith()
-      .use(markdown({
-        gfm: true,
-        tables: true
-      }))
-      .use(templates({
-        engine: 'jade',
-        directory: 'src/templates'
-      }))
-      .use(permalinks({
-        relative: false
-      })))
+    .pipe(jade({
+      pretty: true
+    }))
     .pipe(gulp.dest(paths.dest));
 });
 
@@ -152,7 +125,7 @@ gulp.task('watch', function() {
 
   gulp.watch(join(paths.img, '**'), ['images']);
 
-  gulp.watch(join(paths.src, '**/*.{md,jade}'), ['metalsmith'])
+  gulp.watch(join(paths.src, '*.jade'), ['jade'])
 });
 
 
@@ -165,7 +138,7 @@ gulp.task('build', function() {
     'move',
     'styles',
     'images',
-    'metalsmith'
+    'jade'
   ]);
 });
 
