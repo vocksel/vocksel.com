@@ -12,29 +12,9 @@
 @import "../bower_components/inuit-paragraphs/base.paragraphs";
 @import "../bower_components/inuit-headings/base.headings";
 @import "../bower_components/inuit-images/base.images";
-
-html {
-  font-family: $font-stack;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-stack--headers;
-}
-
-h1, h2, h3, h4, h5, h6,
-p {
-  margin-bottom: $spacing-unit;
-}
-
-a {
-  color: $link-color;
-  text-decoration: none;
-
-  &:hover {
-    color: $link-color--hover;
-    text-decoration: underline;
-  }
-}
+@import "base.links";
+@import "base.page";
+@import "base.type";
 
 .container {
   width: 30rem;
