@@ -118,7 +118,8 @@ gulp.task('watch', function() {
   // All watched tasks should include `.pipe(plumber())` at the beginning of the
   // stream. This prevents you from having to rerun tasks if an error occurs.
   //
-  // If you mess up a variable name or path you don't need to worry.
+  // Very helpful when working with Sass. If you mess up a variable name or
+  // @import path, everything is still running fine.
 
   gulp.watch(paths.static, ['move']);
 
