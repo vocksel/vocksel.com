@@ -16,13 +16,6 @@
 @import "base.page";
 @import "base.type";
 
-.container {
-  width: 30rem;
-  margin: 5rem auto 2rem auto;
-}
+@import "objects.wrappers";
 
-.copyright {
-  @include font-size(14px);
-  color: $copyright-color;
-  text-align: center;
-}
+@import "components.copyright";
