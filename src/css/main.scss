@@ -7,6 +7,7 @@
  *
  * TOOLS
  * Mixins...............inuitcss' default mixins.
+ * Susy.................An assortment of mixins to assist with making grids.
  * Aliases..............Aliases for long inuitcss variables and mixins.
  *
  * GENERIC
@@ -46,6 +47,7 @@
  * #TOOLS
  */
 @import "../bower_components/inuit-mixins/tools.mixins";
+@import "../bower_components/susy/sass/susy";
 @import "tools.aliases";
 
 
