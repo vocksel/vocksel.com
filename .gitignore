@@ -1,20 +1,16 @@
-###
-## Project Specific
-##
+# Project Specific
+
 build/
 
-##
-## Sass
-##
+# Sass
+
 .sass-cache/
 
-##
-## Node
-##
+# Node
+
 node_modules/
 *.log
 
-##
-## Bower
-##
+# Bower
+
 src/bower_components
