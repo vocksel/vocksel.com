@@ -2,7 +2,6 @@
   #WRAPPERS
 \*------------------------------------*/
 
-.container {
-  width: 30rem;
-  margin: ($spacing-unit * 5) auto 0 auto;
+.wrapper {
+  @include container();
 }
