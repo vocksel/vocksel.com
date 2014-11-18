@@ -3,24 +3,24 @@
 \*------------------------------------*/
 
 /**
- * Used to set a background image that covers the height of the browser window.
+ * Covers the first 100% of visible content.
  *
- * This allows you to have a full-screen background while still having content
- * below the image.
+ * This allows you to have a full-screen background while still allowing for
+ * content below the image.
  *
  * For this to work properly it must be applied on all of the elements down a
  * chain.
  *
- * Say you have the following markup:
+ * Example:
 
-   <html>
-     <body>
-       <div class="masthead">
-       </div>
-     </body>
-   </html>
+  <html class="full-height">
+    <head>...</head>
+    <body class="full-height">
+      <main class="full-height  masthead" role="main">
+      </main>
+    </body>
+  </html>
 
- * You would need to apply the class on all three of these elements.
  */
 
 .full-height {
