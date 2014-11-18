@@ -1,0 +1,24 @@
+/*------------------------------------*\
+  #CENTER
+\*------------------------------------*/
+
+/**
+ *
+   <div class="center">
+     <div class="center__vertical">
+       <p>Content centered vertically</p>
+     </div>
+   </div>
+ *
+ * For horizontal
+ */
+
+.center {
+  display: table;
+  width: 100%;
+}
+
+.center__vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
