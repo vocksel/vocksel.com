@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="en").full-height
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -11,8 +11,11 @@ html(lang="en")
 
     link(rel="shortcut icon", href="/img/favicon.png")
 
-  body
-    main(role="main")
+  body.full-height
+    main(role="main").masthead.full-height
+      p.wrapper Welcome to the site!
+
+    section#about
       .wrapper
         h1 Stay Tuned
 

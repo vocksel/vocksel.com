@@ -1,0 +1,29 @@
+/*------------------------------------*\
+  #FULL-HEIGHT
+\*------------------------------------*/
+
+/**
+ * Used to set a background image that covers the height of the browser window.
+ *
+ * This allows you to have a full-screen background while still having content
+ * below the image.
+ *
+ * For this to work properly it must be applied on all of the elements down a
+ * chain.
+ *
+ * Say you have the following markup:
+
+   <html>
+     <body>
+       <div class="masthead">
+       </div>
+     </body>
+   </html>
+
+ * You would need to apply the class on all three of these elements.
+ */
+
+.full-height {
+  height: 100%;
+  max-height: 100%;
+}
