@@ -2,7 +2,6 @@ var gulp        = require('gulp');
 var connect     = require('gulp-connect');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-ruby-sass');
-var jade        = require('gulp-jade');
 var plumber     = require('gulp-plumber');
 var notify      = require('gulp-notify');
 
@@ -42,7 +41,8 @@ var paths = {
 
   // Static files that don't require any pre-processing
   static: [
-    'src/favicon.ico'
+    'src/favicon.ico',
+    'src/**/*.html'
   ]
 }
 
@@ -78,15 +78,6 @@ gulp.task('images', function() {
     .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task('jade', function() {
-  return gulp.src(join(paths.src, '*.jade'))
-    .pipe(plumber({ errorHandler: onError }))
-    .pipe(jade({
-      pretty: true
-    }))
-    .pipe(gulp.dest(paths.dest));
-});
-
 // Moving files that aren't processed by the above tasks.
 gulp.task('move', function() {
   return gulp.src(paths.static)
@@ -117,8 +108,6 @@ gulp.task('watch', function() {
   gulp.watch(join(paths.css, '**'), ['styles']);
 
   gulp.watch(join(paths.img, '**'), ['images']);
-
-  gulp.watch(join(paths.src, '*.jade'), ['jade'])
 });
 
 
@@ -130,8 +119,7 @@ gulp.task('build', function() {
   runSequence('clean', [
     'move',
     'styles',
-    'images',
-    'jade'
+    'images'
   ]);
 });
 
