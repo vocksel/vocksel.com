@@ -23,6 +23,7 @@
  * Type.................Misc type styles.
  * Links................Hyperlink styles.
  * Images...............inuitcss images.
+ * Quotes...............Blockquote styles.
  *
  * OBJECTS
  * Center...............Vertical centering with Tables.
@@ -80,6 +81,7 @@
 @import "base.type";
 @import "base.links";
 @import "../bower_components/inuit-images/base.images";
+@import "base.quotes";
 
 
 
