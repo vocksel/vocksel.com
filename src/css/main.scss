@@ -14,6 +14,7 @@
  * Normalize.css........A level playing field.
  * Reset................Remove those nasty default margins.
  * Box-sizing...........Better default box-sizing.
+ * Shared...............Handling our margins to maintain vertical rhythm.
  *
  * BASE
  * Page.................Page-level styles (HTML element).
@@ -64,6 +65,7 @@
 @import "../bower_components/inuit-normalize/generic.normalize";
 @import "../bower_components/inuit-reset/generic.reset";
 @import "../bower_components/inuit-box-sizing/generic.box-sizing";
+@import "../bower_components/inuit-shared/generic.shared";
 
 
 
