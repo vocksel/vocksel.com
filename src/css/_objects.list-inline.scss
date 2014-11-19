@@ -1,0 +1,36 @@
+/*------------------------------------*\
+  #LIST-INLINE
+\*------------------------------------*/
+
+/**
+ * The list-inline object simply displays a list of items in one line.
+ *
+ * Completely ripped off from: https://github.com/inuitcss/objects.list-inline
+ *
+ * I just needed a simple implementation and decided the configuration was a bit
+ * too much to get the desired outcome.
+ *
+ * The main issue was not knowing where to actually configure the variables, and
+ * then how to extend it to add the padding.
+ */
+
+.list-inline,
+%list-inline {
+  margin:  0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+  }
+}
+
+.list-inline--delimited,
+%list-inline--delimited {
+  > li + li {
+    &:before {
+      padding: 0 $small-spacing-unit/2;
+      content: "\00B7"; /* Midle dot (·) */
+    }
+  }
+}

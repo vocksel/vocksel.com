@@ -27,6 +27,7 @@
  * Quotes...............Blockquote styles.
  *
  * OBJECTS
+ * List Inline..........Simply display a list of items on one line.
  * Center...............Vertical centering with Tables.
  * Wrappers.............Wrappers and page constraints.
  * Full Height..........Covers 100% height.
@@ -92,6 +93,7 @@
 /**
  * #OBJECTS
  */
+@import "objects.list-inline";
 @import "objects.center";
 @import "objects.wrappers";
 @import "objects.full-height";
