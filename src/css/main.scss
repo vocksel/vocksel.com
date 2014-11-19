@@ -3,7 +3,8 @@
  *
  * SETTINGS
  * Default..............inuitcss' default settings.
- * Global...............Variables used throughout the css
+ * Theme................Colors and font families -- the look and feel of the site.
+ * Grids................Configuration for Susy grids.
  *
  * TOOLS
  * Mixins...............inuitcss' default mixins.
@@ -43,7 +44,8 @@
  * #SETTINGS
  */
 @import "../bower_components/inuit-defaults/settings.defaults";
-@import "settings.global";
+@import "settings.theme";
+@import "settings.grids";
 
 
 
