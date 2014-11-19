@@ -37,5 +37,6 @@ $masthead-bg-color: #303030;
 //  #FONT-FAMiLIES
 //\*------------------------------------*/
 
-$font-stack:          "Droid Sans", Roboto, Arial, sans-serif;
-$font-stack--headers: "Roboto Slab", "Droid Serif", "Times New Roman", Times, serif;
+$sans-font-stack:   "Droid Sans", Roboto, Arial, sans-serif;
+$serif-font-stack:  "Droid Serif", "Times New Roman", Times, serif; // [1]
+$header-font-stack: "Roboto Slab", $serif-font-stack;
