@@ -16,7 +16,8 @@
     "inuit-mixins": "~0.2.3",
     "inuit-images": "~0.3.2",
     "inuit-headings": "~0.2.2",
-    "susy": "~2.1.3"
+    "susy": "~2.1.3",
+    "inuit-shared": "~0.1.3"
   },
   "devDependencies": {
     "inuit-reset": "~0.1.1"
