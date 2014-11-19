@@ -3,7 +3,8 @@
 \*------------------------------------*/
 
 .masthead {
-  background: $masthead-bg-color url('../img/wojtek-witkowski-001.jpg') no-repeat center center;
+  background: url('../img/wojtek-witkowski-001.jpg') no-repeat center center;
+  background-color: $masthead-bg-color;
   background-size: cover;
   color: $masthead-color;
 }
