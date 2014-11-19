@@ -2,9 +2,26 @@
   #MASTHEAD
 \*------------------------------------*/
 
+/**
+ * [1] Fix the headline and tagline more snuggly together.
+ * [2] These are entirely arbitrary values that look good with the Roboto Slab
+ *     and Droid Serif fonts, respectively.
+ */
 .masthead {
   background: url('../img/wojtek-witkowski-001.jpg') no-repeat center center;
   background-color: $masthead-bg-color;
   background-size: cover;
   color: $masthead-color;
 }
+
+  .masthead__headline {
+    @include font-size(50px);
+    margin-bottom: $small-spacing-unit; /* [1] */
+    text-shadow: 2px 2px 3px rgba(0,0,0,.5); /* [2] */
+  }
+
+  .masthead__tagline {
+    @include font-size(20px);
+    font-family: $serif-font-stack;
+    text-shadow: 1px 1px 2px #000; /* [2] */
+  }
