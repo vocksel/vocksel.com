@@ -27,6 +27,8 @@
 
 .list-inline--delimited,
 %list-inline--delimited {
+  @extend %list-inline;
+
   > li + li {
     &:before {
       padding: 0 $small-spacing-unit/2;
