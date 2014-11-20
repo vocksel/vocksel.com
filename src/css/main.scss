@@ -20,6 +20,7 @@
  * BASE
  * Page.................Page-level styles (HTML element).
  * Page.................Out extension of the inuitcss page module.
+ * Sections.............Section styles.
  * Headings.............Heading styles.
  * Type.................Misc type styles.
  * Links................Hyperlink styles.
@@ -80,6 +81,7 @@
  */
 @import "../bower_components/inuit-page/base.page";
 @import "base.page";
+@import "base.sections";
 @import "../bower_components/inuit-headings/base.headings";
 @import "base.type";
 @import "base.links";

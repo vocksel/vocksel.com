@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  #SECTIONS
+\*------------------------------------*/
+
+/**
+ * [1] The margin-bottom applied to the majority of elements creates unwanted
+ *     whitespace between sections. We hide the overflowing margin so all that's
+ *     shown is the background color.
+ */
+section {
+  padding-top: $spacing-unit;
+  overflow: hidden; /* [1] */
+}
