@@ -22,7 +22,6 @@
  * BASE
  * Page.................Page-level styles (HTML element).
  * Page.................Out extension of the inuitcss page module.
- * Sections.............Section styles.
  * Headings.............Heading styles.
  * Type.................Misc type styles.
  * Links................Hyperlink styles.
@@ -41,6 +40,7 @@
  * Avatar...............My stunning image, ready for the world to see.
  * Intro................Introductory content -- a short bio.
  * Masthead.............Attractive image at the top of the page.
+ * Sections.............Section styles.
  *
  * TRUMPS
  * Spacing..............Overriding the default margins/padding on certain elements.
@@ -91,7 +91,6 @@
  */
 @import "../bower_components/inuit-page/base.page";
 @import "base.page";
-@import "base.sections";
 @import "../bower_components/inuit-headings/base.headings";
 @import "base.type";
 @import "base.links";
@@ -122,6 +121,7 @@
 @import "components.avatar";
 @import "components.intro";
 @import "components.masthead";
+@import "components.section";
 
 
 
