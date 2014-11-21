@@ -3,6 +3,7 @@
  *
  * SETTINGS
  * Default..............inuitcss' default settings.
+ * Inuit................Enabling parts of inuitcss modules.
  * Theme................Colors and font families -- the look and feel of the site.
  * Grids................Configuration for Susy grids.
  *
@@ -38,6 +39,9 @@
  * COMPONENTS
  * Intro................Introductory content -- a short bio.
  * Masthead.............Attractive image at the top of the page.
+ *
+ * TRUMPS
+ * Spacing..............Overriding the default margins/padding on certain elements.
  */
 
 
@@ -48,6 +52,7 @@
  * #SETTINGS
  */
 @import "../bower_components/inuit-defaults/settings.defaults";
+@import "settings.inuit";
 @import "settings.theme";
 @import "settings.grids";
 
@@ -113,3 +118,12 @@
  */
 @import "components.intro";
 @import "components.masthead";
+
+
+
+
+
+/**
+ * TRUMPS
+ */
+@import "../bower_components/inuit-spacing/trumps.spacing";
