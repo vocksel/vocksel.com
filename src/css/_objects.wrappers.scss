@@ -5,10 +5,3 @@
 .wrapper {
   @include container();
 }
-
-.wrapper--masthead {
-  text-align: center;
-  @include container();
-}
-
-.wrapper--intro { @include container($intro-layout); }
