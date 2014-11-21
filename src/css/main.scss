@@ -34,6 +34,7 @@
  * Full Height..........Covers 100% height.
  *
  * COMPONENTS
+ * Intro................Introductory content -- a short bio.
  * Masthead.............Attractive image at the top of the page.
  */
 
@@ -106,4 +107,5 @@
 /**
  * COMPONENTS
  */
+@import "components.intro";
 @import "components.masthead";

@@ -13,3 +13,9 @@ $susy: (
     toggle: top right,
   )
 );
+
+// The introductory content needs a grid specifically tailored to the content
+// inside of it.
+$intro-layout: (
+  columns: 9
+);
