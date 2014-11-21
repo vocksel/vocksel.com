@@ -1,0 +1,30 @@
+///*------------------------------------*\
+//  #MIXINS
+//\*------------------------------------*/
+
+// A simple alternative to an hr tag. Should be applied to a class on a block
+// element, such as a div.
+//
+// Example class:
+//
+//   .dash {
+//     @include dash(1px #777);
+//   }
+//
+// And in your markup:
+//
+//   <h1>A Title</h1>
+//
+//   <div class="dash"></div>
+//
+//   <p>Some content!</p>
+//
+// [1] The height of the line needs to be removed from the margin, otherwise
+//     the vertical rhythm will be knocked out of place.
+// [2] The dash is semi-transparent to blend in with the background.
+@mixin dash($height: 1px, $color: #202020) {
+  height: $height;
+  margin: $spacing-unit auto ($spacing-unit - $height); // [1]
+  width: $large-spacing-unit;
+  background-color: rgba($color, .5); // [2]
+}

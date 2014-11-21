@@ -8,6 +8,7 @@
  *
  * TOOLS
  * Mixins...............inuitcss' default mixins.
+ * Mixins...............Custom mixins for the project.
  * Susy.................An assortment of mixins to assist with making grids.
  * Aliases..............Aliases for long inuitcss variables and mixins.
  *
@@ -30,6 +31,7 @@
  * OBJECTS
  * List Inline..........Simply display a list of items on one line.
  * Center...............Vertical centering with Tables.
+ * Dash.................A simple alternative to hr tags.
  * Wrappers.............Wrappers and page constraints.
  * Full Height..........Covers 100% height.
  *
@@ -57,6 +59,7 @@
  * #TOOLS
  */
 @import "../bower_components/inuit-mixins/tools.mixins";
+@import "tools.mixins";
 @import "../bower_components/susy/sass/susy";
 @import "tools.aliases";
 
@@ -97,6 +100,7 @@
  */
 @import "objects.list-inline";
 @import "objects.center";
+@import "objects.dash";
 @import "objects.wrappers";
 @import "objects.full-height";
 
