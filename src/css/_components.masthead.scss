@@ -17,11 +17,11 @@
   .masthead__headline {
     @include font-size(50px);
     margin-bottom: $small-spacing-unit; /* [1] */
-    text-shadow: 2px 2px 3px rgba(0,0,0,.5); /* [2] */
+    text-shadow: 2px 2px 2px #1b2031; /* [2] */
   }
 
   .masthead__interests {
     @include font-size(20px);
     font-family: $serif-font-stack;
-    text-shadow: 1px 1px 2px #000; /* [2] */
+    text-shadow: 1px 1px 1px #1b2031; /* [2] */
   }
