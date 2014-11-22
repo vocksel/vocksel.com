@@ -3,7 +3,8 @@
 \*------------------------------------*/
 
 .intro {
-  background-color: #ededed;
+  background-color: $intro-bg-color;
+  color: $intro-color;
   text-align: center;
 }
 
