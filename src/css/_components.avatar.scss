@@ -2,10 +2,13 @@
   #AVATAR
 \*------------------------------------*/
 
+/**
+ * [1] Same as the background image's resolution.
+ */
 .avatar {
   background-image: url(../img/me-avatar-small.png);
-  width:  128px;
-  height: 128px;
+  height: 128px; /* [1] */
+  width:  128px; /* [1] */
   display: inline-block;
   box-shadow: 1px 1px 6px #202020;
 }
