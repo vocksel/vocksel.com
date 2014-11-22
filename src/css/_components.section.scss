@@ -3,11 +3,12 @@
 \*------------------------------------*/
 
 /**
- * The padding looks funny if two sections share the same background color.
- * Avoid this by using different colors on every other section.
+ * Refrain from using the same background color twice in a row. Because of the
+ * padding, two sections that share the same color have a lot of noticable
+ * whitespace between them.
  *
- * A class of .inuit-mb0 (margin-bottom: 0) must be applied to the last element
- * in a section.
+ * Note: A class of .mb0 (margin-bottom: 0) must be applied to the last
+ * element in a section.
  *
  * <section id="about">
  *   <div class="wrapper">
@@ -20,9 +21,6 @@
  * Without that class you effectively have double the whitespace at the bottom,
  * because both the margin-bottom on paragraphs and the padding-bottom on
  * sections combine.
- *
- * Leaving off the padding-bottom results in the base background color being
- * shown.
  */
 .section {
   padding: $large-spacing-unit 0;
