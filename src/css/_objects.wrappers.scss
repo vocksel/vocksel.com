@@ -5,3 +5,7 @@
 .wrapper {
   @include container();
 }
+
+.wrapper--compact {
+  @include container($compact-layout);
+}
