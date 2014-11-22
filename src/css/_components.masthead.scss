@@ -17,6 +17,7 @@
 
   .masthead__headline {
     @include font-size(50px);
+    font-family: $masthead-font-stack;
     margin-bottom: $small-spacing-unit; /* [1] */
     text-shadow: 2px 2px 2px #1b2031; /* [2] */
   }
