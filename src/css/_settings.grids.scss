@@ -4,7 +4,7 @@
 
 $susy: (
   columns: 10,
-  column-width: 3em,
+  column-width: 4em,
 
   debug: (
     image: show,
@@ -12,4 +12,8 @@ $susy: (
     output: overlay,
     toggle: top right,
   )
+);
+
+$compact-layout: (
+  columns: 7
 );
