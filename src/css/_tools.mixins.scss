@@ -19,12 +19,12 @@
 //
 //   <p>Some content!</p>
 //
-// [1] The height of the line needs to be removed from the margin, otherwise
+// [1] The height of the dash needs to be subtracted from the margin, otherwise
 //     the vertical rhythm will be knocked out of place.
 // [2] The dash is semi-transparent to blend in with the background.
-@mixin dash($height: 1px, $color: #202020) {
+@mixin dash($color: #202020, $height: 1px, $width: $large-spacing-unit, $opacity: .5) {
   height: $height;
+  width:  $width;
   margin: $spacing-unit auto ($spacing-unit - $height); // [1]
-  width: $large-spacing-unit;
-  background-color: rgba($color, .5); // [2]
+  background-color: rgba($color, $opacity); // [2]
 }
