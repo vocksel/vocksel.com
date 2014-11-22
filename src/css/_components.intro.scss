@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.intro__bio {
-  @include font-size(18px);
-  font-family: $serif-font-stack;
-}
+  .intro__bio {
+    @include font-size(18px);
+    font-family: $serif-font-stack;
+  }
