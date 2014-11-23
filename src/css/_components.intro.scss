@@ -4,15 +4,12 @@
 
 .intro {
   background-color: $intro-bg-color;
+  @include font-size(18px);
+  font-family: $serif-font-stack;
   color: $intro-color;
   text-align: center;
 }
 
   .intro__dash {
     @include dash(lighten($intro-bg-color, 50));
-  }
-
-  .intro__bio {
-    @include font-size(18px);
-    font-family: $serif-font-stack;
   }
