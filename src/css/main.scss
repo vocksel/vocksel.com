@@ -6,11 +6,13 @@
  * Inuit................Enabling parts of inuitcss modules.
  * Theme................Colors and font families -- the look and feel of the site.
  * Grids................Configuration for Susy grids.
+ * Responsive...........Set up and name our breakpoints.
  *
  * TOOLS
  * Mixins...............inuitcss' default mixins.
  * Mixins...............Custom mixins for the project.
  * Susy.................An assortment of mixins to assist with making grids.
+ * Responsive...........Responsive tooling (requires responsive settings).
  * Aliases..............Aliases for long inuitcss variables and mixins.
  *
  * GENERIC
@@ -56,6 +58,7 @@
 @import "settings.inuit";
 @import "settings.theme";
 @import "settings.grids";
+@import "../bower_components/inuit-responsive-settings/settings.responsive";
 
 
 
@@ -67,6 +70,7 @@
 @import "../bower_components/inuit-mixins/tools.mixins";
 @import "tools.mixins";
 @import "../bower_components/susy/sass/susy";
+@import "../bower_components/inuit-responsive-tools/tools.responsive";
 @import "tools.aliases";
 
 
