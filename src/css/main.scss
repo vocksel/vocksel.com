@@ -29,12 +29,12 @@
  * Quotes...............Blockquote styles.
  *
  * OBJECTS
- * List Inline..........Simply display a list of items on one line.
  * Center...............Vertical centering with Tables.
  * Circle...............Using border-radius to make circles.
+ * Full Height..........Covers 100% height.
+ * List Inline..........Simply display a list of items on one line.
  * Sections.............Keeping chunks of content separated.
  * Wrappers.............Wrappers and page constraints.
- * Full Height..........Covers 100% height.
  *
  * COMPONENTS
  * Avatar...............My stunning image, ready for the world to see.
@@ -103,12 +103,12 @@
 /**
  * #OBJECTS
  */
-@import "objects.list-inline";
 @import "objects.center";
 @import "objects.circle";
+@import "objects.full-height";
+@import "objects.list-inline";
 @import "objects.section";
 @import "objects.wrappers";
-@import "objects.full-height";
 
 
 
