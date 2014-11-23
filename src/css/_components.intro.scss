@@ -10,6 +10,14 @@
   text-align: center;
 }
 
+  .intro a {
+    color: $intro-link-color;
+
+    &:hover {
+      color: lighten($intro-link-color, 20);
+    }
+  }
+
   .intro__dash {
     @include dash(lighten($intro-bg-color, 50));
   }
