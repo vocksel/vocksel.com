@@ -14,7 +14,9 @@ $susy: (
   )
 );
 
+// [1] Completely arbitrary value. The layout is used exlusively for the
+//     introduction, because of this the grid is edited to best display the
+//     contents.
 $compact-layout: (
-  columns: 7,
-  column-width: 3.5em
+  columns: 7.5, // [1]
 );
