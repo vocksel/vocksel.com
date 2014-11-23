@@ -33,11 +33,11 @@
  * Circle...............Using border-radius to make circles.
  * Full Height..........Covers 100% height.
  * List Inline..........Simply display a list of items on one line.
- * Sections.............Keeping chunks of content separated.
  * Wrappers.............Wrappers and page constraints.
  *
  * COMPONENTS
  * Avatar...............My stunning image, ready for the world to see.
+ * Band.................Full-width page bands.
  * Intro................Introductory content -- a short bio.
  * Masthead.............Attractive image at the top of the page.
  *
@@ -107,7 +107,6 @@
 @import "objects.circle";
 @import "objects.full-height";
 @import "objects.list-inline";
-@import "objects.section";
 @import "objects.wrappers";
 
 
@@ -118,6 +117,7 @@
  * COMPONENTS
  */
 @import "components.avatar";
+@import "components.band";
 @import "components.intro";
 @import "components.masthead";
 
