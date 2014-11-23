@@ -18,6 +18,10 @@
     }
   }
 
+  .intro__header {
+    text-align: center;
+  }
+
   .intro__dash {
     @include dash(lighten($intro-bg-color, 50));
   }
