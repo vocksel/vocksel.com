@@ -14,14 +14,14 @@
     color: $intro-link-color;
 
     &:hover {
-      color: lighten($intro-link-color, 20);
+      color: $intro-link-color--hover;
     }
   }
 
   // Not sure how to avoid the specificity here. Maybe a new .intro__underline
   // class?
   .intro .underline:after {
-    background-color: $intro-link-color;
+    background-color: $intro-link-color--hover;
   }
 
   .intro__header {
