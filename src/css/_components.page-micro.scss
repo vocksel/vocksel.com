@@ -1,0 +1,23 @@
+/*------------------------------------*\
+  #PAGE-MICRO
+\*------------------------------------*/
+
+.page-micro {
+  padding: $small-spacing-unit;
+  background-color: $footer-bg-color;
+  color: $footer-color;
+  @include font-size(14px);
+  text-align: center;
+
+  a {
+    color: $footer-link-color;
+
+    &:hover {
+      color: $footer-link-color--hover;
+    }
+  }
+}
+
+.page-micro .underline:after {
+  background-color: $footer-link-color--hover;
+}

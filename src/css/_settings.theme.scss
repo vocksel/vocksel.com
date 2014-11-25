@@ -5,18 +5,23 @@
 $inuit-base-text-color: #333;
 $inuit-base-background-color: #f5f5f5;
 
-$link-color:              #277cd1;
-$quote-color:             #666666;
-$masthead-color:          #f0f0f0;
-$masthead-bg-color:       #303030;
+$link-color:               #277cd1;
+$quote-color:              #666666;
+$masthead-color:           #f0f0f0;
+$masthead-bg-color:        #303030;
 
-//$intro-color:             #f5f5f5;
-//$intro-bg-color:          #554574;
-//$intro-link-color:        #ffe140;
-$intro-color:             rgba(#fff, .85);
-$intro-bg-color:          #243a54;
-$intro-link-color:        #ffa52a;
-$intro-link-color--hover: lighten($intro-link-color, 20);
+//$intro-color:              #f5f5f5;
+//$intro-bg-color:           #554574;
+//$intro-link-color:         #ffe140;
+$intro-color:              rgba(#fff, .85);
+$intro-bg-color:           #243a54;
+$intro-link-color:         #ffa52a;
+$intro-link-color--hover:  lighten($intro-link-color, 20);
+
+$footer-color:             rgba(#fff, .7);
+$footer-bg-color:          #1e1e22;
+$footer-link-color:        $intro-link-color;
+$footer-link-color--hover: $intro-link-color--hover;
 
 
 
