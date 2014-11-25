@@ -5,9 +5,9 @@
 a {
   color: $link-color;
   text-decoration: none;
+  transition: all .2s;
 
   &:hover {
-    color: darken($link-color, 20);
-    text-decoration: underline;
+    color: lighten($link-color, 20);
   }
 }

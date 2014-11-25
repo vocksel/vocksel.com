@@ -18,6 +18,12 @@
     }
   }
 
+  // Not sure how to avoid the specificity here. Maybe a new .intro__underline
+  // class?
+  .intro .underline:after {
+    background-color: $intro-link-color;
+  }
+
   .intro__header {
     text-align: center;
   }
