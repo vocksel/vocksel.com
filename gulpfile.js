@@ -3,29 +3,12 @@ var connect     = require('gulp-connect');
 var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-ruby-sass');
 var plumber     = require('gulp-plumber');
-var notify      = require('gulp-notify');
 
 var del         = require('del');
 var path        = require('path');
 var runSequence = require('run-sequence');
 
 var join = path.join;
-
-
-// Helpers
-// =============================================================================
-
-// Used with Plumber to handle errors
-function onError(err) {
-  notify.onError({
-    title: "Gulp",
-    subtitle: "Failure!",
-    message: "Error: <%= error.message %>",
-    sound: "Beep"
-  })(err);
-
-  this.emit('end');
-}
 
 
 // Configuration
@@ -62,7 +45,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('styles', function() {
   return gulp.src(join(paths.css, '**/*.scss'), { base: paths.src })
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber())
     .pipe(sass({
       sourcemap: false,
       style: 'compressed'
@@ -72,7 +55,7 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
   return gulp.src(join(paths.img, '**'), { base: paths.src })
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber())
     .pipe(imagemin({
       optimizationLevel: 5,
       progressive: true
@@ -82,20 +65,20 @@ gulp.task('images', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(join(paths.js, '**'), { base: paths.src })
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber())
     .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('fonts', function() {
   return gulp.src(join(paths.fonts, '**'), { base: paths.src })
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber())
     .pipe(gulp.dest(paths.dest));
 })
 
 // Moving files that aren't processed by the above tasks.
 gulp.task('move', function() {
   return gulp.src(paths.static)
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plumber())
     .pipe(gulp.dest(paths.dest));
 });
 
