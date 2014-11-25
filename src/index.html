@@ -13,11 +13,16 @@
   </head>
 
   <body class="full-height">
-    <header class="masthead  full-height">
+    <header id="skrollr-body" class="masthead  full-height"
+            data-start="background-position:        0px   0px; "
+            data-top-bottom="background-position:   0px -48px; ">
+
       <div class="center  full-height">
         <div class="center__vertical">
 
-          <div class="wrapper">
+          <div class="wrapper"
+               data-start="opacity: 1"
+               data-top-bottom="opacity:   0">
             <h1 class="masthead__headline">David Minnerly</h1>
             <ul class="masthead__interests  list-inline--delimited">
               <!-- Omitting closing <li> tags to prevent annoying whitespace. -->
@@ -48,5 +53,8 @@
         <p class="mb0">Now I mainly dabble with websites, coding in JavaScript whenever possible. But I still go back to ROBLOX when I have a craving for Lua.</p>
       </div>
     </section>
+
+    <script src="js/skrollr.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
