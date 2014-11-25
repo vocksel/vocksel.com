@@ -43,6 +43,7 @@
  * Band.................Full-width page bands.
  * Intro................Introductory content -- a short bio.
  * Masthead.............Attractive image at the top of the page.
+ * Page Micro...........Copyright and other ending things.
  * Underline............Replacement for border-bottom. Uses neat transform effects.
  *
  * TRUMPS
@@ -127,6 +128,7 @@
 @import "components.band";
 @import "components.intro";
 @import "components.masthead";
+@import "components.page-micro";
 @import "components.underline";
 
 
