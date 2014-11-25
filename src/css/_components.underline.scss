@@ -1,0 +1,25 @@
+/*------------------------------------*\
+  #UNDERLINE
+\*------------------------------------*/
+
+$underline-height: 2px;
+
+.underline {
+  display: inline-block;
+}
+
+.underline:after {
+  display: block;
+  position: relative;
+  height: $underline-height;
+  bottom: $underline-height;
+
+  background-color: $link-color;
+  content: "";
+  transition: all .2s ease;
+  transform: scaleX(0);
+}
+
+.underline:hover:after {
+  transform: scaleX(1);
+}
