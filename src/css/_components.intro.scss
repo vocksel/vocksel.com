@@ -8,15 +8,17 @@
   font-family: $serif-font-stack;
   color: $intro-color;
   text-align: center;
-}
 
-  .intro a {
+  // This is repeated in _components.page-micro. Is there a better way of doing
+  // this? Maybe a link component?
+  a {
     color: $intro-link-color;
 
     &:hover {
       color: $intro-link-color--hover;
     }
   }
+}
 
   // Not sure how to avoid the specificity here. Maybe a new .intro__underline
   // class?
