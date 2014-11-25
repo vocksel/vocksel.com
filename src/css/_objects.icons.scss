@@ -1,0 +1,44 @@
+/*------------------------------------*\
+  #LIST-INLINE
+\*------------------------------------*/
+
+/**
+ * Wonderful free icons from http://icomoon.io
+ */
+
+@font-face {
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?-t3r4m7');
+	src: url('../fonts/icomoon.eot?#iefix-t3r4m7')   format('embedded-opentype'),
+		   url('../fonts/icomoon.woff?-t3r4m7')        format('woff'),
+		   url('../fonts/icomoon.ttf?-t3r4m7')         format('truetype'),
+		   url('../fnts/icomoon.svg?-t3r4m7#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+%icon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style:   normal;
+	font-weight:  normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: $spacing-unit;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Create a new icon class
+@mixin icon($name, $content) {
+  .icon-#{$name}:before {
+    @extend %icon;
+    content: $content
+  }
+}
+
+@include icon("github",  "\e600");
+@include icon("twitter", "\e601");
+@include icon("blog",    "\e602");

@@ -34,10 +34,11 @@ function onError(err) {
 // Locations where files are stored. Commonly used with 'path.join' and a
 // globbing pattern
 var paths = {
-  src: 'src',
-  css: 'src/css',
-  img: 'src/img',
-  js:  'src/js',
+  src:   'src',
+  css:   'src/css',
+  img:   'src/img',
+  js:    'src/js',
+  fonts: 'src/fonts',
   dest: 'build',
 
   // Static files that don't require any pre-processing
@@ -85,6 +86,12 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.dest));
 });
 
+gulp.task('fonts', function() {
+  return gulp.src(join(paths.fonts, '**'), { base: paths.src })
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(gulp.dest(paths.dest));
+})
+
 // Moving files that aren't processed by the above tasks.
 gulp.task('move', function() {
   return gulp.src(paths.static)
@@ -129,7 +136,8 @@ gulp.task('build', function() {
     'move',
     'styles',
     'images',
-    'scripts'
+    'scripts',
+    'fonts'
   ]);
 });
 
