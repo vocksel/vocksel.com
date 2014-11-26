@@ -21,5 +21,6 @@ $underline-height: 2px;
 }
 
 .underline:hover:after {
+  background-color: $link-color--hover;
   transform: scaleX(1);
 }
