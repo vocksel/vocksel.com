@@ -13,6 +13,12 @@
   background-size: cover;
   color: $masthead-color;
   text-align: center;
+
+  @include media-query(palm) {
+    // On mobile devices (atleast Android Firefox) the background follows as you
+    // scroll when fixed. It's set back to 'scroll' on mobile to fix that.
+    background-attachment: scroll;
+  }
 }
 
   .masthead__headline {
