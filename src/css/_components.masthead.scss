@@ -3,9 +3,8 @@
 \*------------------------------------*/
 
 /**
- * [1] Fix the headline and tagline more snuggly together.
- * [2] These are entirely arbitrary values that look good with the Roboto Slab
- *     and Droid Serif fonts, respectively.
+ * [1] On mobile devices (atleast Android Firefox) the background follows as you
+ *     scroll when fixed. It's set back to 'scroll' on mobile to fix that.
  */
 .masthead {
   background: url('../img/wojtek-witkowski-001.jpg') no-repeat center center fixed;
@@ -15,12 +14,15 @@
   text-align: center;
 
   @include media-query(palm) {
-    // On mobile devices (atleast Android Firefox) the background follows as you
-    // scroll when fixed. It's set back to 'scroll' on mobile to fix that.
-    background-attachment: scroll;
+    background-attachment: scroll; /* [1] */
   }
 }
 
+  /**
+   * [1] Fix the headline and tagline more snuggly together.
+   * [2] These are entirely arbitrary values that look good with the Roboto Slab
+   *     and Droid Serif fonts, respectively.
+   */
   .masthead__headline {
     @include font-size(50px);
     font-family: $masthead-font-stack;
