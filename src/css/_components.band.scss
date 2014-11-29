@@ -6,6 +6,11 @@
   padding-top:    $spacing-unit;
   padding-bottom: $spacing-unit;
 
+  @include media-query(palm) {
+    padding-left:  $small-spacing-unit;
+    padding-right: $small-spacing-unit;
+  }
+
   @include media-query(desk) {
     padding-top:    $large-spacing-unit;
     padding-bottom: $large-spacing-unit;
