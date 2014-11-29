@@ -30,10 +30,18 @@
     font-family: $masthead-font-stack;
     margin-bottom: $small-spacing-unit; /* [1] */
     text-shadow: 2px 2px 2px #1b2031; /* [2] */
+
+    @include media-query(palm) {
+      @include font-size(46px);
+    }
   }
 
   .masthead__interests {
     @include font-size(20px);
     font-family: $serif-font-stack;
     text-shadow: 1px 1px 1px #1b2031; /* [2] */
+
+    @include media-query(palm) {
+      @include font-size(16px);
+    }
   }
