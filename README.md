@@ -1,16 +1,18 @@
-## Stay Tuned
+## The Website of David Minnerly
 
-This is the source code for my personal website, [davidminnerly.com](http://davidminnerly.com). I'm currently in the process of transitioning from my [Middleman](http://middlemanapp.com) site ([release 4.3.0](https://github.com/VoxelDavid/voxeldavid-website/releases/tag/v4.3.0)). It's going to be a little while before I have anything presentable.
+This is the source code for my personal website, [davidminnerly.com](http://davidminnerly.com). It's a simple one-pager that leverages [inuitcss](https://github.com/inuitcss/getting-started), [Gulp](http://gulpjs.com) and numerous other amazing utilities.
+
+This is my first project working with inuitcss and Gulp. inuitcss is absolutely amazing for keeping my CSS organized. As of yet I haven't had any problems locating my styles. And Gulp is an astounding build system. I can write plain JavaScript in a Gulp task without having to make a plugin of some kind.
 
 ## Contributing
 
-This project uses the [Gulp](http://gulpjs.com) build system for all of its tasks. Go grab a copy of [Node](http://nodejs.org) if you don't already have it installed.
+This project uses the [Gulp](http://gulpjs.com) build system for all of its tasks. You'll need a copy of [Node](http://nodejs.org) installed to download the dependencies.
 
-Now you can download all of the dependencies:
+The project also depends on Ruby for compiling the Sass files. As of writing this Libsass does not support Maps (`$var: ( value: prop )`), which my grid system, Susy, relies upon.
 
 ```bash
-# You need Gulp installed globally so you can run the gulpfile from the command line.
-$ npm install -g gulp
+# Remember to install Gulp and Bower globally.
+$ npm install -g gulp bower
 $ npm install
 $ bower install
 ```
