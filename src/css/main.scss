@@ -40,6 +40,7 @@
  * COMPONENTS
  * Avatar...............My stunning image, ready for the world to see.
  * Band.................Full-width page bands.
+ * Buttons..............
  * Intro................Introductory content -- a short bio.
  * Masthead.............Attractive image at the top of the page.
  * Page Micro...........Copyright and other ending things.
@@ -124,6 +125,7 @@
  */
 @import "components.avatar";
 @import "components.band";
+@import "components.buttons";
 @import "components.intro";
 @import "components.masthead";
 @import "components.page-micro";
