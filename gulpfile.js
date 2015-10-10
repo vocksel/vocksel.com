@@ -1,7 +1,7 @@
 var gulp        = require('gulp');
 var connect     = require('gulp-connect');
 var imagemin    = require('gulp-imagemin');
-var sass        = require('gulp-ruby-sass');
+var sass        = require('gulp-sass');
 var plumber     = require('gulp-plumber');
 
 var del         = require('del');
@@ -47,8 +47,7 @@ gulp.task('styles', function() {
   return gulp.src(join(paths.css, '**/*.scss'), { base: paths.src })
     .pipe(plumber())
     .pipe(sass({
-      sourcemap: false,
-      style: 'compressed'
+      outputStyle: 'compressed'
     }))
     .pipe(gulp.dest(paths.dest));
 });
