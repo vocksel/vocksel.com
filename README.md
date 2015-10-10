@@ -8,8 +8,6 @@ This is my first project working with inuitcss and Gulp. inuitcss is absolutely 
 
 This project uses the [Gulp](http://gulpjs.com) build system for all of its tasks. You'll need a copy of [Node](http://nodejs.org) installed to download the dependencies.
 
-The project also depends on Ruby for compiling the Sass files. As of writing this Libsass does not support Maps (`$var: ( value: prop )`), which my grid system, Susy, relies upon.
-
 ```bash
 # Remember to install Gulp and Bower globally.
 $ npm install -g gulp bower
