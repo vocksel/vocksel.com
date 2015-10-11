@@ -24,7 +24,8 @@ var paths = {
   fonts: 'src/fonts',
   dest: 'build',
 
-  // Static files that don't require any pre-processing
+  // These are static files that don't have any preprocessing, but still need to
+  // be moved when building the site.
   static: [
     'src/favicon.ico',
     'src/**/*.html'
