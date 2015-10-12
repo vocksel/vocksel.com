@@ -6,7 +6,8 @@
  * [1] Same as the background image's resolution.
  */
 .avatar {
-  background-image: url(../img/me-avatar-small.png);
+  background-image: url(../img/polo.jpg);
+  background-size: cover;
   height: 128px; /* [1] */
   width:  128px; /* [1] */
   display: inline-block;
