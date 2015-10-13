@@ -4,18 +4,11 @@
 
 $quote-border-size: 2px;
 
-/**
- * [1] Indent the text enough so the first quotation is outside of the page
- * 2. Push out the blockquote so the border is outside of the page
- * 3. With 2px border, this padding must be .1 less than the margin
- */
-
-/**
- * [1] Pushes the border to the outside of the page
- */
 blockquote {
-  margin-left: -$spacing-unit; /* [1] */
-  padding-left: $spacing-unit - $quote-border-size; /* [1] */
+  /* Pushes the border to the outside of the page */
+  margin-left: -$spacing-unit;
+  padding-left: $spacing-unit - $quote-border-size;
+
   font-family: $serif-font-stack;
   font-style: italic;
   border-left: $quote-border-size solid $link-color;

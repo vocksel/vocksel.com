@@ -2,14 +2,11 @@
   #AVATAR
 \*------------------------------------*/
 
-/**
- * [1] Same as the background image's resolution.
- */
 .avatar {
   background-image: url(../img/polo.jpg);
   background-size: cover;
-  height: 128px; /* [1] */
-  width:  128px; /* [1] */
+  height: 128px;
+  width:  128px;
   display: inline-block;
   box-shadow: 1px 1px 6px #202020;
 }
