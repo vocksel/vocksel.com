@@ -23,17 +23,15 @@
 
  */
 
-/**
- * [1] Don't bother with the responsive height on smaller displays. It can be
- *     finicky on mobile devices in portrait mode, so until I have better mobile
- *     support I'll be using this.
- */
 .full-height {
   height: 100%;
   max-height: 100%;
 
   @include media-query(palm) {
-    height:     $spacing-unit*16; /* [1] */
-    max-height: $spacing-unit*16; /* [1] */
+    // Don't bother with the responsive height on smaller displays. It can be
+    // finicky on mobile devices in portrait mode, so until I have better mobile
+    // support I'll be using this.
+    height:     $spacing-unit*16;
+    max-height: $spacing-unit*16;
   }
 }

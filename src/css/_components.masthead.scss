@@ -2,10 +2,6 @@
   #MASTHEAD
 \*------------------------------------*/
 
-/**
- * [1] On mobile devices (atleast Android Firefox) the background follows as you
- *     scroll when fixed. It's set back to 'scroll' on mobile to fix that.
- */
 .masthead {
   background: url('../img/wojtek-witkowski-001.jpg') no-repeat center center fixed;
   background-color: $masthead-bg-color;
@@ -14,22 +10,24 @@
   text-align: center;
 
   @include media-query(palm) {
-    background-attachment: scroll; /* [1] */
+    /* On mobile devices (atleast Android Firefox) the background follows as you
+     * scroll when fixed. It's set back to 'scroll' on mobile to fix that. */
+    background-attachment: scroll;
+
     padding-left:  $small-spacing-unit;
     padding-right: $small-spacing-unit;
   }
 }
 
-  /**
-   * [1] Fix the headline and tagline more snuggly together.
-   * [2] These are entirely arbitrary values that look good with the Roboto Slab
-   *     and Droid Serif fonts, respectively.
-   */
   .masthead__headline {
     @include font-size(50px);
     font-family: $masthead-font-stack;
-    margin-bottom: $small-spacing-unit; /* [1] */
-    text-shadow: 2px 2px 2px #1b2031; /* [2] */
+
+    /* Keep the headline and tagline close together. */
+    margin-bottom: $small-spacing-unit;
+
+    /* Arbitrary values that look good with Roboto Slab. */
+    text-shadow: 2px 2px 2px #1b2031;
 
     @include media-query(palm) {
       @include font-size(46px);
@@ -39,7 +37,9 @@
   .masthead__interests {
     @include font-size(20px);
     font-family: $serif-font-stack;
-    text-shadow: 1px 1px 1px #1b2031; /* [2] */
+
+    /* Arbitrary values that look good with Droid Serif */
+    text-shadow: 1px 1px 1px #1b2031;
 
     @include media-query(palm) {
       @include font-size(16px);
