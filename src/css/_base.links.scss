@@ -2,13 +2,14 @@
   #LINKS
 \*------------------------------------*/
 
-$link-color: #5fa1d1;
-$link-color--hover: lighten($link-color, 20);
+$link-color: $accent-color;
+$link-color--hover: darken($link-color, 20);
 
 a {
   color: $link-color;
   text-decoration: none;
   transition: all .2s;
+  font-weight: bold;
 
   &:hover {
     color: $link-color--hover;
