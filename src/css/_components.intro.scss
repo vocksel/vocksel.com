@@ -2,6 +2,9 @@
   #INTRO
 \*------------------------------------*/
 
+$intro-color: rgba(#fff, .85);
+$intro-bg-color: #2f4d6f;
+
 .intro {
   background-color: $intro-bg-color;
   @include font-size(18px);

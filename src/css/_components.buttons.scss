@@ -2,6 +2,11 @@
   #BUTTONS
 \*------------------------------------*/
 
+$btn-base-color: #fff;
+$btn-twitter-color: #32abdf;
+$btn-github-color: #262124;
+$btn-blog-color: #e24e4b;
+
 // Pretties up the FontAwesome icons
 @mixin icon($name, $color) {
   .btn--#{$name} {
