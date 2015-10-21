@@ -3,6 +3,8 @@
 \*------------------------------------*/
 
 $underline-height: 2px;
+$underline-color: $accent-color;
+$underline-color--hover: lighten($underline-color, 20);
 
 .underline {
   display: inline-block;
@@ -14,13 +16,13 @@ $underline-height: 2px;
   height: $underline-height;
   bottom: $underline-height;
 
-  background-color: $link-color;
+  background-color: $underline-color;
   content: "";
   transition: all .2s ease;
   transform: scaleX(0);
 }
 
 .underline:hover:after {
-  background-color: $link-color--hover;
+  background-color: $underline-color--hover;
   transform: scaleX(1);
 }
