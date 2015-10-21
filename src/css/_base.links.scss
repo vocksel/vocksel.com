@@ -2,16 +2,7 @@
   #LINKS
 \*------------------------------------*/
 
-$link-color: $accent-color;
-$link-color--hover: darken($link-color, 20);
-
 a {
-  color: $link-color;
+  @extend %inline-button;
   text-decoration: none;
-  transition: all .2s;
-  font-weight: bold;
-
-  &:hover {
-    color: $link-color--hover;
-  }
 }
