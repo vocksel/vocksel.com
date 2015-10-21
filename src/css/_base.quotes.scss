@@ -10,7 +10,21 @@ blockquote {
   padding-left: $spacing-unit - $quote-border-size;
 
   font-family: $serif-font-stack;
-  font-style: italic;
   border-left: $quote-border-size solid $accent-color;
   color: rgba($text-color, .8);
+
+  p:first-of-type {
+    /* Unindents the text so all the text lines up, with the quotation mark
+     * outside the page.
+     *
+     * This value must be tweaked to work with the current font. */
+    text-indent: -.65em;
+
+    &:before {
+      content: "\201C"; /* left double quote (“) */
+    }
+  }
+  p:last-of-type:after {
+      content: "\201D"; /* right double quote (”) */
+  }
 }
