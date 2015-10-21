@@ -34,6 +34,7 @@
  * Center...............Vertical centering with Tables.
  * Circle...............Using border-radius to make circles.
  * Full Height..........Covers 100% height.
+ * Inline Button........Special button typically applied to links.
  * List Inline..........Simply display a list of items on one line.
  * Wrappers.............Wrappers and page constraints.
  *
@@ -112,6 +113,7 @@
  */
 @import "objects.center";
 @import "objects.circle";
+@import "objects.inline-button";
 @import "objects.full-height";
 @import "objects.list-inline";
 @import "objects.wrappers";
