@@ -8,21 +8,21 @@ $underline-color--hover: lighten($underline-color, 20);
 
 .underline {
   display: inline-block;
-}
 
-.underline:after {
-  display: block;
-  position: relative;
-  height: $underline-height;
-  bottom: $underline-height;
+  &:after {
+    display: block;
+    position: relative;
+    height: $underline-height;
+    bottom: $underline-height;
 
-  background-color: $underline-color;
-  content: "";
-  transition: all .2s ease;
-  transform: scaleX(0);
-}
+    background-color: $underline-color;
+    content: "";
+    transition: all .2s ease;
+    transform: scaleX(0);
+  }
 
-.underline:hover:after {
-  background-color: $underline-color--hover;
-  transform: scaleX(1);
+  &:hover:after {
+    background-color: $underline-color--hover;
+    transform: scaleX(1);
+  }
 }
