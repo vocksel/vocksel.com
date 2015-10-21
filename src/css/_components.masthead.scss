@@ -5,6 +5,8 @@
 $masthead-color: #f0f0f0;
 $masthead-bg-color: #303030;
 
+$masthead-font-stack: "Roboto Slab", $serif-font-stack;
+
 .masthead {
   background: url('../img/wojtek-witkowski-001.jpg') no-repeat center center fixed;
   background-color: $masthead-bg-color;
