@@ -2,12 +2,15 @@
 //  #COLORS
 //\*------------------------------------*/
 
-$primary-color: #ffffff;
-$accent-color: #d3004a;
+$primary-color: #e2e8e8;
+$neg-primary-color: #262626;
+$accent-color: #e3224c;
+$text-color: #011920;
+$neg-text-color: #f5f5f5;
 
 $inuit-base-font-size: 17px;
 $inuit-base-line-height: 28px;
-$inuit-base-text-color: #516066;
+$inuit-base-text-color: $text-color;
 $inuit-base-background-color: $primary-color;
 
 

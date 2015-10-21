@@ -2,13 +2,9 @@
   #PAGE-MICRO
 \*------------------------------------*/
 
-$footer-color: rgba(#fff, .7);
-$footer-bg-color: #1e1e22;
-
 .page-micro {
   padding: $small-spacing-unit;
-  background-color: $footer-bg-color;
-  color: $footer-color;
+  color: rgba($text-color, .7);
   @include font-size(14px);
   text-align: center;
 }
