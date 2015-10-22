@@ -37,7 +37,6 @@
 
   @include media-query(palm) {
     max-width: 100%;
-    padding: 0 $small-spacing-unit;
   }
 }
 
@@ -46,5 +45,8 @@
 
   @include media-query(palm) {
     max-width: 100%;
+
+    // Padding the sides of the text to make it easier to read
+    padding: 0 $small-spacing-unit;
   }
 }
