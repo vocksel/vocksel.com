@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  #PHOTO
+\*------------------------------------*/
+
+/* The primary class for displaying images that take up the full-width allowed
+ * to them.
+ *
+ * Usage:
+
+    <figure>
+      <img class="photo" src="/img/example.jpg" alt="An Example Image">
+      <figcaption class="photo__caption">A caption that appears below the
+        image.</figcaption>
+    </figure>
+
+ */
+
+.photo {
+  // Keeps the photo and caption close together.
+  margin-bottom: $small-spacing-unit;
+}
+
+  .photo__caption {
+    @include font-size(14px);
+    font-style: italic;
+    text-align: center;
+  }
