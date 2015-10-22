@@ -6,16 +6,16 @@
 //
 // They are used both to add some breathing room, and these also act as the
 // sizes for "objects.gradients" so that the content isn't obscured.
-$page-padding-top: 15vh;
-$page-padding-bottom: 35vh;
+$page-spacing-top: 15vh;
+$page-spacing-bottom: 35vh;
 
 html {
   font-family: $serif-font-stack;
 }
 
 body {
-  padding-top: $page-padding-top;
-  padding-bottom: $page-padding-bottom;
+  padding-top: $page-spacing-top;
+  padding-bottom: $page-spacing-bottom;
   background: url("/img/ommwriter.jpg") no-repeat fixed;
   background-size: cover;
 }

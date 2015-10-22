@@ -30,11 +30,11 @@
   .gradient__top:before {
     background: linear-gradient(to bottom, $primary-color 10%, rgba(#fff, 0) 100%);
     top: 0;
-    height: $page-padding-top;
+    height: $page-spacing-top;
   }
 
   .gradient__bottom:after {
     background: linear-gradient(to bottom, rgba(#fff, 0) 0%, $primary-color 90%);
     bottom: 0;
-    height: $page-padding-bottom;
+    height: $page-spacing-bottom;
   }
