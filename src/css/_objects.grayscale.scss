@@ -1,0 +1,22 @@
+/*------------------------------------*\
+  #GRAYSCALE
+\*------------------------------------*/
+
+/* Turns elements (typically images) black-and-white until they've been hovered.
+ *
+ * Usage:
+
+  <img class="grayscale" src="/img/sample.png">"
+
+ */
+
+.grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  transition: all .3s;
+
+  &:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+}
