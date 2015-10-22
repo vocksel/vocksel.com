@@ -5,13 +5,11 @@
  * Default..............inuitcss' default settings.
  * Inuit................Enabling parts of inuitcss modules.
  * Theme................Colors and font families -- the look and feel of the site.
- * Grids................Configuration for Susy grids.
  * Responsive...........Set up and name our breakpoints.
  *
  * TOOLS
  * Mixins...............inuitcss' default mixins.
  * Mixins...............Custom mixins for the project.
- * Susy.................An assortment of mixins to assist with making grids.
  * Responsive...........Responsive tooling (requires responsive settings).
  * Aliases..............Aliases for long inuitcss variables and mixins.
  *
@@ -36,7 +34,6 @@
  * Full Height..........Covers 100% height.
  * Inline Button........Special button typically applied to links.
  * List Inline..........Simply display a list of items on one line.
- * Wrappers.............Wrappers and page constraints.
  *
  * COMPONENTS
  * Avatar...............My stunning image, ready for the world to see.
@@ -61,7 +58,6 @@
 @import "../bower_components/inuit-defaults/settings.defaults";
 @import "settings.inuit";
 @import "settings.theme";
-@import "settings.grids";
 @import "../bower_components/inuit-responsive-settings/settings.responsive";
 
 
@@ -73,7 +69,6 @@
  */
 @import "../bower_components/inuit-mixins/tools.mixins";
 @import "tools.mixins";
-@import "../bower_components/susy/sass/susy";
 @import "../bower_components/inuit-responsive-tools/tools.responsive";
 @import "tools.aliases";
 
@@ -113,10 +108,10 @@
  */
 @import "objects.center";
 @import "objects.circle";
+@import "objects.content";
 @import "objects.inline-button";
 @import "objects.full-height";
 @import "objects.list-inline";
-@import "objects.wrappers";
 
 
 
