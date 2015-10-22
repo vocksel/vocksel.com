@@ -3,8 +3,6 @@
 \*------------------------------------*/
 
 .page-micro {
-  padding: $small-spacing-unit;
-  color: rgba($text-color, .7);
-  @include font-size(14px);
-  text-align: center;
+  margin-top: $large-spacing-unit;
+  @include font-size(13px);
 }
