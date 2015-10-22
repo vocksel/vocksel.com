@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  #SITE TITLE
+\*------------------------------------*/
+
+/* This is special header element that's displayed prominently on the page.
+ *
+ * Usage:
+
+    <h1 class="site-title">The Best Website Ever</h1>
+
+ */
+
+.site-title {
+  @include font-size(50px);
+  color: $neg-primary-color;
+  margin-bottom: $large-spacing-unit;
+}
