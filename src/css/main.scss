@@ -1,56 +1,8 @@
-/**
- * TABLE OF CONTENTS
+/* This is the site's stylesheet. It consolidates every Sass partial into a
+ * single file.
  *
- * SETTINGS
- * Default..............inuitcss' default settings.
- * Inuit................Enabling parts of inuitcss modules.
- * Theme................Colors and font families -- the look and feel of the site.
- * Responsive...........Set up and name our breakpoints.
- *
- * TOOLS
- * Mixins...............inuitcss' default mixins.
- * Mixins...............Custom mixins for the project.
- * Responsive...........Responsive tooling (requires responsive settings).
- * Aliases..............Aliases for long inuitcss variables and mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
- * Reset................Remove those nasty default margins.
- * Box-sizing...........Better default box-sizing.
- * Shared...............Handling our margins to maintain vertical rhythm.
- *
- * BASE
- * Page.................Page-level styles (HTML element).
- * Page.................Out extension of the inuitcss page module.
- * Headings.............Heading styles.
- * Type.................Misc type styles.
- * Links................Hyperlink styles.
- * Images...............inuitcss images.
- * Quotes...............Blockquote styles.
- *
- * OBJECTS
- * Center...............Vertical centering with Tables.
- * Circle...............Using border-radius to make circles.
- * Full Height..........Covers 100% height.
- * Inline Button........Special button typically applied to links.
- * List Inline..........Simply display a list of items on one line.
- *
- * COMPONENTS
- * Avatar...............My stunning image, ready for the world to see.
- * Band.................Full-width page bands.
- * Buttons..............
- * Intro................Introductory content -- a short bio.
- * Masthead.............Attractive image at the top of the page.
- * Page Micro...........Copyright and other ending things.
- * Underline............Replacement for border-bottom. Uses neat transform effects.
- *
- * TRUMPS
- * Spacing..............Overriding the default margins/padding on certain elements.
- */
-
-
-
-
+ * Each file should give you a good idea of what it does and how to use it. Go
+ * on and explore! */
 
 /**
  * #SETTINGS
@@ -60,10 +12,6 @@
 @import "settings.theme";
 @import "../bower_components/inuit-responsive-settings/settings.responsive";
 
-
-
-
-
 /**
  * #TOOLS
  */
@@ -72,10 +20,6 @@
 @import "../bower_components/inuit-responsive-tools/tools.responsive";
 @import "tools.aliases";
 
-
-
-
-
 /**
  * #GENERIC
  */
@@ -83,10 +27,6 @@
 @import "../bower_components/inuit-reset/generic.reset";
 @import "../bower_components/inuit-box-sizing/generic.box-sizing";
 @import "../bower_components/inuit-shared/generic.shared";
-
-
-
-
 
 /**
  * #BASE
@@ -99,40 +39,17 @@
 @import "../bower_components/inuit-images/base.images";
 @import "base.quotes";
 
-
-
-
-
 /**
  * #OBJECTS
  */
-@import "objects.center";
 @import "objects.circle";
 @import "objects.content";
 @import "objects.inline-button";
-@import "objects.full-height";
 @import "objects.list-inline";
-
-
-
-
 
 /**
  * COMPONENTS
  */
 @import "components.avatar";
-@import "components.band";
 @import "components.buttons";
-@import "components.intro";
-@import "components.masthead";
 @import "components.page-micro";
-@import "components.underline";
-
-
-
-
-
-/**
- * TRUMPS
- */
-@import "../bower_components/inuit-spacing/trumps.spacing";
