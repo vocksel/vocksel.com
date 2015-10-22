@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 img {
-  margin-top: $spacing-unit;
-  margin-bottom: $large-spacing-unit;
+  // It doesn't seem that inuitcss has margins for images. We need to add it
+  // manually.
+  margin-bottom: $spacing-unit;
 }
