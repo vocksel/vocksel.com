@@ -1,0 +1,41 @@
+/*------------------------------------*\
+  #CONTENT
+\*------------------------------------*/
+
+/* Wrappers for the page's content.
+ *
+ * `.content-wrapper` is the main class that will hold all the page's content,
+ * then you use `.text-content` inside of it to put the text at the desired
+ * width.
+ *
+ * This is allows images to extend out past the content when placed as children
+ * of `.content-wrapper`
+ *
+ * Usage:
+
+     <div class="content-wrapper">
+       <!-- This image will be a larger width than the paragraph in the below
+            section. -->
+       <img src="/img/sample.png">
+
+       <section class="text-content">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+           culpa libero provident itaque cum porro explicabo facilis, quae quod
+           repudiandae alias voluptatum velit fuga molestias aliquid iure, eos
+           mollitia! Voluptatum.</p>
+       </section>
+     </div>
+ */
+
+.content-wrapper,
+.text-content {
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  width: 680px;
+}
+
+.text-content {
+  width: 580px;
+}
