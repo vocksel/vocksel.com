@@ -4,5 +4,6 @@
 
 .page-micro {
   margin-top: $large-spacing-unit;
+  text-align: center;
   @include font-size(13px);
 }
