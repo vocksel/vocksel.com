@@ -2,7 +2,18 @@
   #LINKS
 \*------------------------------------*/
 
+$link-color: $neg-primary-color;
+$link-color--hover: lighten($link-color, 30);
+
 a {
-  @extend %inline-button;
+  color: $link-color;
   text-decoration: none;
+  border-bottom: 2px solid $link-color;
+  font-weight: bold;
+  transition: all .2s;
+
+  &:hover {
+    color: $link-color--hover;
+    border-color: $link-color--hover;
+  }
 }
