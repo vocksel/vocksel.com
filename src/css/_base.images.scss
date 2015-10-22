@@ -6,13 +6,4 @@ img {
   // It doesn't seem that inuitcss has margins for images. We need to add it
   // manually.
   margin-bottom: $spacing-unit;
-
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
-  transition: all .3s;
-
-  &:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-  }
 }
