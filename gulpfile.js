@@ -1,6 +1,5 @@
 var gulp        = require('gulp');
 var connect     = require('gulp-connect');
-var imagemin    = require('gulp-imagemin');
 var sass        = require('gulp-sass');
 var plumber     = require('gulp-plumber');
 
@@ -55,11 +54,6 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
   return gulp.src(join(paths.img, '**'), { base: paths.src })
-    .pipe(plumber())
-    .pipe(imagemin({
-      optimizationLevel: 5,
-      progressive: true
-    }))
     .pipe(gulp.dest(paths.dest));
 });
 
