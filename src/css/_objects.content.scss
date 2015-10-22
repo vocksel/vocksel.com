@@ -34,8 +34,17 @@
 
 .content-wrapper {
   width: 680px;
+
+  @include media-query(palm) {
+    max-width: 100%;
+    padding: 0 $small-spacing-unit;
+  }
 }
 
 .text-content {
   width: 580px;
+
+  @include media-query(palm) {
+    max-width: 100%;
+  }
 }
