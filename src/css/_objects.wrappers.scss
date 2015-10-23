@@ -32,16 +32,11 @@ $wrapper-width: 680px;
   margin-left: auto;
   margin-bottom: $spacing-unit;
 
+  width: $wrapper-width;
+
   @include media-query(palm) {
     max-width: 100%;
   }
-}
-
-.wrapper--page,
-%wrapper--page {
-  @extend %wrapper;
-
-  width: $wrapper-width;
 }
 
 .wrapper--content,
