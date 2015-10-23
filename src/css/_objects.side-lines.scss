@@ -1,0 +1,45 @@
+/*------------------------------------*\
+  #SIDE-LINES
+\*------------------------------------*/
+
+/* Adds very stylistic lines to the left and right of an element.
+ *
+ * This would typically be applied to h1-h6 tag.
+ *
+ * Initially copied from:
+ * http://puigcerber.com/2013/03/08/centered-heading-overlaying-a-horizontal-line-with-css/
+ *
+ * Usage:
+
+    <h1 class="side-lines">Sample Heading</h1>
+
+ */
+
+$side-line-height: $link-underline-height;
+$side-line-spacing: $small-spacing-unit;
+
+.side-lines,
+%side-lines {
+  overflow: hidden;
+  text-align: center;
+
+  &:before, &:after {
+    background-color: $neg-primary-color;
+    content: "";
+    display: inline-block;
+    height: $side-line-height;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  &:before {
+    right: $side-line-spacing;
+    margin-left: -50%;
+  }
+
+  &:after {
+    left: $side-line-spacing;
+    margin-right: -50%;
+  }
+}

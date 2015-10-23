@@ -4,11 +4,12 @@
 
 $link-color: $neg-primary-color;
 $link-color--hover: lighten($link-color, 30);
+$link-underline-height: 2px;
 
 a {
   color: $link-color;
   text-decoration: none;
-  border-bottom: 2px solid $link-color;
+  border-bottom: $link-underline-height solid $link-color;
   font-weight: bold;
   transition: all .2s;
 
