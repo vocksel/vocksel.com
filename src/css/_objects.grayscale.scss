@@ -10,7 +10,8 @@
 
  */
 
-.grayscale {
+.grayscale,
+%grayscale {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
   transition: all .3s;

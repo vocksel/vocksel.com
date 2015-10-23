@@ -13,12 +13,14 @@
  * For horizontal
  */
 
-.center {
+.center,
+%center {
   display: table;
   width: 100%;
 }
 
-.center__vertical {
+.center__vertical,
+%center__vertical {
   display: table-cell;
   vertical-align: middle;
 }
