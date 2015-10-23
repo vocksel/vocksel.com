@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #CONTENT
+  #WRAPPERS
 \*------------------------------------*/
 
 /* Wrappers for the page's content.
@@ -29,6 +29,7 @@ $wrapper-width: 680px;
 .wrapper {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: $spacing-unit;
 
   @include media-query(palm) {
     max-width: 100%;
