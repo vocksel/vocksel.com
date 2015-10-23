@@ -25,7 +25,16 @@ $inline-button-color--hover: lighten($inline-button-color, 20);
   border-radius: .2em;
   transition: background-color .2s;
 
+  // Removing default link styling. This seems like a really bad way of doing
+  // things. I don't know how else I could go about restyling the links withhout
+  // creating a class to apply on each <a> tag (to avoid styling them globally).
+  border: none;
+  font-weight: normal;
+
   &:hover {
+    // Again, removing default styling.
+    color: $neg-text-color;
+
     background-color: $inline-button-color--hover;
   }
 }
