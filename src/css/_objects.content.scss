@@ -4,48 +4,45 @@
 
 /* Wrappers for the page's content.
  *
- * `.content-wrapper` is the main class that will hold all the page's content,
- * then you use `.text-content` inside of it to put the text at the desired
+ * `.wrapper--page` is the main class that will hold all the page's content,
+ * then you use `.wrapper--content` inside of it to put the text at the desired
  * width.
  *
- * This is allows images to extend out past the content when placed as children
- * of `.content-wrapper`
+ * This allows images to extend out past the content when placed as children of
+ * `.wrapper--page`. It makes it "pop", so to speak.
  *
  * Usage:
 
-     <div class="content-wrapper">
+     <div class="wrapper wrapper--page">
        <!-- This image will be a larger width than the paragraph in the below
-            section. -->
+         section. -->
        <img src="/img/sample.png">
 
-       <section class="text-content">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-           culpa libero provident itaque cum porro explicabo facilis, quae quod
-           repudiandae alias voluptatum velit fuga molestias aliquid iure, eos
-           mollitia! Voluptatum.</p>
+       <section class="wrapper wrapper--content">
+         </p>Some sample content</p>
        </section>
      </div>
  */
 
-.content-wrapper,
-.text-content {
-  margin: 0 auto;
-}
+$wrapper-width: 680px;
 
-.content-wrapper {
-  width: 680px;
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
 
   @include media-query(palm) {
     max-width: 100%;
   }
 }
 
-.text-content {
-  width: 580px;
+.wrapper--page {
+  width: $wrapper-width;
+}
+
+.wrapper--content {
+  width: $wrapper-width - 100px;
 
   @include media-query(palm) {
-    max-width: 100%;
-
     // Padding the sides of the text to make it easier to read
     padding: 0 $small-spacing-unit;
   }
