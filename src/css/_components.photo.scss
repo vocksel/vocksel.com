@@ -17,6 +17,7 @@
 
 .photo {
   @extend %grayscale;
+  @extend %grow;
 
   // Keeps the photo and caption close together.
   margin-bottom: $small-spacing-unit;
