@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  #FINE-PRINT
+\*------------------------------------*/
+
+/* Simply makes the text smaller than normal.
+ *
+ * This is good for captions or footer text -- things that don't need as much
+ * attention, but are still important.
+ *
+ * Usage:
+
+   <p class="fine-print">Sample text</p>
+
+ */
+
+.fine-print,
+%fine-print {
+  @include font-size(14px);
+}
