@@ -21,7 +21,7 @@
 }
 
   .photo__caption {
-    @include font-size(14px);
+    @extend %fine-print;
     font-style: italic;
     text-align: center;
   }
