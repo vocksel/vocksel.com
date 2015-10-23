@@ -1,9 +1,11 @@
 /*------------------------------------*\
-  #INLINE BUTTON
+  #OMM-BUTTON
 \*------------------------------------*/
 
 /* Applies a simple rounded background to the element. Typically used on
  * anchors.
+ *
+ * Iinspired by OmmWriter's interface. (http://ommwriter.com)
  *
  * Usage:
 
@@ -14,8 +16,8 @@
 $inline-button-color: $neg-primary-color;
 $inline-button-color--hover: lighten($inline-button-color, 20);
 
-.inline-button,
-%inline-button {
+.omm-button,
+%omm-button {
   // The button looks best with a sans-serif font
   font-family: $sans-font-stack;
 
