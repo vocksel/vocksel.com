@@ -17,7 +17,8 @@
 
  */
 
-.gradient {
+.gradient,
+%gradient {
   &:before, &:after {
     content: "";
     z-index: 1;
@@ -27,14 +28,24 @@
   }
 }
 
-  .gradient__top:before {
-    background: linear-gradient(to bottom, $primary-color 10%, rgba(#fff, 0) 100%);
-    top: 0;
-    height: $page-spacing-top;
+  .gradient__top,
+  %gradient__top {
+    @extend %gradient;
+
+    &:before {
+      background: linear-gradient(to bottom, $primary-color 10%, rgba(#fff, 0) 100%);
+      top: 0;
+      height: $page-spacing-top;
+    }
   }
 
-  .gradient__bottom:after {
-    background: linear-gradient(to bottom, rgba(#fff, 0) 0%, $primary-color 90%);
-    bottom: 0;
-    height: $page-spacing-bottom;
+  .gradient__bottom,
+  %gradient__bottom {
+    @extend %gradient;
+
+    &:after {
+      background: linear-gradient(to bottom, rgba(#fff, 0) 0%, $primary-color 90%);
+      bottom: 0;
+      height: $page-spacing-bottom;
+    }
   }

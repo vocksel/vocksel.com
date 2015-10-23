@@ -26,7 +26,8 @@
 
 $wrapper-width: 680px;
 
-.wrapper {
+.wrapper,
+%wrapper {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: $spacing-unit;
@@ -36,11 +37,17 @@ $wrapper-width: 680px;
   }
 }
 
-.wrapper--page {
+.wrapper--page,
+%wrapper--page {
+  @extend %wrapper;
+
   width: $wrapper-width;
 }
 
-.wrapper--content {
+.wrapper--content,
+%wrapper--content {
+  @extend %wrapper;
+
   width: $wrapper-width - 100px;
 
   @include media-query(palm) {
