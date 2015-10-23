@@ -1,0 +1,12 @@
+
+$transition-speed: .2s;
+
+
+.grow,
+%grow {
+  transition: all $transition-speed;
+
+  &:hover {
+    transform: scale(1.025, 1.025)
+  }
+}
