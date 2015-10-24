@@ -28,7 +28,7 @@ $btn-blog-color: #e24e4b;
   border: 2px solid $btn-base-color;
   color: $btn-base-color;
 
-  transition: all .2s ease;
+  transition: all $transition-speed;
 
   &:hover {
     color: $btn-base-color;

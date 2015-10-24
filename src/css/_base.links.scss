@@ -11,7 +11,7 @@ a {
   text-decoration: none;
   border-bottom: $link-underline-height solid $link-color;
   font-weight: bold;
-  transition: all .2s;
+  transition: all $transition-speed;
 
   &:hover {
     color: $link-color--hover;
