@@ -42,4 +42,15 @@ $side-line-spacing: $small-spacing-unit;
     left: $side-line-spacing;
     margin-right: -50%;
   }
+
+  @include media-query(palm) {
+    &:before, &:after {
+      // Don't show the lines on smaller displays.
+      //
+      // This is in case a header is too long. If the header takes up more than
+      // one line, then one side line will be coming out the left of the first
+      // line, and the other will come out the right on the last line.
+      display: none;
+    }
+  }
 }
