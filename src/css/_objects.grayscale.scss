@@ -14,7 +14,7 @@
 %grayscale {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
-  transition: all .3s;
+  transition: all $transition-speed;
 
   &:hover {
     -webkit-filter: grayscale(0);
