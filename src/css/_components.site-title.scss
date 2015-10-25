@@ -11,7 +11,8 @@
  */
 
 .site-title {
-  @include font-size(50px);
+  @include font-size(52px);
   color: $neg-primary-color;
   margin-bottom: $large-spacing-unit;
+  letter-spacing: .025em;
 }
