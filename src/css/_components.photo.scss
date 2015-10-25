@@ -7,21 +7,33 @@
  *
  * Usage:
 
-    <figure>
-      <img class="photo" src="/img/example.jpg" alt="An Example Image">
-      <figcaption class="photo__caption">A caption that appears below the
-        image.</figcaption>
+    <figure class="photo">
+      <a class="photo__link" src="http://example.com">
+        <img class="photo__image" src="/img/example.jpg" alt="An Example Image">
+      </a>
+
+      <figcaption class="photo__caption">
+        A caption that appears below the image.
+      </figcaption>
     </figure>
 
  */
 
-.photo {
-  @extend %grayscale;
-  @extend %grow;
+.photo {}
 
-  // Keeps the photo and caption close together.
-  margin-bottom: $small-spacing-unit;
-}
+  .photo__link {
+    // Remove the default border applied to links so it doesn't appear behind
+    // the image.
+    border-bottom: none;
+  }
+
+  .photo__image {
+    @extend %grayscale;
+    @extend %grow;
+
+    // Keeps the photo and caption close together.
+    margin-bottom: $small-spacing-unit;
+  }
 
   .photo__caption {
     @extend %fine-print;
