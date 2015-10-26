@@ -20,7 +20,6 @@ var paths = {
   css:   'src/css',
   img:   'src/img',
   js:    'src/js',
-  fonts: 'src/fonts',
   dest: 'build',
 
   // These are static files that don't have any preprocessing, but still need to
@@ -62,12 +61,6 @@ gulp.task('scripts', function() {
     .pipe(plumber())
     .pipe(gulp.dest(paths.dest));
 });
-
-gulp.task('fonts', function() {
-  return gulp.src(join(paths.fonts, '**'), { base: paths.src })
-    .pipe(plumber())
-    .pipe(gulp.dest(paths.dest));
-})
 
 // Moving files that aren't processed by the above tasks.
 gulp.task('move', function() {
@@ -113,8 +106,7 @@ gulp.task('build', function() {
     'move',
     'styles',
     'images',
-    'scripts',
-    'fonts'
+    'scripts'
   ]);
 });
 
