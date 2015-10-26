@@ -2,6 +2,21 @@
   #BUTTONS
 \*------------------------------------*/
 
+/* Stylish social buttons.
+ *
+ * Font Awesome is used to add icons to the buttons.
+ * http://fontawesome.io/get-started/
+ *
+ * Usage:
+
+  <a class="[ btn--social  btn--twitter ] [ fa  fa-2x  fa-twitter]"
+     href="https://twitter.com/example">Twitter</a>
+
+  <a class="[ btn--social  btn--github ] [ fa  fa-2x  fa-github ]"
+     href="http://github.com/example">GitHub</a>
+
+ */
+
 $btn-base-color: #fff;
 $btn-twitter-color: #32abdf;
 $btn-github-color: #262124;
