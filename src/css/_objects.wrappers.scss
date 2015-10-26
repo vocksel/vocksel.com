@@ -4,21 +4,20 @@
 
 /* Wrappers for the page's content.
  *
- * `.wrapper--page` is the main class that will hold all the page's content,
- * then you use `.wrapper--content` inside of it to put the text at the desired
- * width.
+ * `.wrapper` is the main class that will hold all the page's content, then you
+ * use `.wrapper--content` inside of it to put the text at the desired width.
  *
  * This allows images to extend out past the content when placed as children of
- * `.wrapper--page`. It makes it "pop", so to speak.
+ * `.wrapper`. It makes it "pop", so to speak.
  *
  * Usage:
 
-     <div class="wrapper wrapper--page">
+     <div class="wrapper">
        <!-- This image will be a larger width than the paragraph in the below
-         section. -->
+         -- section. -->
        <img src="/img/sample.png">
 
-       <section class="wrapper wrapper--content">
+       <section class="wrapper--content">
          </p>Some sample content</p>
        </section>
      </div>
