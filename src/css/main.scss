@@ -9,7 +9,6 @@
  */
 @import "../bower_components/inuit-defaults/settings.defaults";
 @import "../bower_components/inuit-responsive-settings/settings.responsive";
-@import "settings.inuit";
 @import "settings.theme";
 
 /**
@@ -17,7 +16,6 @@
  */
 @import "../bower_components/inuit-mixins/tools.mixins";
 @import "../bower_components/inuit-responsive-tools/tools.responsive";
-@import "tools.mixins";
 @import "tools.aliases";
 
 /**
@@ -43,12 +41,8 @@
 /**
  * #OBJECTS
  */
-@import "objects.circle";
 @import "objects.fine-print";
-@import "objects.gradient";
 @import "objects.grayscale";
-@import "objects.grow";
-@import "objects.omm-button";
 @import "objects.list-inline";
 @import "objects.side-lines";
 @import "objects.wrappers";
@@ -56,9 +50,7 @@
 /**
  * COMPONENTS
  */
-@import "components.avatar";
 @import "components.background";
-@import "components.buttons";
 @import "components.page-micro";
 @import "components.photo";
 @import "components.site-title";
