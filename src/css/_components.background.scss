@@ -3,6 +3,8 @@
 \*------------------------------------*/
 
 .background {
-  background: url("/img/ommwriter.jpg") no-repeat fixed;
+  background-image: url("/img/ommwriter.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
