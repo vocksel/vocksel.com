@@ -43,7 +43,7 @@ gulp.task('clean', function(cb) {
 // =============================================================================
 
 gulp.task('styles', function() {
-  return gulp.src(join(paths.css, '**/*.scss'), { base: paths.src })
+  return gulp.src(join(paths.css, 'main.scss'), { base: paths.src })
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
