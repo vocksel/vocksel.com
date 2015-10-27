@@ -17,7 +17,9 @@
 
  */
 function colorScroll() {
-  var viewportCenter = "50%";
+  var inFocusOffset = "50%"; // Top of the image meets middle of viewport.
+  var outOfFocusOffset = "-10%"; // Last bit of the image meets top of viewport.
+
   var $photos = $(".js-color-scroll");
 
   function toggleColor(element) {
@@ -28,7 +30,8 @@ function colorScroll() {
     toggleColor(this.element)
   }
 
-  $photos.waypoint(waypointHandler, { offset: viewportCenter });
+  $photos.waypoint(waypointHandler, { offset: inFocusOffset });
+  $photos.waypoint(waypointHandler, { offset: outOfFocusOffset });
 }
 
 colorScroll()
