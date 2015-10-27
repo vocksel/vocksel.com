@@ -5,6 +5,15 @@
 // The base speed all transitions on the site will be based off of.
 $transition-speed: .2s;
 
+
+///*------------------------------------*\
+//  #FONTS
+//\*------------------------------------*/
+
+$sans-font-stack: "Droid Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$serif-font-stack: Merriweather, Georgia, Times, "Times New Roman", serif;
+
+
 ///*------------------------------------*\
 //  #COLORS
 //\*------------------------------------*/
@@ -19,13 +28,3 @@ $inuit-base-font-size: 17px;
 $inuit-base-line-height: 28px;
 $inuit-base-text-color: $text-color;
 $inuit-base-background-color: $primary-color;
-
-
-
-
-///*------------------------------------*\
-//  #FONTS
-//\*------------------------------------*/
-
-$sans-font-stack: "Droid Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
-$serif-font-stack: Merriweather, Georgia, Times, "Times New Roman", serif;
