@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  #COLORING
+\*------------------------------------*/
+
+/* Classes for setting the color of images.
+ *
+ * These are used in conjunction with Waypoints.js to dynamically change the
+ * color of images as you scroll past them.
+ *
+ * Usage:
+
+    <!-- Simply setting an image to grayscale. -->
+    <img class="grayscale" src="/img/sample.png">
+
+    <!-- This image will change from grayscale to color as you scroll. -->
+    <img class="js-color-scroll  grayscale" src="/img/sample.png">
+
+ */
+
+.grayscale,
+%grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  transition: all $transition-speed--slow;
+}
+
+.colorize,
+%colorize {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  transition: all $transition-speed--slow;
+}
