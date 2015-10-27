@@ -5,6 +5,8 @@
 // The base speed all transitions on the site will be based off of.
 $transition-speed: .2s;
 
+$transition-speed--slow: $transition-speed*2.5;
+
 
 ///*------------------------------------*\
 //  #FONTS
