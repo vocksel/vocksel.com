@@ -9,14 +9,14 @@
  */
 @import "../bower_components/inuit-defaults/settings.defaults";
 @import "../bower_components/inuit-responsive-settings/settings.responsive";
-@import "settings.theme";
+@import "settings/theme";
 
 /**
  * #TOOLS
  */
 @import "../bower_components/inuit-mixins/tools.mixins";
 @import "../bower_components/inuit-responsive-tools/tools.responsive";
-@import "tools.aliases";
+@import "tools/aliases";
 
 /**
  * #GENERIC
@@ -32,26 +32,26 @@
 @import "../bower_components/inuit-page/base.page";
 @import "../bower_components/inuit-headings/base.headings";
 @import "../bower_components/inuit-images/base.images";
-@import "base.page";
-@import "base.type";
-@import "base.links";
-@import "base.images";
-@import "base.quotes";
+@import "base/page";
+@import "base/type";
+@import "base/links";
+@import "base/images";
+@import "base/quotes";
 
 /**
  * #OBJECTS
  */
-@import "objects.centered-text";
-@import "objects.coloring";
-@import "objects.fine-print";
-@import "objects.list-inline";
-@import "objects.side-lines";
-@import "objects.wrappers";
+@import "objects/centered-text";
+@import "objects/coloring";
+@import "objects/fine-print";
+@import "objects/list-inline";
+@import "objects/side-lines";
+@import "objects/wrappers";
 
 /**
  * COMPONENTS
  */
-@import "components.background";
-@import "components.page-micro";
-@import "components.photo";
-@import "components.site-title";
+@import "components/background";
+@import "components/page-micro";
+@import "components/photo";
+@import "components/site-title";
