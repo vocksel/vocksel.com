@@ -2,6 +2,24 @@
   #BACKGROUND
 \*------------------------------------*/
 
+/* Applies a full-page background to the site.
+ *
+ * It would be ideal to apply the background to the <body> tag, but there is a
+ * strange bug on mobile where the background won't stay fixed.
+ *
+ * It appears that this is to do the `background-color` property applied by
+ * inuitcss' base.page partial. There is no clear indication why this happens.
+ *
+ * If someone knows of a fix, a pull request would be much appreciated.
+ *
+ * Usage:
+
+    <html lang="en" class="background">
+      ...
+    </html>
+
+ */
+
 .background {
   background-image: url("/img/ommwriter.jpg");
   background-repeat: no-repeat;
