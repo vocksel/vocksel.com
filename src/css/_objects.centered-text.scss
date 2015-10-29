@@ -1,0 +1,17 @@
+/*------------------------------------*\
+  #CENTERED-TEXT
+\*------------------------------------*/
+
+/* Simply centers text.
+ *
+ * Usage:
+
+    <p class="centered-text">Sample text that will be centered</p>
+
+ */
+
+.centered-text,
+%centered-text {
+  text-align: center;
+  margin: 0 auto;
+}

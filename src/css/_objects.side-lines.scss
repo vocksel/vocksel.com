@@ -20,8 +20,8 @@ $side-line-spacing: $small-spacing-unit;
 
 .side-lines,
 %side-lines {
+  @extend %centered-text;
   overflow: hidden;
-  text-align: center;
 
   &:before, &:after {
     background-color: $neg-primary-color;

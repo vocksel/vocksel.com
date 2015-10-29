@@ -34,6 +34,6 @@
 
   .photo__caption {
     @extend %fine-print;
+    @extend %centered-text;
     font-style: italic;
-    text-align: center;
   }

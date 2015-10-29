@@ -8,11 +8,11 @@ $masthead-bg-color: #303030;
 $masthead-font-stack: "Roboto Slab", $serif-font-stack;
 
 .masthead {
+  @extend %centered-text;
   background: url('../img/wojtek-witkowski-001.jpg') no-repeat center center fixed;
   background-color: $masthead-bg-color;
   background-size: cover;
   color: $masthead-color;
-  text-align: center;
 
   @include media-query(palm) {
     /* On mobile devices (atleast Android Firefox) the background follows as you
