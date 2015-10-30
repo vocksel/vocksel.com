@@ -13,135 +13,133 @@
   </head>
 
   <body>
-    <main class="wrapper">
-      <header id="top" class="wrapper--content">
-        <h1 class="site-title">David Minnerly</h1>
-      </header>
+    <header id="top" class="wrapper--content">
+      <h1 class="site-title">David Minnerly</h1>
+    </header>
 
-      <section id="about" class="wrapper--content">
-        <p>I'm a 19-year-old programming enthusiast living in the state of New
-          York. I aim to make a career out of server administration and network
-          security, and in my spare time I create websites and computer
-          programs.</p>
+    <section id="about" class="wrapper--content">
+      <p>I'm a 19-year-old programming enthusiast living in the state of New
+        York. I aim to make a career out of server administration and network
+        security, and in my spare time I create websites and computer
+        programs.</p>
 
-        <p>I frequently work on open-source projects. All of which can be found
-          on my <a href="https://github.com/voxeldavid">GitHub</a>.</p>
-      </section>
+      <p>I frequently work on open-source projects. All of which can be found
+        on my <a href="https://github.com/voxeldavid">GitHub</a>.</p>
+    </section>
 
-      <figure id="biking-picture" class="photo  wrapper--content">
-        <a class="photo__link" href="https://walkway.org/"
-           title="Visit the Walkway Over the Hudson's website">
+    <figure id="biking-picture" class="photo  wrapper--content">
+      <a class="photo__link" href="https://walkway.org/"
+         title="Visit the Walkway Over the Hudson's website">
+        <img class="photo__image  js-color-scroll  grayscale"
+             src="/img/biking.jpg">
+      </a>
+
+      <figcaption class="photo__caption">
+        A photo from my trip back home from the
+        <a href="https://walkway.org/">Walkway Over the Hudson</a>.
+      </figcaption>
+    </figure>
+
+    <section id="experience" class="wrapper--content">
+      <p>I got my first taste of programming when I was 13. I started out by
+        learning Lua on the online building game
+        <a href="http://roblox.com">ROBLOX</a>. Making my little blocky
+        creations come to life was amazing to me, and it became the foundation
+        for something more.</p>
+
+      <p>Since then I've branched out to learning about web design, picking up
+        on HTML, CSS and JavaScript along the way. I've experimented with
+        creating applications on <a href="https://angularjs.org">AngularJS</a>
+        and <a href="https://djangoproject.org">Django</a>, and both of them
+        were great fun to work with.</p>
+    </section>
+
+    <section id="fireflies" class="wrapper--content">
+      <h1 class="side-lines">Fireflies</h1>
+
+      <p><a href="http://fireflies.davidminnerly.com/">Fireflies</a> is a
+        small application that displays a quote and background image at
+        random every time the page is loaded.</p>
+
+      <figure class="photo">
+        <a class="photo__link" href="http://fireflies.davidminnerly.com/"
+           title="Check out Fireflies in person">
           <img class="photo__image  js-color-scroll  grayscale"
-               src="/img/biking.jpg">
+               src="/img/projects/fireflies.png">
         </a>
 
         <figcaption class="photo__caption">
-          A photo from my trip back home from the
-          <a href="https://walkway.org/">Walkway Over the Hudson</a>.
+          A screenshot of Fireflies in action.
         </figcaption>
       </figure>
 
-      <section id="experience" class="wrapper--content">
-        <p>I got my first taste of programming when I was 13. I started out by
-          learning Lua on the online building game
-          <a href="http://roblox.com">ROBLOX</a>. Making my little blocky
-          creations come to life was amazing to me, and it became the foundation
-          for something more.</p>
+      <p>It started as an <a href="https://angularjs.org">AngularJS</a> app.
+        It fit my needs very well at the start, but a major drawback to my
+        setup was that new images and quotes were cumbersome to implement.</p>
 
-        <p>Since then I've branched out to learning about web design, picking up
-          on HTML, CSS and JavaScript along the way. I've experimented with
-          creating applications on <a href="https://angularjs.org">AngularJS</a>
-          and <a href="https://djangoproject.org">Django</a>, and both of them
-          were great fun to work with.</p>
-      </section>
+      <p>I later fixed this by porting Fireflies to
+        <a href="https://djangoproject.org">Django</a>. This works
+        considerably better, as now when I want to add a new image or quote, I
+        can do it directly from the admin interface.</p>
 
-      <section id="fireflies" class="wrapper--content">
-        <h1 class="side-lines">Fireflies</h1>
+      <p>All of the backgrounds and quotes mean a lot to me, I picked ones
+        that I personally liked, and because of that I hold Fireflies very
+        near to my heart.</p>
+    </section>
 
-        <p><a href="http://fireflies.davidminnerly.com/">Fireflies</a> is a
-          small application that displays a quote and background image at
-          random every time the page is loaded.</p>
+    <section id="echo-ridge" class="wrapper--content">
+      <header>
+        <h1 class="side-lines">Echo Ridge</h1>
 
-        <figure class="photo">
-          <a class="photo__link" href="http://fireflies.davidminnerly.com/"
-             title="Check out Fireflies in person">
-            <img class="photo__image  js-color-scroll  grayscale"
-                 src="/img/projects/fireflies.png">
-          </a>
+        <p><a href="http://www.roblox.com/games/13525723/view?rbxp=1343930">
+          Echo Ridge</a> is a 3D recreation of the hub level in Mega Man Star
+          Force 3. I built it over the span of 3 months, and it has quickly
+          become my favorite ROBLOX project to date.</p>
+      </header>
 
-          <figcaption class="photo__caption">
-            A screenshot of Fireflies in action.
-          </figcaption>
-        </figure>
+      <figure class="photo">
+        <a class="photo__link" href="http://www.roblox.com/games/13525723/view?rbxp=1343930">
+          <img class="photo__image  js-color-scroll  grayscale"
+               src="/img/projects/echo-ridge.png">
+        </a>
 
-        <p>It started as an <a href="https://angularjs.org">AngularJS</a> app.
-          It fit my needs very well at the start, but a major drawback to my
-          setup was that new images and quotes were cumbersome to implement.</p>
+        <figcaption class="photo__caption">
+          A full view of Echo Ridge, featuring the Sky Wave.
+        </figcaption>
+      </figure>
 
-        <p>I later fixed this by porting Fireflies to
-          <a href="https://djangoproject.org">Django</a>. This works
-          considerably better, as now when I want to add a new image or quote, I
-          can do it directly from the admin interface.</p>
+      <p>I made the first version of Echo Ridge when I was 14, back in October
+        of 2010. Almost 4 and a half years later, I took another look at it
+        and felt it didn't do the original game justice.</p>
 
-        <p>All of the backgrounds and quotes mean a lot to me, I picked ones
-          that I personally liked, and because of that I hold Fireflies very
-          near to my heart.</p>
-      </section>
+      <p>Thanks to ROBLOX's modeling system I was able to achieve a much
+        higher level of detail. This also opened up the possibility to remove
+        all of the seam lines, giving the map a much cleaner appearance.</p>
 
-      <section id="echo-ridge" class="wrapper--content">
-        <header>
-          <h1 class="side-lines">Echo Ridge</h1>
+      <figure class="photo">
+        <a class="photo__link" href="http://www.roblox.com/games/13525723/view?rbxp=1343930">
+          <img class="photo__image  js-color-scroll  grayscale"
+               src="/img/projects/echo-ridge-comparison.png">
+        </a>
 
-          <p><a href="http://www.roblox.com/games/13525723/view?rbxp=1343930">
-            Echo Ridge</a> is a 3D recreation of the hub level in Mega Man Star
-            Force 3. I built it over the span of 3 months, and it has quickly
-            become my favorite ROBLOX project to date.</p>
-        </header>
+        <figcaption class="photo__caption">
+          Geo's house, now and then.
+        </figcaption>
+      </figure>
 
-        <figure class="photo">
-          <a class="photo__link" href="http://www.roblox.com/games/13525723/view?rbxp=1343930">
-            <img class="photo__image  js-color-scroll  grayscale"
-                 src="/img/projects/echo-ridge.png">
-          </a>
+      <p>This new version is a much better representation of Echo Ridge, and
+        it's an excellent example of the difference 4 years of experience can
+        make. It is one of my most detailed projects on ROBLOX, and overall
+        I'm very happy with how it turned out.</p>
+    </section>
 
-          <figcaption class="photo__caption">
-            A full view of Echo Ridge, featuring the Sky Wave.
-          </figcaption>
-        </figure>
-
-        <p>I made the first version of Echo Ridge when I was 14, back in October
-          of 2010. Almost 4 and a half years later, I took another look at it
-          and felt it didn't do the original game justice.</p>
-
-        <p>Thanks to ROBLOX's modeling system I was able to achieve a much
-          higher level of detail. This also opened up the possibility to remove
-          all of the seam lines, giving the map a much cleaner appearance.</p>
-
-        <figure class="photo">
-          <a class="photo__link" href="http://www.roblox.com/games/13525723/view?rbxp=1343930">
-            <img class="photo__image  js-color-scroll  grayscale"
-                 src="/img/projects/echo-ridge-comparison.png">
-          </a>
-
-          <figcaption class="photo__caption">
-            Geo's house, now and then.
-          </figcaption>
-        </figure>
-
-        <p>This new version is a much better representation of Echo Ridge, and
-          it's an excellent example of the difference 4 years of experience can
-          make. It is one of my most detailed projects on ROBLOX, and overall
-          I'm very happy with how it turned out.</p>
-      </section>
-
-      <footer id="bottom" class="page-micro fine-print">
-        <ul class="list-inline--delimited">
-          <li>&copy; 2015 David Minnerly
-          <li><a href="http://github.com/voxeldavid/voxeldavid-website">Website Source</a>
-          <li>Background from <a href="http://ommwriter.com">OmmWriter</a>
-        </ul>
-      </footer>
-    </main>
+    <footer id="bottom" class="page-micro fine-print">
+      <ul class="list-inline--delimited">
+        <li>&copy; 2015 David Minnerly
+        <li><a href="http://github.com/voxeldavid/voxeldavid-website">Website Source</a>
+        <li>Background from <a href="http://ommwriter.com">OmmWriter</a>
+      </ul>
+    </footer>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.waypoints.min.js"></script>
