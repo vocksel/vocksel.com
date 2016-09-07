@@ -5,13 +5,13 @@
   "author": "David Minnerly",
   "license": "MIT",
   "main": "gulpfile.js",
-  "homepage": "https://github.com/VoxelDavid/voxeldavid-website",
+  "homepage": "davidminnerly.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/VoxelDavid/voxeldavid.git"
+    "url": "git://github.com/VoxelDavid/voxeldavid-website.git"
   },
   "bugs": {
-    "url": "https://github.com/VoxelDavid/voxeldavid/issues"
+    "url": "https://github.com/VoxelDavid/voxeldavid-website/issues"
   },
   "devDependencies": {
     "del": "^0.1.3",
