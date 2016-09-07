@@ -118,7 +118,7 @@ function makeRelease(done) {
 }
 
 function setupRemote(remote) {
-  buildRepo.addRemote('origin', remove)
+  buildRepo.addRemote('origin', remote)
 }
 
 function setupStaging(done) {
