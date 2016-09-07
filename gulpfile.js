@@ -7,8 +7,6 @@ var del         = require('del');
 var path        = require('path');
 var runSequence = require('run-sequence');
 
-var join = path.join;
-
 
 // Configuration
 // =============================================================================
@@ -43,7 +41,7 @@ gulp.task('clean', function(cb) {
 // =============================================================================
 
 gulp.task('styles', function() {
-  return gulp.src(join(paths.css, 'main.scss'), { base: paths.src })
+  return gulp.src(path.join(paths.css, 'main.scss'), { base: paths.src })
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
@@ -52,12 +50,12 @@ gulp.task('styles', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src(join(paths.img, '**'), { base: paths.src })
+  return gulp.src(path.join(paths.img, '**'), { base: paths.src })
     .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(join(paths.js, '**'), { base: paths.src })
+  return gulp.src(path.join(paths.js, '**'), { base: paths.src })
     .pipe(plumber())
     .pipe(gulp.dest(paths.dest));
 });
@@ -90,11 +88,11 @@ gulp.task('watch', function() {
   gulp.watch(paths.static, ['move']);
 
   // Gets all Sass files, even the ones in bower_components.
-  gulp.watch(join(paths.src, '**/*.scss'), ['styles']);
+  gulp.watch(path.join(paths.src, '**/*.scss'), ['styles']);
 
-  gulp.watch(join(paths.img, '**'), ['images']);
+  gulp.watch(path.join(paths.img, '**'), ['images']);
 
-  gulp.watch(join(paths.js, '**'), ['scripts']);
+  gulp.watch(path.join(paths.js, '**'), ['scripts']);
 });
 
 
