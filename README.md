@@ -1,4 +1,4 @@
-## The Website of David Minnerly
+# The Website of David Minnerly
 
 This is the source code for my personal website, [davidminnerly.com](http://davidminnerly.com). It's a simple one-pager that leverages [inuitcss](https://github.com/inuitcss/getting-started), [Gulp](http://gulpjs.com) and numerous other amazing utilities.
 
