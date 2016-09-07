@@ -139,6 +139,7 @@ function push(done) {
 gulp.task('deploy:setup', gulp.series('build', makeRelease))
 gulp.task('deploy:staging', gulp.series('deploy:setup', setupStaging, push))
 gulp.task('deploy:prod', gulp.series('deploy:setup', setupProduction, push))
+gulp.task('deploy', gulp.parallel('deploy:staging'))
 
 
 // Default
