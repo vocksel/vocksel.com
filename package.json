@@ -14,7 +14,6 @@
     "url": "https://github.com/VoxelDavid/voxeldavid/issues"
   },
   "devDependencies": {
-    "concat-stream": "^1.5.0",
     "del": "^0.1.3",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-connect": "^5.0.0",
