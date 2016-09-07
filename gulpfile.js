@@ -62,6 +62,9 @@ function move() {
     .pipe(gulp.dest(paths.dest));
 }
 
+gulp.task('compile', gulp.parallel(move, styles, images, scripts))
+gulp.task('build', gulp.series(clean, 'compile'))
+
 
 // Development
 // =============================================================================
@@ -91,14 +94,10 @@ function watch(done) {
   done()
 }
 
+gulp.task('serve', gulp.series('build', server, watch))
+
 
 // Default
 // =============================================================================
-
-gulp.task('compile', gulp.parallel(move, styles, images, scripts))
-
-gulp.task('build', gulp.series(clean, 'compile'))
-
-gulp.task('serve', gulp.series('build', server, watch))
 
 gulp.task('default', gulp.parallel('serve'))
