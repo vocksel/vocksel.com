@@ -28,16 +28,12 @@ var paths = {
 }
 
 
-// Clean Up
+// Compiling
 // =============================================================================
 
 gulp.task(function clean(done) {
   del(paths.dest, done);
 });
-
-
-// Compiling
-// =============================================================================
 
 gulp.task('styles', function() {
   return gulp.src(path.join(paths.css, 'main.scss'), { base: paths.src })
