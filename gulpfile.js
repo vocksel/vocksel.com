@@ -5,7 +5,6 @@ var plumber     = require('gulp-plumber');
 
 var del         = require('del');
 var path        = require('path');
-var runSequence = require('run-sequence');
 
 
 // Configuration
@@ -32,8 +31,8 @@ var paths = {
 // Clean Up
 // =============================================================================
 
-gulp.task('clean', function(cb) {
-  del(paths.dest, cb);
+gulp.task(function clean(done) {
+  del(paths.dest, done);
 });
 
 
@@ -73,8 +72,7 @@ gulp.task('move', function() {
 
 gulp.task('server', function() {
   connect.server({
-    root: paths.dest,
-    port: 80
+    root: paths.dest
   });
 });
 
@@ -85,34 +83,26 @@ gulp.task('watch', function() {
   // Very helpful when working with Sass. If you mess up a variable name or
   // @import path, everything is still running fine.
 
-  gulp.watch(paths.static, ['move']);
+  gulp.watch(paths.static, gulp.parallel('move'));
 
   // Gets all Sass files, even the ones in bower_components.
-  gulp.watch(path.join(paths.src, '**/*.scss'), ['styles']);
+  gulp.watch(path.join(paths.src, '**/*.scss'), gulp.parallel('styles'));
 
-  gulp.watch(path.join(paths.img, '**'), ['images']);
+  gulp.watch(path.join(paths.img, '**'), gulp.parallel('images'));
 
-  gulp.watch(path.join(paths.js, '**'), ['scripts']);
+  gulp.watch(path.join(paths.js, '**'), gulp.parallel('scripts'));
+
+  done()
 });
 
 
 // Default
 // =============================================================================
 
-gulp.task('build', function() {
-  // Always clean the directory before compiling
-  runSequence('clean', [
-    'move',
-    'styles',
-    'images',
-    'scripts'
-  ]);
-});
+gulp.task('compile', gulp.parallel('move', 'styles', 'images', 'scripts'))
 
-gulp.task('serve', [
-  'build',
-  'server',
-  'watch'
-]);
+gulp.task('build', gulp.series('clean', 'compile'))
 
-gulp.task('default', ['serve']);
+gulp.task('serve', gulp.series('build', 'server', 'watch'));
+
+gulp.task('default', gulp.parallel('serve'))
