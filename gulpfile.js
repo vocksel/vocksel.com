@@ -5,6 +5,7 @@ var plumber     = require('gulp-plumber');
 
 var del         = require('del');
 var path        = require('path');
+var git         = require('simple-git')
 
 
 // Configuration
@@ -27,6 +28,12 @@ var paths = {
   ]
 }
 
+// Remote repositories for deploying the site. These can only be pushed to with
+// proper authorization.
+var remotes = {
+  staging: "ssh://git@davidminnerly.com/~/beta.davidminnerly.git",
+  production: "ssh://git@davidminnerly.com/~/davidminnerly.git"
+}
 
 // Compiling
 // =============================================================================
@@ -95,6 +102,43 @@ function watch(done) {
 }
 
 gulp.task('serve', gulp.series('build', server, watch))
+
+
+// Deployment
+// =============================================================================
+
+var buildRepo = git(paths.dest)
+
+function makeRelease(done) {
+  buildRepo
+    .init()
+    .add('.')
+    .commit("Release");
+  done()
+}
+
+function setupRemote(remote) {
+  buildRepo.addRemote('origin', remove)
+}
+
+function setupStaging(done) {
+  setupRemote(remotes.staging)
+  done()
+}
+
+function setupProduction(done) {
+  setupRemotes(remotes.production)
+  done()
+}
+
+function push(done) {
+  buildRepo.push(['-f', 'origin', 'master']);
+  done()
+}
+
+gulp.task('deploy:setup', gulp.series('build', makeRelease))
+gulp.task('deploy:staging', gulp.series('deploy:setup', setupStaging, push))
+gulp.task('deploy:prod', gulp.series('deploy:setup', setupProduction, push))
 
 
 // Default
