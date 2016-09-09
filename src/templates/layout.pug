@@ -1,0 +1,23 @@
+doctype html
+html(lang="en" class="background")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+
+    block title
+      title David Minnerly
+
+    link(rel="stylesheet" href="/css/main.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans|Merriweather")
+    link(rel="shortcut icon" href="/img/favicon.png")
+
+  body
+    include header.pug
+
+    block content
+
+    include footer.pug
+
+    script(src="/js/jquery.min.js")
+    script(src="/js/jquery.waypoints.min.js")
+    script(src="/js/main.js")

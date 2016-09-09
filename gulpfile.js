@@ -2,6 +2,7 @@ var gulp        = require('gulp');
 var connect     = require('gulp-connect');
 var sass        = require('gulp-sass');
 var plumber     = require('gulp-plumber');
+var pug         = require('gulp-pug'); // formerly Jade
 
 var del         = require('del');
 var path        = require('path');
@@ -23,8 +24,7 @@ var paths = {
   // These are static files that don't have any preprocessing, but still need to
   // be moved when building the site.
   static: [
-    'src/favicon.ico',
-    'src/**/*.html'
+    'src/favicon.ico'
   ]
 }
 
@@ -62,6 +62,13 @@ function scripts() {
     .pipe(gulp.dest(paths.dest));
 }
 
+function templates() {
+  return gulp.src(path.join(paths.src, '*.pug'))
+    .pipe(plumber())
+    .pipe(pug())
+    .pipe(gulp.dest(paths.dest));
+}
+
 // Moving files that aren't processed by the above tasks.
 function move() {
   return gulp.src(paths.static)
@@ -69,7 +76,7 @@ function move() {
     .pipe(gulp.dest(paths.dest));
 }
 
-gulp.task('compile', gulp.parallel(move, styles, images, scripts))
+gulp.task('compile', gulp.parallel(move, templates, styles, images, scripts))
 gulp.task('build', gulp.series(clean, 'compile'))
 
 
@@ -97,6 +104,8 @@ function watch(done) {
   gulp.watch(path.join(paths.img, '**'), images);
 
   gulp.watch(path.join(paths.js, '**'), scripts);
+
+  gulp.watch(path.join(paths.src, '**/*.pug'), templates);
 
   done()
 }
