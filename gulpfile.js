@@ -101,7 +101,7 @@ function watch(done) {
   done()
 }
 
-gulp.task('serve', gulp.series('build', server, watch))
+gulp.task('serve', gulp.series('build', gulp.parallel(server, watch)))
 
 
 // Deployment
