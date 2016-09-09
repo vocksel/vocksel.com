@@ -1,0 +1,36 @@
+//- These mixins are for generating site-specific content.
+//-
+//- Everything here is based off of the site's needs and written according to
+//- the styling.
+
+mixin header(title)
+  h1.side-lines= title
+
+mixin section(id)
+  section(id=id, class="wrapper--content")
+    block
+
+//- This:
+//-
+//-   +picture("/img/picture.png", "http://example.com", "A picture!")
+//-   | A little caption underneath the picture describing it.
+//-
+//- Becomes this:
+//-
+//-   <figure class="photo">
+//-     <a href="http://example.com" title="A picture!"
+//-       <img class="photo__image js-color-scroll grayscale"
+//-            src="/img/picture.png">
+//-     </a>
+//-
+//-     <figcaption class="photo__caption">
+//-       A little caption underneath the picture describing it.
+//-     </figcaption>
+//-   </figure>
+mixin picture(imageUrl, href, title)
+  figure.photo
+    a.photo__link(href=href title=title)
+      img.photo__image.js-color-scroll.grayscale(src=imageUrl)
+
+    figcaption.photo__caption
+      block
