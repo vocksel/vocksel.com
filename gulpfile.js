@@ -12,6 +12,13 @@ var git         = require('simple-git')
 // Configuration
 // =============================================================================
 
+var locals = {
+  site: {
+    title: 'David Minnerly',
+    url: 'http://davidminnerly.com'
+  }
+}
+
 // Locations where files are stored. Commonly used with 'path.join' and a
 // globbing pattern
 var paths = {
@@ -65,7 +72,9 @@ function scripts() {
 function templates() {
   return gulp.src(path.join(paths.src, '*.pug'))
     .pipe(plumber())
-    .pipe(pug())
+    .pipe(pug({
+      locals: locals
+    }))
     .pipe(gulp.dest(paths.dest));
 }
 
