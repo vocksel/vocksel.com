@@ -1,12 +1,12 @@
-var gulp        = require('gulp');
-var connect     = require('gulp-connect');
-var sass        = require('gulp-sass');
-var plumber     = require('gulp-plumber');
-var pug         = require('gulp-pug'); // formerly Jade
+var gulp = require('gulp');
+var connect = require('gulp-connect');
+var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
+var pug = require('gulp-pug'); // formerly Jade
 
-var del         = require('del');
-var path        = require('path');
-var git         = require('simple-git')
+var del = require('del');
+var path = require('path');
+var git = require('simple-git')
 
 
 // Configuration
@@ -22,10 +22,10 @@ var locals = {
 // Locations where files are stored. Commonly used with 'path.join' and a
 // globbing pattern
 var paths = {
-  src:   'src',
-  css:   'src/css',
-  img:   'src/img',
-  js:    'src/js',
+  src: 'src',
+  css: 'src/css',
+  img: 'src/img',
+  js: 'src/js',
   dest: 'build',
 
   // These are static files that don't have any preprocessing, but still need to
