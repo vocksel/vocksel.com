@@ -87,7 +87,6 @@ function templates() {
 // Moving files that aren't processed by the above tasks.
 function move() {
   return gulp.src(paths.static)
-    .pipe(plumber())
     .pipe(gulp.dest(BUILD_DIR));
 }
 
