@@ -14,10 +14,10 @@
     "url": "https://github.com/VoxelDavid/voxeldavid-website/issues"
   },
   "devDependencies": {
-    "del": "^0.1.3",
+    "del": "^2.2.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-connect": "^5.0.0",
-    "gulp-plumber": "^0.6.6",
+    "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.4",
     "gulp-sass": "^2.0.4",
     "simple-git": "^1.48.0"
