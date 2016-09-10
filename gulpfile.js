@@ -3,6 +3,8 @@ var connect = require('gulp-connect');
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var pug = require('gulp-pug'); // formerly Jade
+var rename = require('gulp-rename');
+var gulpif = require('gulp-if');
 
 var del = require('del');
 var path = require('path');
@@ -75,12 +77,19 @@ function scripts() {
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-function templates() {
-  return gulp.src(path.join(SOURCE_DIR, '*.pug'))
+function views() {
+  return gulp.src([ src('*.pug'), '!index.pug' ])
     .pipe(plumber())
-    .pipe(pug({
-      locals: locals
-    }))
+    .pipe(pug({ locals: locals }))
+
+    // Compiles the index file to the root, and any other `pug` files to a
+    // folder with an `index.html`. This allows you to access the pages at
+    // http://davidminnerly.com/page/, instead of having a trailing `.html`
+    .pipe(gulpif('!index*', rename((p) => {
+      p.dirname = path.join(p.dirname, p.basename)
+      p.basename = 'index'
+    })))
+
     .pipe(gulp.dest(BUILD_DIR));
 }
 
@@ -90,7 +99,7 @@ function move() {
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-gulp.task('compile', gulp.parallel(move, templates, styles, images, scripts));
+gulp.task('compile', gulp.parallel(move, views, styles, images, scripts));
 gulp.task('build', gulp.series(clean, 'compile'));
 
 
