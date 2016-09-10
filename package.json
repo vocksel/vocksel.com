@@ -17,8 +17,10 @@
     "del": "^2.2.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-connect": "^5.0.0",
+    "gulp-if": "^2.0.1",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.4",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "simple-git": "^1.48.0"
   }
