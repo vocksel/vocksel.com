@@ -17,8 +17,8 @@ const SOURCE_DIR = 'src'
 const BUILD_DIR = 'build'
 
 // Used for retrieving files/folders in the source directory.
-function src(path) {
-  return path.join(SOURCE_DIR, path)
+function src(f) {
+  return path.join(SOURCE_DIR, f);
 }
 
 var locals = {
