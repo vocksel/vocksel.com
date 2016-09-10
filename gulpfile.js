@@ -114,13 +114,13 @@ function watch(done) {
   gulp.watch(paths.static, move);
 
   // Gets all Sass files, even the ones in bower_components.
-  gulp.watch(path.join(SOURCE_DIR, '**/*.scss'), styles);
+  gulp.watch(src('**/*.scss'), styles);
 
   gulp.watch(path.join(paths.img, '**'), images);
 
   gulp.watch(path.join(paths.js, '**'), scripts);
 
-  gulp.watch(path.join(SOURCE_DIR, '**/*.pug'), templates);
+  gulp.watch(src('**/*.pug'), templates);
 
   done()
 }
