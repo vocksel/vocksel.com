@@ -52,7 +52,7 @@ var remotes = {
 // =============================================================================
 
 function clean(done) {
-  del(BUILD_DIR, done);
+  return del(BUILD_DIR, done);
 }
 
 function styles() {
