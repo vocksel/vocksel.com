@@ -12,6 +12,15 @@ var git = require('simple-git')
 // Configuration
 // =============================================================================
 
+// This is where the source code is stored.
+const SOURCE_DIR = 'src'
+const BUILD_DIR = 'build'
+
+// Used for retrieving files/folders in the source directory.
+function src(path) {
+  return path.join(SOURCE_DIR, path)
+}
+
 var locals = {
   site: {
     title: 'David Minnerly',
@@ -19,19 +28,16 @@ var locals = {
   }
 }
 
-// Locations where files are stored. Commonly used with 'path.join' and a
-// globbing pattern
+// Paths to the files that need to be compiled.
 var paths = {
-  src: 'src',
-  css: 'src/css',
-  img: 'src/img',
-  js: 'src/js',
-  dest: 'build',
+  css: src('css'),
+  img: src('img'),
+  js: src('js'),
 
-  // These are static files that don't have any preprocessing, but still need to
-  // be moved when building the site.
+  // Static files that don't require pre-processing. They're simply moved when
+  // building the site.
   static: [
-    'src/favicon.ico'
+    src('favicon.ico')
   ]
 }
 
@@ -46,43 +52,43 @@ var remotes = {
 // =============================================================================
 
 function clean(done) {
-  del(paths.dest, done);
+  del(BUILD_DIR, done);
 }
 
 function styles() {
-  return gulp.src(path.join(paths.css, 'main.scss'), { base: paths.src })
+  return gulp.src(path.join(paths.css, 'main.scss'), { base: SOURCE_DIR })
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
     }))
-    .pipe(gulp.dest(paths.dest));
+    .pipe(gulp.dest(BUILD_DIR));
 }
 
 function images() {
-  return gulp.src(path.join(paths.img, '**'), { base: paths.src })
-    .pipe(gulp.dest(paths.dest));
+  return gulp.src(path.join(paths.img, '**'), { base: SOURCE_DIR })
+    .pipe(gulp.dest(BUILD_DIR));
 }
 
 function scripts() {
-  return gulp.src(path.join(paths.js, '**'), { base: paths.src })
+  return gulp.src(path.join(paths.js, '**'), { base: SOURCE_DIR })
     .pipe(plumber())
-    .pipe(gulp.dest(paths.dest));
+    .pipe(gulp.dest(BUILD_DIR));
 }
 
 function templates() {
-  return gulp.src(path.join(paths.src, '*.pug'))
+  return gulp.src(path.join(SOURCE_DIR, '*.pug'))
     .pipe(plumber())
     .pipe(pug({
       locals: locals
     }))
-    .pipe(gulp.dest(paths.dest));
+    .pipe(gulp.dest(BUILD_DIR));
 }
 
 // Moving files that aren't processed by the above tasks.
 function move() {
   return gulp.src(paths.static)
     .pipe(plumber())
-    .pipe(gulp.dest(paths.dest));
+    .pipe(gulp.dest(BUILD_DIR));
 }
 
 gulp.task('compile', gulp.parallel(move, templates, styles, images, scripts))
@@ -94,7 +100,7 @@ gulp.task('build', gulp.series(clean, 'compile'))
 
 function server() {
   connect.server({
-    root: paths.dest
+    root: BUILD_DIR
   });
 }
 
@@ -108,13 +114,13 @@ function watch(done) {
   gulp.watch(paths.static, move);
 
   // Gets all Sass files, even the ones in bower_components.
-  gulp.watch(path.join(paths.src, '**/*.scss'), styles);
+  gulp.watch(path.join(SOURCE_DIR, '**/*.scss'), styles);
 
   gulp.watch(path.join(paths.img, '**'), images);
 
   gulp.watch(path.join(paths.js, '**'), scripts);
 
-  gulp.watch(path.join(paths.src, '**/*.pug'), templates);
+  gulp.watch(path.join(SOURCE_DIR, '**/*.pug'), templates);
 
   done()
 }
@@ -125,7 +131,7 @@ gulp.task('serve', gulp.series('build', gulp.parallel(server, watch)))
 // Deployment
 // =============================================================================
 
-var buildRepo = git(paths.dest)
+var buildRepo = git(BUILD_DIR)
 
 function makeRelease(done) {
   buildRepo
