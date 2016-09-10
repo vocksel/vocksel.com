@@ -6,7 +6,7 @@ var pug = require('gulp-pug'); // formerly Jade
 
 var del = require('del');
 var path = require('path');
-var git = require('simple-git')
+var git = require('simple-git');
 
 
 // Configuration
@@ -44,8 +44,8 @@ var paths = {
 // Remote repositories for deploying the site. These can only be pushed to with
 // proper authorization.
 var remotes = {
-  staging: "ssh://git@davidminnerly.com/~/beta.davidminnerly.git",
-  production: "ssh://git@davidminnerly.com/~/davidminnerly.git"
+  staging: 'ssh://git@davidminnerly.com/~/beta.davidminnerly.git',
+  production: 'ssh://git@davidminnerly.com/~/davidminnerly.git'
 }
 
 // Compiling
@@ -91,8 +91,8 @@ function move() {
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-gulp.task('compile', gulp.parallel(move, templates, styles, images, scripts))
-gulp.task('build', gulp.series(clean, 'compile'))
+gulp.task('compile', gulp.parallel(move, templates, styles, images, scripts));
+gulp.task('build', gulp.series(clean, 'compile'));
 
 
 // Development
@@ -137,7 +137,7 @@ function makeRelease(done) {
   buildRepo
     .init()
     .add('.')
-    .commit("Release");
+    .commit('Release');
   done()
 }
 
@@ -160,13 +160,13 @@ function push(done) {
   done()
 }
 
-gulp.task('deploy:setup', gulp.series('build', makeRelease))
-gulp.task('deploy:staging', gulp.series('deploy:setup', setupStaging, push))
-gulp.task('deploy:prod', gulp.series('deploy:setup', setupProduction, push))
-gulp.task('deploy', gulp.parallel('deploy:staging'))
+gulp.task('deploy:setup', gulp.series('build', makeRelease));
+gulp.task('deploy:staging', gulp.series('deploy:setup', setupStaging, push));
+gulp.task('deploy:prod', gulp.series('deploy:setup', setupProduction, push));
+gulp.task('deploy', gulp.parallel('deploy:staging'));
 
 
 // Default
 // =============================================================================
 
-gulp.task('default', gulp.parallel('serve'))
+gulp.task('default', gulp.parallel('serve'));
