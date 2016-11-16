@@ -8,10 +8,10 @@
   "homepage": "davidminnerly.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/VoxelDavid/voxeldavid-website.git"
+    "url": "git://github.com/VoxelDavid/my-website.git"
   },
   "bugs": {
-    "url": "https://github.com/VoxelDavid/voxeldavid-website/issues"
+    "url": "https://github.com/VoxelDavid/my-website/issues"
   },
   "devDependencies": {
     "del": "^2.2.2",
