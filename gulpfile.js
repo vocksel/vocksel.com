@@ -128,7 +128,7 @@ function watch(done) {
 
   gulp.watch(path.join(paths.js, '**'), scripts);
 
-  gulp.watch(src('**/*.pug'), templates);
+  gulp.watch(src('**/*.pug'), views);
 
   done()
 }
