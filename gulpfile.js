@@ -160,7 +160,7 @@ function setupStaging(done) {
 }
 
 function setupProduction(done) {
-  setupRemotes(remotes.production)
+  setupRemote(remotes.production)
   done()
 }
 
