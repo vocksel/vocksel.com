@@ -11,8 +11,8 @@
  */
 
 .site-title {
-  @include font-size(52px);
+  @include inuit-font-size(52px);
   color: $neg-primary-color;
-  margin-bottom: $large-spacing-unit;
+  margin-bottom: $inuit-global-spacing-unit-large;
   letter-spacing: .025em;
 }

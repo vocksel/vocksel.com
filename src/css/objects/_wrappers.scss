@@ -29,7 +29,7 @@ $wrapper-width: 680px;
 %wrapper {
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $inuit-global-spacing-unit;
 
   width: $wrapper-width;
 
@@ -46,6 +46,6 @@ $wrapper-width: 680px;
 
   @include mq($from: mobile) {
     // Padding the sides of the text to make it easier to read
-    padding: 0 $small-spacing-unit;
+    padding: 0 $inuit-global-spacing-unit-small;
   }
 }

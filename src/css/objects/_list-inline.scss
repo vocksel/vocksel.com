@@ -30,7 +30,7 @@
 
   > li + li {
     &:before {
-      padding: 0 $small-spacing-unit/2;
+      padding: 0 $inuit-global-spacing-unit-tiny;
       content: "\00B7"; /* Midle dot (·) */
     }
   }
