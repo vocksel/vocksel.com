@@ -82,6 +82,12 @@
 // Gulp is setup to include node_modules as a path to look for @import matches
 // so we don't have to reference parent folders (../../node_modules/inuitcss).
 
+// All commented inuitcss partials are to be kept for potential future use.
+//
+// While there is no intention of making use of these partials, they are being
+// left in so that we don't forget they exist and write a brand new partial that
+// does the same thing.
+
 // SETTINGS
 @import "inuitcss/settings/example.settings.config";
 $inuit-global-font-size: 17px;
@@ -93,8 +99,8 @@ $inuit-global-line-height: 28px;
 // TOOLS
 @import "inuitcss/tools/tools.rem";
 @import "inuitcss/tools/tools.font-size";
-@import "inuitcss/tools/tools.clearfix";
-@import "inuitcss/tools/tools.hidden";
+// @import "inuitcss/tools/tools.clearfix";
+// @import "inuitcss/tools/tools.hidden";
 @import "sass-mq/mq"; // Installed by inuitcss. This is the Media Query library it uses.
 
 // GENERIC
@@ -115,18 +121,18 @@ $inuit-global-line-height: 28px;
 @import "elements/quotes";
 
 // OBJECTS
-@import "inuitcss/objects/objects.wrapper";
-@import "inuitcss/objects/objects.layout";
-@import "inuitcss/objects/objects.media";
-@import "inuitcss/objects/objects.flag";
-@import "inuitcss/objects/objects.list-bare";
-@import "inuitcss/objects/objects.list-inline";
-@import "inuitcss/objects/objects.box";
-@import "inuitcss/objects/objects.block";
-@import "inuitcss/objects/objects.ratio";
-@import "inuitcss/objects/objects.crop";
-@import "inuitcss/objects/objects.tables";
-@import "inuitcss/objects/objects.pack";
+// @import "inuitcss/objects/objects.wrapper";
+// @import "inuitcss/objects/objects.layout";
+// @import "inuitcss/objects/objects.media";
+// @import "inuitcss/objects/objects.flag";
+// @import "inuitcss/objects/objects.list-bare";
+// @import "inuitcss/objects/objects.list-inline";
+// @import "inuitcss/objects/objects.box";
+// @import "inuitcss/objects/objects.block";
+// @import "inuitcss/objects/objects.ratio";
+// @import "inuitcss/objects/objects.crop";
+// @import "inuitcss/objects/objects.tables";
+// @import "inuitcss/objects/objects.pack";
 @import "objects/centered-text";
 @import "objects/coloring";
 @import "objects/fine-print";
@@ -141,11 +147,11 @@ $inuit-global-line-height: 28px;
 @import "components/site-title";
 
 // UTILITIES
-@import "inuitcss/utilities/utilities.clearfix";
+// @import "inuitcss/utilities/utilities.clearfix";
 
 $inuit-offsets: true;
-@import "inuitcss/utilities/utilities.widths";
-@import "inuitcss/utilities/utilities.headings";
-@import "inuitcss/utilities/utilities.spacing";
+// @import "inuitcss/utilities/utilities.widths";
+// @import "inuitcss/utilities/utilities.headings";
+// @import "inuitcss/utilities/utilities.spacing";
 @import "inuitcss/utilities/utilities.print";
-@import "inuitcss/utilities/utilities.hide";
+// @import "inuitcss/utilities/utilities.hide";
