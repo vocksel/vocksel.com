@@ -109,11 +109,11 @@ $inuit-global-line-height: 28px;
 @import "inuitcss/elements/elements.headings";
 @import "inuitcss/elements/elements.images";
 @import "inuitcss/elements/elements.tables";
-@import "base/page";
-@import "base/type";
-@import "base/links";
-@import "base/images";
-@import "base/quotes";
+@import "elements/page";
+@import "elements/type";
+@import "elements/links";
+@import "elements/images";
+@import "elements/quotes";
 
 // OBJECTS
 @import "inuitcss/objects/objects.wrapper";
