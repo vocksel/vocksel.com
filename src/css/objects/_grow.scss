@@ -14,7 +14,7 @@
 
 .grow,
 %grow {
-  transition: all $transition-speed;
+  transition: all $global-transition;
 
   &:hover {
     transform: scale(1.025, 1.025)

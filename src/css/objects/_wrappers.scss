@@ -33,7 +33,7 @@ $wrapper-width: 680px;
 
   width: $wrapper-width;
 
-  @include media-query(palm) {
+  @include mq($from: mobile) {
     max-width: 100%;
   }
 }
@@ -44,7 +44,7 @@ $wrapper-width: 680px;
 
   width: $wrapper-width - 100px;
 
-  @include media-query(palm) {
+  @include mq($from: mobile) {
     // Padding the sides of the text to make it easier to read
     padding: 0 $small-spacing-unit;
   }

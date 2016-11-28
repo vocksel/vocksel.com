@@ -47,7 +47,7 @@ $side-line-spacing: $small-spacing-unit;
   // where the case mentioned below is not a problem. In the event that it is,
   // this can be uncommented.
 
-  // @include media-query(palm) {
+  // @include mq(palm) {
   //   &:before, &:after {
   //     // Don't show the lines on smaller displays.
   //     //

@@ -22,6 +22,7 @@
     "gulp-pug": "^3.0.4",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
-    "simple-git": "^1.48.0"
+    "simple-git": "^1.48.0",
+    "inuitcss": "^6.0.0-beta.4"
   }
 }

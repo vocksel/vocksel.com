@@ -10,7 +10,3 @@ build/
 
 node_modules/
 *.log
-
-# Bower
-
-src/bower_components
