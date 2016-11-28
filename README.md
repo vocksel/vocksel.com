@@ -9,9 +9,8 @@ This is my first project working with inuitcss and Gulp. inuitcss is absolutely 
 This project uses the [Gulp](http://gulpjs.com) build system for all of its tasks. You'll need a copy of [Node](http://nodejs.org) installed to download the dependencies.
 
 ```bash
-$ npm install -g gulp-cli bower
+$ npm install -g gulp-cli
 $ npm install
-$ bower install
 ```
 
 The main task you'll be interested in is `gulp serve` which will build all of the files under `src/` and serve them up in the browser at [localhost:8080](http://localhost:8080).
