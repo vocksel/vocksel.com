@@ -6,8 +6,8 @@ $quote-border-size: 2px;
 
 blockquote {
   /* Pushes the border to the outside of the page */
-  margin-left: -$spacing-unit;
-  padding-left: $spacing-unit - $quote-border-size;
+  margin-left: -$inuit-global-spacing-unit;
+  padding-left: $inuit-global-spacing-unit - $quote-border-size;
 
   font-family: $serif-font-stack;
   border-left: $quote-border-size solid $accent-color;
