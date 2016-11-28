@@ -1,14 +1,4 @@
 ///*------------------------------------*\
-//  #EFFECTS
-//\*------------------------------------*/
-
-// The base speed all transitions on the site will be based off of.
-$transition-speed: .2s;
-
-$transition-speed--slow: $transition-speed*2.5;
-
-
-///*------------------------------------*\
 //  #FONTS
 //\*------------------------------------*/
 
@@ -26,7 +16,5 @@ $accent-color: #e3224c;
 $text-color: #011920;
 $neg-text-color: #f5f5f5;
 
-$inuit-base-font-size: 17px;
-$inuit-base-line-height: 28px;
-$inuit-base-text-color: $text-color;
-$inuit-base-background-color: $primary-color;
+$inuit-global-text-color: $text-color;
+$inuit-global-background-color: $primary-color;

@@ -21,12 +21,12 @@
 %grayscale {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
-  transition: all $transition-speed--slow;
+  transition: all $global-transition--slow;
 }
 
 .colorize,
 %colorize {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
-  transition: all $transition-speed--slow;
+  transition: all $global-transition--slow;
 }

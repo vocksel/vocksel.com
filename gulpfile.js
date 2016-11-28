@@ -61,7 +61,15 @@ function styles() {
   return gulp.src(path.join(paths.css, 'main.scss'), { base: SOURCE_DIR })
     .pipe(plumber())
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'compressed',
+      includePaths: [
+        // Anything installed via NPM can be easily referenced by its folder
+        // name when importing.
+        //
+        // For example, instead of "../../node_modules/inuitcss", we can simply
+        // use "inuitcss".
+        path.join(__dirname, 'node_modules')
+      ]
     }))
     .pipe(gulp.dest(BUILD_DIR));
 }
