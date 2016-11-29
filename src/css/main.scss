@@ -94,7 +94,8 @@ $inuit-global-font-size: 17px;
 $inuit-global-line-height: 28px;
 @import "inuitcss/settings/settings.core";
 @import "settings/global";
-@import "settings/theme";
+@import "settings/colors";
+@import "settings/fonts";
 
 // TOOLS
 @import "inuitcss/tools/tools.rem";
