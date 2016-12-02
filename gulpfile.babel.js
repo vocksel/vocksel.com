@@ -31,12 +31,12 @@ const locals = {
 // Paths to the files that need to be compiled.
 const paths = {
   css: src('css'),
-  img: src('img'),
-  js: src('js'),
 
   // Static files that don't require pre-processing. They're simply moved when
   // building the site.
   static: [
+    src('img/**'),
+    src('js/**'),
     src('favicon.ico')
   ]
 }
@@ -72,17 +72,6 @@ export function styles() {
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-export function images() {
-  return gulp.src(path.join(paths.img, '**'), { base: SOURCE_DIR })
-    .pipe(gulp.dest(BUILD_DIR));
-}
-
-export function scripts() {
-  return gulp.src(path.join(paths.js, '**'), { base: SOURCE_DIR })
-    .pipe(plumber())
-    .pipe(gulp.dest(BUILD_DIR));
-}
-
 export function views() {
   return gulp.src([ src('*.pug'), '!index.pug' ])
     .pipe(plumber())
@@ -101,7 +90,7 @@ export function views() {
 
 // Moving files that aren't processed by the above tasks.
 export function move() {
-  return gulp.src(paths.static)
+  return gulp.src(paths.static, { base: SOURCE_DIR })
     .pipe(gulp.dest(BUILD_DIR));
 }
 
@@ -125,10 +114,6 @@ export function watch(done) {
 
   // Gets all Sass files, even the ones in bower_components.
   gulp.watch(src('**/*.scss'), styles);
-
-  gulp.watch(path.join(paths.img, '**'), images);
-
-  gulp.watch(path.join(paths.js, '**'), scripts);
 
   gulp.watch(src('**/*.pug'), views);
 
@@ -170,7 +155,7 @@ function push(done) {
 // Default
 // =============================================================================
 
-export const compile = gulp.parallel(move, views, styles, scripts)
+export const compile = gulp.parallel(move, views, styles)
 export const build = gulp.series(clean, compile)
 export const serve = gulp.series(build, gulp.parallel(server, watch));
 
