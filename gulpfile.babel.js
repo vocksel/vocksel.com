@@ -1,15 +1,13 @@
-var gulp = require('gulp');
-var connect = require('gulp-connect');
-var sass = require('gulp-sass');
-var plumber = require('gulp-plumber');
-var pug = require('gulp-pug'); // formerly Jade
-var rename = require('gulp-rename');
-var gulpif = require('gulp-if');
-
-var del = require('del');
-var path = require('path');
-var git = require('simple-git');
-
+import gulp from 'gulp';
+import connect from 'gulp-connect';
+import sass from 'gulp-sass';
+import plumber from 'gulp-plumber';
+import pug from 'gulp-pug';
+import rename from 'gulp-rename';
+import gulpif from 'gulp-if';
+import del from 'del';
+import path from 'path';
+import git from 'simple-git'
 
 // Configuration
 // =============================================================================
@@ -23,7 +21,7 @@ function src(f) {
   return path.join(SOURCE_DIR, f);
 }
 
-var locals = {
+const locals = {
   site: {
     title: 'David Minnerly',
     url: 'http://davidminnerly.com'
@@ -31,7 +29,7 @@ var locals = {
 }
 
 // Paths to the files that need to be compiled.
-var paths = {
+const paths = {
   css: src('css'),
   img: src('img'),
   js: src('js'),
@@ -53,11 +51,11 @@ var remotes = {
 // Compiling
 // =============================================================================
 
-function clean(done) {
-  return del(BUILD_DIR, done);
+export function clean() {
+  return del(BUILD_DIR)
 }
 
-function styles() {
+export function styles() {
   return gulp.src(path.join(paths.css, 'main.scss'), { base: SOURCE_DIR })
     .pipe(plumber())
     .pipe(sass({
@@ -74,18 +72,18 @@ function styles() {
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-function images() {
+export function images() {
   return gulp.src(path.join(paths.img, '**'), { base: SOURCE_DIR })
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-function scripts() {
+export function scripts() {
   return gulp.src(path.join(paths.js, '**'), { base: SOURCE_DIR })
     .pipe(plumber())
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-function views() {
+export function views() {
   return gulp.src([ src('*.pug'), '!index.pug' ])
     .pipe(plumber())
     .pipe(pug({ locals: locals }))
@@ -102,25 +100,21 @@ function views() {
 }
 
 // Moving files that aren't processed by the above tasks.
-function move() {
+export function move() {
   return gulp.src(paths.static)
     .pipe(gulp.dest(BUILD_DIR));
 }
 
-gulp.task('compile', gulp.parallel(move, views, styles, images, scripts));
-gulp.task('build', gulp.series(clean, 'compile'));
-
-
 // Development
 // =============================================================================
 
-function server() {
+export function server() {
   connect.server({
     root: BUILD_DIR
   });
 }
 
-function watch(done) {
+export function watch(done) {
   // All watched tasks should include `.pipe(plumber())` at the beginning of the
   // stream. This prevents you from having to rerun tasks if an error occurs.
   //
@@ -141,14 +135,10 @@ function watch(done) {
   done()
 }
 
-gulp.task('connect', gulp.parallel(server, watch));
-gulp.task('serve', gulp.series('build', 'connect'));
-
-
 // Deployment
 // =============================================================================
 
-var buildRepo = git(BUILD_DIR)
+let buildRepo = git(BUILD_DIR)
 
 function makeRelease(done) {
   buildRepo
@@ -177,13 +167,16 @@ function push(done) {
   done()
 }
 
-gulp.task('deploy:setup', gulp.series('build', makeRelease));
-gulp.task('deploy:staging', gulp.series('deploy:setup', setupStaging, push));
-gulp.task('deploy:prod', gulp.series('deploy:setup', setupProduction, push));
-gulp.task('deploy', gulp.parallel('deploy:staging'));
-
-
 // Default
 // =============================================================================
 
-gulp.task('default', gulp.parallel('serve'));
+export const compile = gulp.parallel(move, views, styles, scripts)
+export const build = gulp.series(clean, compile)
+export const serve = gulp.series(build, gulp.parallel(server, watch));
+
+export const deploySetup = gulp.series(build, makeRelease)
+export const deployStaging = gulp.series(deploySetup, setupStaging, push);
+export const deployProd = gulp.series(deploySetup, setupProduction, push);
+export const deploy = deployStaging
+
+export default serve;
