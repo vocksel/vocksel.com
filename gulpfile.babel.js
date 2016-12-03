@@ -30,7 +30,6 @@ const age = year - 1996
 // (e.g. 'self.title')
 const locals = {
   title: 'David Minnerly',
-  url: 'http://davidminnerly.com',
   copyright: '&copy; ' + year + ' David Minnerly',
   age: age
 }
