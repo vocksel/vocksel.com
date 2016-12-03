@@ -43,7 +43,7 @@ const paths = {
 
 // Remote repositories for deploying the site. These can only be pushed to with
 // proper authorization.
-var remotes = {
+const remotes = {
   staging: 'ssh://git@davidminnerly.com/~/beta.davidminnerly.git',
   production: 'ssh://git@davidminnerly.com/~/davidminnerly.git'
 }
