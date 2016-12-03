@@ -21,10 +21,17 @@ function src(f) {
   return path.join(SOURCE_DIR, f);
 }
 
+// Current year and my age, for copyright and displaying how old I am,
+// respectively. Now these don't have to be updated every year.
+const year = new Date().getFullYear();
+const age = year - 1996
+
 const locals = {
   site: {
     title: 'David Minnerly',
-    url: 'http://davidminnerly.com'
+    url: 'http://davidminnerly.com',
+    copyright: '&copy; ' + year + ' David Minnerly',
+    age: age
   }
 }
 
