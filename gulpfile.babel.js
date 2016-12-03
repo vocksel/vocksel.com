@@ -31,6 +31,7 @@ const locals = {
 // Paths to the files that need to be compiled.
 const paths = {
   css: src('css'),
+  views: src('views'),
 
   // Static files that don't require pre-processing. They're simply moved when
   // building the site.
@@ -73,9 +74,12 @@ export function styles() {
 }
 
 export function views() {
-  return gulp.src([ src('*.pug'), '!index.pug' ])
+  return gulp.src(path.join(paths.views, '**/*.pug'))
     .pipe(plumber())
-    .pipe(pug({ locals: locals }))
+    .pipe(pug({
+      locals: locals,
+      basedir: SOURCE_DIR
+    }))
 
     // Compiles the index file to the root, and any other `pug` files to a
     // folder with an `index.html`. This allows you to access the pages at
