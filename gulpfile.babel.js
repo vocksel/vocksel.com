@@ -26,13 +26,13 @@ function src(f) {
 const year = new Date().getFullYear();
 const age = year - 1996
 
+// Properties are referenced as 'self.property' in Pug files.
+// (e.g. 'self.title')
 const locals = {
-  site: {
-    title: 'David Minnerly',
-    url: 'http://davidminnerly.com',
-    copyright: '&copy; ' + year + ' David Minnerly',
-    age: age
-  }
+  title: 'David Minnerly',
+  url: 'http://davidminnerly.com',
+  copyright: '&copy; ' + year + ' David Minnerly',
+  age: age
 }
 
 // Paths to the files that need to be compiled.
@@ -98,6 +98,7 @@ export function views() {
   return gulp.src(path.join(paths.views, '**/*.pug'))
     .pipe(plumber())
     .pipe(pug({
+      self: true,
       locals: locals,
       basedir: SOURCE_DIR
     }))

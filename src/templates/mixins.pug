@@ -3,7 +3,7 @@
 //- We want to make sure the name of the site is still used in the title, but we
 //- also want names for each of the pages so they can be distinguished easily.
 mixin siteTitle(pageName)
-  | #{pageName} &ndash; #{site.title}
+  | #{pageName} &ndash; #{self.title}
 
 
 //- Mixins for generating site-specific content.
