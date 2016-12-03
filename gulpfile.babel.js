@@ -8,6 +8,7 @@ import gulpif from 'gulp-if';
 import del from 'del';
 import path from 'path';
 import git from 'simple-git'
+import moment from 'moment';
 
 // Configuration
 // =============================================================================
@@ -23,8 +24,8 @@ function src(f) {
 
 // Current year and my age, for copyright and displaying how old I am,
 // respectively. Now these don't have to be updated every year.
-const year = new Date().getFullYear();
-const age = year - 1996
+const year = moment().year();
+const age = moment().diff("1996-07-15", 'years');
 
 // Properties are referenced as 'self.property' in Pug files.
 // (e.g. 'self.title')
