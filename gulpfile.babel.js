@@ -115,10 +115,7 @@ export function watch(done) {
   // @import path, everything is still running fine.
 
   gulp.watch(paths.static, move);
-
-  // Gets all Sass files, even the ones in bower_components.
   gulp.watch(src('**/*.scss'), styles);
-
   gulp.watch(src('**/*.pug'), views);
 
   done()
