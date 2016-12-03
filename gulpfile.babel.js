@@ -49,6 +49,20 @@ const remotes = {
   production: 'ssh://git@davidminnerly.com/~/davidminnerly.git'
 }
 
+// Helpers
+// =============================================================================
+
+// Changes `site/page.html` to `site/page/index.html`.
+//
+// This is used in conjunction with gulp-rename to change all of our lone html
+// files to folders with index files.
+//
+// This allows us to access all of our pages at http://example.org/page/, instead of having
+function fileToFolder(file) {
+  file.dirname = path.join(file.dirname, file.basename)
+  file.basename = 'index'
+}
+
 // Compiling
 // =============================================================================
 
@@ -81,13 +95,13 @@ export function views() {
       basedir: SOURCE_DIR
     }))
 
-    // Compiles the index file to the root, and any other `pug` files to a
-    // folder with an `index.html`. This allows you to access the pages at
-    // http://davidminnerly.com/page/, instead of having a trailing `.html`
-    .pipe(gulpif('!index*', rename((p) => {
-      p.dirname = path.join(p.dirname, p.basename)
-      p.basename = 'index'
-    })))
+    // We're using gulpif to ignore the index file in the root so that it will
+    // compile normally.
+    //
+    // Every other pug file (that's not a partial) will be compiled to a folder
+    // with an `index.html`. This allows us to access pages at
+    // http://davidminnerly.com/page/ instead of having a trailing `.html`.
+    .pipe(gulpif('!index*', rename(fileToFolder)))
 
     .pipe(gulp.dest(BUILD_DIR));
 }
