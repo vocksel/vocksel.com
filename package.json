@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "my-website",
-  "version": "5.0.0",
+  "version": "6.6.0",
   "author": "David Minnerly",
   "license": "MIT",
   "main": "gulpfile.js",
