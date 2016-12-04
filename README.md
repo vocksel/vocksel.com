@@ -15,6 +15,12 @@ $ npm install
 
 The main task you'll be interested in is `gulp serve` which will build all of the files under `src/` and serve them up in the browser at [localhost:8080](http://localhost:8080).
 
-From there it's just a matter of expanding upon the existing content.
+From there it's just a matter of expanding upon the existing content, which can be found at the following locations:
+
+- `src/css/`: Stylesheets, written in Sass. `main.scss` loads in all of the partials in the other folders. Read up on [inuitcss](https://github.com/inuitcss/inuitcss) to understand how everything works.
+- `src/img/`: All of the site's images.
+- `src/js/`: JavaScript files used in our markup.
+- `src/templates/`: [Pug](https://pugjs.org/) layouts and mixins to give the site a consistent look.
+- `src/views/`: Pages for the site. This is where the index goes, along with things like an 'about' or 'contact' page.
 
 Happy coding!
