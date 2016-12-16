@@ -65,7 +65,8 @@ const remotes = {
 // This is used in conjunction with gulp-rename to change all of our lone html
 // files to folders with index files.
 //
-// This allows us to access all of our pages at http://example.org/page/, instead of having
+// This allows us to access all of our pages at http://example.org/page/,
+// instead of having to append `.html` to the end.
 function fileToFolder(file) {
   file.dirname = path.join(file.dirname, file.basename)
   file.basename = 'index'
