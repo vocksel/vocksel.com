@@ -8,7 +8,8 @@ import gulpif from 'gulp-if';
 import del from 'del';
 import path from 'path';
 import git from 'simple-git'
-import moment from 'moment';
+
+import locals from './locals.babel.js';
 
 // Configuration
 // =============================================================================
@@ -20,20 +21,6 @@ const BUILD_DIR = 'build'
 // Used for retrieving files/folders in the source directory.
 function src(f) {
   return path.join(SOURCE_DIR, f);
-}
-
-// Current year and my age, for copyright and displaying how old I am,
-// respectively. Now these don't have to be updated every year.
-const year = moment().year();
-const age = moment().diff("1996-07-15", 'years');
-
-// Properties are referenced as 'self.property' in Pug files.
-// (e.g. 'self.title')
-const locals = {
-  title: 'David Minnerly',
-  repo: 'https://github.com/vocksel/my-website',
-  copyright: '&copy; ' + year + ' David Minnerly',
-  age: age
 }
 
 // Paths to the files that need to be compiled.
