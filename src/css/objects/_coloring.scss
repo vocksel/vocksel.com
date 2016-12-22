@@ -10,23 +10,14 @@
  * Usage:
 
     <!-- Simply setting an image to grayscale. -->
-    <img class="grayscale" src="/img/sample.png">
+    <img class="coloring--grayscale" src="/img/sample.png">
 
     <!-- This image will change from grayscale to color as you scroll. -->
-    <img class="js-color-scroll  grayscale" src="/img/sample.png">
+    <img class="js-color-scroll transition coloring--grayscale" src="/img/sample.png">
 
  */
 
-.grayscale,
-%grayscale {
+.coloring--grayscale {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
-  transition: all $global-transition--slow;
-}
-
-.colorize,
-%colorize {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
-  transition: all $global-transition--slow;
 }
