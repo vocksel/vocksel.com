@@ -3,7 +3,7 @@ import path from 'path';
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, 'src/js'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
   devtool: 'source-map',
@@ -22,7 +22,8 @@ module.exports = {
         query: {
           presets: [ 'es2015' ]
         }
-      }
+      },
+      { test: /\.pug$/, use: 'pug-loader' }
     ]
   }
 };
