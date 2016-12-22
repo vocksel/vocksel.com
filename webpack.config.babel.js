@@ -23,7 +23,8 @@ module.exports = {
           presets: [ 'es2015' ]
         }
       },
-      { test: /\.pug$/, use: 'pug-loader' }
+      { test: /\.pug$/, use: 'pug-loader' },
+      { test: /\.(png|jpg|ico)/, use: 'url-loader?limit=10000' }
     ]
   }
 };
