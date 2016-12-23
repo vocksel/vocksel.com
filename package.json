@@ -13,10 +13,10 @@
     "url": "https://github.com/vocksel/my-website/issues"
   },
   "scripts": {
-    "webpack": "webpack",
+    "build": "webpack",
     "serve": "webpack-dev-server",
-    "deploy-dev": "npm run webpack && cross-env NODE_ENV=development babel-node deploy.babel.js",
-    "deploy-prod": "npm run webpack && cross-env NODE_ENV=production babel-node deploy.babel.js"
+    "deploy-dev": "npm run build && cross-env NODE_ENV=development babel-node deploy.babel.js",
+    "deploy-prod": "npm run build && cross-env NODE_ENV=production babel-node deploy.babel.js"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
