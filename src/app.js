@@ -1,4 +1,5 @@
 import { setupPhotoWaypoints } from './js/photo-coloring';
+import './css/main.scss'
 import template from './views/index.pug';
 import locals from '../locals.babel.js';
 
