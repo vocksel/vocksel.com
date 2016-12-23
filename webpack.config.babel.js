@@ -24,6 +24,7 @@ module.exports = {
         }
       },
       { test: /\.pug$/, use: 'pug-loader' },
+      { test: /\.scss$/, use: [ 'style-loader', 'css-loader', 'sass-loader' ] },
       { test: /\.(png|jpg|ico)/, use: 'url-loader?limit=10000' }
     ]
   }
