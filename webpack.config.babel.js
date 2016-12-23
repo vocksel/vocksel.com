@@ -34,6 +34,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: './src/favicon.ico',
       template: './src/views/index.pug',
 
       // Accessed in the Pug files at `htmlWebpackPlugin.options.locals`.
