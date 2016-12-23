@@ -6,7 +6,7 @@ html(lang="en" class="background")
     link(rel="shortcut icon" href=require('favicon.ico'))
 
     block title
-      title= self.title
+      title= htmlWebpackPlugin.options.locals.title
 
     block styles
       link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans|Merriweather")
@@ -17,6 +17,3 @@ html(lang="en" class="background")
     block content
 
     include footer.pug
-
-    block scripts
-      script(src="/js/bundle.js")

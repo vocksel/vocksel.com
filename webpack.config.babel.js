@@ -1,5 +1,9 @@
 import path from 'path';
 
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+
+import locals from './locals.babel.js';
+
 module.exports = {
   entry: './src/app.js',
   output: {
@@ -27,5 +31,16 @@ module.exports = {
       { test: /\.scss$/, use: [ 'style-loader', 'css-loader', 'sass-loader' ] },
       { test: /\.(png|jpg|ico)/, use: 'url-loader?limit=10000' }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/views/index.pug',
+
+      // Accessed in the Pug files at `htmlWebpackPlugin.options.locals`.
+      //
+      // This is how we have to pass data to our templates. It took so long to
+      // figure this out.
+      locals: locals
+    })
+  ]
 };
