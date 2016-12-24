@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: 'favicon.ico',
+      favicon: 'img/favicon.ico',
       template: 'views/index.pug',
 
       // Accessed in the Pug files at `htmlWebpackPlugin.options.locals`.
