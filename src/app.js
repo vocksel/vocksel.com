@@ -1,4 +1,2 @@
-import { setupPhotoWaypoints } from './js/photo-coloring';
+import './js/main.js'
 import './css/main.scss'
-
-setupPhotoWaypoints()
