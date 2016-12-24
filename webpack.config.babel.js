@@ -5,7 +5,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import locals from './locals.babel.js';
 
 module.exports = {
-  entry: './src/app.js',
+  context: path.resolve(__dirname, 'src'),
+  entry: 'app.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
@@ -31,8 +32,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: './src/favicon.ico',
-      template: './src/views/index.pug',
+      favicon: 'favicon.ico',
+      template: 'views/index.pug',
 
       // Accessed in the Pug files at `htmlWebpackPlugin.options.locals`.
       //
