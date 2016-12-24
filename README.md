@@ -2,6 +2,8 @@
 
 This is the source code for my personal website, [davidminnerly.com](http://davidminnerly.com). It's a simple one-pager that leverages [inuitcss](https://github.com/inuitcss/getting-started), [Webpack](http://webpack.js.org) and numerous other amazing utilities.
 
+![Screenshot of the site](screenshots/website.png)
+
 ## Contributing
 
 Install [Node.js](https://nodejs.org/en/) if you don't have it already. From there you'll need to install all the packages and start the dev server to get going.
