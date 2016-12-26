@@ -3,8 +3,6 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-import locals from './locals.babel.js';
-
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: 'app.js',
@@ -22,7 +20,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/, // Match both .js and .jsx.
         exclude: /node_modules/,
         use: 'babel-loader'
       },
@@ -40,13 +38,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       favicon: 'img/favicon.ico',
-      template: 'views/index.pug',
-
-      // Accessed in the Pug files at `htmlWebpackPlugin.options.locals`.
-      //
-      // This is how we have to pass data to our templates. It took so long to
-      // figure this out.
-      locals: locals
+      template: 'index.html',
     }),
 
     new ExtractTextPlugin({
