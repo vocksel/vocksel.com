@@ -1,6 +1,7 @@
 import path from 'path';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 import locals from './locals.babel.js';
 
@@ -26,7 +27,13 @@ module.exports = {
         use: 'babel-loader'
       },
       { test: /\.pug$/, use: 'pug-loader' },
-      { test: /\.scss$/, use: [ 'style-loader', 'css-loader', 'sass-loader' ] },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [ 'css-loader', 'sass-loader' ]
+        })
+      },
       { test: /\.(png|jpg|ico)/, use: 'url-loader?limit=10000' }
     ]
   },
@@ -40,6 +47,11 @@ module.exports = {
       // This is how we have to pass data to our templates. It took so long to
       // figure this out.
       locals: locals
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      // allChunks: true
     })
   ]
 };
