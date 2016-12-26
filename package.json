@@ -15,8 +15,8 @@
   "scripts": {
     "build": "webpack --colors",
     "serve": "webpack-dev-server --colors",
-    "deploy-dev": "npm run build && cross-env NODE_ENV=development babel-node deploy.babel.js",
-    "deploy-prod": "npm run build && cross-env NODE_ENV=production babel-node deploy.babel.js"
+    "deploy:dev": "npm run build && cross-env NODE_ENV=development babel-node deploy.babel.js",
+    "deploy:prod": "npm run build && cross-env NODE_ENV=production babel-node deploy.babel.js"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
