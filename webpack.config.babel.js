@@ -24,7 +24,6 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader'
       },
-      { test: /\.pug$/, use: 'pug-loader' },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
