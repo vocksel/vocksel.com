@@ -1,8 +1,10 @@
 import React from 'react';
 
-import Content from 'js/components/Content.jsx';
-import ContentTitle from 'js/components/ContentTitle.jsx';
-import { PhotoWrapper, PhotoLink, PhotoCaption } from 'js/components/Photos.jsx';
+import Content from 'components/content/Content.jsx';
+import ContentTitle from 'components/content/ContentTitle.jsx';
+import PhotoWrapper from 'components/photo/PhotoWrapper.jsx';
+import PhotoLink from 'components/photo/PhotoLink.jsx';
+import PhotoCaption from 'components/photo/PhotoCaption.jsx';
 
 const url = 'http://fireflies.davidminnerly.com';
 
