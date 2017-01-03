@@ -2,10 +2,7 @@ import React from 'react';
 
 import Content from 'components/content/Content.jsx';
 import ContentTitle from 'components/content/ContentTitle.jsx';
-import PhotoWrapper from 'components/photo/PhotoWrapper.jsx';
-import PhotoLink from 'components/photo/PhotoLink.jsx';
-import PhotoImage from 'components/photo/PhotoImage.jsx';
-import PhotoCaption from 'components/photo/PhotoCaption.jsx';
+import { OverviewPhoto, ComparisonPhoto } from 'components/photo/EchoRidgePhotos.jsx';
 
 const url = 'http://www.roblox.com/games/13525723/view?rbxp=1343930';
 
@@ -16,25 +13,13 @@ function EchoRidge(props) {
 
       <p><a href={url}>Echo Ridge</a> is a 3D recreation of the hub level in Mega Man Star Force 3. I built it over the span of 3 months, and it has quickly become my favorite ROBLOX project to date.</p>
 
-      <PhotoWrapper>
-        <PhotoLink href={url}>
-          <PhotoImage image={require('img/projects/echo-ridge/overview.png')} />
-        </PhotoLink>
-
-        <PhotoCaption>A full view of Echo Ridge, featuring the Sky Wave.</PhotoCaption>
-      </PhotoWrapper>
+      <OverviewPhoto href={url} />
 
       <p>I made the first version of Echo Ridge when I was 14, back in October of 2010. Almost 4 and a half years later, I took another look at it and felt it didn't do the original game justice.</p>
 
       <p>Thanks to ROBLOX's modeling system I was able to achieve a much higher level of detail. This also opened up the possibility to remove all of the seam lines, giving the map a much cleaner appearance.</p>
 
-      <PhotoWrapper>
-        <PhotoLink href={url}>
-          <PhotoImage image={require('img/projects/echo-ridge/comparison.png')} />
-        </PhotoLink>
-
-        <PhotoCaption>Geo's house, before and after.</PhotoCaption>
-      </PhotoWrapper>
+      <ComparisonPhoto href={url} />
     </Content>
   )
 }

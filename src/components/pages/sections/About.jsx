@@ -2,10 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import Content from 'components/content/Content.jsx';
-import PhotoWrapper from 'components/photo/PhotoWrapper.jsx';
-import PhotoLink from 'components/photo/PhotoLink.jsx';
-import PhotoImage from 'components/photo/PhotoImage.jsx';
-import PhotoCaption from 'components/photo/PhotoCaption.jsx';
+import { WalkwayPhoto } from 'components/photo/WalkwayPhotos.jsx';
 
 const age = moment().diff('1996-07-15', 'years');
 
@@ -16,15 +13,7 @@ function About(props) {
 
       <p>I frequently work on open-source projects. All of which can be found on my <a href={"https://github.com/voxeldavid/"}>GitHub</a>.</p>
 
-      <PhotoWrapper>
-        <PhotoLink href={"https://walkway.org"} title={"Visit the Walkway Over the Hudon's website"}>
-          <PhotoImage image={require('img/biking.jpg')} />
-        </PhotoLink>
-
-        <PhotoCaption>
-          A photo from my trip back home from the <a href={"https://walkway.org"}>Walkway Over the Hudson</a>
-        </PhotoCaption>
-      </PhotoWrapper>
+      <WalkwayPhoto />
     </Content>
   )
 }
