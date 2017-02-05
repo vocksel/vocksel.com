@@ -2,7 +2,7 @@ import React from 'react';
 
 import Content from 'components/content/Content.jsx';
 import ContentTitle from 'components/content/ContentTitle.jsx';
-import { Photo, PhotoCaption } from 'components/photo/PhotoComponents.jsx';
+import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
 
 const url = 'http://www.roblox.com/games/13525723/view?rbxp=1343930';
 
