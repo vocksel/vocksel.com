@@ -31,7 +31,10 @@ module.exports = {
           loader: [ 'css-loader', 'sass-loader' ]
         })
       },
-      { test: /\.(png|jpg|ico)/, use: 'url-loader?limit=10000' }
+      {
+        test: /\.(png|jpg|ico)/,
+        use: 'url-loader?limit=10000'
+      }
     ]
   },
   plugins: [
