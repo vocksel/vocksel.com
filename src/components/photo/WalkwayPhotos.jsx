@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Photo, PhotoCaption } from './PhotoComponents.jsx';
+import { Photo, PhotoCaption } from './photo.jsx';
 
 const url = 'https://walkway.org';
 
