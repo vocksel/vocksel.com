@@ -7,11 +7,9 @@ import { Photo, PhotoCaption } from 'components/photo/PhotoComponents.jsx';
 const url = 'http://fireflies.davidminnerly.com';
 const title = 'Check out Fireflies in person.';
 
-function Fireflies(props) {
+function Body() {
   return (
-    <Content id={"echo-ridge"}>
-      <ContentTitle>Fireflies</ContentTitle>
-
+    <div>
       <p><a href={url}>Fireflies</a> is a small application that displays a quote and background image at random every time the page is loaded.</p>
 
       <Photo href={url} title={title} image={require('./images/perks.png')}>
@@ -28,6 +26,15 @@ function Fireflies(props) {
       </Photo>
 
       <p>All of the backgrounds and quotes mean a lot to me, I picked ones that I personally liked, and because of that I hold Fireflies very near to my heart.</p>
+    </div>
+  )
+}
+
+function Fireflies(props) {
+  return (
+    <Content id={"echo-ridge"}>
+      <ContentTitle>Fireflies</ContentTitle>
+      <Body/>
     </Content>
   )
 }
