@@ -6,11 +6,9 @@ import { Photo, PhotoCaption } from 'components/photo/PhotoComponents.jsx';
 
 const url = 'http://www.roblox.com/games/13525723/view?rbxp=1343930';
 
-function EchoRidge(props) {
+function Body() {
   return (
-    <Content id={"echo-ridge"}>
-      <ContentTitle>Echo Ridge</ContentTitle>
-
+    <div>
       <p><a href={url}>Echo Ridge</a> is a 3D recreation of the hub level in Mega Man Star Force 3. I built it over the span of 3 months, and it has quickly become my favorite ROBLOX project to date.</p>
 
       <Photo href={url} image={require('./images/overview.png')}>
@@ -24,6 +22,15 @@ function EchoRidge(props) {
       <Photo href={url} image={require('./images/comparison.png')}>
         <PhotoCaption>Geo's house, before and after.</PhotoCaption>
       </Photo>
+    </div>
+  )
+}
+
+function EchoRidge(props) {
+  return (
+    <Content id={"echo-ridge"}>
+      <ContentTitle>Echo Ridge</ContentTitle>
+      <Body/>
     </Content>
   )
 }
