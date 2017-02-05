@@ -27,7 +27,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
+          fallback: 'style-loader',
           loader: [ 'css-loader', 'sass-loader' ]
         })
       },
@@ -40,8 +40,6 @@ module.exports = {
       template: 'index.html',
     }),
 
-    new ExtractTextPlugin({
-      filename: 'style.css',
-    })
+    new ExtractTextPlugin('style.css')
   ]
 };
