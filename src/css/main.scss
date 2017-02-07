@@ -16,11 +16,8 @@
   * on and explore!
   */
 
-// Note that all @import paths starting with "inuitcss" are referencing the
-// inuitcss install in node_modules.
-//
-// Gulp is setup to include node_modules as a path to look for @import matches
-// so we don't have to reference parent folders (../../node_modules/inuitcss).
+// Note that all @import paths starting with "~inuitcss" are referencing
+// node_modules/inuitcss.
 
 // All commented inuitcss partials are to be kept for potential future use.
 //
