@@ -1,3 +1,18 @@
+// Deploys the site to the server.
+//
+// This can only be done with SSH access to the server. If you haven't been
+// authorized to deploy, this file can be ignored.
+//
+// Usage:
+//
+//   # Deploys to the production environment (davidminnerly.com)
+//   $ npm run deploy:prod
+//
+//   # Deploys to the development environment (beta.davidminnerly.com).
+//   # This is used commonly when you're testing out changes and want to see
+//   # how they'll look online before being fully ready to push to production.
+//   $ npm run deploy:dev
+
 import git from 'simple-git';
 import config from './webpack.config.babel.js';
 
