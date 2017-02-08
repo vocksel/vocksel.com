@@ -8,7 +8,6 @@ function SiteFooter(props) {
       <ul className="list-inline--delimited">
         <li>&copy; {currentYear} David Minnerly</li>
         <li><a href="https://github.com/vocksel/my-website">Website Source</a></li>
-        <li>Background from <a href="http://ommwriter.com">OmmWriter</a></li>
       </ul>
     </footer>
   )
