@@ -2,9 +2,23 @@ import React from 'react';
 import moment from 'moment';
 
 import Content from 'components/content/Content.jsx';
-import { WalkwayPhoto } from 'components/photo/WalkwayPhotos.jsx';
+import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
 
 const age = moment().diff('1996-07-15', 'years');
+
+function WalkwayPhoto(props) {
+  const url = 'https://walkway.org';
+
+  return (
+    <Photo href={url} title={'Visit the Walkway Over the Hudson\'s website.'}
+      image={require('img/biking.jpg')}>
+
+      <PhotoCaption>
+        A photo from my trip back home from the <a href={url}>Walkway Over the Hudson</a>.
+      </PhotoCaption>
+    </Photo>
+  );
+}
 
 function About(props) {
   return (
