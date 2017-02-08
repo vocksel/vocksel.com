@@ -3,8 +3,7 @@ import React from 'react';
 // Component for displaying photographs.
 function PhotoImage(props) {
   return (
-    <img className="photo__image  js-color-scroll  transition--slow  coloring--grayscale"
-      src={props.image} />
+    <img className="photo__image" src={props.image} />
   )
 }
 
