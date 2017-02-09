@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Content from 'components/content/Content.jsx';
 import ContentTitle from 'components/content/ContentTitle.jsx';
 import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
 
@@ -32,10 +31,11 @@ function Body() {
 
 function Fireflies(props) {
   return (
-    <Content id={"echo-ridge"}>
+    <div>
       <ContentTitle>Fireflies</ContentTitle>
+
       <Body/>
-    </Content>
+    </div>
   )
 }
 

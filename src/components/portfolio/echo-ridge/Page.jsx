@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Content from 'components/content/Content.jsx';
 import ContentTitle from 'components/content/ContentTitle.jsx';
 import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
 
@@ -28,10 +27,11 @@ function Body() {
 
 function EchoRidge(props) {
   return (
-    <Content id={"echo-ridge"}>
+    <div>
       <ContentTitle>Echo Ridge</ContentTitle>
+
       <Body/>
-    </Content>
+    </div>
   )
 }
 
