@@ -3,8 +3,7 @@
 \*------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
-  @extend %centered-text;
-  font-family: $serif-font-stack;
+  font-family: $sans-font-stack;
 
   // Adds some space above the headers. Padding is used so that when a section
   // is linked to, there will be space at the top of the browser.
