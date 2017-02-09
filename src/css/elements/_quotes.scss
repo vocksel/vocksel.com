@@ -9,7 +9,6 @@ blockquote {
   margin-left: -$inuit-global-spacing-unit;
   padding-left: $inuit-global-spacing-unit - $quote-border-size;
 
-  font-family: $serif-font-stack;
   border-left: $quote-border-size solid $accent-color;
   color: rgba($text-color, .8);
 
