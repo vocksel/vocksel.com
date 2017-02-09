@@ -10,7 +10,7 @@ Install [NodeJS](https://nodejs.org/en/) if you don't have it already. From ther
 
 ```shell
 $ npm install
-$ npm run serve # Compiles and serves the content.
+$ npm start # Starts the dev server
 ```
 
 With the dev server running, you can start expanding upon the existing content, which can be found at the following locations:
