@@ -37,15 +37,3 @@ $wrapper-width: 680px;
     max-width: 100%;
   }
 }
-
-.wrapper--content,
-%wrapper--content {
-  @extend %wrapper;
-
-  width: $wrapper-width - 100px;
-
-  @include mq($from: mobile) {
-    // Padding the sides of the text to make it easier to read
-    padding: 0 $inuit-global-spacing-unit-small;
-  }
-}
