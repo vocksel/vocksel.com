@@ -17,6 +17,12 @@
 
  */
 
+// How large the gradients are.
+//
+// You should apply these above and below your content for the best results.
+$page-spacing-top: 15vh;
+$page-spacing-bottom: 35vh;
+
 .gradient,
 %gradient {
   &:before, &:after {

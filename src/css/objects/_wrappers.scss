@@ -27,9 +27,7 @@ $wrapper-width: 680px;
 
 .wrapper,
 %wrapper {
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: $inuit-global-spacing-unit;
+  margin: $inuit-global-spacing-unit;
 
   width: $wrapper-width;
 
