@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 /**
   * Used for displaying images on the page.
@@ -62,3 +62,10 @@ export function Photo(props) {
     </figure>
   );
 }
+
+Photo.propTypes = {
+  image: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  title: PropTypes.string,
+  caption: PropTypes.node
+};
