@@ -1,58 +1,64 @@
 import React from 'react';
 
-// Component for displaying photographs.
-function PhotoImage(props) {
-  return (
-    <img className="photo__image" src={props.image} />
-  )
+/**
+  * Used for displaying images on the page.
+  *
+  * Use in conjunction with <PhotoCaption> to add a caption beneath your image.
+  *
+  * Properties:
+  *
+  * image (string, required)
+  *  Path to the image you want to display.
+  *
+  *  When using Webpack, you'll need to wrap the path in a 'require()' call.
+  *
+  * href (string)
+  *  When this property is used, the image is wrapped in an <a> tag.
+  *
+  *  Sets the 'href' attribute of the link.
+  *
+  * title (string)
+  *  Used in conjunction with 'href'. Sets the 'title' attribute of the link.
+  *
+  * Usage:
+
+      <Photo image={require('./example.png')} />
+
+      // As a link:
+      <Photo image={require('./example.png')} href='http://example.com'
+        title='Click me' />
+
+      // With a caption:
+      <Photo image={require('./example.png')}>
+        <PhotoCaption>Hello, World!</PhotoCaption>
+      </Photo>
+
+      // All together:
+      <Photo image={require('./example.png')} href='http://example.com'
+        title='Click me' caption='Hello, World!'>
+
+        <PhotoCaption>Hello, World!</PhotoCaption>
+      </Photo>
+
+  */
+
+function getImageAsLink(image, href, title) {
+  return <a className='photo__link' href={href} title={title}>{image}</a>;
 }
 
-// Wraps <PhotoImage> in an <a> tag.
-function PhotoLink(props) {
-  return (
-    <a className="photo__link" href={props.href} title={props.title}>
-      {props.children}
-    </a>
-  )
-}
-
-// Container Component for all other Components in this file.
-function PhotoWrapper(props) {
-  return <figure className="photo">{props.children}</figure>
-}
-
-// Used for displaying images on the page.
-//
-// This is the main Component you'll be interested in. The other being
-// PhotoCaption, which allows you to caption your images.
-//
-// Usage:
-//
-//   <Photo href={'http://example.com'} title={'Click me'}
-//     image={require('example.png')}>
-//
-// With a caption:
-//
-//   <Photo href={'http://example.com'} title={'Click me'}
-//     image={require('example.png')}>
-//
-//     <PhotoCaption>Caption for the image.</PhotoCaption>
-//   </Photo>
-export function Photo(props) {
-  const photo = <PhotoImage image={props.image} />;
-
-  return (
-    <PhotoWrapper>
-      {props.href
-        ? <PhotoLink href={props.href} title={props.title}>{photo}</PhotoLink>
-        : photo }
-
-      {props.children}
-    </PhotoWrapper>
-  )
-}
-
-// Used as a child of <Photo> to apply a caption.
 export function PhotoCaption(props) {
-  return <figcaption className="photo__caption">{props.children}</figcaption>
+  return (
+    <figcaption className='photo__caption'>{props.children}</figcaption>
+  );
+}
+
+export function Photo(props) {
+  const image = <img className='photo__image' src={props.image} />;
+
+  return (
+    <figure className='photo'>
+      {props.href ? getImageAsLink(image, props.href, props.title) : image}
+      {props.children}
+    </figure>
+  );
 }
