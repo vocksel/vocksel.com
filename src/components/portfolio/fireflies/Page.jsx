@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ContentTitle from 'components/content/ContentTitle.jsx';
 import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
 
 const url = 'http://fireflies.davidminnerly.com';
@@ -32,7 +31,7 @@ function Body() {
 function Fireflies(props) {
   return (
     <div>
-      <ContentTitle>Fireflies</ContentTitle>
+      <h1>Fireflies</h1>
 
       <Body/>
     </div>

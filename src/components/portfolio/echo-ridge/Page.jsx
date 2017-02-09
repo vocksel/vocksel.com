@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ContentTitle from 'components/content/ContentTitle.jsx';
 import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
 
 const url = 'http://www.roblox.com/games/13525723/view?rbxp=1343930';
@@ -28,7 +27,7 @@ function Body() {
 function EchoRidge(props) {
   return (
     <div>
-      <ContentTitle>Echo Ridge</ContentTitle>
+      <h1>Echo Ridge</h1>
 
       <Body/>
     </div>
