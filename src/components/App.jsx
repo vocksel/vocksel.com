@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Home from './pages/Home.jsx';
-import SiteFooter from './includes/SiteFooter.jsx';
+import Home from './Home.jsx';
+import SiteFooter from './SiteFooter.jsx';
 
 export default function App(props) {
   return (

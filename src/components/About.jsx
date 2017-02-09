@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
-import Content from 'components/content/Content.jsx';
-import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
+import Content from './content/Content.jsx';
+import { Photo, PhotoCaption } from './photo/photo.jsx';
 
 const age = moment().diff('1996-07-15', 'years');
 
