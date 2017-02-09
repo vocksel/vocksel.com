@@ -15,9 +15,8 @@ $ npm run serve # Compiles and serves the content.
 
 With the dev server running, you can start expanding upon the existing content, which can be found at the following locations:
 
-- `src/components`: All of our React components.
 - `src/css/`: Stylesheets, written in Sass. `main.scss` loads in all of the partials in the other folders. Read up on [inuitcss](https://github.com/inuitcss/inuitcss) to understand how everything is structured.
 - `src/img/`: All of the site's images.
-- `src/js/`: JavaScript files used in our markup.
+- `src/jsx/`: All of our React components.
 
 Happy coding!

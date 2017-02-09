@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Photo, PhotoCaption } from 'components/photo/photo.jsx';
+import { Photo, PhotoCaption } from 'jsx/photo/photo.jsx';
 
 const url = 'http://www.roblox.com/games/13525723/view?rbxp=1343930';
 
