@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-import App from './App.jsx';
-import Home from './routes/Home.jsx';
-import About from './routes/About.jsx';
+import App from './App';
+import Home from './routes/Home';
+import About from './routes/About';
 
 ReactDOM.render((
   <Router history={hashHistory}>
