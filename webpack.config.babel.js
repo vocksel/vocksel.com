@@ -11,6 +11,17 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'source-map',
+  devServer: {
+    // Enables automatic reloading when files are changed.
+    //
+    // As of February 10, 2017, Webpack's docs mention that: "By default the
+    // application will be served with inline mode enabled." This doesn't seem
+    // to be the case, as without the inline option specified, there is no auto
+    // reloading.
+    //
+    // Reference: https://webpack.js.org/configuration/dev-server/#devserver-inline-cli-only
+    inline: true
+  },
   resolve: {
     modules: [
       path.resolve(__dirname, 'src'),
