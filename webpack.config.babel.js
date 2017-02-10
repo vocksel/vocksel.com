@@ -12,6 +12,8 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
+    historyApiFallback: true,
+
     // Enables automatic reloading when files are changed.
     //
     // As of February 10, 2017, Webpack's docs mention that: "By default the
