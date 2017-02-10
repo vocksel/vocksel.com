@@ -1,7 +1,7 @@
 import React from 'react';
 
-import EchoRidge from './portfolio/echo-ridge/Page.jsx';
-import Fireflies from './portfolio/fireflies/Page.jsx';
+import EchoRidge from 'jsx/portfolio/echo-ridge/Page.jsx';
+import Fireflies from 'jsx/portfolio/fireflies/Page.jsx';
 
 function Home() {
   return (
