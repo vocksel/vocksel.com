@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import SiteFooter from './SiteFooter.jsx';
+import SiteFooter from './SiteFooter';
 
 export default function App(props) {
   return (

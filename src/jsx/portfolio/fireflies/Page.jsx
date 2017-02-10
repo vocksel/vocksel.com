@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Photo, PhotoCaption } from 'jsx/photo/photo.jsx';
+import { Photo, PhotoCaption } from 'jsx/photo/photo';
 
 const url = 'http://fireflies.davidminnerly.com';
 const title = 'Check out Fireflies in person.';

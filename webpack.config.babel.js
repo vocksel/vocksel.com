@@ -15,6 +15,10 @@ module.exports = {
     modules: [
       path.resolve(__dirname, 'src'),
       path.resolve(__dirname, 'node_modules')
+    ],
+    extensions: [
+      '.js', '.json', // Defaults
+      '.jsx'
     ]
   },
   module: {
