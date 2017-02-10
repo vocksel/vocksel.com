@@ -1,14 +1,18 @@
 import path from 'path';
 
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: 'app.js',
+  entry: {
+    main: 'app.js',
+    vendor: [ 'react', 'react-dom', 'react-router', 'moment' ]
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: '[chunkhash].[name].js'
   },
   devtool: 'source-map',
   devServer: {
@@ -60,6 +64,10 @@ module.exports = {
       template: 'index.html',
     }),
 
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
   ]
 };
