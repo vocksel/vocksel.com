@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "my-website",
-  "version": "6.7.0",
+  "version": "7.0.0-alpha.1",
   "author": "David Minnerly",
   "license": "MIT",
   "homepage": "davidminnerly.com",
@@ -37,7 +37,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.0-rc.1",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.3"
   },
   "dependencies": {
     "react": "^15.4.1",
