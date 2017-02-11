@@ -5,19 +5,6 @@ import { Photo, PhotoCaption } from 'jsx/photo/photo';
 
 const age = moment().diff('1996-07-15', 'years');
 
-function WalkwayPhoto(props) {
-  const url = 'https://walkway.org';
-
-  return (
-    <Photo href={url} title={'Visit the Walkway Over the Hudson\'s website.'}
-      image={require('img/biking.jpg')}>
-
-      <PhotoCaption>A photo from my trip back home from the
-        <a href={url}>Walkway Over the Hudson</a>.</PhotoCaption>
-    </Photo>
-  );
-}
-
 function About(props) {
   return (
     <div>
@@ -25,8 +12,6 @@ function About(props) {
         York. I aim to make a career out of server administration and network
         security, and in my spare time I create websites and computer
         programs.</p>
-
-      <WalkwayPhoto />
 
       <p>I got my first taste of programming when I was 13. I started out by
         learning Lua on the online building game <a href={"http://roblox.com"}>
