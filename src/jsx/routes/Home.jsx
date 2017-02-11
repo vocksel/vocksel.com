@@ -1,15 +1,18 @@
 import React from 'react';
 
-import EchoRidge from 'jsx/portfolio/echo-ridge/Page';
-import Fireflies from 'jsx/portfolio/fireflies/Page';
+import ProjectTile from 'jsx/components/ProjectTile';
+import portfolio from './portfolio';
 
 function Home() {
+  const projects = portfolio.map((project, index) => {
+    return <ProjectTile key={index} {...project} />
+  });
+
   return (
-    <div>
-      <EchoRidge/>
-      <Fireflies/>
+    <div className="portfolio">
+      {projects}
     </div>
-  )
+  );
 }
 
 export default Home
