@@ -12,6 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     filename: '[chunkhash].[name].js'
   },
   devtool: 'source-map',
