@@ -5,7 +5,7 @@ import portfolio from './portfolio';
 
 export default function Home() {
   const projects = portfolio.map((project, index) => {
-    return <ProjectTile key={index} {...project} />
+    return <ProjectTile key={index} {...project} />;
   });
 
   return (
