@@ -3,7 +3,7 @@ import React from 'react';
 import ProjectTile from 'jsx/components/ProjectTile';
 import portfolio from './portfolio';
 
-function Home() {
+export default function Home() {
   const projects = portfolio.map((project, index) => {
     return <ProjectTile key={index} {...project} />
   });
@@ -14,5 +14,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home
