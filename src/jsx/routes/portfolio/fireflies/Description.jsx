@@ -20,5 +20,5 @@ export default function Description() {
         I personally liked, and because of that I hold Fireflies very near to my
         heart.</p>
     </div>
-  )
+  );
 }
