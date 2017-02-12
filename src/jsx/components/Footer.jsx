@@ -2,7 +2,7 @@ import React from 'react';
 
 import Copyright from './Copyright';
 
-export default SiteFooter(props) {
+export default Footer(props) {
   return (
     <footer id="bottom" className="centered-text fine-print">
       <ul className="list-inline--delimited">
