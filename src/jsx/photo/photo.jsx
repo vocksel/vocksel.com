@@ -1,5 +1,3 @@
-import React, { PropTypes } from 'react';
-
 /**
   * Used for displaying images on the page.
   *
@@ -41,6 +39,8 @@ import React, { PropTypes } from 'react';
       </Photo>
 
   */
+
+import React, { PropTypes } from 'react';
 
 function getImageAsLink(image, href, title) {
   return <a className='photo__link' href={href} title={title}>{image}</a>;
