@@ -5,7 +5,7 @@ import { Photo, PhotoCaption } from 'jsx/photo/photo';
 
 const age = moment().diff('1996-07-15', 'years');
 
-function About(props) {
+export default function About(props) {
   return (
     <div>
       <p>I'm a {age}-year-old programming enthusiast living in the state of New
@@ -26,5 +26,3 @@ function About(props) {
     </div>
   )
 }
-
-export default About;
