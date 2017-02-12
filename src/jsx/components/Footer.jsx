@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Copyright from './components/Copyright';
+import Copyright from './Copyright';
 
 function SiteFooter(props) {
   return (
