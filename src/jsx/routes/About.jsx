@@ -1,8 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-import { Photo, PhotoCaption } from 'jsx/photo/photo';
-
 const age = moment().diff('1996-07-15', 'years');
 
 export default function About(props) {
