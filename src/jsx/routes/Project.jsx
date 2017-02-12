@@ -4,16 +4,11 @@ import ProjectPage from 'jsx/components/ProjectPage';
 import portfolio from './portfolio';
 
 function getProjectBySlug(slug) {
-  for (const project of portfolio) {
-    if (slug === project.slug) {
-      return project;
-    };
-  };
+  return portfolio.find(project => project.slug === slug);
 }
 
 export default function Project(props) {
-  const slug = props.params.projectSlug;
-  const project = getProjectBySlug(slug);
+  const project = getProjectBySlug(props.params.projectSlug);
 
   return (
     <ProjectPage {...project}>
