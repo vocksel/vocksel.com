@@ -12,7 +12,7 @@ export default function Project(props) {
 
   return (
     <ProjectPage {...project}>
-      <project.Description />
+      {project.description}
     </ProjectPage>
   );
 }
