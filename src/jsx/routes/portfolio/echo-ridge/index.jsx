@@ -7,7 +7,11 @@ export default {
   tags: [ '3D Modeling', 'Roblox' ],
   images: [
     require('./images/overview.png'),
-    require('./images/comparison.png')
+    require('./images/geos-house-exterior.png'),
+    require('./images/geos-living-room.png'),
+    require('./images/geos-room.png'),
+    require('./images/sky-wave-teleport.png'),
+    require('./images/sky-wave.png')
   ],
   description: (
     <div>
