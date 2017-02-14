@@ -7,7 +7,11 @@ export default function App(props) {
   return (
     <div className='wrapper'>
       <Navigation />
-      {props.children}
+
+      <div className="grid">
+        {props.children}
+      </div>
+
       <Footer />
     </div>
   );
