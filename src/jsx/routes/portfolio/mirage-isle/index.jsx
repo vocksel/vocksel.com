@@ -17,9 +17,9 @@ export default {
 
       <p>What appears to be a bastion of hope for weary travelers soon reveals itself as not much more than a desert at sea. With no food or drinkable water, sailors have described it as a mirage, hastily taking away what hope it initially gave them.</p>
 
-      <p>A small boat rests atop the water, anchored to the dock. A tent and campfire sit just above. Someone has been here, but given the lack of sustainability, what are the chances they’re still amongst the living?</p>
+      <p>A small boat rests atop the water, anchored to the dock. A tent and campfire sit just above. Someone has been here, but given the lack of sustainability, what are the chances they're still amongst the living?</p>
 
-      <p>I used Mirage Isle as an “in between” project. I would incrementally add on to it when I needed a break from more intensive projects. Modeling the rocks used for the terrain was surprisingly therapeutic. It didn’t require much thought or effort to sculpt a rock that fit in nicely with the existing landscape.</p>
+      <p>I used Mirage Isle as an “in between” project. I would incrementally add on to it when I needed a break from more intensive projects. Modeling the rocks used for the terrain was surprisingly therapeutic. It didn't require much thought or effort to sculpt a rock that fit in nicely with the existing landscape.</p>
 
       <p>This was a delightfully relaxing project to work on, with a very appealing end result.</p>
     </div>

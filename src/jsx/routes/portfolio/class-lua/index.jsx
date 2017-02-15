@@ -12,7 +12,7 @@ export default {
     <div>
       <p>A dead simple Lua module to make classes easier to define.</p>
 
-      <p>Object Oriented Programming (OOP) is a commonly used paradigm across all major programming languages. While Lua has support for OOP, their implementation isn’t the easiest to work with.</p>
+      <p>Object Oriented Programming (OOP) is a commonly used paradigm across all major programming languages. While Lua has support for OOP, their implementation isn't the easiest to work with.</p>
 
       <p>There is no class keyword like you would come to expect from other programming languages. What Lua uses instead are called metatables, which can be tedious to work with and cause confusion. </p>
 
