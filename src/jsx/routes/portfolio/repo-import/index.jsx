@@ -11,11 +11,11 @@ export default {
   ],
   description: (
     <div>
-      <p>Repo Import makes it easier to work on your games outside of Roblox’s development environment, Roblox Studio.</p>
+      <p>Repo Import makes it easier to work on your games outside of Roblox's development environment, Roblox Studio.</p>
 
       <p>A little backstory: Roblox games are contained in a single file with all your source code and level geometry. This makes it incredibly difficult to version control your code, as you have to wade through thousands of lines of XML to do so.</p>
 
-      <p>I’ve worked extensively on another project called <Link to="/projects/elixir">Elixir</Link>, which allows you to code your games outside of Studio. It compiles Lua source code into a Roblox-compatible XML file, also known as a ‘Model’ file, that you can import into your game. This lets you write all of your code outside of Studio, using any third-party software you like.</p>
+      <p>I've worked extensively on another project called <Link to="/projects/elixir">Elixir</Link>, which allows you to code your games outside of Studio. It compiles Lua source code into a Roblox-compatible XML file, also known as a 'Model' file, that you can import into your game. This lets you write all of your code outside of Studio, using any third-party software you like.</p>
 
       <div>
         <div className="grid__col grid__col--1-of-2">
@@ -35,7 +35,7 @@ export default {
 
       <p>When using Elixir by itself, you run into the workflow of: code -> compile -> import into Studio -> put everything in the right place. Repo Import takes care of the last step for you.</p>
 
-      <p>With Repo Import, you create directories to match Studio’s hierarchy. When compiled and imported, Repo Import automatically moves your files to the correct locations in your game. This is a major help, as having to drag-and-drop sections of your codebase each time you make a change is incredibly tedious.</p>
+      <p>With Repo Import, you create directories to match Studio's hierarchy. When compiled and imported, Repo Import automatically moves your files to the correct locations in your game. This is a major help, as having to drag-and-drop sections of your codebase each time you make a change is incredibly tedious.</p>
 
       <div>
         <div className="grid__col grid__col--1-of-2">
@@ -49,9 +49,9 @@ export default {
         </div>
       </div>
 
-      <p>While there is still some tedium with this workflow, it’s served me well for just about a year. <Link to="/projects/echo-ridge">Echo Ridge</Link> is my most notable game using this workflow. It’s completely version controlled with Git, and even open-sourced on <a href="https://github.com/vocksel/echo-ridge">GitHub</a>.</p>
+      <p>While there is still some tedium with this workflow, it's served me well for just about a year. <Link to="/projects/echo-ridge">Echo Ridge</Link> is my most notable game using this workflow. It's completely version controlled with Git, and even open-sourced on <a href="https://github.com/vocksel/echo-ridge">GitHub</a>.</p>
 
-      <p>The biggest flaw with this workflow is once you compile your code, you have to drag-and-drop the Model file into Studio. While we can automate compiling and what happens after importing, this is an unfortunate flaw that can’t be avoided.</p>
+      <p>The biggest flaw with this workflow is once you compile your code, you have to drag-and-drop the Model file into Studio. While we can automate compiling and what happens after importing, this is an unfortunate flaw that can't be avoided.</p>
     </div>
   )
 };
