@@ -8,8 +8,7 @@ export default {
   images: [
     require('./images/mountain.png'),
     require('./images/hill.png'),
-    require('./images/rune.png'),
-    require('./images/cave.png')
+    require('./images/rune.png')
   ],
   description: (
     <div>
