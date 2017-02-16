@@ -39,6 +39,8 @@ $inuit-global-line-height: 24px;
 @import "~inuitcss/generic/generic.shared";
 
 // ELEMENTS
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 @import "~inuitcss/elements/elements.page";
 @import "~inuitcss/elements/elements.headings";
 @import "~inuitcss/elements/elements.images";

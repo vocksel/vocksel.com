@@ -56,6 +56,10 @@ module.exports = {
       {
         test: /\.(png|jpg|ico)/,
         use: 'url-loader?limit=10000'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: 'file-loader'
       }
     ]
   },

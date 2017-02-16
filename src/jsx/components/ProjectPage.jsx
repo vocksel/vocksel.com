@@ -11,8 +11,8 @@ export default class ProjectPage extends Component {
         </div>
 
         <ul className="ProjectMeta">
-          <li>Released: {this.props.released}</li>
-          <li>Tags: {this.props.tags.join(', ')}</li>
+          <li><i className="fa fa-clock-o" /> {this.props.released}</li>
+          <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
         </ul>
 
         <div className="Project-bio">
