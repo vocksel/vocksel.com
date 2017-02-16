@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default class ProjectTile extends Component {
   render() {
     return (
-      <div className="ProjectTile grid__col grid__col--1-of-2">
+      <div className="ProjectTile">
         <Link to={`/projects/${this.props.slug}`}>
           <h1 className="Project-title">{this.props.name}</h1>
           <img className="ProjectTile--mainImage" src={this.props.images[0]} />
