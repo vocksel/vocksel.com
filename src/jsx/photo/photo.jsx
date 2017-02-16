@@ -40,27 +40,37 @@
 
   */
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-function getImageAsLink(image, href, title) {
-  return <a className='photo__link' href={href} title={title}>{image}</a>;
+class PhotoLink extends Component {
+  render() {
+    return (
+      <a className='photo__link' href={this.props.href} title={this.props.title}>
+        {image}
+      </a>
+    );
+  }
 }
 
-export function PhotoCaption(props) {
-  return (
-    <figcaption className='photo__caption'>{props.children}</figcaption>
-  );
+export class PhotoCaption extends Component {
+  render() {
+    return (
+      <figcaption className='photo__caption'>{this.props.children}</figcaption>
+    );
+  }
 }
 
-export function Photo(props) {
-  const image = <img className='photo__image' src={props.image} />;
+export class Photo extends Component {
+  render() {
+    const image = <img className='photo__image' src={props.image} />;
 
-  return (
-    <figure className='photo'>
-      {props.href ? getImageAsLink(image, props.href, props.title) : image}
-      {props.children}
-    </figure>
-  );
+    return (
+      <figure className='photo'>
+        {props.href ? getImageAsLink(image, props.href, props.title) : image}
+        {props.children}
+      </figure>
+    );
+  }
 }
 
 Photo.propTypes = {
