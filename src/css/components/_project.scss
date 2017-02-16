@@ -1,0 +1,9 @@
+.Project {
+  @extend .grid__col;
+  @extend %span-all;
+}
+
+.ProjectTile {
+  @extend .grid__col;
+  @extend %one-half;
+}
