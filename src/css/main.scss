@@ -70,6 +70,7 @@ $inuit-global-line-height: 24px;
 // @import "~inuitcss/objects/objects.crop";
 // @import "~inuitcss/objects/objects.tables";
 // @import "~inuitcss/objects/objects.pack";
+$toast-gutter-width: $inuit-global-spacing-unit;
 @import "objects/grids";
 @import "objects/centered-text";
 @import "objects/fine-print";
