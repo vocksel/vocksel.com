@@ -8,3 +8,6 @@
 $global-radius: 3px !default;
 $global-transition: .2s;
 $global-transition--slow: $global-transition*2.5;
+
+// Toast
+$toast-gutter-width: $inuit-global-spacing-unit;
