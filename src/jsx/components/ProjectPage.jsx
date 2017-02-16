@@ -1,27 +1,29 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default function ProjectPage(props) {
-  return (
-    <div className="project">
-      <h1 className="project__title">{props.name}</h1>
+export default class ProjectPage extends Component {
+  render() {
+    return (
+      <div className="project">
+        <h1 className="project__title">{this.props.name}</h1>
 
-      <div className="project__gallery">
-        {props.images.map(image => <img key={image} src={image} />)}
+        <div className="project__gallery">
+          {this.props.images.map(image => <img key={image} src={image} />)}
+        </div>
+
+        <div className="project__meta">
+          <p className="project__date">Released {this.props.released}.</p>
+
+          <ul className="project__tags">
+            {this.props.tags.map(tag => <li key={tag}>{tag}</li>)}
+          </ul>
+        </div>
+
+        <div className="project__description">
+          {this.props.children}
+        </div>
       </div>
-
-      <div className="project__meta">
-        <p className="project__date">Released {props.released}.</p>
-
-        <ul className="project__tags">
-          {props.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
-      </div>
-
-      <div className="project__description">
-        {props.children}
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 ProjectPage.propTypes = {

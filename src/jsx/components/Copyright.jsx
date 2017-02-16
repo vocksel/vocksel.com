@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const currentYear = new Date().getFullYear();
 
-export default function Copyright() {
-  return <span>&copy; {currentYear} David Minnerly</span>;
+export default class Copyright extends Component {
+  render() {
+    return <span>&copy; {currentYear} David Minnerly</span>;
+  }
 }
