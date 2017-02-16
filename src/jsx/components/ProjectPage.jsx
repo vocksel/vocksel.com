@@ -3,22 +3,19 @@ import React, { Component, PropTypes } from 'react';
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className="project">
-        <h1 className="project__title">{this.props.name}</h1>
+      <div className="Project">
+        <h1 className="Project-title">{this.props.name}</h1>
 
-        <div className="project__gallery">
+        <div className="ProjectGallery">
           {this.props.images.map(image => <img key={image} src={image} />)}
         </div>
 
-        <div className="project__meta">
-          <p className="project__date">Released {this.props.released}.</p>
+        <ul className="ProjectMeta">
+          <li>Released: {this.props.released}</li>
+          <li>Tags: {this.props.tags.join(', ')}</li>
+        </ul>
 
-          <ul className="project__tags">
-            {this.props.tags.map(tag => <li key={tag}>{tag}</li>)}
-          </ul>
-        </div>
-
-        <div className="project__description">
+        <div className="Project-bio">
           {this.props.children}
         </div>
       </div>
