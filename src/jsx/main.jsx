@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory, applyRouterMiddleware } from 'react-router';
+import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
 import { useScroll } from 'react-router-scroll';
 
-import App from './App';
-import Home from './routes/Home';
-import About from './routes/About';
-import Project from './routes/Project';
+import routes from './routes';
 
 ReactDOM.render((
-  <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
-    <Route path='/' component={App}>
-      <IndexRoute component={Home} />
-      <Route path='/about' component={About} />
-      <Route path='/projects/:projectSlug' component={Project} />
-    </Route>
-  </Router>
+  <Router history={browserHistory}
+    routes={routes}
+    render={applyRouterMiddleware(useScroll())} />
 ), document.getElementById('root'));
