@@ -1,11 +1,6 @@
-.Project {
-  @extend .grid__col;
-  @extend %span-all;
-}
+.Project {}
 
 .ProjectTile {
-  @extend .grid__col;
-  @extend %one-half;
   margin-bottom: $inuit-global-spacing-unit;
 }
 

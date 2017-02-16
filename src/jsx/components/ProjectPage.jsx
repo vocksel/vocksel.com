@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className="Project">
+      <div className="Project grid__col">
         <h1 className="Project-title">{this.props.name}</h1>
 
         <div className="ProjectGallery">
