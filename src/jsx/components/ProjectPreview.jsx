@@ -18,7 +18,7 @@ class Meta extends Component {
         </span>
 
         <span className="ProjectPreview-date grid__col grid__col--1-of-3">
-          {this.props.released}
+          <i className="fa fa-clock-o" /> {this.props.released}
         </span>
       </div>
     );
