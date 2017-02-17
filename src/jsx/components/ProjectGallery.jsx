@@ -15,8 +15,9 @@ export default class ProjectGallery extends Component {
 
     return (
       <Slider className="ProjectGallery" {...settings}>
-        {this.props.images.map(image =>
-          <img key={image} src={image} />)}
+        {this.props.images.map((image, index) =>
+          <div key={index} style={{ backgroundImage: `url(${image})` }} />
+        )}
       </Slider>
     );
   }
