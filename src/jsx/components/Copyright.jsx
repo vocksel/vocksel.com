@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-const currentYear = new Date().getFullYear();
-
 export default class Copyright extends Component {
+  getYear() {
+    return new Date().getFullYear();
+  }
+
   render() {
-    return <span>&copy; {currentYear} David Minnerly</span>;
+    return <span>&copy; {this.getYear()} David Minnerly</span>;
   }
 }
