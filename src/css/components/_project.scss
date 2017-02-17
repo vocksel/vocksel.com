@@ -40,6 +40,11 @@
   // Restyling the Slick classes:
 
   .slick-slide {
+    height: $inuit-global-spacing-unit-large*10;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     // We don't want any of the slides having margins, especially at the bottom.
     // This keeps the dots and the sliders fit snug together.
     margin: 0;
