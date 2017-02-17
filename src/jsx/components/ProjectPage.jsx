@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 
+import ProjectGallery from './ProjectGallery';
+
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className="Project grid__col">
+      <div className="Project grid__col grid__col--2-of-2">
         <h1 className="Project-title">{this.props.name}</h1>
 
-        <div className="ProjectGallery">
-          {this.props.images.map(image => <img key={image} src={image} />)}
-        </div>
+        <ProjectGallery images={this.props.images} />
 
         <ul className="ProjectMeta">
           <li><i className="fa fa-clock-o" /> {this.props.released}</li>

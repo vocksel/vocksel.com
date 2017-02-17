@@ -54,7 +54,7 @@ module.exports = {
         })
       },
       {
-        test: /\.(png|jpg|ico)/,
+        test: /\.(png|jpg|ico|gif)/,
         use: 'url-loader?limit=10000'
       },
       {

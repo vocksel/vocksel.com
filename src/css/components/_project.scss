@@ -33,3 +33,23 @@
 .ProjectPreview-date {
   text-align: right;
 }
+
+.ProjectGallery {
+  margin-bottom: $inuit-global-spacing-unit;
+
+  // Restyling the Slick classes:
+
+  .slick-slide {
+    // We don't want any of the slides having margins, especially at the bottom.
+    // This keeps the dots and the sliders fit snug together.
+    margin: 0;
+  }
+
+  .slick-dots {
+    // Removes the default positioning of the dots so we can use plain margins.
+    // The dots ended up clipping into the content below them because of the
+    // absolute positioning they use by default..
+    position: inherit;
+    bottom: 0;
+  }
+}
