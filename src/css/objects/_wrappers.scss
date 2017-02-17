@@ -2,35 +2,9 @@
   #WRAPPERS
 \*------------------------------------*/
 
-/* Wrappers for the page's content.
- *
- * `.wrapper` is the main class that will hold all the page's content, then you
- * use `.wrapper--content` inside of it to put the text at the desired width.
- *
- * This allows images to extend out past the content when placed as children of
- * `.wrapper`. It makes it "pop", so to speak.
- *
- * Usage:
+$max-width: 900px !global;
+$grid-columns: 12 !global;
 
-     <div class="wrapper">
-       <!-- This image will be a larger width than the paragraph in the below
-         -- section. -->
-       <img src="/img/sample.png">
-
-       <section class="wrapper--content">
-         </p>Some sample content</p>
-       </section>
-     </div>
- */
-
-$wrapper-width: 960px;
-
-.wrapper,
-%wrapper {
-  margin: 0 auto;
-  width: $wrapper-width;
-
-  @include mq($from: mobile) {
-    max-width: 100%;
-  }
+.MainWrapper {
+  @include outer-container;
 }

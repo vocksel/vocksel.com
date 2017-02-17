@@ -1,6 +1,8 @@
 .Project {}
 
 .ProjectTile {
+  @include span-columns(6);
+  @include omega(2n);
   margin-bottom: $inuit-global-spacing-unit;
 }
 
@@ -25,18 +27,13 @@
   bottom: 0;
 }
 
-.ProjectPreview-title {
-  // Override padding applied by grid__col.
-  padding: 0;
-}
-
 .ProjectGallery {
   margin-bottom: $inuit-global-spacing-unit;
 
   // Restyling the Slick classes:
 
   .slick-slide {
-    height: $inuit-global-spacing-unit-large*10;
+    height: $inuit-global-spacing-unit-large*12;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

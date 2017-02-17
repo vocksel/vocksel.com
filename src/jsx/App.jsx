@@ -6,10 +6,10 @@ import Header from './components/Header';
 export default class App extends Component {
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <Header />
 
-        <div className="grid">
+        <div className="MainWrapper">
           {this.props.children}
         </div>
 
