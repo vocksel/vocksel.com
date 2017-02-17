@@ -8,11 +8,15 @@ export default class ProjectGallery extends Component {
       arrows: false,
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
+
+      fade: true,
+      draggable: false,
+
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 4000,
       pauseOnHover: true
     };
 
