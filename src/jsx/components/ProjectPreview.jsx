@@ -16,10 +16,6 @@ class Meta extends Component {
         <span className="ProjectPreview-title grid__col grid__col--2-of-3">
           {this.props.name}
         </span>
-
-        <span className="ProjectPreview-date grid__col grid__col--1-of-3">
-          <i className="fa fa-clock-o" /> {this.props.released}
-        </span>
       </div>
     );
   }
