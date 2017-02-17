@@ -1,18 +1,20 @@
 import React from 'react';
 
 import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import Header from './components/Header';
 
 export default function App(props) {
   return (
-    <div className='wrapper'>
-      <Navigation />
+    <div>
+      <Header />
 
-      <div className="grid">
-        {props.children}
+      <div className="wrapper">
+        <div className="grid">
+          {props.children}
+        </div>
+
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   );
 }
