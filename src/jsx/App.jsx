@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
 
-export default function App(props) {
-  return (
-    <div>
-      <Header />
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
 
-      <div className="wrapper">
-        <div className="grid">
-          {props.children}
+        <div className="wrapper">
+          <div className="grid">
+            {this.props.children}
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
       </div>
-    </div>
-  );
+    );
+  }
 }
