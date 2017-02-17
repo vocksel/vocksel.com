@@ -23,12 +23,11 @@
      </div>
  */
 
-$wrapper-width: 800px;
+$wrapper-width: 960px;
 
 .wrapper,
 %wrapper {
-  margin: $inuit-global-spacing-unit;
-
+  margin: 0 auto;
   width: $wrapper-width;
 
   @include mq($from: mobile) {
