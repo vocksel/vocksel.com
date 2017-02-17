@@ -5,7 +5,7 @@ import ProjectGallery from './ProjectGallery';
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className="Project grid__col grid__col--2-of-2">
+      <div className="Project">
         <h1 className="Project-title">{this.props.name}</h1>
 
         <ProjectGallery images={this.props.images} />

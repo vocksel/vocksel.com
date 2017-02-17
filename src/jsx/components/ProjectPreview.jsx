@@ -13,9 +13,7 @@ class Meta extends Component {
   render() {
     return (
       <div className="ProjectPreview-meta">
-        <span className="ProjectPreview-title grid__col grid__col--2-of-3">
-          {this.props.name}
-        </span>
+        {this.props.name}
       </div>
     );
   }
