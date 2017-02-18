@@ -1,4 +1,5 @@
 .Footer {
   @extend %centered-text;
   @extend %fine-print;
+  @extend %grid-column--full;
 }

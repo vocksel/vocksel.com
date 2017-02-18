@@ -45,7 +45,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
-    "bourbon-neat": "^1.8.0",
+    "bourbon-neat": "^2.0.0",
     "font-awesome": "^4.7.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

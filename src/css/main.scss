@@ -29,7 +29,7 @@ $inuit-global-line-height: 24px;
 // TOOLS
 @import "~inuitcss/tools/tools.rem";
 @import "~inuitcss/tools/tools.font-size";
-@import "~bourbon-neat/app/assets/stylesheets/neat";
+@import "~bourbon-neat/core/neat";
 @import "~sass-mq/mq"; // Installed by inuitcss. This is the Media Query library it uses.
 
 // GENERIC
@@ -51,6 +51,7 @@ $inuit-global-line-height: 24px;
 // OBJECTS
 @import "objects/centered-text";
 @import "objects/fine-print";
+@import "objects/grids";
 @import "objects/list-inline";
 @import "objects/transitions";
 @import "objects/wrappers";
