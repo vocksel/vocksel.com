@@ -1,0 +1,19 @@
+$neat-grid: (
+  columns: 12,
+  gutter: $inuit-global-spacing-unit,
+);
+
+.grid,
+%grid {
+  @include grid-container;
+}
+
+.grid-column--full,
+%grid-column--full {
+  @include grid-column(12);
+}
+
+.grid-column--half,
+%grid-column--half {
+  @include grid-column(6);
+}

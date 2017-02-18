@@ -2,9 +2,7 @@
   #WRAPPERS
 \*------------------------------------*/
 
-$max-width: 900px !global;
-$grid-columns: 12 !global;
-
 .MainWrapper {
-  @include outer-container;
+  width: 960px;
+  margin: 0 auto;
 }

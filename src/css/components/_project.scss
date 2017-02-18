@@ -1,8 +1,9 @@
-.Project {}
+.Project {
+  @extend %grid-column--full;
+}
 
 .ProjectTile {
-  @include span-columns(6);
-  @include omega(2n);
+  @extend %grid-column--half;
   margin-bottom: $inuit-global-spacing-unit;
 }
 

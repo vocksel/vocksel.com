@@ -8,7 +8,8 @@ export default class About extends Component {
 
   render() {
     return (
-      <div>
+      <div className="grid-column--full">
+
         <p>I'm a {this.getAge()}-year-old programming enthusiast living in the state of New York. I aim to make a career out of server administration and network security, and in my spare time I create websites and computer programs.</p>
 
         <p>I got my first taste of programming when I was 13. I started out by learning Lua on the online building game <a href={'http://roblox.com'}> Roblox</a>. Making my little blocky creations come to life was amazing to me, and it became the foundation for something more.</p>
