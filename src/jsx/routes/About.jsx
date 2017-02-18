@@ -9,6 +9,7 @@ export default class About extends Component {
   render() {
     return (
       <div className="grid-column--full">
+        <h1>About</h1>
 
         <p>I'm a {this.getAge()}-year-old programming enthusiast living in the state of New York. I aim to make a career out of server administration and network security, and in my spare time I create websites and computer programs.</p>
 
