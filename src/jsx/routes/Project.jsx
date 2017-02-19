@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ProjectPage from 'jsx/components/ProjectPage';
+import ProjectPage from 'jsx/components/project/ProjectPage';
 import portfolio from './portfolio';
 
 function getProjectBySlug(slug) {
