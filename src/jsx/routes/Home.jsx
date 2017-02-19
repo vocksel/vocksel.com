@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ProjectTile from 'jsx/components/ProjectTile';
+import ProjectTile from 'jsx/components/project/ProjectTile';
 import portfolio from './portfolio';
 
 export default class Home extends Component {
