@@ -18,16 +18,16 @@ export default {
 
       <p>Every class definition comes with a heap of overhead because of the excessive amount of work you have to do with metatables. To fix this, I made a simple module that abstracts away all of that overhead so you can focus on your code.</p>
 
-      <div className="grid__col grid__col--1-of-2">
-        <p><strong>Before</strong></p>
+      <div className="Grid">
+        <div className="Grid-halfColumn">
+          <p><strong>Before</strong></p>
+          <img src={require('./images/before.png')} />
+        </div>
 
-        <img src={require('./images/before.png')} />
-      </div>
-
-      <div className="grid__col grid__col--1-of-2">
-        <p><strong>After</strong></p>
-
-        <img src={require('./images/after.png')} />
+        <div className="Grid-halfColumn">
+          <p><strong>After</strong></p>
+          <img src={require('./images/after.png')} />
+        </div>
       </div>
     </div>
   )
