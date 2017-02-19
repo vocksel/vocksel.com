@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './App';
-import Home from './Home';
+import Portfolio from './Portfolio';
 import About from './About';
 import Project from './Project';
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={Portfolio} />
     <Route path='/about' component={About} />
     <Route path='/projects/:projectSlug' component={Project} />
   </Route>
