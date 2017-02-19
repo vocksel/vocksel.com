@@ -1,19 +1,21 @@
+@import "~bourbon-neat/core/neat";
+
 $neat-grid: (
   columns: 12,
   gutter: $inuit-global-spacing-unit,
 );
 
-.grid,
-%grid {
+.Grid,
+%Grid {
   @include grid-container;
 }
 
-.grid-column--full,
-%grid-column--full {
-  @include grid-column(12);
+.Grid-fullColumn,
+%Grid-fullColumn {
+  @include grid-column;
 }
 
-.grid-column--half,
-%grid-column--half {
-  @include grid-column(6);
+.Grid-halfColumn,
+%Grid-halfColumn {
+  @include grid-column(1 of 2);
 }

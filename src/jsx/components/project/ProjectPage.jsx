@@ -5,18 +5,20 @@ import ProjectGallery from './ProjectGallery';
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className="Project">
-        <h1 className="Project-title">{this.props.name}</h1>
+      <div className="Project Grid">
+        <div className="Grid-fullColumn">
+          <h1 className="Project-title">{this.props.name}</h1>
 
-        <ProjectGallery images={this.props.images} />
+          <ProjectGallery images={this.props.images} />
 
-        <ul className="ProjectMeta">
-          <li><i className="fa fa-clock-o" /> {this.props.released}</li>
-          <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
-        </ul>
+          <ul className="ProjectMeta">
+            <li><i className="fa fa-clock-o" /> {this.props.released}</li>
+            <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
+          </ul>
 
-        <div className="Project-bio">
-          {this.props.children}
+          <div className="Project-bio">
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

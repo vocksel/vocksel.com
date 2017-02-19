@@ -12,7 +12,9 @@ export default class Home extends Component {
 
     return (
       <div>
-        {projects}
+        <div className="Grid">
+          {projects}
+        </div>
       </div>
     );
   }
