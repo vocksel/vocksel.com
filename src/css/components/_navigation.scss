@@ -1,4 +1,21 @@
-.Navigation {
+/**
+ * Navigation layed out over a single line.
+ *
+ * This is your standard "Home  About  Contact" navigation, primarily used at
+ * the top of the page.
+ *
+ * Usage:
+
+  <div class="FlatNav">
+    <div class="FlatNav-group">
+      <a href="https://twitter.com/you">Twitter</a>
+      <a href="https://github.com/you">GitHub</a>
+    </div>
+  </div>
+
+ */
+
+.FlatNav {
   ul {
     margin: 0;
   }
@@ -14,16 +31,36 @@
   }
 }
 
-.Navigation-link {
-  border-bottom-width: 0;
-  transition: none;
+// Main navigation at the top of the page.
+.FlatNav--main {
+  float: right;
 
-  &:hover {
-    color: inherit;
-    border-color: inherit;
+  a {
+    border-bottom-width: 0;
+    transition: none;
+
+    &:hover {
+      color: inherit;
+      border-color: inherit;
+    }
+
+    &.is-active {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.FlatNav-group {
+  float: left;
+  // border-right: 1px solid darken($background-color, 20);
+
+  &:after {
+    content: "/";
+    padding: 0 $inuit-global-spacing-unit;
   }
 
-  &.active {
-    border-bottom-width: 2px;
+  &:last-of-type:after {
+    content: none;
+    padding: 0;
   }
 }
