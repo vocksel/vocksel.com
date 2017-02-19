@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import Navigation from './Navigation';
+import PrimaryNav from './navigation/PrimaryNav';
 
 export default class Header extends Component {
   render() {
     return (
       <header className="Header">
-        <Navigation />
+        <PrimaryNav />
       </header>
     );
   }
