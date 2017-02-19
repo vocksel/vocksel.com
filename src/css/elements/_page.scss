@@ -2,6 +2,9 @@
   #PAGE
 \*------------------------------------*/
 
+@import "../settings/colors";
+@import "../settings/fonts";
+
 html {
   font-family: $sans-font-stack;
   color: $text-color;
