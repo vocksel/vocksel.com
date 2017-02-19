@@ -17,13 +17,13 @@ export default {
 
       <p>I've worked extensively on another project called <Link to="/projects/elixir">Elixir</Link>, which allows you to code your games outside of Studio. It compiles Lua source code into a Roblox-compatible XML file, also known as a 'Model' file, that you can import into your game. This lets you write all of your code outside of Studio, using any third-party software you like.</p>
 
-      <div>
-        <div className="grid__col grid__col--1-of-2">
+      <div className="Grid">
+        <div className="Grid-halfColumn">
           <p><strong>Files</strong></p>
           <img src={require('./images/no-repo-import.png')} />
         </div>
 
-        <div className="grid__col grid__col--1-of-2">
+        <div className="Grid-halfColumn">
           <p><strong>Roblox Studio</strong></p>
           <img src={require('./images/no-repo-import-in-game.png')} />
         </div>
@@ -37,13 +37,13 @@ export default {
 
       <p>With Repo Import, you create directories to match Studio's hierarchy. When compiled and imported, Repo Import automatically moves your files to the correct locations in your game. This is a major help, as having to drag-and-drop sections of your codebase each time you make a change is incredibly tedious.</p>
 
-      <div>
-        <div className="grid__col grid__col--1-of-2">
+      <div className="Grid">
+        <div className="Grid-halfColumn">
           <p><strong>Files</strong></p>
           <img src={require('./images/with-repo-import.png')} />
         </div>
 
-        <div className="grid__col grid__col--1-of-2">
+        <div className="Grid-halfColumn">
           <p><strong>Roblox Studio</strong></p>
           <img src={require('./images/with-repo-import-in-game.png')} />
         </div>
