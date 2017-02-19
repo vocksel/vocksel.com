@@ -22,7 +22,7 @@
 // =============================================================================
 
 .ProjectPreview {
-  color: $primary-color;
+  color: $background-color;
   position: relative;
 }
 
@@ -37,7 +37,7 @@
 .ProjectPreview-meta {
   position: absolute;
   width: 100%;
-  background-color: rgba($neg-primary-color, .5);
+  background-color: rgba(20,20,20, .35);
   padding: $inuit-global-spacing-unit-small/2 $inuit-global-spacing-unit-small;
   bottom: 0;
 }
