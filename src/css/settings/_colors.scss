@@ -4,5 +4,5 @@
 // Setting variables for all the colors we use across the site.
 
 $background-color: #fff;
-$text-color: #011920;;
-$header-color: $text-color;
+$text-color: #777777;
+$header-color: darken($text-color, 20);
