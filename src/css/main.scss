@@ -18,24 +18,20 @@
 
 // Note that all @import paths starting with "~" are referencing node_modules.
 
-// SETTINGS
+// INUITCSS
 $inuit-global-font-size: 16px;
 $inuit-global-line-height: 24px;
 @import "~inuitcss/settings/settings.core";
-
-// TOOLS
 @import "~inuitcss/tools/tools.rem";
 @import "~inuitcss/tools/tools.font-size";
-
-// GENERIC
 @import "~inuitcss/generic/generic.box-sizing";
 @import "~inuitcss/generic/generic.normalize";
 @import "~inuitcss/generic/generic.reset";
 @import "~inuitcss/generic/generic.shared";
-
-// ELEMENTS
 @import "~inuitcss/elements/elements.page";
 @import "~inuitcss/elements/elements.images";
+
+// ELEMENTS
 @import "elements/page";
 @import "elements/type";
 @import "elements/links";
