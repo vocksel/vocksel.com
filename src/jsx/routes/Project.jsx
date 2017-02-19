@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import ProjectPage from 'jsx/components/project/ProjectPage';
-import portfolio from './portfolio';
+import projects from './projects';
 
 function getProjectBySlug(slug) {
-  return portfolio.find(project => project.slug === slug);
+  return projects.find(project => project.slug === slug);
 }
 
 export default class Project extends Component {
