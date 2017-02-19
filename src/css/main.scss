@@ -26,7 +26,6 @@ $inuit-global-line-height: 24px;
 // TOOLS
 @import "~inuitcss/tools/tools.rem";
 @import "~inuitcss/tools/tools.font-size";
-@import "~bourbon-neat/core/neat";
 
 // GENERIC
 @import "~inuitcss/generic/generic.box-sizing";
@@ -44,6 +43,7 @@ $inuit-global-line-height: 24px;
 
 // OBJECTS
 @import "objects/wrappers";
+@import "objects/grids";
 
 // COMPONENTS
 @import "components/footer";

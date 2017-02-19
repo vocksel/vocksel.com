@@ -5,8 +5,10 @@ import PrimaryNav from './navigation/PrimaryNav';
 export default class Header extends Component {
   render() {
     return (
-      <header className="Header">
-        <PrimaryNav />
+      <header className="Header Grid">
+        <div className="Grid-fullColumn">
+          <PrimaryNav />
+        </div>
       </header>
     );
   }

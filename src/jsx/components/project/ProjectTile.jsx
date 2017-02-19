@@ -6,7 +6,7 @@ import ProjectPreview from './ProjectPreview';
 export default class ProjectTile extends Component {
   render() {
     return (
-      <div className="ProjectTile">
+      <div className="ProjectTile Grid-halfColumn">
         <Link to={`/projects/${this.props.slug}`}>
           <ProjectPreview name={this.props.name} image={this.props.image}
             released={this.props.released} />
