@@ -1,5 +1,12 @@
+@import "../objects/centered-text";
+@import "../objects/fine-print";
+@import "../objects/list-inline";
+
 .Footer {
   @extend %centered-text;
   @extend %fine-print;
-  @extend %grid-column--full;
+}
+
+.Footer-nav {
+  @extend %list-inline--delimited;
 }
