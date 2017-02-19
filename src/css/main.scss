@@ -30,7 +30,6 @@ $inuit-global-line-height: 24px;
 @import "~inuitcss/tools/tools.rem";
 @import "~inuitcss/tools/tools.font-size";
 @import "~bourbon-neat/core/neat";
-@import "~sass-mq/mq"; // Installed by inuitcss. This is the Media Query library it uses.
 
 // GENERIC
 @import "~inuitcss/generic/generic.box-sizing";
@@ -40,9 +39,7 @@ $inuit-global-line-height: 24px;
 
 // ELEMENTS
 @import "~inuitcss/elements/elements.page";
-@import "~inuitcss/elements/elements.headings";
 @import "~inuitcss/elements/elements.images";
-@import "~inuitcss/elements/elements.tables";
 @import "elements/page";
 @import "elements/type";
 @import "elements/links";
@@ -56,6 +53,3 @@ $inuit-global-line-height: 24px;
 @import "components/header";
 @import "components/navigation";
 @import "components/project";
-
-// UTILITIES
-@import "~inuitcss/utilities/utilities.print";
