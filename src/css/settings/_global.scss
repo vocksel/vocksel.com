@@ -4,10 +4,5 @@
 // The global settings file contains any project-wide variables; things that
 // need to be made available to the entire codebase.
 
-// Standardise some UI treatments.
-$global-radius: 3px !default;
 $global-transition: .2s;
 $global-transition--slow: $global-transition*2.5;
-
-// Toast
-$toast-gutter-width: $inuit-global-spacing-unit;
