@@ -2,6 +2,9 @@
   #LINKS
 \*------------------------------------*/
 
+@import "../settings/colors";
+@import "../settings/global";
+
 $link-color: $text-color;
 $link-color--hover: lighten($link-color, 30);
 $link-underline-height: 2px;
