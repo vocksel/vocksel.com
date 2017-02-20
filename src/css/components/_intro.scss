@@ -1,0 +1,12 @@
+@import "~inuitcss/tools/tools.font-size";
+
+.Intro {
+  margin-bottom: $inuit-global-spacing-unit-large;
+}
+
+.Intro-text {
+  @include inuit-font-size(22px);
+  line-height: 1.5;
+  color: $text-color;
+  font-weight: normal;
+}
