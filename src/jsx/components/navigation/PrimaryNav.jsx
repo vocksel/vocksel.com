@@ -17,11 +17,6 @@ export default class PrimaryNav extends Component {
           <NavLink onlyActiveOnIndex={true} to="/">Portfolio</NavLink>
           <NavLink to="/about">About</NavLink>
         </NavGroup>
-
-        <NavGroup className="FlatNav-group">
-          <a href="https://twitter.com/voxeldavid">Twitter</a>
-          <a href="https://github.com/vocksel">GitHub</a>
-        </NavGroup>
       </nav>
     );
   }
