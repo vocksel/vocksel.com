@@ -18,10 +18,7 @@
 // Project Preview
 // =============================================================================
 
-.ProjectPreview {
-  color: $background-color;
-  position: relative;
-}
+.ProjectPreview {}
 
 .ProjectPreview-image {
   width: 100%;
@@ -30,15 +27,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.ProjectPreview-meta {
-  position: absolute;
-  width: 100%;
-  background-color: rgba(20,20,20, .35);
-  padding: $inuit-global-spacing-unit-small/2 $inuit-global-spacing-unit-small;
-  bottom: 0;
-}
-
 
 // =============================================================================
 // Project Gallery
