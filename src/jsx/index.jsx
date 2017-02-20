@@ -4,14 +4,14 @@ import { Router, Route, IndexRoute,  browserHistory, applyRouterMiddleware } fro
 import { useScroll } from 'react-router-scroll';
 
 import App from './routes/App';
-import Portfolio from './routes/Portfolio';
+import Home from './routes/Home';
 import About from './routes/About';
 import Project from './routes/Project';
 
 ReactDOM.render((
   <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
     <Route path='/' component={App}>
-      <IndexRoute component={Portfolio} />
+      <IndexRoute component={Home} />
       <Route path='/about' component={About} />
       <Route path='/projects/:projectSlug' component={Project} />
     </Route>
