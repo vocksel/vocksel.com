@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import ProjectTile from 'jsx/components/project/ProjectTile';
-import projects from './projects';
+import ProjectTile from './project/ProjectTile';
+import projects from 'jsx/routes/projects';
 
 export default class Portfolio extends Component {
   getProjectTiles() {
