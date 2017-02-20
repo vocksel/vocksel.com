@@ -37,15 +37,10 @@
 
   a {
     border-bottom-width: 0;
-    transition: none;
-
-    &:hover {
-      color: inherit;
-      border-color: inherit;
-    }
+    transition-property: color;
 
     &.is-active {
-      border-bottom-width: 2px;
+      border-bottom-width: 1px;
     }
   }
 }
