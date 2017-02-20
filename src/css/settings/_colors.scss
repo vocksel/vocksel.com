@@ -6,3 +6,9 @@
 $background-color: #fff;
 $text-color: #777777;
 $header-color: darken($text-color, 20);
+
+// These are used for setting the color of links/icons for different websites.
+$brand-colors: (
+  twitter: #1da1f2,
+  github: #333
+);
