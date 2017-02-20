@@ -9,3 +9,7 @@ html {
   font-family: $sans-font-stack;
   color: $text-color;
 }
+
+body {
+  padding: $inuit-global-spacing-unit-large 0;
+}
