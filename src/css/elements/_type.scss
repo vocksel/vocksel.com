@@ -2,6 +2,9 @@
   #TYPE
 \*------------------------------------*/
 
+@import "../settings/colors";
+@import "../settings/fonts";
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans-font-stack;
   font-weight: normal;

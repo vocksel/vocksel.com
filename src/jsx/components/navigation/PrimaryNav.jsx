@@ -5,15 +5,17 @@
  */
 
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
+import styles from 'css/components/_navigation.scss';
 import NavLink from './NavLink';
 import NavGroup from './NavGroup';
 
 export default class PrimaryNav extends Component {
   render() {
     return (
-      <nav className="FlatNav FlatNav--main">
-        <NavGroup className="FlatNav-group">
+      <nav className={classNames(styles.FlatNav, styles['FlatNav--main'])}>
+        <NavGroup className={styles['FlatNav-groupd']}>
           <NavLink onlyActiveOnIndex={true} to="/">Portfolio</NavLink>
           <NavLink to="/about">About</NavLink>
         </NavGroup>

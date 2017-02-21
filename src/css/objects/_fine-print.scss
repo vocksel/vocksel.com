@@ -13,6 +13,9 @@
 
  */
 
+@import "~inuitcss/settings/settings.core"; // For inuit-font-size.
+@import "~inuitcss/tools/tools.font-size";
+
 .fine-print,
 %fine-print {
   @include inuit-font-size(14px);
