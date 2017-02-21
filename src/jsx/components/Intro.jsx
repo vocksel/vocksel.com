@@ -6,7 +6,7 @@ import Section from './Section';
 export default class Intro extends Component {
   render() {
     return (
-      <Section name="About" className="Intro">
+      <Section name="About">
         <div className="Grid-fullColumn">
           <p>Hey, nice to meet you. I'm David Minnerly. I'm a programmer, 3D modeler, and I also make websites on occasion.</p>
 
