@@ -23,7 +23,6 @@ $inuit-global-font-size: 16px;
 $inuit-global-line-height: 24px;
 @import "~inuitcss/settings/settings.core";
 @import "~inuitcss/tools/tools.rem";
-@import "~inuitcss/tools/tools.font-size";
 @import "~inuitcss/generic/generic.box-sizing";
 @import "~inuitcss/generic/generic.normalize";
 @import "~inuitcss/generic/generic.reset";
@@ -36,15 +35,3 @@ $inuit-global-line-height: 24px;
 @import "elements/type";
 @import "elements/links";
 @import "elements/images";
-
-// OBJECTS
-@import "objects/wrappers";
-@import "objects/grids";
-
-// COMPONENTS
-@import "components/footer";
-@import "components/header";
-@import "components/navigation";
-@import "components/project";
-@import "components/links";
-@import "components/section";

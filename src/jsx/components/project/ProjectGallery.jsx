@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import styles from 'css/components/_project.scss';
 import Slider from 'react-slick';
 
 export default class ProjectGallery extends Component {
@@ -21,7 +22,7 @@ export default class ProjectGallery extends Component {
     };
 
     return (
-      <Slider className="ProjectGallery" {...settings}>
+      <Slider className={styles.ProjectGallery} {...settings}>
         {this.props.images.map((image, index) =>
           <div key={index} style={{ backgroundImage: `url(${image})` }} />
         )}
