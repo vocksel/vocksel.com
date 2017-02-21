@@ -34,14 +34,14 @@
 // Main navigation at the top of the page.
 .FlatNav--main {
   float: right;
+}
 
-  a {
-    border-bottom-width: 0;
-    transition-property: color;
+.FlatNav-link {
+  border-bottom-width: 0;
+  transition-property: color;
 
-    &.is-active {
-      border-bottom-width: 1px;
-    }
+  &.is-active {
+    border-bottom-width: 1px;
   }
 }
 

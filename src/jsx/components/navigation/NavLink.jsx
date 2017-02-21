@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 export default class NavLink extends Component {
   render() {
     return (
-      <Link className="FlatNav-link" activeClassName="is-active" {...this.props}>
+      <Link {...this.props} activeClassName="is-active" className="FlatNav-link">
         {this.props.children}
       </Link>
     );
