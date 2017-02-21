@@ -1,0 +1,13 @@
+.Section {
+  margin-bottom: $inuit-global-spacing-unit;
+}
+
+.Section-title {
+  @include inuit-font-size(18px);
+  color: $header-color;
+  margin-bottom: $inuit-global-spacing-unit;
+
+  // Pushes the border down so it matches the bottom margin.
+  padding-bottom: $inuit-global-spacing-unit-tiny;
+  border-bottom: 1px solid darken($background-color, 15);
+}
