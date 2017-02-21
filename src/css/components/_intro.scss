@@ -4,7 +4,11 @@
   margin-bottom: $inuit-global-spacing-unit;
 }
 
-.Intro-text {
+.Intro-title {
+  margin-bottom: 0;
+}
+
+.Intro-tagline {
   @include inuit-font-size(22px);
   line-height: 1.5;
   color: $text-color;
