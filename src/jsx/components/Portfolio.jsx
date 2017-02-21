@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Section from './Section';
 import ProjectTile from './project/ProjectTile';
 import projects from 'jsx/routes/projects';
 
@@ -15,11 +16,9 @@ export default class Portfolio extends Component {
     const tiles = this.getProjectTiles();
 
     return (
-      <div>
-        <div className="Grid">
-          {tiles}
-        </div>
-      </div>
+      <Section name="Selected work">
+        {tiles}
+      </Section>
     );
   }
 }
