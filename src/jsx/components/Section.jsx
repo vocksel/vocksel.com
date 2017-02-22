@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import grids from 'css/objects/_grids.scss';
-import styles from 'css/components/_section.scss';
+import styles from './Section.scss';
 
 export default class Section extends Component {
   render() {

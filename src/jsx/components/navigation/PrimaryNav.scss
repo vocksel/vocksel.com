@@ -1,20 +1,3 @@
-/**
- * Navigation layed out over a single line.
- *
- * This is your standard "Home  About  Contact" navigation, primarily used at
- * the top of the page.
- *
- * Usage:
-
-  <div class="FlatNav">
-    <div class="FlatNav-group">
-      <a href="https://twitter.com/you">Twitter</a>
-      <a href="https://github.com/you">GitHub</a>
-    </div>
-  </div>
-
- */
-
 @import "~inuitcss/settings/settings.core";
 
 .base {
@@ -37,15 +20,6 @@
 .primaryNav {
   composes: base;
   float: right;
-}
-
-.link {
-  border-bottom-width: 0;
-  transition-property: color;
-
-  &.isActive {
-    border-bottom-width: 1px;
-  }
 }
 
 .group {

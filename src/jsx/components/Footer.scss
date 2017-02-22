@@ -1,0 +1,12 @@
+@import "src/css/objects/centered-text";
+@import "src/css/objects/fine-print";
+@import "src/css/objects/list-inline";
+
+.base {
+  @extend %centered-text;
+  @extend %fine-print;
+}
+
+.nav {
+  @extend %list-inline--delimited;
+}

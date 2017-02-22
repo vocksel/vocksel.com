@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import classNames from 'classnames';
 
 import grids from 'css/objects/_grids.scss';
-import nav from 'css/components/_navigation.scss';
-import styles from 'css/components/_header.scss';
+import nav from './navigation/NavLink.scss';
+import styles from './Header.scss';
 import PrimaryNav from './navigation/PrimaryNav';
 
 export default class Header extends Component {

@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 
-import styles from 'css/components/_navigation.scss';
+import styles from './PrimaryNav.scss';
 import NavLink from './NavLink';
 import NavGroup from './NavGroup';
 
