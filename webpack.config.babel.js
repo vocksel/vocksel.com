@@ -54,8 +54,25 @@ module.exports = {
         use: [ 'babel-loader', 'eslint-loader' ]
       },
 
+      // Separate compiling for the vendor styles.
+      //
+      // There was a lot of problems from css-loader's modules option applying
+      // to vendor libraries. To fix it, we're compiling our vendor styles
+      // separately.
+      {
+        test: /vendor.scss/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [ 'css-loader', 'sass-loader' ]
+        })
+      },
+
       {
         test: /\.scss$/,
+
+        // Ignores the vendor styles that we process in the above rule.
+        exclude: /vendor.scss/,
+
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
