@@ -2,11 +2,11 @@
 @import "../objects/fine-print";
 @import "../objects/list-inline";
 
-.Footer {
+.base {
   @extend %centered-text;
   @extend %fine-print;
 }
 
-.Footer-nav {
+.nav {
   @extend %list-inline--delimited;
 }

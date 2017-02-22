@@ -8,8 +8,8 @@ import ProjectGallery from './ProjectGallery';
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className={classNames(styles.Project, grids.Grid)}>
-        <div className={grids['Grid-fullColumn']}>
+      <div className={classNames(styles.Project, grids.grid)}>
+        <div className={grids.full}>
           <h1 className={styles['Project-title']}>{this.props.name}</h1>
 
           <ProjectGallery images={this.props.images} />

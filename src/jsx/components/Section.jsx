@@ -7,9 +7,9 @@ import styles from 'css/components/_section.scss';
 export default class Section extends Component {
   render() {
     return (
-      <section className={classNames(styles.Section, grids.Grid)}>
-        <header className={grids['Grid-fullColumn']}>
-          <h1 className={styles['Section-title']}>{this.props.name}</h1>
+      <section className={classNames(styles.base, grids.grid)}>
+        <header className={grids.full}>
+          <h1 className={styles.title}>{this.props.name}</h1>
         </header>
 
         {this.props.children}

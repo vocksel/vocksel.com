@@ -2,11 +2,11 @@
 @import "~inuitcss/tools/tools.font-size";
 @import "../settings/colors";
 
-.Section {
+.main {
   margin-bottom: $inuit-global-spacing-unit;
 }
 
-.Section-title {
+.title {
   @include inuit-font-size(18px);
   color: $header-color;
   margin-bottom: $inuit-global-spacing-unit;

@@ -7,7 +7,7 @@ import wrappers from 'css/objects/_wrappers.scss';
 export default class App extends Component {
   render() {
     return (
-      <div className={wrappers.wrapper}>
+      <div className={wrappers.base}>
         <Header />
 
         {this.props.children}

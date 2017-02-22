@@ -6,17 +6,14 @@ $neat-grid: (
   gutter: $inuit-global-spacing-unit,
 );
 
-.Grid,
-%Grid {
+.grid, %grid {
   @include grid-container;
 }
 
-.Grid-fullColumn,
-%Grid-fullColumn {
+.full, %full {
   @include grid-column;
 }
 
-.Grid-halfColumn,
-%Grid-halfColumn {
+.half, %half {
   @include grid-column(1 of 2);
 }
