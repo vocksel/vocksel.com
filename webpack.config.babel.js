@@ -6,16 +6,20 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
+
   entry: {
     main: 'app.js',
     vendor: [ 'react', 'react-dom', 'react-router', 'moment' ]
   },
+
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: '[chunkhash].[name].js'
   },
+
   devtool: 'source-map',
+
   devServer: {
     historyApiFallback: true,
 
@@ -29,23 +33,27 @@ module.exports = {
     // Reference: https://webpack.js.org/configuration/dev-server/#devserver-inline-cli-only
     inline: true
   },
+
   resolve: {
     modules: [
       path.resolve(__dirname, 'src'),
       path.resolve(__dirname, 'node_modules')
     ],
+
     extensions: [
       '.js', '.json', // Defaults
       '.jsx'
     ]
   },
+
   module: {
     rules: [
       {
-        test: /\.jsx?$/, // Match both .js and .jsx.
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [ 'babel-loader', 'eslint-loader' ]
       },
+
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
@@ -64,16 +72,19 @@ module.exports = {
           ]
         })
       },
+
       {
         test: /\.(png|jpg|ico|gif)/,
         use: 'url-loader?limit=10000'
       },
+
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: 'file-loader'
       }
     ]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       favicon: 'favicon.ico',
