@@ -39,7 +39,7 @@
 
   // Restyling the Slick classes:
 
-  .slick-slide {
+  :global .slick-slide {
     height: $inuit-global-spacing-unit-large*12;
     background-position: center center;
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@
     margin: 0;
   }
 
-  .slick-dots {
+  :global .slick-dots {
     // Removes the default positioning of the dots so we can use plain margins.
     // The dots ended up clipping into the content below them because of the
     // absolute positioning they use by default..
