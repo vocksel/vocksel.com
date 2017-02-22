@@ -10,12 +10,12 @@ import PrimaryNav from './navigation/PrimaryNav';
 export default class Header extends Component {
   render() {
     return (
-      <header className={classNames(styles.Header, grids.Grid)}>
-        <div className={grids['Grid-halfColumn']}>
-          <Link to="/" className={nav['FlatNav-link']}>David Minnerly</Link>
+      <header className={classNames(styles.base, grids.grid)}>
+        <div className={grids.half}>
+          <Link to="/" className={nav.link}>David Minnerly</Link>
         </div>
 
-        <div className={grids['Grid-halfColumn']}>
+        <div className={grids.half}>
           <PrimaryNav />
         </div>
       </header>

@@ -17,7 +17,7 @@
 
 @import "~inuitcss/settings/settings.core";
 
-.FlatNav {
+.base {
   ul {
     margin: 0;
   }
@@ -34,20 +34,21 @@
 }
 
 // Main navigation at the top of the page.
-.FlatNav--main {
+.primaryNav {
+  composes: base;
   float: right;
 }
 
-.FlatNav-link {
+.link {
   border-bottom-width: 0;
   transition-property: color;
 
-  &.is-active {
+  &.isActive {
     border-bottom-width: 1px;
   }
 }
 
-.FlatNav-group {
+.group {
   float: left;
 
   &:after {
