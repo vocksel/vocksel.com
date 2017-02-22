@@ -1,0 +1,9 @@
+@import "~inuitcss/settings/settings.core";
+
+.image {
+  width: 100%;
+  height: $inuit-global-spacing-unit-large*6;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

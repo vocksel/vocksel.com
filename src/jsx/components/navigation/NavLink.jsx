@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-import styles from 'css/components/_navigation.scss';
+import styles from './NavLink.scss';
 
 export default class NavLink extends Component {
   render() {

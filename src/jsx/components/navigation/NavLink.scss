@@ -1,0 +1,8 @@
+.link {
+  border-bottom-width: 0;
+  transition-property: color;
+
+  &.isActive {
+    border-bottom-width: 1px;
+  }
+}
