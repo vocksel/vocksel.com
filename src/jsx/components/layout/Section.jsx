@@ -37,13 +37,15 @@
  */
 
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 import style from './Section.scss';
 
 export default class Section extends Component {
   render() {
+    const className = classNames(style.base, this.props.className);
     return (
-      <section className={style.base}>
+      <section className={className}>
         {this.props.children}
       </section>
     );
