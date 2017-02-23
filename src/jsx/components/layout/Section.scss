@@ -5,15 +5,3 @@
   @include grid-container;
   margin-bottom: $inuit-global-spacing-unit;
 }
-
-.content {
-  @include grid-column;
-
-  &.isPushedIn {
-    @include grid-column(3 of 4);
-  }
-}
-
-.aside {
-  @include grid-column(1 of 4);
-}
