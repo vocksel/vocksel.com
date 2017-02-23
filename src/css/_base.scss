@@ -1,4 +1,11 @@
-// base.scss
+/**
+ * Base styling for HTML elements.
+ *
+ * This file handles all the styling for the HTML elements we make use of.
+ *
+ * Each React component has its own stylesheet grouped with it. If a component
+ * has any styles you can find them in the same directory as the component.
+ */
 
 @import "~inuitcss/settings/settings.core";
 @import "./settings/global";
