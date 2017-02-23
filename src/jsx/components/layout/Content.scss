@@ -1,4 +1,7 @@
+@import "~inuitcss/settings/settings.core";
 @import "~bourbon-neat/core/neat";
+
+$neat-grid: ( gutter: $inuit-global-spacing-unit );
 
 .base {
   @include grid-column;
