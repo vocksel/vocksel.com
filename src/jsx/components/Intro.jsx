@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 
 import links from 'css/components/_links.scss';
 import grids from 'css/objects/_grids.scss';
