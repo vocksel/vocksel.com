@@ -28,6 +28,7 @@
  */
 
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 import style from './Content.scss';
 
@@ -45,8 +46,9 @@ export default class Content extends Component {
   }
 
   render() {
+    const className = classNames(this.getClassName(), this.props.className);
     return (
-      <div className={this.getClassName()}>
+      <div className={className}>
         {this.props.children}
       </div>
     );
