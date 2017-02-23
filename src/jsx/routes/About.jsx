@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import Section from 'jsx/components/layout/Section';
-import Content from 'jsx/components/layout/Content';
-import Title from 'jsx/components/layout/Title';
+import { Section, Content, Title } from 'jsx/components/layout';
 
 export default class About extends Component {
   getAge() {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import Section from './layout/Section';
-import Content from './layout/Content';
-import Title from './layout/Title';
+import { Section, Content, Title } from './layout';
 import ProjectTile from './project/ProjectTile';
 import projects from 'jsx/routes/projects';
 

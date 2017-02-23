@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 import links from 'css/components/_links.scss';
-import Section from './layout/Section';
-import Content from './layout/Content';
-import Title from './layout/Title';
+import { Section, Content, Title } from './layout';
 
 export default class Intro extends Component {
   render() {
