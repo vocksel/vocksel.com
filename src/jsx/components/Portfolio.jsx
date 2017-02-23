@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import grids from 'css/objects/_grids.scss';
-import Section from './Section';
-import ProjectTile from './project/ProjectTile';
+import Section from './layout/Section';
+import Content from './layout/Content';
 import Title from './layout/Title';
+import ProjectTile from './project/ProjectTile';
 import projects from 'jsx/routes/projects';
 
 export default class Portfolio extends Component {
@@ -19,12 +19,9 @@ export default class Portfolio extends Component {
 
     return (
       <Section>
-        {/* HACK: Currently we need to wrap the title in a full-width column so
-          that it appears above the project tiles. Special components should be
-          made so we can remove this. */}
-        <div className={grids.full}>
+        <Content>
           <Title>Selected work</Title>
-        </div>
+        </Content>
 
         {tiles}
       </Section>

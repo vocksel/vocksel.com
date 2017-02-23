@@ -1,0 +1,13 @@
+@import "~bourbon-neat/core/neat";
+
+.base {
+  @include grid-column;
+}
+
+.reduced {
+  @include grid-column(2 of 3);
+}
+
+.aside {
+  @include grid-column(1 of 3);
+}
