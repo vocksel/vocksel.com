@@ -37,6 +37,8 @@ export default class Content extends Component {
       return style.reduced;
     } else if (this.props.aside) {
       return style.aside;
+    } else if (this.props.half) {
+      return style.half;
     } else {
       return style.base;
     }
