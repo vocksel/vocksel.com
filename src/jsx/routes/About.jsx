@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import grids from 'css/objects/_grids.scss';
 import Section from 'jsx/components/Section';
+import Title from 'jsx/components/layout/Title';
 
 export default class About extends Component {
   getAge() {
@@ -11,8 +12,10 @@ export default class About extends Component {
 
   render() {
     return (
-      <Section name="A bit about me">
+      <Section>
         <div className={grids.full}>
+          <Title>A bit about me</Title>
+
           <p>I'm a {this.getAge()}-year-old programming enthusiast living in the state of New York. I aim to make a career out of server administration and network security, and in my spare time I create websites and computer programs.</p>
 
           <p>I got my first taste of programming when I was 13. I started out by learning Lua on the online building game <a href={'http://roblox.com'}> Roblox</a>. Making my little blocky creations come to life was amazing to me, and it became the foundation for something more.</p>
