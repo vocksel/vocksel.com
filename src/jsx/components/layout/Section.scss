@@ -1,7 +1,5 @@
-@import "~inuitcss/settings/settings.core";
 @import "~bourbon-neat/core/neat";
 
 .base {
   @include grid-container;
-  margin-bottom: $inuit-global-spacing-unit;
 }
