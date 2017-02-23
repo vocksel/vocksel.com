@@ -1,6 +1,7 @@
 import React from 'react';
 
-import grids from 'css/objects/_grids.scss';
+import Content from 'jsx/components/layout/Content';
+import Title from 'jsx/components/layout/Title';
 
 export default {
   name: 'Class.lua',
@@ -20,17 +21,21 @@ export default {
 
       <p>Every class definition comes with a heap of overhead because of the excessive amount of work you have to do with metatables. To fix this, I made a simple module that abstracts away all of that overhead so you can focus on your code.</p>
 
-      <div className={grids.grid}>
-        <div className={grids.half}>
-          <p><strong>Before</strong></p>
+      <Content half>
+        <Title small>Before</Title>
+
+        <div>
           <img src={require('./images/before.png')} />
         </div>
+      </Content>
 
-        <div className={grids.half}>
-          <p><strong>After</strong></p>
+      <Content half>
+        <Title small>After</Title>
+
+        <div>
           <img src={require('./images/after.png')} />
         </div>
-      </div>
+      </Content>
     </div>
   )
 };

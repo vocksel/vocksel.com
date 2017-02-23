@@ -4,6 +4,10 @@
   @include grid-column;
 }
 
+.half {
+  @include grid-column(1 of 2);
+}
+
 .reduced {
   @include grid-column(2 of 3);
 }
