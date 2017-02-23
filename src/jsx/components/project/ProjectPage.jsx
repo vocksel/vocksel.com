@@ -1,26 +1,30 @@
 import React, { Component, PropTypes } from 'react';
 
-import grids from 'css/objects/_grids.scss';
+import Section from 'jsx/components/layout/Section';
+import Content from 'jsx/components/layout/Content';
+import Title from 'jsx/components/layout/Title';
 import ProjectGallery from './ProjectGallery';
 
 export default class ProjectPage extends Component {
   render() {
     return (
-      <div className={grids.grid}>
-        <div className={grids.full}>
-          <h1>{this.props.name}</h1>
+      <div>
+        <Section>
+          <Content>
+            <Title>{this.props.name}</Title>
 
-          <ProjectGallery images={this.props.images} />
+            <ProjectGallery images={this.props.images} />
 
-          <ul>
-            <li><i className="fa fa-clock-o" /> {this.props.released}</li>
-            <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
-          </ul>
+            <ul>
+              <li><i className="fa fa-clock-o" /> {this.props.released}</li>
+              <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
+            </ul>
+          </Content>
 
-          <div>
+          <Content>
             {this.props.children}
-          </div>
-        </div>
+          </Content>
+        </Section>
       </div>
     );
   }
