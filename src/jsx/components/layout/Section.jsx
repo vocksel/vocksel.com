@@ -1,0 +1,51 @@
+/**
+ * Container for sections of content.
+ *
+ * This is used in conjunction with the Content and Title components to
+ * construct sections of content on the page.
+ *
+ * Usage:
+
+    <Section>
+      <Content>
+        <Title>Hello, World!</Title>
+
+        <p>Some content in the section.</p>
+      </Content>
+    </Section>
+
+ * Section is a grid container, and Content spans the entire width. You can add
+ * a sidebar like so:
+
+    <Section>
+      <Content reduced>
+        <Title>Page</Title>
+
+        <p>Main content</p>
+      </Content>
+
+      <Content aside>
+        <Title>Sidebar</Title>
+
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </Content>
+    </Section>
+
+ */
+
+import React, { Component } from 'react';
+
+import style from './Section.scss';
+
+export default class Section extends Component {
+  render() {
+    return (
+      <section className={style.base}>
+        {this.props.children}
+      </section>
+    );
+  }
+}
