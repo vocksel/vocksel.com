@@ -5,5 +5,9 @@ $fa-font-path: "~font-awesome/fonts";
 // Slick Carousel
 $slick-font-path: "~slick-carousel/slick/fonts/";
 $slick-loader-path: "~slick-carousel/slick/";
+$slick-font-family: FontAwesome;
+$slick-prev-character: "\f104";
+$slick-next-character: "\f105";
+$slick-dot-character: "\f111";
 @import "~slick-carousel/slick/slick-theme";
 @import "~slick-carousel/slick/slick";

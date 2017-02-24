@@ -6,7 +6,6 @@ import Slider from 'react-slick';
 export default class ProjectGallery extends Component {
   render() {
     const settings = {
-      arrows: false,
       dots: true,
       infinite: true,
       speed: 1000,
