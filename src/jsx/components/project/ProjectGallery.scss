@@ -1,11 +1,37 @@
 @import "~inuitcss/settings/settings.core";
 
+$arrow-size: 40px;
+
 .base {
   margin-bottom: $inuit-global-spacing-unit;
 
   // Restyling the Slick classes:
 
   :global {
+    .slick-arrow {
+      width: $arrow-size;
+      height: $arrow-size;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: $arrow-size;
+      line-height: $arrow-size;
+    }
+
+    .slick-next {
+      right: 0;
+      margin-right: $inuit-global-spacing-unit-small;
+    }
+
+    .slick-prev {
+      left: 0;
+      margin-left: $inuit-global-spacing-unit-small;
+
+      // HACK Puts the arrow above the slider.
+      z-index: 1;
+    }
+
     .slick-slide {
       height: $inuit-global-spacing-unit-large*12;
       background-position: center center;
