@@ -24,7 +24,7 @@ $arrow-size: 40px;
 
     .slick-next {
       right: 0;
-      margin-right: $inuit-global-spacing-unit-small;
+      margin-right: $inuit-global-spacing-unit-tiny;
 
       transition: right $global-transition;
       &:hover { right: -3px; }
@@ -32,7 +32,7 @@ $arrow-size: 40px;
 
     .slick-prev {
       left: 0;
-      margin-left: $inuit-global-spacing-unit-small;
+      margin-left: $inuit-global-spacing-unit-tiny;
 
       // HACK Puts the arrow above the slider.
       z-index: 1;
