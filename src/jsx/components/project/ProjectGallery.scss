@@ -1,4 +1,5 @@
 @import "~inuitcss/settings/settings.core";
+@import "src/css/settings/_global.scss";
 
 $arrow-size: 40px;
 
@@ -24,6 +25,9 @@ $arrow-size: 40px;
     .slick-next {
       right: 0;
       margin-right: $inuit-global-spacing-unit-small;
+
+      transition: right $global-transition;
+      &:hover { right: -3px; }
     }
 
     .slick-prev {
@@ -32,6 +36,9 @@ $arrow-size: 40px;
 
       // HACK Puts the arrow above the slider.
       z-index: 1;
+
+      transition: left $global-transition;
+      &:hover { left: -3px; }
     }
 
     .slick-slide {
