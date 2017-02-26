@@ -72,3 +72,37 @@ img {
   // manually.
   margin-bottom: $inuit-global-spacing-unit;
 }
+
+
+// =============================================================================
+// Form elements
+// =============================================================================
+
+input, textarea {
+  padding: $inuit-global-spacing-unit-tiny;
+  width: 100%;
+}
+
+label, input {
+  display: block;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+  height: $inuit-global-spacing-unit-huge*1.5;
+}
+
+
+// =============================================================================
+// Buttons
+// =============================================================================
+
+button {
+  cursor: pointer;
+  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit*1.5;
+
+  // Get rid of those gross defaults.
+  outline: none;
+  border: 0;
+}
