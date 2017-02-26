@@ -1,0 +1,59 @@
+@import "~inuitcss/settings/settings.core";
+@import "~inuitcss/tools/tools.font-size";
+@import "~bourbon-neat/core/neat";
+@import "src/css/settings/_global.scss";
+
+$neat-grid: (
+  gutter: $inuit-global-spacing-unit,
+  media: 1080px
+);
+
+.base {
+  @include grid-collapse;
+}
+
+.field {
+  margin-bottom: $inuit-global-spacing-unit;
+  font-weight: bold;
+}
+
+.userField {
+  composes: field;
+  @include grid-column;
+
+  @include grid-media($neat-grid) {
+    @include grid-column(1 of 2);
+  }
+}
+
+.messageField {
+  composes: field;
+  @include grid-column;
+}
+
+.submit {
+  @include grid-column;
+}
+
+.reassurance {
+  @include inuit-font-size(14px);
+}
+
+.plane {
+  position: relative;
+  transition: all $global-transition ease-out;
+}
+
+.send {
+  $bg-color: #8BC34A;
+  $text-color: #F1F8E9;
+
+  background-color: $bg-color;
+  color: $text-color;
+  transition: all $global-transition;
+
+  &:focus, &:hover {
+    background-color: lighten($bg-color, 10);
+    color: lighten($text-color, 10);
+  }
+}
