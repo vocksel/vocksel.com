@@ -47,19 +47,18 @@ h1, h2, h3, h4, h5, h6 {
 // Links
 // =============================================================================
 
-$link-color: #219ab7;
-$link-color--hover: lighten($link-color, 20);
-$link-underline-height: 1px;
-
 a {
-  color: $link-color;
+  $color: $link-color;
+  $hover: lighten($color, 20);
+
+  color: $color;
   text-decoration: none;
   transition: all $global-transition;
-  border-bottom: $link-underline-height solid $link-color;
+  border-bottom: 1px solid $color;
 
   &:hover {
-    color: $link-color--hover;
-    border-bottom-color: $link-color--hover;
+    color: $hover;
+    border-bottom-color: $hover;
   }
 }
 
