@@ -36,16 +36,3 @@
 .submit {
   @include grid-column;
 }
-
-.send {
-  $bg-color: $link-color;
-  $color: #fff;
-
-  background-color: $bg-color;
-  color: $color;
-  transition: all $global-transition;
-
-  &:focus, &:hover {
-    background-color: lighten($bg-color, 10);
-  }
-}

@@ -101,8 +101,20 @@ textarea {
 // =============================================================================
 
 button {
+  $color: lighten($link-color, 60);
+  $bg-color: $link-color;
+
   cursor: pointer;
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit*1.5;
+
+  color: $color;
+  background-color: $bg-color;
+  transition: color, background-color $global-transition;
+
+  &:focus, &:hover {
+    background-color: lighten($bg-color, 10);
+    color: lighten($color, 10);
+  }
 
   // Get rid of those gross defaults.
   outline: none;
