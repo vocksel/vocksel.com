@@ -8,13 +8,9 @@ export default class ProjectGallery extends Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 1000,
+      speed: 750,
       slidesToShow: 1,
       slidesToScroll: 1,
-
-      fade: true,
-      draggable: false,
-
       autoplay: true,
       autoplaySpeed: 4000,
       pauseOnHover: true
