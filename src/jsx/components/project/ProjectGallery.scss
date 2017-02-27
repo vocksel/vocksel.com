@@ -42,7 +42,6 @@ $arrow-size: 40px;
     }
 
     .slick-slide {
-      height: $inuit-global-spacing-unit-large*11;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -50,6 +49,18 @@ $arrow-size: 40px;
       // We don't want any of the slides having margins, especially at the bottom.
       // This keeps the dots and the sliders fit snug together.
       margin: 0;
+
+      @media only screen and (max-width: 639px) {
+        height: $inuit-global-spacing-unit-large*4;
+      }
+
+      @media only screen and (min-width: 640px) and (max-width: 959px) {
+        height: $inuit-global-spacing-unit-large*7;
+      }
+
+      @media only screen and (min-width: 960px) {
+        height: $inuit-global-spacing-unit-large*11;
+      }
     }
 
     .slick-dots {
