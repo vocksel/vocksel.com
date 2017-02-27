@@ -6,9 +6,9 @@ export default {
   released: '2015',
   tags: [ '3D Modeling', 'Roblox' ],
   images: [
+    require('./images/rune.png'),
     require('./images/mountain.png'),
-    require('./images/hill.png'),
-    require('./images/rune.png')
+    require('./images/hill.png')
   ],
   description: (
     <div>
