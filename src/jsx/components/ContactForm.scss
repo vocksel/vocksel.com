@@ -38,15 +38,14 @@
 }
 
 .send {
-  $bg-color: $success-color;
-  $text-color: #f1f8e9;
+  $bg-color: $link-color;
+  $color: #fff;
 
   background-color: $bg-color;
-  color: $text-color;
+  color: $color;
   transition: all $global-transition;
 
   &:focus, &:hover {
     background-color: lighten($bg-color, 10);
-    color: lighten($text-color, 10);
   }
 }
