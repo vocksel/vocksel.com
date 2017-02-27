@@ -13,6 +13,12 @@
   font-weight: bold;
 }
 
+.invalid {
+  $color: #f44336;
+  border: 1px solid $color;
+  box-shadow: 0 0 5px rgba($color, .4);
+}
+
 .userField {
   composes: field;
   @include grid-column;

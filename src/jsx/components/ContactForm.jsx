@@ -14,7 +14,13 @@ export default class ContactForm extends Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  validate(field) {
+    return field.value.length > 0;
   }
 
   handleInputChange(event) {
@@ -23,6 +29,30 @@ export default class ContactForm extends Component {
     this.setState({
       [target.name]: target.value
     });
+  }
+
+  // HACK handleFocus and handleBlur both set the target's className to an empty
+  // string. This is because none of the input fields have classes, so we don't
+  // need to worry about retaining their defaults.
+  //
+  // If this changes in the future, we'll need to handle resetting the 'invalid'
+  // class different.
+
+  handleFocus(event) {
+    event.target.className = '';
+  }
+
+  handleBlur(event) {
+    const target = event.target;
+    const isValid = this.validate(target);
+
+    if (!isValid) {
+      target.className = style.invalid;
+    } else {
+      // None of our fields have class names, so we can get away with simply
+      // setting it to an empty string when the input is valid.
+      target.className = '';
+    }
   }
 
   handleSubmit(event) {
@@ -52,7 +82,9 @@ export default class ContactForm extends Component {
             name="name"
             placeholder="John Doe"
             value={this.state.name}
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur} />
         </div>
 
         <div className={style.userField}>
@@ -64,7 +96,9 @@ export default class ContactForm extends Component {
             name="email"
             placeholder="john@example.com"
             value={this.state.email}
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur} />
         </div>
 
         <div className={style.messageField}>
@@ -75,7 +109,9 @@ export default class ContactForm extends Component {
             name="message"
             placeholder="What's on your mind?"
             value={this.state.message}
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur} />
         </div>
 
         <div className={style.submit}>
