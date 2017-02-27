@@ -2,6 +2,7 @@
 @import "~inuitcss/tools/tools.font-size";
 @import "~bourbon-neat/core/neat";
 @import "src/css/settings/_global.scss";
+@import "src/css/settings/_colors.scss";
 @import "src/css/settings/_grid.scss";
 
 .base {
@@ -14,9 +15,8 @@
 }
 
 .invalid {
-  $color: #f44336;
-  border: 1px solid $color;
-  box-shadow: 0 0 5px rgba($color, .4);
+  border: 1px solid $error-color;
+  box-shadow: 0 0 5px rgba($error-color, .4);
 }
 
 .userField {
@@ -38,8 +38,8 @@
 }
 
 .send {
-  $bg-color: #8BC34A;
-  $text-color: #F1F8E9;
+  $bg-color: $success-color;
+  $text-color: #f1f8e9;
 
   background-color: $bg-color;
   color: $text-color;
