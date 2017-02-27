@@ -105,6 +105,7 @@ export default class ContactForm extends Component {
           <label htmlFor="name">Full name:</label>
           <input
             required
+            disabled={this.state.sent}
             id="name"
             type="text"
             name="name"
@@ -119,6 +120,7 @@ export default class ContactForm extends Component {
           <label htmlFor="email">Email:</label>
           <input
             required
+            disabled={this.state.sent}
             id="email"
             type="email"
             name="email"
@@ -133,6 +135,7 @@ export default class ContactForm extends Component {
           <label htmlFor="message">Message:</label>
           <textarea
             required
+            disabled={this.state.sent}
             id="message"
             name="message"
             placeholder="What's on your mind?"
