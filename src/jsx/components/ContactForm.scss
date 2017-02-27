@@ -35,15 +35,6 @@ $neat-grid: (
   @include grid-column;
 }
 
-.reassurance {
-  @include inuit-font-size(14px);
-}
-
-.plane {
-  position: relative;
-  transition: all $global-transition ease-out;
-}
-
 .send {
   $bg-color: #8BC34A;
   $text-color: #F1F8E9;
