@@ -4,10 +4,26 @@ import $ from 'jquery';
 import style from './ContactForm.scss';
 
 class SendButton extends Component {
+  constructor(props) {
+    super(props);
+
+    this.getIconClasses = this.getIconClasses.bind(this);
+  }
+
+  getIconClasses() {
+    if (this.props.processing) {
+      return 'fa fa-cog fa-spin';
+    } else {
+      return 'fa fa-paper-plane-o';
+    }
+  }
+
   render() {
     if (this.props.visible) {
       return (
-        <button type="submit">Send <i className="fa fa-paper-plane-o" /></button>
+        <button disabled={this.props.processing} type="submit">
+          Send <i className={this.getIconClasses()} />
+        </button>
       );
     } else {
       return null;
@@ -38,6 +54,7 @@ export default class ContactForm extends Component {
       email: '',
       message: '',
 
+      processing: false,
       sent: false
     };
 
@@ -86,16 +103,20 @@ export default class ContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    $.ajax({
-      url: 'http://contact.davidminnerly.com',
-      type: 'POST',
-      data: {
-        name: this.state.name,
-        email: this.state.email,
-        message: this.state.message
-      }
-    })
-    .done(() => this.setState({ sent: true }));
+    if (!this.state.processing) {
+      this.setState({ processing: true });
+
+      $.ajax({
+        url: 'http://contact.davidminnerly.com',
+        type: 'POST',
+        data: {
+          name: this.state.name,
+          email: this.state.email,
+          message: this.state.message
+        }
+      })
+      .done(() => this.setState({ sent: true }));
+    }
   }
 
   render() {
@@ -105,7 +126,7 @@ export default class ContactForm extends Component {
           <label htmlFor="name">Full name:</label>
           <input
             required
-            disabled={this.state.sent}
+            disabled={this.state.processing}
             id="name"
             type="text"
             name="name"
@@ -120,7 +141,7 @@ export default class ContactForm extends Component {
           <label htmlFor="email">Email:</label>
           <input
             required
-            disabled={this.state.sent}
+            disabled={this.state.processing}
             id="email"
             type="email"
             name="email"
@@ -135,7 +156,7 @@ export default class ContactForm extends Component {
           <label htmlFor="message">Message:</label>
           <textarea
             required
-            disabled={this.state.sent}
+            disabled={this.state.processing}
             id="message"
             name="message"
             placeholder="What's on your mind?"
@@ -146,7 +167,7 @@ export default class ContactForm extends Component {
         </div>
 
         <div className={style.submit}>
-          <SendButton visible={!this.state.sent} />
+          <SendButton visible={!this.state.sent} processing={this.state.processing} />
           <SuccessButton visible={this.state.sent} />
         </div>
       </form>

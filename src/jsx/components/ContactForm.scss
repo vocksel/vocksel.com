@@ -38,12 +38,14 @@
 }
 
 .success {
+  $color: #f1f8e9;
   cursor: auto;
   width: 100%;
-  color: #f1f8e9;
+  color: $color;
   background-color: $success-color;
 
-  &:focus, &:hover {
+  &:focus, &:hover, &:disabled {
+    color: $color;
     background-color: $success-color;
   }
 }

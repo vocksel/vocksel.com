@@ -111,12 +111,17 @@ button {
   background-color: $bg-color;
   transition: color, background-color $global-transition;
 
+  // Get rid of those gross defaults.
+  outline: none;
+  border: 0;
+
   &:focus, &:hover {
     background-color: lighten($bg-color, 10);
     color: lighten($color, 10);
   }
 
-  // Get rid of those gross defaults.
-  outline: none;
-  border: 0;
+  &:disabled {
+    background-color: desaturate(darken($bg-color, 10), 40);
+    color: rgba($color, .5);
+  }
 }
