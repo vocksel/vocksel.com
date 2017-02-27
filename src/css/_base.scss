@@ -79,6 +79,7 @@ img {
 // =============================================================================
 
 input, textarea {
+  border: 1px solid darken($background-color, 20);
   padding: $inuit-global-spacing-unit-tiny;
   width: 100%;
 }
