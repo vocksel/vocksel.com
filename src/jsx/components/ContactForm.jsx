@@ -3,6 +3,32 @@ import $ from 'jquery';
 
 import style from './ContactForm.scss';
 
+class SendButton extends Component {
+  render() {
+    if (this.props.visible) {
+      return (
+        <button type="submit">Send <i className="fa fa-paper-plane-o" /></button>
+      );
+    } else {
+      return null;
+    }
+  }
+}
+
+class SuccessButton extends Component {
+  render() {
+    if (this.props.visible) {
+      return (
+        <button disabled className={style.success}>
+          Success! Your message has been sent, thank you! <i className="fa fa-heart" />
+        </button>
+      );
+    } else {
+      return null;
+    }
+  }
+}
+
 export default class ContactForm extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +36,9 @@ export default class ContactForm extends Component {
     this.state = {
       name: '',
       email: '',
-      message: ''
+      message: '',
+
+      sent: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -67,7 +95,7 @@ export default class ContactForm extends Component {
         message: this.state.message
       }
     })
-    .done(() => alert('Form sent!'));
+    .done(() => this.setState({ sent: true }));
   }
 
   render() {
@@ -115,9 +143,8 @@ export default class ContactForm extends Component {
         </div>
 
         <div className={style.submit}>
-          <button type="submit" className={style.send}>
-            Send <i className="fa fa-paper-plane-o" />
-          </button>
+          <SendButton visible={!this.state.sent} />
+          <SuccessButton visible={this.state.sent} />
         </div>
       </form>
     );
