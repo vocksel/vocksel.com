@@ -2,11 +2,7 @@
 @import "~inuitcss/tools/tools.font-size";
 @import "~bourbon-neat/core/neat";
 @import "src/css/settings/_global.scss";
-
-$neat-grid: (
-  gutter: $inuit-global-spacing-unit,
-  media: 1080px
-);
+@import "src/css/settings/_grid.scss";
 
 .base {
   @include grid-collapse;
