@@ -1,5 +1,15 @@
 @import "~inuitcss/settings/settings.core";
+@import "~bourbon-neat/core/neat";
+@import "src/css/settings/_grid.scss";
 
 .base {
   margin-bottom: $inuit-global-spacing-unit-large;
+}
+
+.name {
+  @include grid-column(2 of 5);
+}
+
+.nav {
+  @include grid-column(3 of 5);
 }
