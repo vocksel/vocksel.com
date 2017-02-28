@@ -16,10 +16,15 @@
 
 .reduced {
   composes: base;
-  @include grid-column(2 of 3);
+
+  @include grid-media($neat-grid) {
+    @include grid-column(2 of 3);
+  }
 }
 
 .aside {
   composes: base;
-  @include grid-column(1 of 3);
+  @include grid-media($neat-grid) {
+    @include grid-column(1 of 3);
+  }
 }
