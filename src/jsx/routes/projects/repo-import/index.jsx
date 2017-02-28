@@ -10,7 +10,7 @@ export default {
   released: '2016',
   tags: [ 'Software', 'Lua' ],
   images: [
-    require('./images/thumbnail.png')
+    require('./images/thumbnail.jpg')
   ],
   description: (
     <div>

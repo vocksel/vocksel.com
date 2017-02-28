@@ -6,12 +6,12 @@ export default {
   released: '2016',
   tags: [ '3D Modeling', 'Roblox' ],
   images: [
-    require('./images/living-room.png'),
-    require('./images/bedroom.png'),
-    require('./images/desk.png'),
-    require('./images/bed.png'),
-    require('./images/bookcase.png'),
-    require('./images/outside.png')
+    require('./images/living-room.jpg'),
+    require('./images/bedroom.jpg'),
+    require('./images/desk.jpg'),
+    require('./images/bed.jpg'),
+    require('./images/bookcase.jpg'),
+    require('./images/outside.jpg')
   ],
 
   description: (
