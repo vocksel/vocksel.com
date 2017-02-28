@@ -1,5 +1,6 @@
 @import "~inuitcss/settings/settings.core";
 @import "~bourbon-neat/core/neat";
+@import "src/css/settings/_global.scss";
 @import "src/css/settings/_grid.scss";
 
 .image {
@@ -8,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: $inuit-global-spacing-unit-large*4;
+  box-shadow: $box-shadow;
 
   @include grid-media($neat-grid) {
     height: $inuit-global-spacing-unit-large*5;
