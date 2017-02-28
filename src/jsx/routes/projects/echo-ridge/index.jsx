@@ -13,6 +13,7 @@ export default {
     require('./images/sky-wave-teleport.jpg'),
     require('./images/sky-wave.jpg')
   ],
+  link: <a href="http://www.roblox.com/games/13525723/view?rbxp=1343930">View it on Roblox.</a>,
   description: (
     <div>
       <p><a href={'http://www.roblox.com/games/13525723/view?rbxp=1343930'}> Echo Ridge</a> is a 3D recreation of the hub level in Mega Man Star Force 3. I built it over the span of 3 months, and it has quickly become my favorite Roblox project to date.</p>

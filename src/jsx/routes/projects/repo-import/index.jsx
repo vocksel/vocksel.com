@@ -12,6 +12,7 @@ export default {
   images: [
     require('./images/thumbnail.jpg')
   ],
+  link: <a href="https://github.com/vocksel/roblox-repo-import">View it on GitHub.</a>,
   description: (
     <div>
       <p>Repo Import makes it easier to work on your games outside of Roblox's development environment, Roblox Studio.</p>
