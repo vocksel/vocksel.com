@@ -12,15 +12,23 @@ export default class ProjectPage extends Component {
             <Title>{this.props.name}</Title>
 
             <ProjectGallery images={this.props.images} />
+          </Content>
+        </Section>
+
+        <Section>
+          <Content reduced>
+            <Title>Description</Title>
+
+            {this.props.children}
+          </Content>
+
+          <Content aside>
+            <Title>Details</Title>
 
             <ul>
               <li><i className="fa fa-clock-o" /> {this.props.released}</li>
               <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
             </ul>
-          </Content>
-
-          <Content>
-            {this.props.children}
           </Content>
         </Section>
       </div>
