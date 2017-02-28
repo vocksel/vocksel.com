@@ -6,10 +6,10 @@ export default {
   released: '2016',
   tags: [ '3D Modeling', 'Roblox' ],
   images: [
-    require('./images/overview.png'),
-    require('./images/boat.png'),
-    require('./images/cave.png'),
-    require('./images/cattails.png'),
+    require('./images/overview.jpg'),
+    require('./images/boat.jpg'),
+    require('./images/cave.jpg'),
+    require('./images/cattails.jpg'),
   ],
   description: (
     <div>

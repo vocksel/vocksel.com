@@ -7,7 +7,7 @@ export default {
   released: '2014',
   tags: [ 'Software', 'Python' ],
   images: [
-    require('./images/thumbnail.png')
+    require('./images/thumbnail.jpg')
   ],
   description: (
     <div>

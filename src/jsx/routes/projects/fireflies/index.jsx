@@ -6,8 +6,8 @@ export default {
   released: '2014',
   tags: [ 'Web Design' ],
   images: [
-    require('./images/perks.png'),
-    require('./images/stars.png')
+    require('./images/perks.jpg'),
+    require('./images/stars.jpg')
   ],
   description: (
     <div>

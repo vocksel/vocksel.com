@@ -6,12 +6,12 @@ export default {
   released: '2016',
   tags: [ '3D Modeling', 'Roblox' ],
   images: [
-    require('./images/overview.png'),
-    require('./images/geos-house-exterior.png'),
-    require('./images/geos-living-room.png'),
-    require('./images/geos-room.png'),
-    require('./images/sky-wave-teleport.png'),
-    require('./images/sky-wave.png')
+    require('./images/overview.jpg'),
+    require('./images/geos-house-exterior.jpg'),
+    require('./images/geos-living-room.jpg'),
+    require('./images/geos-room.jpg'),
+    require('./images/sky-wave-teleport.jpg'),
+    require('./images/sky-wave.jpg')
   ],
   description: (
     <div>
