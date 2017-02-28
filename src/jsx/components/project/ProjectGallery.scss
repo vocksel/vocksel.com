@@ -9,6 +9,10 @@ $arrow-size: 40px;
   // Restyling the Slick classes:
 
   :global {
+    .slick-list {
+      box-shadow: $box-shadow;
+    }
+
     .slick-arrow {
       width: $arrow-size;
       height: $arrow-size;
