@@ -31,6 +31,22 @@ class SendButton extends Component {
   }
 }
 
+class SendFailed extends Component {
+  render() {
+    if (this.props.visible) {
+      return (
+        <div>
+          <p className={style.error}>Failed to communicate with the server, please try again later.</p>
+
+          <p>If the issue persists, please message me on <a href="https://twitter.com/voxeldavid">Twitter</a> and I'll get to the bottom of it.</p>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+}
+
 class SuccessButton extends Component {
   render() {
     if (this.props.visible) {
@@ -55,7 +71,8 @@ export default class ContactForm extends Component {
       message: '',
 
       processing: false,
-      sent: false
+      sent: false,
+      sendFailed: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -115,7 +132,8 @@ export default class ContactForm extends Component {
           message: this.state.message
         }
       })
-      .done(() => this.setState({ sent: true }));
+      .done(() => this.setState({ sent: true, sendFailed: false }))
+      .fail(() => this.setState({ processing: false, sendFailed: true }));
     }
   }
 
@@ -167,8 +185,12 @@ export default class ContactForm extends Component {
         </div>
 
         <div className={style.submit}>
-          <SendButton visible={!this.state.sent} processing={this.state.processing} />
+          <SendButton visible={!this.state.sent} failed={this.state.sendFailed}
+            processing={this.state.processing} />
+
           <SuccessButton visible={this.state.sent} />
+
+          <SendFailed visible={this.state.sendFailed} />
         </div>
       </form>
     );
