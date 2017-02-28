@@ -9,7 +9,7 @@ module.exports = {
 
   entry: {
     main: 'app.js',
-    vendor: [ 'react', 'react-dom', 'react-router', 'moment' ]
+    vendor: [ 'react', 'react-dom', 'react-router', 'moment', 'jquery' ]
   },
 
   output: {
