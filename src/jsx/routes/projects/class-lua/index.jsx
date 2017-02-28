@@ -11,6 +11,7 @@ export default {
   images: [
     require('./images/thumbnail.jpg')
   ],
+  link: <a href="https://github.com/vocksel/class.lua">View it on GitHub.</a>,
   description: (
     <div>
       <p>A dead simple Lua module to make classes easier to define.</p>

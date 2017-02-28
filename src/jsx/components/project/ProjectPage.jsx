@@ -28,6 +28,7 @@ export default class ProjectPage extends Component {
             <ul>
               <li><i className="fa fa-clock-o" /> {this.props.released}</li>
               <li><i className="fa fa-tags" /> {this.props.tags.join(', ')}</li>
+              { this.props.link  && <li><i className="fa fa-link" /> {this.props.link}</li> }
             </ul>
           </Content>
         </Section>

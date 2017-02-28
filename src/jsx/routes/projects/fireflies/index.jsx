@@ -9,6 +9,7 @@ export default {
     require('./images/perks.jpg'),
     require('./images/stars.jpg')
   ],
+  link: <a href="http://fireflies.davidminnerly.com/">View it online.</a>,
   description: (
     <div>
       <p><a href={'http://fireflies.davidminnerly.com'}>Fireflies</a> is a small application that displays a quote and background image at random every time the page is loaded.</p>

@@ -9,6 +9,7 @@ export default {
   images: [
     require('./images/thumbnail.jpg')
   ],
+  link: <a href="https://github.com/vocksel/elixir">View it on Github.</a>,
   description: (
     <div>
       <p>Elixir is a tool I devised to allow Lua source code to be easily packaged and imported into Roblox's development environment, Roblox Studio.</p>
