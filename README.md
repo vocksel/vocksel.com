@@ -2,7 +2,7 @@
 
 This is the source code for my personal website. It leverages Webpack and React to create a multi-page site with a portfolio featuring my best work, along with About and Contact pages.
 
-![Screenshot of the site](screenshots/website.png)
+[![Screenshot of the site](screenshots/website.png)](http://davidminnerly.com)
 
 ## Contributing
 
