@@ -1,6 +1,6 @@
-# The Website of David Minnerly
+# [davidminnerly.com](http://davidminnerly.com)
 
-This is the source code for my personal website, [davidminnerly.com](http://davidminnerly.com). It's a simple one-pager that leverages [inuitcss](https://github.com/inuitcss/getting-started), [Webpack](http://webpack.js.org) and numerous other amazing utilities.
+This is the source code for my personal website. It leverages Webpack and React to create a multi-page site with a portfolio featuring my best work, along with About and Contact pages.
 
 ![Screenshot of the site](screenshots/website.png)
 
