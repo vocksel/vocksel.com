@@ -1,5 +1,6 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
@@ -28,6 +29,8 @@ module.exports = {
 			template: path.resolve(__dirname, 'src/index.html'),
 			favicon: path.resolve(__dirname, 'src/favicon.ico'),
 		}),
+
+		new MiniCssExtractPlugin(),
 	],
 
 	module: {
@@ -44,7 +47,7 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: [
-					'style-loader',
+					IS_PRODUCTION ? MiniCssExtractPlugin.loader : 'style-loader',
 					{
 						loader: 'css-loader',
 						options: {
