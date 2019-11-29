@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Content from 'jsx/components/layout/Content';
-import Title from 'jsx/components/layout/Title';
-
 export default {
 	name: 'Class.lua',
 	slug: 'class-lua',
@@ -22,21 +19,13 @@ export default {
 
 			<p>Every class definition comes with a heap of overhead because of the excessive amount of work you have to do with metatables. To fix this, I made a simple module that abstracts away all of that overhead so you can focus on your code.</p>
 
-			<Content half>
-				<Title small>Before</Title>
+			<h2>Before</h2>
 
-				<div>
-					<img src={require('./images/before.png')} />
-				</div>
-			</Content>
+			<img src={require('./images/before.png')} />
 
-			<Content half>
-				<Title small>After</Title>
+			<h2>After</h2>
 
-				<div>
-					<img src={require('./images/after.png')} />
-				</div>
-			</Content>
+			<img src={require('./images/after.png')} />
 		</div>
 	)
 };
