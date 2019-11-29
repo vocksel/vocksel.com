@@ -1,38 +1,13 @@
 import path from 'path';
-
-import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-
-  entry: {
-    main: 'app.js',
-    vendor: [ 'react', 'react-dom', 'react-router', 'moment', 'jquery' ]
-  },
-
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    publicPath: '/',
-    filename: '[chunkhash].[name].js'
-  },
-
+  entry: path.resolve(__dirname, 'src/index.js'),
+  mode: IS_PRODUCTION ? 'production' : 'development',
   devtool: 'source-map',
-
-  devServer: {
-    historyApiFallback: true,
-
-    // Enables automatic reloading when files are changed.
-    //
-    // As of February 10, 2017, Webpack's docs mention that: "By default the
-    // application will be served with inline mode enabled." This doesn't seem
-    // to be the case, as without the inline option specified, there is no auto
-    // reloading.
-    //
-    // Reference: https://webpack.js.org/configuration/dev-server/#devserver-inline-cli-only
-    inline: true
-  },
 
   resolve: {
     modules: [
@@ -46,72 +21,57 @@ module.exports = {
     ]
   },
 
+  plugins: [
+    new CleanWebpackPlugin(),
+
+    new HtmlWebpackPlugin({
+      title: 'David Minnerly',
+      favicon: path.resolve(__dirname, 'src/favicon.ico'),
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, user-scalable=no'
+      }
+    }),
+  ],
+
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: [ 'babel-loader', 'eslint-loader' ]
-      },
-
-      // Separate compiling for the vendor styles.
-      //
-      // There was a lot of problems from css-loader's modules option applying
-      // to vendor libraries. To fix it, we're compiling our vendor styles
-      // separately.
-      {
-        test: /vendor.scss/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [ 'css-loader', 'sass-loader' ]
-        })
+        use: [
+          'babel-loader',
+          'eslint-loader',
+        ]
       },
 
       {
         test: /\.scss$/,
-
-        // Ignores the vendor styles that we process in the above rule.
-        exclude: /vendor.scss/,
-
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                localIdentName: '[name]__[local]--[hash:base64:5]'
-              }
-            },
-            {
-              loader: 'sass-loader'
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
             }
-          ]
-        })
+          },
+          'sass-loader',
+        ]
       },
 
+      // We write everything in Sass, CSS handling is just for third-party libraries.
       {
-        test: /\.(png|jpg|ico|gif)/,
-        use: 'url-loader?limit=10000'
-      },
-
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        use: 'file-loader'
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
       }
     ]
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      favicon: 'favicon.ico',
-      template: 'index.html',
-    }),
-
-    new ExtractTextPlugin('style.css'),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
-    })
-  ]
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
