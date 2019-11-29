@@ -1,4 +1,19 @@
+@import "../styles.scss";
+
 .app {
-	width: 960px;
+	width: 720px;
 	margin: 0 auto;
+}
+
+.keyword {
+	color: $orion;
+	font-weight: bold;
+
+	// &:before {
+	// 	content: "<";
+	// }
+
+	// &:after {
+	// 	content: ">";
+	// }
 }
