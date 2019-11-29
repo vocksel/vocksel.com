@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 
 export default {
 	name: 'Elixir',
@@ -64,7 +63,7 @@ export default {
 
 			<p>When Roblox imports a compatible Model file, it dumps it into the Workspace, the same place you store level geometry. Studio has specific containers where you need to store your server, client, and shared code. With everything dumped into the Workspace, you have to manually sort these sections of your codebase each time you make a change.</p>
 
-			<p>Manually sorting your is Elixir's biggest weakness as a tool for decoupling your code from Studio. I ended up creating <Link to="/projects/repo-import">Repo Import</Link>, which takes the imported source code and automatically sorts it for you. This makes coding games outside of Studio significantly less painful</p>
+			<p>Manually sorting your is Elixir's biggest weakness as a tool for decoupling your code from Studio. I ended up creating <a href="http://davidminnerly.com/projects/repo-import">Repo Import</a>, which takes the imported source code and automatically sorts it for you. This makes coding games outside of Studio significantly less painful</p>
 
 			<h2>Conclusion</h2>
 
