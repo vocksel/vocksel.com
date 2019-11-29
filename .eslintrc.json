@@ -18,7 +18,7 @@
     "rules": {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
-        "indent": [ "error", 2 ],
+        "indent": [ "error", "tab" ],
         "quotes": [ "error", "single" ],
         "semi": [ "error", "always" ]
     }
