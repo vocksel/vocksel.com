@@ -25,11 +25,8 @@ module.exports = {
 		new CleanWebpackPlugin(),
 
 		new HtmlWebpackPlugin({
-			title: 'David Minnerly',
+			template: path.resolve(__dirname, 'src/index.html'),
 			favicon: path.resolve(__dirname, 'src/favicon.ico'),
-			meta: {
-				viewport: 'width=device-width, initial-scale=1, user-scalable=no'
-			}
 		}),
 	],
 
