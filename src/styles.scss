@@ -9,16 +9,17 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
 	margin-block-end: $body-font-size/1.5;
+	font-family: $family-serif;
 }
 
 h1 {
-	font-size: $body-font-size * 1.5;
+	font-size: $body-font-size * 1.4;
 }
 h2 {
-	font-size: $body-font-size * 1.25;
+	font-size: $body-font-size * 1.1;
 }
 h3 {
-	font-size: $body-font-size * 1.1;
+	font-size: $body-font-size;
 }
 
 p, img {
