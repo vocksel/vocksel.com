@@ -1,49 +1,28 @@
-$font-size: 1.25em;
-$line-height: $font-size * 2;
+@charset "utf-8";
 
-$text-color: #C5C2D6;
-$header-color: $text-color;
-$orion: #DF5C63;
-
-* {
-	margin: 0;
-	padding: 0;
-
-	margin-block-start: 0;
-	margin-block-end: 0;
-}
+@import "config";
 
 html {
-	font-family: Quattrocento;
-	font-size: $font-size;
-	line-height: $line-height;
-	color: $text-color;
-
-	background-color: #292640;
-	margin-top: $line-height * 3;
-	margin-bottom: $line-height * 3;
+	margin-top: $body-font-size * 4;
+	margin-bottom: $body-font-size * 4;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-	margin-block-end: $font-size/1.5;
-	color: $header-color;
-	font-family: Prata;
+	margin-block-end: $body-font-size/1.5;
 }
 
 h1 {
-	font-size: $font-size * 2;
-	line-height: $font-size;
+	font-size: $body-font-size * 1.5;
 }
 h2 {
-	font-size: $font-size * 1.5;
+	font-size: $body-font-size * 1.25;
 }
 h3 {
-	font-size: $font-size * 1.25;
+	font-size: $body-font-size * 1.1;
 }
 
-p {
+p, img {
 	// text-indent: $font-size * 3;
 	// text-align: justify;
-	margin-block-end: $line-height;
+	margin-block-end: $body-font-size;
 }
