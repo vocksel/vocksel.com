@@ -1,10 +1,11 @@
 export default [
-	require('./mirage-isle').default,
+	require('./aquaman').default,
 	require('./apartment').default,
-	require('./repo-import').default,
 	require('./class-lua').default,
-	require('./echo-ridge').default,
-	require('./elixir').default,
-	require('./fireflies').default,
-	require('./snowy-mountain').default
+	// require('./mirage-isle').default,
+	// require('./repo-import').default,
+	// require('./echo-ridge').default,
+	// require('./elixir').default,
+	// require('./fireflies').default,
+	// require('./snowy-mountain').default
 ];

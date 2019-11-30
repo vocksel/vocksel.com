@@ -1,19 +1,14 @@
 import React from 'react';
+import { ProjectType } from '../types';
+import thumbnail from './images/living-room.jpg';
 
 export default {
-	name: 'Rhinebeck Apartment',
+	title: 'Rhinebeck Apartment',
 	slug: 'apartment',
-	released: '2016',
-	tags: [ '3D Modeling', 'Roblox' ],
-	images: [
-		require('./images/living-room.jpg'),
-		require('./images/bedroom.jpg'),
-		require('./images/desk.jpg'),
-		require('./images/bed.jpg'),
-		require('./images/bookcase.jpg'),
-		require('./images/outside.jpg')
-	],
-
+	releaseDate: new Date(2016, 0),
+	type: ProjectType.Game,
+	thumbnail: thumbnail,
+	url: 'https://www.roblox.com/games/343113123/Rhinebeck',
 	description: (
 		<div>
 			<p>A high-end apartment based in Rhinebeck, New York.</p>

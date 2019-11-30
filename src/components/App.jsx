@@ -1,29 +1,52 @@
 import React from 'react';
-import style from './App.scss';
-
-console.log(style.app);
-
-const Keyword = ({ text }) => (
-	<span className={style.keyword}>{text}</span>
-);
-
-const Orion = () => <Keyword text="Orion" />;
+import projects from '../projects';
+import bulma from '../bulma.scss';
 
 export default class App extends React.Component {
+	getProjects() {
+		return projects.map(project => (
+			<div key={project.slug}>
+				<h3><a href={project.url}>{project.title}</a></h3>
+
+				<p>{project.shortDescription}</p>
+
+				<img src={project.thumbnail} />
+
+				{project.description}
+			</div>
+		));
+	}
+
 	render() {
 		return (
-			<div className={style.app}>
-				<h1><Orion/>, the Banished Blade</h1>
+			<div className={bulma.container}>
+				<section className={bulma.section}>
+					<h1>About</h1>
 
-				<p><Orion/> was the sworn blade to a royal family. She was born into a well off household, in which her father was a retired member of the royal guard. Over the years growing up, <Orion/> heard many stories of his heroism (most of it embellished), which lit a fire in her to follow the same path of protecting the royal family.</p>
+					<p>Hi I'm David Minnerly. I'm a programmer and 3D modeler, and I love creating new experiences and expressing myself through artistic mediums.</p>
+				</section>
 
-				<p>She is a masterful dualist and avid magic user, casting spells that imbue her blade with varying elements to best suit the situation and strike down her current foe. Throughout her years of training she gained notoriety and quickly climbed the ranks, ending up as the appointed knight to the daughter of the king. However, somewhere along the lines, she was banished. Her memories of the past several years as a royal knight were forcibly erased. This included the death of her father. <Orion/> was deeply ingrained within the royal family’s private life, so much so that the king had concerns that family secrets would get out as a result of her banishment. As a preventative measure, her memories were erased. It was either that, or beheading. “Father be reasonable, erasure is far more humane,” cried the princess.</p>
+				<section className={bulma.section}>
+					<h1>Experience</h1>
 
-				<p><Orion/> awakens in a haze, in an unfamiliar forest with no memory leading up to this point. The last thing she remembers is being knighted several years prior. She sees abstract shapes in her mind that she thinks represent faces. One of these faces makes her cry. To her side, she sees her blade. A longsword dubbed <Keyword text="Comet" />, which was given to her as a gift. She can’t remember from who. <Orion/> is the archetypical swordswoman—her sword acting as an extension of her body. Regardless of the magic used to erase her memories, this sword she remembers. <Orion/> vigorously trained her mind and body over her teenage years into young adulthood to be a protector, with the end goal of guarding the royal family with her life. Even with her memories gone, that innate desire to protect is still within her. But now, with no one to guard, she feels empty and lost. More lost than she feels in this strange, unfamiliar place.</p>
+					<p>Software Engineering intern at Roblox working on the mobile app</p>
 
-				<p>It’s been 2 years since she woke, however she only has clear memories of the last year. The year before that is sliced up into dreamlike uncertainty. The magic placed over her seems to have had a lasting effect that mangled her memories long after awakening. She remembers waking up as clear as when it happened, however everything after that point is hazy. Only recently have her memories started to solidify and stay with her, however she is now very doubtful of her own memory. <Orion/> now is wandering blade for hire, carrying out escort requests and guarding cargo being transported overseas from pirates. She thinks that if she keeps traveling, keeps guarding others, that something will come back to her, and she’ll remember what she lost.</p>
+					<p>Accelerator creating a game in-house at Roblox</p>
+				</section>
 
-				<p><Orion/> is driven by the need to know what happened to her. She is trying desperately to get back to where she was so she can finally have closure—and to destroy the evil that forced her to forget what she cared so deeply for.</p>
+				<section className={bulma.section}>
+					<h1>Projects</h1>
+
+					{this.getProjects()}
+				</section>
+
+				<section className={bulma.section}>
+					<h1>Contact</h1>
+
+					<p><a href="https://twitter.com/vocksel_">Twitter</a></p>
+					<p>LinkedIn</p>
+					<p>Email</p>
+				</section>
 			</div>
 		);
 	}
