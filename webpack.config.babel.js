@@ -45,7 +45,7 @@ module.exports = {
 			},
 
 			{
-				test: /\.scss$/,
+				test: /\.s[a|c]ss$/,
 				use: [
 					IS_PRODUCTION ? MiniCssExtractPlugin.loader : 'style-loader',
 					{
