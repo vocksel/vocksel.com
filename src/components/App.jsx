@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProjectType } from 'types';
+import getAge from 'getAge';
 import ProjectTile from './ProjectTile';
 import Keyword from './Keyword';
 import projects from '../projects';
@@ -27,7 +28,7 @@ export default class App extends React.Component {
 				<section className={bulma.section}>
 					<h1>About</h1>
 
-					<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
+					<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
 				</section>
 
 				<section className={bulma.section}>
