@@ -1,6 +1,6 @@
 import React from 'react';
 import bulma from 'bulma.scss';
-import { ProjectType } from '../types';
+import { ProjectType } from 'types';
 import thumbnail from './images/thumbnail.jpg';
 import beforeImage from './images/before.png';
 import afterImage from './images/after.png';

@@ -1,20 +1,24 @@
 import React from 'react';
+import { ProjectType } from 'types';
+import ProjectTile from './ProjectTile';
+import Keyword from './Keyword';
 import projects from '../projects';
 import bulma from '../bulma.scss';
 
 export default class App extends React.Component {
-	getProjects() {
-		return projects.map(project => (
-			<div key={project.slug}>
-				<h3><a href={project.url}>{project.title}</a></h3>
+	getFreelanceProjects() {
+		const freelance = projects.filter(project => project.type === ProjectType.Game);
 
-				<p>{project.shortDescription}</p>
+		return freelance.map(project =>
+			<ProjectTile key={project.slug} project={project} />);
+	}
 
-				<img src={project.thumbnail} />
+	getCodeProjects() {
+		const code = projects.filter(project => project.type === ProjectType.Code);
 
-				{project.description}
-			</div>
-		));
+		// Need a new component to return. Should be just be a list of my code projects
+		return code.map(project =>
+			<ProjectTile key={project.slug} project={project} />);
 	}
 
 	render() {
@@ -23,7 +27,7 @@ export default class App extends React.Component {
 				<section className={bulma.section}>
 					<h1>About</h1>
 
-					<p>Hi I'm David Minnerly. I'm a programmer and 3D modeler, and I love creating new experiences and expressing myself through artistic mediums.</p>
+					<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
 				</section>
 
 				<section className={bulma.section}>
@@ -37,16 +41,26 @@ export default class App extends React.Component {
 				<section className={bulma.section}>
 					<h1>Projects</h1>
 
-					{this.getProjects()}
+					{this.getFreelanceProjects()}
+
+					{this.getCodeProjects()}
 				</section>
+
 
 				<section className={bulma.section}>
 					<h1>Contact</h1>
 
 					<p><a href="https://twitter.com/vocksel_">Twitter</a></p>
-					<p>LinkedIn</p>
-					<p>Email</p>
+					<p><a href="https://www.linkedin.com/in/david-minnerly-916809149/">LinkedIn</a></p>
+					<p><a href="mailto:david@vocksel.com">Email</a></p>
 				</section>
+
+				<footer className={bulma.section}>
+					<ul>
+						<li>Copyright &copy; 2019 David Minnerly</li>
+						<li><a href="https://github.com/vocksel/davidminnerly.com">Source</a></li>
+					</ul>
+				</footer>
 			</div>
 		);
 	}
