@@ -4,12 +4,14 @@ $accent-color: #FF3685;
 $accent-color-variant: #A772FF;
 
 // Bulma overrides
-$family-sans-serif: Quattrocento, sans-serif;
-$family-serif: Prata, serif;
+$family-sans-serif: Poppins, sans-serif;
+$family-serif: Merriweather, serif;
+
+$body-font-size: 1.25em;
+$body-line-height: $body-font-size * 1.5;
 
 $primary: $accent-color;
 $body-background-color: #292640;
-$body-font-size: 1.25em;
 $strong-color: $accent-color;
 $link: $accent-color-variant;
 $link-hover: lighten($link, 5);
