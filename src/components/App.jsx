@@ -1,6 +1,7 @@
 import React from 'react';
 import { ProjectType } from 'types';
 import getAge from 'getAge';
+import Copyright from './Copyright';
 import ProjectTile from './ProjectTile';
 import Keyword from './Keyword';
 import projects from '../projects';
@@ -58,7 +59,7 @@ export default class App extends React.Component {
 
 				<footer className={bulma.section}>
 					<ul>
-						<li>Copyright &copy; 2019 David Minnerly</li>
+						<li><Copyright /></li>
 						<li><a href="https://github.com/vocksel/davidminnerly.com">Source</a></li>
 					</ul>
 				</footer>
