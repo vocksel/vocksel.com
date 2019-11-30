@@ -1,16 +1,19 @@
 import React from 'react';
+import bulma from 'bulma.scss';
+import { ProjectType } from '../types';
+import thumbnail from './images/thumbnail.jpg';
+import beforeImage from './images/before.png';
+import afterImage from './images/after.png';
 
 export default {
-	name: 'Class.lua',
-	slug: 'class-lua',
-	released: '2016',
-	tags: [ 'Software', 'Lua' ],
-	images: [
-		require('./images/thumbnail.jpg')
-	],
-	link: <a href="https://github.com/vocksel/class.lua">View it on GitHub.</a>,
+	title: 'class()',
+	slug: 'class',
+	releaseDate: new Date(2016, 0),
+	type: ProjectType.Code,
+	thumbnail: thumbnail,
+	url: 'https://github.com/vocksel/class.lua',
 	description: (
-		<div>
+		<React.Fragment>
 			<p>A dead simple Lua module to make classes easier to define.</p>
 
 			<p>Object Oriented Programming (OOP) is a commonly used paradigm across all major programming languages. While Lua has support for OOP, their implementation isn't the easiest to work with.</p>
@@ -19,13 +22,19 @@ export default {
 
 			<p>Every class definition comes with a heap of overhead because of the excessive amount of work you have to do with metatables. To fix this, I made a simple module that abstracts away all of that overhead so you can focus on your code.</p>
 
-			<h2>Before</h2>
+			<div className={bulma.columns}>
+				<div className={bulma.column}>
+					<h2>Before</h2>
 
-			<img src={require('./images/before.png')} />
+					<img src={beforeImage} />
+				</div>
 
-			<h2>After</h2>
+				<div className={bulma.column}>
+					<h2>After</h2>
 
-			<img src={require('./images/after.png')} />
-		</div>
+					<img src={afterImage} />
+				</div>
+			</div>
+		</React.Fragment>
 	)
 };
