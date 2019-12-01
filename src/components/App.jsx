@@ -8,6 +8,7 @@ import ProjectTile from './ProjectTile';
 import Keyword from './Keyword';
 import projects from '../projects';
 import bulma from '../bulma.scss';
+import boy from 'boy.jpg';
 
 class Company {
 	constructor(name, url) {
@@ -108,10 +109,16 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className={bulma.container}>
-				<section className={bulma.section}>
+				<section className={classNames(bulma.section, bulma.columns)}>
+					<div className={bulma.column}>
 					<h1>About</h1>
 
-					<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
+						<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. <img src='' alt='💖' /></p>
+					</div>
+
+					<div className={classNames(bulma.column, bulma['is-narrow'])}>
+						<img className={bulma.image} src={boy} alt="" />
+					</div>
 				</section>
 
 				<section className={bulma.section}>
