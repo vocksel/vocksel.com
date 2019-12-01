@@ -43,7 +43,7 @@ const experiences = [
 		job: 'Programmer',
 		company: novaly,
 		description: <span>Created the Robbery feature for <a href='https://www.roblox.com/games/2563455047/Bandit-Simulator'>Bandit Simulator</a> and squashed bugs.</span>,
-		wasInHouse: true,
+		wasInHouse: false,
 		startDate: new Date(2019, 5),
 		endDate: new Date(2019, 7),
 	},
