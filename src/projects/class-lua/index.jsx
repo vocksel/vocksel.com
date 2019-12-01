@@ -16,21 +16,17 @@ export default {
 		<React.Fragment>
 			<p>A dead simple Lua module to make classes easier to define.</p>
 
-			<p>Object Oriented Programming (OOP) is a commonly used paradigm across all major programming languages. While Lua has support for OOP, their implementation isn't the easiest to work with.</p>
-
-			<p>There is no class keyword like you would come to expect from other programming languages. What Lua uses instead are called metatables, which can be tedious to work with and cause confusion. </p>
-
-			<p>Every class definition comes with a heap of overhead because of the excessive amount of work you have to do with metatables. To fix this, I made a simple module that abstracts away all of that overhead so you can focus on your code.</p>
+			<p>While Lua has support for OOP, their implementation is not the easiest to work with. Unlike other languages, there is no <code>class</code> keyword. What Lua uses instead are <code>metatables</code>, which can be confusing to work with for even seasoned Lua programmers. Every class definition comes with a heap of overhead because of the work you have to do with metatables. To fix this, I made a simple function that abstracts away the metatable overhead, which makes class definitions easier to parse and reason about.</p>
 
 			<div className={bulma.columns}>
 				<div className={bulma.column}>
-					<h2>Before</h2>
+					<h2>Before (Metatables)</h2>
 
 					<img src={beforeImage} />
 				</div>
 
 				<div className={bulma.column}>
-					<h2>After</h2>
+					<h2>After (<code>class()</code>)</h2>
 
 					<img src={afterImage} />
 				</div>
