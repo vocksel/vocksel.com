@@ -114,7 +114,7 @@ export default class App extends React.Component {
 					<div className={bulma.column}>
 						<h1>About</h1>
 
-						<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. <img src='' alt='💖' /></p>
+						<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
 					</div>
 
 					<div className={classNames(bulma.column, bulma['is-narrow'])}>
