@@ -27,3 +27,16 @@ p, img {
 	// text-align: justify;
 	margin-block-end: $body-font-size;
 }
+
+a {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+code {
+	background: none;
+	font-size: 1em;
+	padding: 0;
+	color: $accent-color;
+}

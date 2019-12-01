@@ -1,7 +1,9 @@
 // Brand colors
-$text: #C5C2D6;
+$text: #F6E8EA;
+$background: #22181C;
 $accent-color: #FF3685;
-$accent-color-variant: #A772FF;
+$blueb: #5B94FF;
+$lello: #FFD254;
 
 // Bulma overrides
 $family-sans-serif: Poppins, sans-serif;
@@ -11,8 +13,8 @@ $body-font-size: 1.25em;
 $body-line-height: $body-font-size * 1.5;
 
 $primary: $accent-color;
-$body-background-color: #292640;
+$body-background-color: $background;
 $strong-color: $accent-color;
-$link: $accent-color-variant;
-$link-hover: lighten($link, 5);
+$link: $blueb;
+$link-hover: $lello;
 
