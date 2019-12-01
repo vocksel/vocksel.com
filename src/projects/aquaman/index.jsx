@@ -15,9 +15,7 @@ export default {
 		<React.Fragment>
 			<p>Hello, World!</p>
 
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quam soluta tempora harum ut aut vero fuga similique necessitatibus nostrum quas doloremque, minus error ipsam ullam, blanditiis itaque ratione eaque.</p>
-
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem maiores fugiat nam quibusdam accusamus officia aliquid tempore, ea suscipit illum.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quam soluta <a href="#">tempora harum</a> ut aut vero fuga similique necessitatibus nostrum quas doloremque, minus error ipsam ullam, blanditiis itaque ratione eaque. Lorem ipsum dolor sit amet consectetur adipisicing elit.	<a href="#">Voluptatem maiores</a> fugiat nam quibusdam accusamus officia aliquid tempore, ea suscipit illum.</p>
 		</React.Fragment>
 	)
 };
