@@ -9,6 +9,7 @@ import Keyword from './Keyword';
 import projects from '../projects';
 import bulma from '../bulma.scss';
 import boy from 'boy.jpg';
+import flag from 'transflag.png';
 
 class Company {
 	constructor(name, url) {
@@ -111,7 +112,7 @@ export default class App extends React.Component {
 			<div className={bulma.container}>
 				<section className={classNames(bulma.section, bulma.columns)}>
 					<div className={bulma.column}>
-					<h1>About</h1>
+						<h1>About</h1>
 
 						<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. <img src='' alt='💖' /></p>
 					</div>
@@ -148,6 +149,7 @@ export default class App extends React.Component {
 					<ul>
 						<li><Copyright /></li>
 						<li><a href="https://github.com/vocksel/davidminnerly.com">Source</a></li>
+						<li><img src={flag} alt='Trans Flag'/></li>
 					</ul>
 				</footer>
 			</div>
