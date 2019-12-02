@@ -136,7 +136,6 @@ export default class App extends React.Component {
 					{this.getCodeProjects()}
 				</section>
 
-
 				<section className={bulma.section}>
 					<h1>Contact</h1>
 
@@ -149,7 +148,7 @@ export default class App extends React.Component {
 					<ul>
 						<li><Copyright /></li>
 						<li><a href="https://github.com/vocksel/davidminnerly.com">Source</a></li>
-						<li><img src={flag} alt='Trans Flag'/></li>
+						<li><img src={flag} title={'I know the world is scary, but you\'re doing great <3'} alt='Trans Flag'/></li>
 					</ul>
 				</footer>
 			</div>
