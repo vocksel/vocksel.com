@@ -131,9 +131,11 @@ export default class App extends React.Component {
 				<section className={bulma.section}>
 					<h1>Projects</h1>
 
+					<div className={bulma.columns}>
 					{this.getFreelanceProjects()}
 
 					{this.getCodeProjects()}
+					</div>
 				</section>
 
 				<section className={bulma.section}>

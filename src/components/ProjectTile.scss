@@ -1,0 +1,68 @@
+@import "../config.scss";
+
+// Dotted border effect inspired by:
+// https://codepen.io/markmead/pen/MqmOVB
+
+// Holds the border and tile contents
+.container {
+	position: relative;
+}
+
+// Unstyle link text since the borders act as the indicator of the tile being a
+// link.
+.link {
+	color: $text;
+	&:hover {
+		color: $text;
+	}
+}
+
+.display {
+	position: relative;
+	overflow: hidden;
+	height: 300px;
+	border: 2px solid $link;
+	display: block;
+	transition: 0.2s;
+}
+
+// Moving the display when the container is hovered means there isn't weird
+// jumpy behavior if the user hovers where the display moves away from.
+.container:hover .display {
+	transform: translate(-1em, -1em);
+	border-color: $link-hover;
+}
+
+.border {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border: 2px dashed $text;
+	z-index: -1;
+}
+
+.image {
+	object-fit: cover;
+	margin-block-end: 0;
+	height: 100%;
+}
+
+.caption {
+	// Generated with https://cssgradient.io/
+	background: rgb(2,2,2);
+	background: linear-gradient(0deg, rgba(2,2,2,0.8) 0%, rgba(2,2,2,0.8) 52%, rgba(255,255,255,0) 100%);
+
+	width: 100%;
+	padding: 0.5em;
+	padding-top: 3em;
+
+	// Mount to the bottom of the container
+	position: absolute;
+	bottom: 0;
+}
+
+.title {
+	margin-block-end: 0;
+}

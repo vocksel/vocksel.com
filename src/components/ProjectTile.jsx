@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import bulma from '../bulma.scss';
+import style from './ProjectTile.scss';
 
 export default class ProjectTile extends React.Component {
 	static propTypes = {
@@ -16,14 +19,20 @@ export default class ProjectTile extends React.Component {
 		const { project } = this.props;
 
 		return (
-			<div>
-				<h2><a href={project.url}>{project.title}</a></h2>
+			<div className={classNames(bulma.column, bulma['is-one-third'])}>
+				<a className={style.link} href={project.url}>
+					<div className={style.container}>
+						<div className={style.border}></div>
 
-				<p>{project.shortDescription}</p>
+						<div className={style.display}>
+							<img className={style.image} src={project.thumbnail} />
 
-				<img src={project.thumbnail} />
-
-				{project.description}
+							<div className={style.caption}>
+								<h2 className={style.title}>{project.title}</h2>
+							</div>
+						</div>
+					</div>
+				</a>
 			</div>
 		);
 	}
