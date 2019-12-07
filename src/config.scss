@@ -15,7 +15,7 @@ $primary: $accent-color;
 $body-background-color: $background;
 $strong-color: $accent-color;
 $link: $blueb;
-$link-hover: $lello;
+$link-hover: scale-color($blueb, $hue: -10%);
 
 // Forces the max width on these display types
 $desktop: 960px;

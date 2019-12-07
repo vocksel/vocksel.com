@@ -29,7 +29,7 @@ p, img {
 
 a {
 	&:hover {
-		text-decoration: underline;
+		border-bottom: 2px solid $link-hover;
 	}
 }
 
