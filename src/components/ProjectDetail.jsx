@@ -1,13 +1,23 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import HorizontalList from './HorizontalList';
 import projects from 'projects';
 import style from './ProjectDetail.scss';
-import bulma from 'bulma.scss';
+
+const getProjectLink = (index, text) => {
+	const project = projects[index];
+	if (project) {
+		return <Link to={`/projects/${project.slug}`}>{text}</Link>;
+	} else {
+		return <span>{text}</span>;
+	}
+};
 
 const ProjectDetail = () => {
 	const { projectId } = useParams();
 
 	const project = projects.find(project => project.slug == projectId);
+	const index = projects.indexOf(project);
 
 	return (
 		<div>
@@ -19,6 +29,12 @@ const ProjectDetail = () => {
 			<section className={style.description}>
 				{project.description}
 			</section>
+
+			<HorizontalList isCentered>
+				{getProjectLink(index-1, '< Prev')}
+				<Link to="/">Home</Link>
+				{getProjectLink(index+1, 'Next >')}
+			</HorizontalList>
 		</div>
 	);
 };
