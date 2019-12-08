@@ -1,0 +1,13 @@
+@import "config.scss";
+
+$scale: 0.7;
+
+.job, .description {
+	margin-block-end: $body-font-size / 2;
+}
+
+.description {
+	color: $text-faded;
+	font-size: $body-font-size * $scale;
+	line-height: $body-line-height * $scale;
+}

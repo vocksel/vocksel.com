@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Company from '../Company';
 import bulma from '../bulma.scss';
+import style from './Experience.scss';
 
 function formatDate(date) {
 	return moment(date).format('MMM YYYY');
@@ -30,13 +31,13 @@ export default class Experience extends React.Component {
 		const connector = exp.wasInHouse ? 'at' : 'for';
 
 		return (
-			<div className={bulma.columns}>
+			<div className={classNames(style.container, bulma.columns)}>
 				<p className={bulma.column}>{startDate}&ndash;{endDate}</p>
 
 				<div className={classNames(bulma.column, bulma['is-two-thirds'])}>
-					<p>{exp.job} {connector} <a href={exp.company.url}>{exp.company.name}</a>.</p>
+					<p className={style.job}>{exp.job} {connector} <a href={exp.company.url}>{exp.company.name}</a>.</p>
 
-					<p className={bulma.subtitle}>{exp.description}</p>
+					<p className={style.description}>{exp.description}</p>
 				</div>
 			</div>
 		);
