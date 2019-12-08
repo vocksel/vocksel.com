@@ -21,7 +21,6 @@
 	position: relative;
 	overflow: hidden;
 	height: 300px;
-	border: 2px solid $link;
 	display: block;
 	transition: 0.2s;
 }
@@ -30,7 +29,6 @@
 // jumpy behavior if the user hovers where the display moves away from.
 .container:hover .display {
 	transform: translate(-1em, -1em);
-	border-color: $link-hover;
 }
 
 .border {
