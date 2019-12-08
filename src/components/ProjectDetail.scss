@@ -1,5 +1,21 @@
 @import "config.scss";
 
+.title {
+	font-weight: bold;
+	font-size: $body-font-size * 2;
+	margin-bottom: $body-font-size / 3;
+}
+
+.subtitle {
+	font-style: italic;
+}
+
+.masthead {
+	width: 100%;
+	object-fit: cover;
+	height: $body-font-size * 14;
+}
+
 .description {
 	text-indent: $body-font-size*2;
 }
