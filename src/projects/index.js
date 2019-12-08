@@ -1,6 +1,6 @@
 export default [
 	require('./aquaman').default,
-	require('./apartment').default,
+	require('./rhinebeck').default,
 	require('./class-lua').default,
 	require('./mirage-isle').default,
 	// require('./repo-import').default,
