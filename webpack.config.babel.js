@@ -10,6 +10,10 @@ module.exports = {
 	mode: IS_PRODUCTION ? 'production' : 'development',
 	devtool: 'source-map',
 
+	output: {
+		publicPath: '/',
+	},
+
 	resolve: {
 		modules: [
 			path.resolve(__dirname, 'src'),
@@ -20,6 +24,10 @@ module.exports = {
 			'.js', '.json', // Defaults
 			'.jsx'
 		]
+	},
+
+	devServer: {
+		historyApiFallback: true,
 	},
 
 	plugins: [

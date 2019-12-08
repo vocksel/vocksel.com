@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import bulma from '../bulma.scss';
@@ -20,7 +21,7 @@ export default class ProjectTile extends React.Component {
 
 		return (
 			<div className={classNames(bulma.column, bulma['is-one-third'])}>
-				<a className={style.link} href={project.url}>
+				<Link to={`/projects/${project.slug}/`} className={style.link}>
 					<div className={style.container}>
 						<div className={style.border}></div>
 
@@ -32,7 +33,7 @@ export default class ProjectTile extends React.Component {
 							</div>
 						</div>
 					</div>
-				</a>
+				</Link>
 			</div>
 		);
 	}
