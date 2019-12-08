@@ -16,14 +16,15 @@ export default class Experience extends React.Component {
 			endDate: PropTypes.instanceOf(Date),
 			wasInHouse: PropTypes.bool.isRequired,
 			job: PropTypes.string.isRequired,
-			url: PropTypes.string.isRequired,
 			company: PropTypes.instanceOf(Company).isRequired,
-			description: PropTypes.string.isRequired,
+			description: PropTypes.oneOfType([
+				PropTypes.string,
+				PropTypes.element,
+			]).isRequired,
 		})
 	}
 	render() {
 		const { exp } = this.props;
-		console.log(exp);
 		const startDate = formatDate(exp.startDate);
 		const endDate = exp.endDate ? formatDate(exp.endDate) : 'Present';
 		const connector = exp.wasInHouse ? 'at' : 'for';
