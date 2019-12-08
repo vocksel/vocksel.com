@@ -7,7 +7,7 @@ import outside from './images/outside.jpg';
 export default {
 	title: 'Rhinebeck',
 	subtitle: 'An intimate, high-end apartment based in Rhinebeck, NY',
-	slug: 'apartment',
+	slug: 'rhinebeck',
 	releaseDate: new Date(2016, 0),
 	type: ProjectType.Game,
 	thumbnail: thumbnail,
