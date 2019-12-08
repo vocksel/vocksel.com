@@ -1,5 +1,6 @@
 // Brand colors
 $text: #F6E8EA;
+$text-faded: adjust-color($text, $alpha: -0.4);
 $background: #22181C;
 $accent-color: #FF3685;
 $blueb: #5B94FF;
