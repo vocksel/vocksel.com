@@ -1,0 +1,14 @@
+@import "../config.scss";
+
+.list li {
+	display: inline;
+	padding-right: $body-font-size;
+
+	&:last-of-type {
+		padding-right: none;
+	}
+}
+
+.isCentered {
+	text-align: center;
+}

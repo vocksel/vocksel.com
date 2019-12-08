@@ -6,6 +6,7 @@ import getAge from 'getAge';
 import Copyright from './Copyright';
 import ProjectTile from './ProjectTile';
 import Keyword from './Keyword';
+import HorizontalList from './HorizontalList';
 import projects from '../projects';
 import bulma from '../bulma.scss';
 import boy from 'boy.jpg';
@@ -115,6 +116,13 @@ export default class App extends React.Component {
 						<h1>About</h1>
 
 						<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
+
+						<HorizontalList>
+							<a href="https://twitter.com/vocksel_" title="Follow on Twitter for updates">Twitter</a>
+							<a href="https://github.com/vocksel" title="Check out my code on GitHub">GitHub</a>
+							<a href="https://www.linkedin.com/in/david-minnerly-916809149/" title="Connect with me on LinkedIn">LinkedIn</a>
+							<a href="mailto:voxeldavid@gmail.com" title="Shoot me an email">Email</a>
+						</HorizontalList>
 					</div>
 
 					<div className={classNames(bulma.column, bulma['is-narrow'])}>
@@ -132,26 +140,20 @@ export default class App extends React.Component {
 					<h1>Projects</h1>
 
 					<div className={bulma.columns}>
-					{this.getFreelanceProjects()}
+						{this.getFreelanceProjects()}
 
-					{this.getCodeProjects()}
+						{this.getCodeProjects()}
 					</div>
 				</section>
 
-				<section className={bulma.section}>
-					<h1>Contact</h1>
-
-					<p><a href="https://twitter.com/vocksel_">Twitter</a></p>
-					<p><a href="https://www.linkedin.com/in/david-minnerly-916809149/">LinkedIn</a></p>
-					<p><a href="mailto:david@vocksel.com">Email</a></p>
-				</section>
-
 				<footer className={bulma.section}>
-					<ul>
-						<li><Copyright /></li>
-						<li><a href="https://github.com/vocksel/davidminnerly.com">Source</a></li>
-						<li><img src={flag} title={'I know the world is scary, but you\'re doing great <3'} alt='Trans Flag'/></li>
-					</ul>
+					<HorizontalList isCentered>
+						<Copyright />
+
+						<a href="https://github.com/vocksel/davidminnerly.com">Source</a>
+
+						<img src={flag} title={'I know the world is scary, but you\'re doing great <3'} alt='Trans Flag'/>
+					</HorizontalList>
 				</footer>
 			</div>
 		);
