@@ -4,12 +4,15 @@ import Copyright from './Copyright';
 import Home from './Home';
 import HorizontalList from './HorizontalList';
 import ProjectDetail from './ProjectDetail';
+import ScrollToTop from './ScrollToTop';
 import TransFlag from './TransFlag';
 import bulma from 'bulma.scss';
 export default class App extends React.Component {
 	render() {
 		return (
 			<Router>
+				<ScrollToTop />
+
 				<div className={bulma.container}>
 					<Switch>
 						<Route path='/projects/:projectId'><ProjectDetail /></Route>
