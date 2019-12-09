@@ -16,7 +16,8 @@ export default class Home extends React.Component {
 		const freelance = projects.filter(project => project.type === ProjectType.Game);
 
 		return freelance.map(project =>
-			<ProjectTile key={project.slug} project={project} />);
+			<ProjectTile className={classNames(bulma.column, bulma['is-one-third'])}
+				key={project.slug} project={project} />);
 	}
 
 	getCodeProjects() {
@@ -24,7 +25,8 @@ export default class Home extends React.Component {
 
 		// Need a new component to return. Should be just be a list of my code projects
 		return code.map(project =>
-			<ProjectTile key={project.slug} project={project} />);
+			<ProjectTile className={classNames(bulma.column, bulma['is-one-third'])}
+				key={project.slug} project={project} />);
 	}
 
 	render() {
