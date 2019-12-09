@@ -40,7 +40,7 @@ const experiences = [
 		description: <span>Worked for Roblox to create <Link to='/projects/aquaman'>Aquaman: City of Rolantis</Link> for a Warner Brother's sponsorship.</span>,
 		wasInHouse: false,
 		startDate: new Date(2018, 6),
-		endDate: new Date(2019, 10),
+		endDate: new Date(2018, 10),
 	},
 
 	{
