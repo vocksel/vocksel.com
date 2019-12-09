@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import HorizontalList from './HorizontalList';
+import HorizontalList from '../components/HorizontalList';
 import projects from 'projects';
 import bulma from 'bulma.scss';
 import style from './ProjectDetail.scss';
