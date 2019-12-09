@@ -43,6 +43,7 @@ export default class Home extends React.Component {
 							<a href="https://github.com/vocksel" title="Check out my code on GitHub">GitHub</a>
 							<a href="https://www.linkedin.com/in/david-minnerly-916809149/" title="Connect with me on LinkedIn">LinkedIn</a>
 							<a href="mailto:voxeldavid@gmail.com" title="Shoot me an email">Email</a>
+							<a href="https://discordapp.com/invite/uRCzvTM" title="Join my Discord server">Discord</a>
 						</HorizontalList>
 					</div>
 
