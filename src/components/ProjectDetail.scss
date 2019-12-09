@@ -1,13 +1,11 @@
 @import "config.scss";
 
 .title {
-	font-weight: bold;
-	font-size: $body-font-size * 2;
-	margin-bottom: $body-font-size / 3;
+	margin-bottom: $body-font-size / 4;
 }
 
 .subtitle {
-	font-style: italic;
+	color: $text-faded;
 }
 
 .masthead {
