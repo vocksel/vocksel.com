@@ -1,4 +1,5 @@
 import path from 'path';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
@@ -39,6 +40,11 @@ module.exports = {
 		}),
 
 		new MiniCssExtractPlugin(),
+
+		new CopyWebpackPlugin([
+			path.resolve(__dirname, 'src/static/og-thumbnail.jpg'),
+			path.resolve(__dirname, 'src/static/oembed.json'),
+		]),
 	],
 
 	module: {
