@@ -5,6 +5,7 @@ import Copyright from './Copyright';
 import HorizontalList from './HorizontalList';
 import Home from 'routes/Home';
 import ProjectDetail from 'routes/ProjectDetail';
+import ProjectList from 'routes/ProjectList';
 import ScrollToTop from './ScrollToTop';
 import TransFlag from './TransFlag';
 import bulma from 'bulma.scss';
@@ -18,6 +19,7 @@ export default class App extends React.Component {
 				<div className={bulma.container}>
 					<Switch>
 						<Route path='/projects/:projectId'><ProjectDetail /></Route>
+						<Route path='/projects'><ProjectList /></Route>
 						<Route path='/'><Home /></Route>
 					</Switch>
 
