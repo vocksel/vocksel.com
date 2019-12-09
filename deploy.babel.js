@@ -13,6 +13,7 @@
 //   # how they'll look online before being fully ready to push to production.
 //   $ npm run deploy:dev
 
+import fs from 'fs';
 import git from 'simple-git';
 import config from './webpack.config.babel.js';
 
@@ -23,19 +24,28 @@ const REMOTES = {
 	production: 'ssh://git@davidminnerly.com/~/davidminnerly.git'
 }
 
-const outputDir = config.output.path;
-const repo = git(outputDir)
+const OUTPUT_DIR = config.output.path || 'dist';
+
+function getRemote() {
+	if (process.env.NODE_ENV == 'production') {
+		return REMOTES.production;
+	} else {
+		return REMOTES.staging;
+	}
+};
+
+if (fs.existsSync(OUTPUT_DIR)) {
+	const repo = git(OUTPUT_DIR)
 	.init()
 	.add('.')
 	.commit('Release');
 
-switch (process.env.NODE_ENV) {
-	case 'development':
-		repo.addRemote('origin', REMOTES.staging);
-		break;
-	case 'production':
-		repo.addRemote('origin', REMOTES.production);
-		break;
-}
+	const remote = getRemote();
 
-repo.push(['-f', 'origin', 'master'])
+	repo.addRemote('origin', remote);
+	repo.push(['-f', 'origin', 'master']);
+
+	console.log('Deployed to ' + remote);
+} else {
+	console.warn('Nothing has been built. Run `npm run build` first');
+}
