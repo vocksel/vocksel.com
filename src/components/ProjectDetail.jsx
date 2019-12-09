@@ -24,7 +24,7 @@ const ProjectDetail = () => {
 			<h1 className={style.title}>{project.title} <span className={style.date}> &mdash; {project.releaseDate.getFullYear()}</span></h1>
 			<p className={style.subtitle}>{project.subtitle}</p>
 
-			<img className={style.masthead} src={project.thumbnail} alt="" />
+			<img src={project.thumbnail} alt="" />
 
 			<section className={style.description}>
 				{project.description}
