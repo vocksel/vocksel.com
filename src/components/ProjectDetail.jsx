@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import HorizontalList from './HorizontalList';
 import projects from 'projects';
+import bulma from 'bulma.scss';
 import style from './ProjectDetail.scss';
 
 const getProjectLink = (index, text) => {
@@ -20,7 +21,7 @@ const ProjectDetail = () => {
 	const index = projects.indexOf(project);
 
 	return (
-		<div>
+		<div className={bulma.section}>
 			<h1 className={style.title}>{project.title} <span className={style.date}> &mdash; {project.releaseDate.getFullYear()}</span></h1>
 			<p className={style.subtitle}>{project.subtitle}</p>
 
