@@ -16,9 +16,8 @@
     "start": "webpack-dev-server --colors",
     "test": "eslint",
     "build": "webpack --colors",
-    "deploy:dev": "npm run build && cross-env NODE_ENV=development babel deploy.babel.js",
-    "deploy:prod": "npm run build && cross-env NODE_ENV=production babel deploy.babel.js",
-    "deploy": "cross-env NODE_ENV=development babel deploy.babel.js"
+    "deploy": "npm run build && cross-env NODE_ENV=development babel-node deploy.babel.js",
+    "deploy:prod": "npm run build && cross-env NODE_ENV=production babel-node deploy.babel.js"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -30,6 +29,7 @@
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.5",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "eslint": "^6.7.1",
