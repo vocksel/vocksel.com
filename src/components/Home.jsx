@@ -58,7 +58,7 @@ export default class Home extends React.Component {
 				<section className={bulma.section}>
 					<h1>Projects</h1>
 
-					<div className={bulma.columns}>
+					<div className={classNames(bulma.columns, bulma['is-multiline'])}>
 						{this.getFreelanceProjects()}
 
 						{this.getCodeProjects()}
