@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import Experience from './Experience';
-import HorizontalList from './HorizontalList';
-import Keyword from './Keyword';
-import ProjectTile from './ProjectTile';
+import Experience from '../components/Experience';
+import HorizontalList from '../components/HorizontalList';
+import Keyword from '../components/Keyword';
+import ProjectTile from '../components/ProjectTile';
 import bulma from 'bulma.scss';
 import { ProjectType } from 'types';
 import getAge from 'getAge';
