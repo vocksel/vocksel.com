@@ -28,7 +28,7 @@ const ProjectDetail = () => {
 
 				<img src={project.thumbnail} alt="" />
 
-				<section className={style.description}>
+				<section>
 					{project.description}
 				</section>
 
