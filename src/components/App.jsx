@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Copyright from './Copyright';
@@ -8,7 +7,6 @@ import ProjectDetail from 'routes/ProjectDetail';
 import ProjectList from 'routes/ProjectList';
 import ScrollToTop from './ScrollToTop';
 import TransFlag from './TransFlag';
-import bulma from 'bulma.scss';
 import generic from 'generic.scss';
 export default class App extends React.Component {
 	render() {
@@ -16,23 +14,21 @@ export default class App extends React.Component {
 			<Router>
 				<ScrollToTop />
 
-				<div className={bulma.container}>
-					<Switch>
-						<Route path='/projects/:projectId'><ProjectDetail /></Route>
-						<Route path='/projects'><ProjectList /></Route>
-						<Route path='/'><Home /></Route>
-					</Switch>
+				<Switch>
+					<Route path='/projects/:projectId'><ProjectDetail /></Route>
+					<Route path='/projects'><ProjectList /></Route>
+					<Route path='/'><Home /></Route>
+				</Switch>
 
-					<footer className={classNames(bulma.section, generic.finePrint)}>
-						<HorizontalList isCentered>
-							<Copyright />
+				<footer className={generic.finePrint}>
+					<HorizontalList isCentered>
+						<Copyright />
 
-							<a href="https://github.com/vocksel/davidminnerly.com">Source</a>
+						<a href="https://github.com/vocksel/davidminnerly.com">Source</a>
 
-							<TransFlag />
-						</HorizontalList>
-					</footer>
-				</div>
+						<TransFlag />
+					</HorizontalList>
+				</footer>
 			</Router>
 		);
 	}

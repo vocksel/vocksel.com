@@ -32,39 +32,47 @@ export default class Home extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<section className={classNames(bulma.section, bulma.columns)}>
-					<div className={bulma.column}>
-						<h1>About</h1>
+				<section className={bulma.section}>
+					<div className={bulma.container}>
+						<div className={bulma.columns}>
+							<div className={bulma.column}>
+								<h1>About</h1>
 
-						<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
+								<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
 
-						<HorizontalList>
-							<a href="https://twitter.com/vocksel_" title="Follow on Twitter for updates">Twitter</a>
-							<a href="https://github.com/vocksel" title="Check out my code on GitHub">GitHub</a>
-							<a href="https://www.linkedin.com/in/david-minnerly-916809149/" title="Connect with me on LinkedIn">LinkedIn</a>
-							<a href="mailto:voxeldavid@gmail.com" title="Shoot me an email">Email</a>
-							<a href="https://discordapp.com/invite/uRCzvTM" title="Join my Discord server">Discord</a>
-						</HorizontalList>
-					</div>
+								<HorizontalList>
+									<a href="https://twitter.com/vocksel_" title="Follow on Twitter for updates">Twitter</a>
+									<a href="https://github.com/vocksel" title="Check out my code on GitHub">GitHub</a>
+									<a href="https://www.linkedin.com/in/david-minnerly-916809149/" title="Connect with me on LinkedIn">LinkedIn</a>
+									<a href="mailto:voxeldavid@gmail.com" title="Shoot me an email">Email</a>
+									<a href="https://discordapp.com/invite/uRCzvTM" title="Join my Discord server">Discord</a>
+								</HorizontalList>
+							</div>
 
-					<div className={classNames(bulma.column, bulma['is-narrow'])}>
-						<img className={bulma.image} src={boy} alt="" />
+							<div className={classNames(bulma.column, bulma['is-narrow'])}>
+								<img className={bulma.image} src={boy} alt="" />
+							</div>
+						</div>
 					</div>
 				</section>
 
 				<section className={bulma.section}>
-					<h1>Experience</h1>
+					<div className={bulma.container}>
+						<h1>Experience</h1>
 
-					{experiences.map(exp => <Experience exp={exp} />)}
+						{experiences.map(exp => <Experience exp={exp} />)}
+					</div>
 				</section>
 
 				<section className={bulma.section}>
-					<h1>Projects</h1>
+					<div className={bulma.container}>
+						<h1>Projects</h1>
 
-					<div className={classNames(bulma.columns, bulma['is-multiline'])}>
-						{this.getFreelanceProjects()}
+						<div className={classNames(bulma.columns, bulma['is-multiline'])}>
+							{this.getFreelanceProjects()}
 
-						{this.getCodeProjects()}
+							{this.getCodeProjects()}
+						</div>
 					</div>
 				</section>
 			</React.Fragment>
