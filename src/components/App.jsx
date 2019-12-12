@@ -5,6 +5,7 @@ import HorizontalList from './HorizontalList';
 import Home from 'routes/Home';
 import ProjectDetail from 'routes/ProjectDetail';
 import ProjectList from 'routes/ProjectList';
+import NoMatch from 'routes/NoMatch';
 import ScrollToTop from './ScrollToTop';
 import TransFlag from './TransFlag';
 import generic from 'generic.scss';
@@ -17,7 +18,8 @@ export default class App extends React.Component {
 				<Switch>
 					<Route path='/projects/:projectId'><ProjectDetail /></Route>
 					<Route path='/projects'><ProjectList /></Route>
-					<Route path='/'><Home /></Route>
+					<Route exact path='/'><Home /></Route>
+					<Route path='*'><NoMatch /></Route>
 				</Switch>
 
 				<footer className={generic.finePrint}>
