@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import HorizontalList from '../components/HorizontalList';
 import projects from 'projects';
 import bulma from 'bulma.scss';
@@ -22,6 +23,10 @@ const ProjectDetail = () => {
 
 	return (
 		<div className={bulma.section}>
+			<Helmet>
+				<title>{project.title} &mdash; David Minnerly</title>
+			</Helmet>
+
 			<div className={bulma.container}>
 				<h1 className={style.title}>{project.title} <span className={style.date}> &mdash; {project.releaseDate.getFullYear()}</span></h1>
 				<p className={style.subtitle}>{project.subtitle}</p>
