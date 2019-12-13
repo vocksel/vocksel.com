@@ -13,9 +13,13 @@
 	transition: transform 0.2s;
 }
 
-.container:hover .image {
+.container:hover .hoverUp {
 	outline: 4px solid $link-hover;
 	transform: translate(0, -($body-font-size / 2));
+}
+.container:hover .hoverRight {
+	outline: 4px solid $link-hover;
+	transform: translate($body-font-size / 2, 0);
 }
 
 .link {
