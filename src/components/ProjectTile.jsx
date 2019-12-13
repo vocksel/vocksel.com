@@ -8,6 +8,10 @@ import style from './ProjectTile.scss';
 export default class ProjectTile extends React.Component {
 	static propTypes = {
 		className: PropTypes.string,
+
+		// Determines the direction that the tile will slide when hovered.
+		slide: PropTypes.oneOf([ 'x', 'y' ]),
+
 		project: PropTypes.shape({
 			slug: PropTypes.string,
 			title: PropTypes.string,
@@ -17,13 +21,24 @@ export default class ProjectTile extends React.Component {
 		}),
 	};
 
+	static defaultProps = {
+		slide: 'y',
+	}
+
 	render() {
-		const { project } = this.props;
+		const { project, slide } = this.props;
+
+		let hoverClass;
+		if (slide == 'x') {
+			hoverClass = style.hoverRight;
+		} else {
+			hoverClass = style.hoverUp;
+		}
 
 		return (
 			<div className={classNames(style.container, this.props.className)}>
 				<Link to={`/projects/${project.slug}/`} className={style.link}>
-					<CaptionedImage className={style.image} src={project.thumbnail} caption={project.title} />
+					<CaptionedImage className={classNames(style.image, hoverClass)} src={project.thumbnail} caption={project.title} />
 				</Link>
 			</div>
 		);
