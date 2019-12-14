@@ -18,6 +18,8 @@ const ProjectList = () => {
 
 			<div className={bulma.section}>
 				<div className={bulma.container}>
+					<h1>Projects</h1>
+
 					{tiles}
 				</div>
 			</div>
