@@ -12,6 +12,7 @@ import getAge from 'getAge';
 import experiences from 'experiences';
 import projects from 'projects';
 import boy from 'boy.jpg';
+import urls from 'urls.json';
 
 export default class Home extends React.Component {
 	getFreelanceProjects() {
@@ -45,11 +46,11 @@ export default class Home extends React.Component {
 								<p className={generic.bigText}>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
 
 								<HorizontalList>
-									<a href="https://twitter.com/vocksel_" title="Follow on Twitter for updates">Twitter</a>
-									<a href="https://github.com/vocksel" title="Check out my code on GitHub">GitHub</a>
-									<a href="https://www.linkedin.com/in/david-minnerly-916809149/" title="Connect with me on LinkedIn">LinkedIn</a>
-									<a href="mailto:voxeldavid@gmail.com" title="Shoot me an email">Email</a>
-									<a href="https://discordapp.com/invite/uRCzvTM" title="Join my Discord server">Discord</a>
+									<a href={urls.twitter} title='Follow on Twitter for updates'>Twitter</a>
+									<a href={urls.github} title='Check out my code on GitHub'>GitHub</a>
+									<a href={urls.linkedin} title='Connect with me on LinkedIn'>LinkedIn</a>
+									<a href={urls.email} title='Shoot me an email'>Email</a>
+									<a href={urls.discord} title='Join my Discord server'>Discord</a>
 								</HorizontalList>
 							</div>
 

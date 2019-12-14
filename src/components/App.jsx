@@ -15,6 +15,7 @@ import ScrollToTop from './ScrollToTop';
 import TransFlag from './TransFlag';
 import generic from 'generic.scss';
 import bulma from 'bulma.scss';
+import urls from 'urls.json';
 
 export default function App() {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
@@ -45,7 +46,7 @@ export default function App() {
 				<HorizontalList isCentered>
 					<Copyright />
 
-					<a href="https://github.com/vocksel/davidminnerly.com">Source</a>
+					<a href={urls.repo}>Source</a>
 
 					<TransFlag />
 				</HorizontalList>
