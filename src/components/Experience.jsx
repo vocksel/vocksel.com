@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Company from '../Company';
@@ -8,7 +7,7 @@ import generic from '../generic.scss';
 import style from './Experience.scss';
 
 function formatDate(date) {
-	return moment(date).format('MMM YYYY');
+	return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 }
 
 export default class Experience extends React.Component {
