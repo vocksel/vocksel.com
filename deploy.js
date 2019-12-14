@@ -13,9 +13,9 @@
 //   # how they'll look online before being fully ready to push to production.
 //   $ npm run deploy:dev
 
-import fs from 'fs';
-import git from 'simple-git';
-import config from './webpack.config.js';
+const fs = require('fs');
+const git = require('simple-git');
+const config = require('./webpack.config.js');
 
 // Remote repositories for deploying the site. These can only be pushed to with
 // proper authorization.
