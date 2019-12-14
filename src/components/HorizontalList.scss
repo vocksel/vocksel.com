@@ -5,10 +5,14 @@
 	padding-right: $body-font-size;
 
 	&:last-of-type {
-		padding-right: none;
+		padding-right: 0;
 	}
 }
 
 .isCentered {
 	text-align: center;
+}
+
+.isRightAligned {
+	text-align: right;
 }
