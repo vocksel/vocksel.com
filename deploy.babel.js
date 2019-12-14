@@ -15,7 +15,7 @@
 
 import fs from 'fs';
 import git from 'simple-git';
-import config from './webpack.config.babel.js';
+import config from './webpack.config.js';
 
 // Remote repositories for deploying the site. These can only be pushed to with
 // proper authorization.
