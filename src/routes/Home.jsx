@@ -65,7 +65,7 @@ export default class Home extends React.Component {
 					<div className={bulma.container}>
 						<h1>Experience</h1>
 
-						{experiences.map(exp => <Experience exp={exp} />)}
+						{experiences.map((exp, index) => <Experience key={index} exp={exp} />)}
 					</div>
 				</section>
 
