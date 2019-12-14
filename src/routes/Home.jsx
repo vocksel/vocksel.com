@@ -1,4 +1,5 @@
 import React from 'react';
+import  { Helmet } from 'react-helmet';
 import classNames from 'classnames';
 import Experience from '../components/Experience';
 import HorizontalList from '../components/HorizontalList';
@@ -33,6 +34,10 @@ export default class Home extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
+				<Helmet>
+					<title>David Minnerly</title>
+				</Helmet>
+
 				<section className={bulma.section}>
 					<div className={bulma.container}>
 						<div className={bulma.columns}>
