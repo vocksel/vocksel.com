@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import Copyright from './Copyright';
 import HorizontalList from './HorizontalList';
 import Home from 'routes/Home';
+import About from 'routes/About';
 import ProjectDetail from 'routes/ProjectDetail';
 import ProjectList from 'routes/ProjectList';
 import NoMatch from 'routes/NoMatch';
@@ -35,6 +36,7 @@ export default function App() {
 			<Switch>
 				<Route path='/projects/:projectId'><ProjectDetail /></Route>
 				<Route path='/projects'><ProjectList /></Route>
+				<Route path='/about'><About /></Route>
 				<Route exact path='/'><Home /></Route>
 				<Route path='*'><NoMatch /></Route>
 			</Switch>
