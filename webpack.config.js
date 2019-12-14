@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -96,6 +97,11 @@ module.exports = {
 	},
 
 	optimization: {
+		minimize: true,
+		minimizer: [
+			new UglifyJsPlugin(),
+		],
+
 		splitChunks: {
 			chunks: 'all',
 		},
