@@ -1,4 +1,5 @@
 import React from 'react';
+import  { Helmet } from 'react-helmet';
 import projects from 'projects';
 import ProjectTile from 'components/ProjectTile';
 import bulma from 'bulma.scss';
@@ -10,11 +11,17 @@ const ProjectList = () => {
 	);
 
 	return (
-		<div className={bulma.section}>
-			<div className={bulma.container}>
-				{tiles}
+		<React.Fragment>
+			<Helmet>
+				<title>Projects &mdash; David Minnerly</title>
+			</Helmet>
+
+			<div className={bulma.section}>
+				<div className={bulma.container}>
+					{tiles}
+				</div>
 			</div>
-		</div>
+		</React.Fragment>
 	);
 };
 
