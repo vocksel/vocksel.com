@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Copyright from './Copyright';
@@ -36,7 +37,7 @@ export default class App extends React.Component {
 					<Route path='*'><NoMatch /></Route>
 				</Switch>
 
-				<footer className={generic.finePrint}>
+				<footer className={classNames(bulma.section, generic.finePrint)}>
 					<HorizontalList isCentered>
 						<Copyright />
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Company from '../Company';
 import bulma from '../bulma.scss';
+import generic from '../generic.scss';
 import style from './Experience.scss';
 
 function formatDate(date) {
@@ -32,12 +33,12 @@ export default class Experience extends React.Component {
 
 		return (
 			<div className={classNames(style.container, bulma.columns)}>
-				<p className={bulma.column}>{startDate}&ndash;{endDate}</p>
+				<p className={classNames(bulma.column, style.date)}>{startDate}&ndash;{endDate}</p>
 
 				<div className={classNames(bulma.column, bulma['is-two-thirds'])}>
 					<p className={style.job}>{exp.job} {connector} <a href={exp.company.url}>{exp.company.name}</a>.</p>
 
-					<p className={style.description}>{exp.description}</p>
+					<p className={classNames(style.description, generic.tight)}>{exp.description}</p>
 				</div>
 			</div>
 		);
