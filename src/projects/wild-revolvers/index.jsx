@@ -16,7 +16,7 @@ export default {
 	url: 'https://www.roblox.com/games/983224898/Wild-Revolvers',
 	description: (
 		<React.Fragment>
-			<p>In June of 2017, I was approached by Novaly Studios to work as a level designer for a western shooter focused around revolvers. The game’s core premise was simple: an arcade shooter with one-shot kills. Upon release, Wild Revolvers soured to the front page of Roblox, topping out around 16k concurrent users where it stayed at the #2 spot. The game consists of 5 core levels and a lobby that I created over 3 months. The levels serve as the game’s battlegrounds, while the lobby is a place for players to hang out during intermission and trade revolver skins with each other.</p>
+			<p>In June of 2017, I was approached by Novaly Studios to work as a level designer for a western shooter focused around revolvers. The game’s core premise was simple: an arcade shooter with one-shot kills. Upon release, Wild Revolvers soared to the front page of Roblox, topping out around 16k concurrent users where it stayed at the #2 spot. The game consists of 5 core levels and a lobby that I created over 3 months. The levels serve as the game’s battlegrounds, while the lobby is a place for players to hang out during intermission and trade revolver skins with each other.</p>
 
 			<p>Since its release, Wild Revolvers has gained quite a bit of notoriety, and is still occasionally tweeted by Roblox to their 1.3 million followers.</p>
 
