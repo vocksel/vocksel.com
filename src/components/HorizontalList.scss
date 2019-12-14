@@ -1,7 +1,7 @@
 @import "../config.scss";
 
 .list li {
-	display: inline;
+	display: inline-block;
 	padding-right: $body-font-size;
 
 	&:last-of-type {
