@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { ProjectType } from 'types';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
-import thumbnail from './outpost/013.png';
+import thumbnail from './outpost/013.jpg';
 import bulma from 'bulma.scss';
 
 export default {
@@ -35,14 +35,14 @@ export default {
 			<p>My work consisted of handling everything to do with the in-game world. From levels, to lobbies, to incorporating new assets from other developers, and managing existing assets at the request of others. I was given a lot of creative freedom for each map, and was left to my own devices to come up with new themes and designs and execute them to completion. I typically prefer a more hands-off approach, so this worked great for me. Mojave was the first map I created, and I drew a lot of inspiration from mesas for it. It has an above ground plateau as well as tunnels underneath, which allow players to sneak behind others that are camping out. It was a hit from the start and is one of the more iconic maps.</p>
 
 			<figure>
-				<img src={require('./mojave/066.png').default} />
+				<img src={require('./mojave/066.jpg').default} />
 				<figcaption>Aerial view of Mojave.</figcaption>
 			</figure>
 
 			<p>I drew a lot of inspiration from <a href='https://store.steampowered.com/app/265630/Fistful_of_Frags/'>Fistful of Frags</a> during my time working on Wild Revolvers, as it has similar gameplay to what we were aiming for. Particularly in the sense of being a western arcade shooter. Prior to Wild Revolvers, I had never designed maps for a shooter, so in the process of creating the maps I used games like Fistful of Frags and CS:GO as inspiration for what a shooter map could look and feel like. Mojave was an example of where this worked well, and the same can be said for Outpost, which consisted of various elevation changes and different avenues for player’s to attack from. Two of the other maps, Depot and Farm, were not as beloved but still held up as quality maps to play on.</p>
 
 			<figure>
-				<img src={require('./outpost/019.png').default} />
+				<img src={require('./outpost/019.jpg').default} />
 				<figcaption>Another look at Outpost, showcasing one of its routes that the user can take.</figcaption>
 			</figure>
 
@@ -51,7 +51,7 @@ export default {
 			<p>I primarily worked on bugfixes, adding new gun skins,  and general maintenance. However I did add several features, such as spectating,  support for VIP servers, and daily rewards. I also rewrote our code for the CTF gamemode from the ground up, as we were having several consistency issues with it. The whole process taught me a lot about how to work in codebases other than my own, as well as managing perfectionist tendencies. We had updates we needed to get out the door, so we had to take shortcuts occasionally.</p>
 
 			<figure>
-				<img src={require('./canyon/2017-12-09 15.50.37.png').default} />
+				<img src={require('./canyon/2017-12-09 15.50.37.jpg').default} />
 				<figcaption>Another view of Canyon, highlighting a little fishing shack and covered bridge.</figcaption>
 			</figure>
 
@@ -62,14 +62,14 @@ export default {
 			<p>The most glaring example of a lack of planning was with Canyon. I spent most of my time focused around the idea of a huge bridge cutting through a town in a canyon, that I didn’t think much about how the map would play. Because of this, soon after the game’s release we decided that Canyon needed a rework, as it was very easy for players to kill each other from across the map, and overall was not fun to play.</p>
 
 			<figure>
-				<img src={require('./canyon/2017-08-08 21.02.38.png').default} />
+				<img src={require('./canyon/2017-08-08 21.02.38.jpg').default} />
 				<figcaption>The first iteration of Canyon, notice the lack of elevation throughout the map.</figcaption>
 			</figure>
 
 			<p>The way the map was designed lead to players feeling like they died unfairly, and it was also hard to navigate. Canyon was designed to have two pathways that players take most often, creating chokepoints. With the old map, it was easy for these spots to be camped and resulted in deaths that didn’t feel warranted. The rework consisted of cutting off line of sight that crossed the entire map, along with changing around elevation and making the map overall easier to navigate. This helped significantly and put Canyon in a better place, however with proper greyboxing and testing, this rework might have been avoided from the start.</p>
 
 			<figure>
-				<img src={require('./canyon/2017-12-09 15.49.34.png').default} />
+				<img src={require('./canyon/2017-12-09 15.49.34.jpg').default} />
 				<figcaption>Showcasing the newest iteration of Canyon with its elevated center island.</figcaption>
 			</figure>
 
@@ -78,7 +78,7 @@ export default {
 			<p>One of the best decisions that was made for the game was the addition of a double jump. Initially I criticized the idea because it seemed out of place for a western shooter, however giving the user the option of vertical movement was a massive boon for the game. This feature enhanced the feeling of the game being arcadey and fast paced, which is exactly what we were going for. When playing the game myself, this is still one of my favorite additions because of all the possibilities of movement around the map it allows. It’s also just cool to see cowboys flipping around midair while firing at each other.</p>
 
 			<figure>
-				<img src={require('./farm/032.png').default} />
+				<img src={require('./farm/032.jpg').default} />
 				<figcaption>Farm map, featuring the barn and various boards that make paths to move along.</figcaption>
 			</figure>
 
@@ -89,14 +89,14 @@ export default {
 			<p>For Halloween and Christmas of 2017, I was tasked with modifying the maps to feature spooky and festive props for each event. It was fun to get to revisit the levels after the fact and reflect on what I had created. Decorating the maps with various props and ambient lighting was a nice change of pace as well.</p>
 
 			<figure>
-				<img src={require('./farm-spooky.png').default} />
+				<img src={require('./farm-spooky.jpg').default} />
 				<figcaption>Spooky version of the Farm map.</figcaption>
 			</figure>
 
 			<p>When I was younger, one of my favorite things to see on Roblox was games changing their appearance to match the season. It really helped cement in my kid brain that it was Christmas, or Halloween, or Easter, or some other holiday. It was always super exciting for me to see all my favorite games updated with special events, so I hope Wild Revolvers doing the same brought some joy to the kids that played it.</p>
 
 			<figure>
-				<img src={require('./saloon-holiday.png').default} />
+				<img src={require('./saloon-holiday.jpg').default} />
 				<figcaption>A holiday version of the lobby, featuring string lights and a festive tree.</figcaption>
 			</figure>
 
@@ -106,7 +106,7 @@ export default {
 
 			<p>Now giddy on up an git, ride off into your sunset pardner. Yeehaw 🤠</p>
 
-			<img src={require('./lobby/021.png').default} />
+			<img src={require('./lobby/021.jpg').default} />
 		</React.Fragment>
 	)
 };
