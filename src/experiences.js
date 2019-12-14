@@ -3,9 +3,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Company from './Company';
+import urls from './urls';
 
-const novaly = new Company('Novaly Studios', 'https://twitter.com/novalystudios');
-const roblox = new Company('Roblox Corporation', 'https://corp.roblox.com/');
+const novaly = new Company('Novaly Studios', urls.novaly);
+const roblox = new Company('Roblox Corporation', urls.roblox);
 
 const experiences = [
 	{
