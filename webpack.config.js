@@ -2,6 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
@@ -45,6 +46,10 @@ module.exports = {
 			path.resolve(__dirname, 'src/static/og-thumbnail.jpg'),
 			path.resolve(__dirname, 'src/static/oembed.json'),
 		]),
+
+		new ImageminPlugin({
+			disable: !IS_PRODUCTION
+		})
 	],
 
 	module: {
