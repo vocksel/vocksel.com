@@ -17,8 +17,8 @@
     "test": "eslint",
     "build": "webpack --colors",
     "build:prod": "cross-env NODE_ENV=production webpack --colors",
-    "deploy": "npm run build && cross-env NODE_ENV=development babel-node deploy.babel.js",
-    "deploy:prod": "npm run build && cross-env NODE_ENV=production babel-node deploy.babel.js"
+    "deploy": "npm run build && cross-env NODE_ENV=development node deploy.js",
+    "deploy:prod": "npm run build && cross-env NODE_ENV=production node deploy.js"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
