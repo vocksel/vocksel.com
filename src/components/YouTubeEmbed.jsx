@@ -10,7 +10,7 @@ export default class YoutubeEmbed extends React.Component {
 	render() {
 		return (
 			<div className={style.videoContainer}>
-				<iframe className={style.video} src={this.props.src} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe className={style.video} src={this.props.src} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 			</div>
 		);
 	}
