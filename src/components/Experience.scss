@@ -1,6 +1,9 @@
 @import "config.scss";
 
-$scale: 0.7;
+.date {
+	margin-block-end: 0;
+	padding-bottom: 0;
+}
 
 .job, .description {
 	margin-block-end: $body-font-size / 2;
@@ -8,6 +11,4 @@ $scale: 0.7;
 
 .description {
 	color: $text-faded;
-	font-size: $body-font-size * $scale;
-	line-height: $body-line-height * $scale;
 }
