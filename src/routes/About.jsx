@@ -3,10 +3,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Keyword from '../components/Keyword';
-import YouTubeEmbed from '../components/YouTubeEmbed';
 import getAge from 'getAge';
 import bulma from 'bulma.scss';
-import generic from 'generic.scss';
 import style from './About.scss';
 import urls from 'urls.json';
 
@@ -36,9 +34,7 @@ export default function About() {
 
 				<p>I’ve worked on many types of projects. A majority of what I do involves games, but I also do web development, work on Linux servers, and create command line tools. For examples of my work, check out my <a href={urls.github}>GitHub</a> for software, and the <Link to='/projects'>Projects</Link> page for everything else.</p>
 
-				<p>For the past 2 summers I've worked as an intern for <a href={urls.roblox}>Roblox</a>. This past time, our CEO came through the office with a marching band and brought us all outside to the lawn for a company photo <span className={generic.finePrint}>(mind the volume)</span>.</p>
-
-				<YouTubeEmbed src='https://www.youtube.com/embed/EkKvDcCG5Ac'/>
+				<p>For the past 2 summers I've worked as an intern for <a href={urls.roblox}>Roblox</a>. Each time is always such an incredibly valuable experience, where I get to work with some of the brightest people I've ever met. I get to work towards helping the platform I grew up with be even greater for future generations, and I'm even able to help out newhires and other interns with my knowledge of Roblox and the tools used internally.</p>
 			</div>
 		</section>
 	);
