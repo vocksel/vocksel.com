@@ -31,7 +31,9 @@ const ProjectDetail = () => {
 				<h1 className={style.title}>{project.title} <span className={style.date}> &mdash; {project.releaseDate.getFullYear()}</span></h1>
 				<p className={style.subtitle}>{project.subtitle}</p>
 
-				<img src={project.thumbnail} alt="" />
+				<a className={style.projectLink} href={project.url} title='Check out the project online'>
+					<img src={project.thumbnail} alt="" />
+				</a>
 
 				<section>
 					{project.description}

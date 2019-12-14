@@ -7,3 +7,9 @@
 .subtitle {
 	color: $text-faded;
 }
+
+.projectLink {
+	&:hover {
+		border: 0;
+	}
+}
