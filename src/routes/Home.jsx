@@ -5,6 +5,7 @@ import HorizontalList from '../components/HorizontalList';
 import Keyword from '../components/Keyword';
 import ProjectTile from '../components/ProjectTile';
 import bulma from 'bulma.scss';
+import generic from 'generic.scss';
 import { ProjectType } from 'types';
 import getAge from 'getAge';
 import experiences from 'experiences';
@@ -36,9 +37,7 @@ export default class Home extends React.Component {
 					<div className={bulma.container}>
 						<div className={bulma.columns}>
 							<div className={bulma.column}>
-								<h1>About</h1>
-
-								<p>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
+								<p className={generic.bigText}>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
 
 								<HorizontalList>
 									<a href="https://twitter.com/vocksel_" title="Follow on Twitter for updates">Twitter</a>
