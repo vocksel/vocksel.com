@@ -97,10 +97,10 @@ module.exports = {
 	},
 
 	optimization: {
-		minimize: true,
-		minimizer: [
+		minimize: IS_PRODUCTION,
+		minimizer:  IS_PRODUCTION ? [
 			new UglifyJsPlugin(),
-		],
+		] : [],
 
 		splitChunks: {
 			chunks: 'all',
