@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import HorizontalList from '../components/HorizontalList';
+import NoMatch from './NoMatch';
 import projects from 'projects';
 import bulma from 'bulma.scss';
 import style from './ProjectDetail.scss';
@@ -20,6 +21,10 @@ const ProjectDetail = () => {
 
 	const project = projects.find(project => project.slug == projectId);
 	const index = projects.indexOf(project);
+
+	if (!project) {
+		return <NoMatch />;
+	}
 
 	return (
 		<div className={bulma.section}>
