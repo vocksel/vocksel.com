@@ -20,8 +20,8 @@ const config = require('./webpack.config.js');
 // Remote repositories for deploying the site. These can only be pushed to with
 // proper authorization.
 const REMOTES = {
-	staging: 'ssh://git@davidminnerly.com/~/beta.davidminnerly.git',
-	production: 'ssh://git@davidminnerly.com/~/davidminnerly.git'
+	staging: 'ssh://me@davidminnerly.com/var/repos/baby.davidminnerly.git',
+	production: 'ssh://me@davidminnerly.com/var/repos/davidminnerly.git',
 }
 
 const OUTPUT_DIR = config.output.path || 'dist';
