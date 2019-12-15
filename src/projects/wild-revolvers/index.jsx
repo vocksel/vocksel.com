@@ -105,6 +105,8 @@ export default {
 			<p>Despite any shortcomings, the work I did was super fun and was an incredibly valuable learning experience. It also resulted in a quality product that users are still enjoying to this day. Each map has a unique theme separating it from the others, and the art direction of the game comes together cohesively, creating a recognizable look for Wild Revolvers. Roblox still occasionally tweets about Wild Revolvers to their 1.3 million followers, which I think acts as a testament to the game being a staple of arcade shooters on the platform.</p>
 
 			<p>Now giddy on up an git, ride off into your sunset pardner. Yeehaw 🤠</p>
+
+			<img src={require('./lobby/021.jpg').default}/>
 		</React.Fragment>
 	)
 };
