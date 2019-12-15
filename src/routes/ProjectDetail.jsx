@@ -2,8 +2,10 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import HorizontalList from '../components/HorizontalList';
+import Button from '../components/Button';
 import NoMatch from './NoMatch';
 import projects from 'projects';
+import { ProjectType } from 'types';
 import bulma from 'bulma.scss';
 import style from './ProjectDetail.scss';
 
@@ -26,6 +28,11 @@ const ProjectDetail = () => {
 		return <NoMatch />;
 	}
 
+	let playButton;
+	if (project.type === ProjectType.Game && project.url) {
+		playButton = <Button url={project.url} text='Play on Roblox' />;
+	}
+
 	return (
 		<div className={bulma.section}>
 			<Helmet>
@@ -36,13 +43,13 @@ const ProjectDetail = () => {
 				<h1 className={style.title}>{project.title} <span className={style.date}> &mdash; {project.releaseDate.getFullYear()}</span></h1>
 				<p className={style.subtitle}>{project.subtitle}</p>
 
-				<a className={style.projectLink} href={project.url} title='Check out the project online'>
-					<img src={project.thumbnail} alt="" />
-				</a>
+				<img src={project.thumbnail} alt="" />
 
 				<section>
 					{project.description}
 				</section>
+
+				{playButton}
 
 				<HorizontalList isCentered>
 					{getProjectLink(index-1, '< Prev')}
