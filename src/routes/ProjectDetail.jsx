@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import HorizontalList from '../components/HorizontalList';
 import Button from '../components/Button';
+import TweetIntent from '../components/TweetIntent';
 import NoMatch from './NoMatch';
 import projects from 'projects';
 import { ProjectType } from 'types';
@@ -30,7 +31,9 @@ const ProjectDetail = () => {
 
 	let playButton;
 	if (project.type === ProjectType.Game && project.url) {
-		playButton = <Button url={project.url} text='Play on Roblox' />;
+		playButton = <Button theme='play'>
+			<a href={project.url}>Play on Roblox <i className='fas fa-play'></i></a>
+		</Button>;
 	}
 
 	return (
@@ -49,7 +52,21 @@ const ProjectDetail = () => {
 					{project.description}
 				</section>
 
-				{playButton}
+				<div className={bulma.columns}>
+					{playButton &&
+						<div className={bulma.column}>
+							{playButton}
+						</div>
+					}
+
+					<div className={bulma.column}>
+						<Button>
+							<TweetIntent text={`${project.title}: ${project.subtitle}`}>
+								Share on Twitter
+							</TweetIntent>
+						</Button>
+					</div>
+				</div>
 
 				<HorizontalList isCentered>
 					{getProjectLink(index-1, '< Prev')}

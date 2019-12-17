@@ -1,40 +1,29 @@
 @import "config";
 
-$button-text: #fff;
-$button-hover: adjust-color($greeb, $lightness: 15%);
-
 .button {
 	display: inline-block;
 	width: 100%;
 	text-align: center;
 
-	padding-top: $body-font-size / 3;
-	padding-bottom: $body-font-size / 3;
 	margin-bottom: $body-line-height;
 
-	color: $button-text;
-	background-color: $greeb;
+	a {
+		display: block;
+		margin: 0;
+		padding: $body-font-size / 4;
 
-	border-radius: 8px;
-
-	transition: 0.2s;
-
-	&:hover {
-		// Override default link styles
-		color: $button-text;
-		border: 0;
-
-		background-color: $button-hover;
+		&:hover {
+			// Override default link styles
+			border: 0;
+		}
 	}
 }
 
-.text {
-	padding-right: $body-font-size / 4;
-	transition: 0.2s;
-}
+.outline {
+	color: $link;
+	border: 2px solid $link;
 
-.button:hover {
-	.text {
-		padding-right: $body-font-size / 1.5;
+	&:hover {
+		border-color: $link-hover;
 	}
 }

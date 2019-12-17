@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import style from './TweetIntent.scss';
 
 export default class TweetIntent extends React.Component {
 	BASE_URL = 'https://twitter.com/intent/tweet';
@@ -29,6 +28,6 @@ export default class TweetIntent extends React.Component {
 			intentUrl = intentUrl + `&via=${via}`;
 		}
 
-		return <a className={style.button} href={encodeURI(intentUrl)}>{this.props.children} <i className='fab fa-twitter' /></a>;
+		return <a href={encodeURI(intentUrl)}>{this.props.children} <i className='fab fa-twitter' /></a>;
 	}
 }
