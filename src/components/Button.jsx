@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import style from './Button.scss';
@@ -9,11 +10,12 @@ export default class Button extends React.Component {
 	};
 
 	render() {
-		const { url, text } = this.props;
+		const { url } = this.props;
+
 		return (
-			<a href={url} className={style.button}>
-				<span className={style.text}>{text}</span> <i class='fas fa-play'></i>
-			</a>
+			<div href={url} className={classNames(style.button, style.outline )}>
+				{this.props.children}
+			</div>
 		);
 	}
 }
