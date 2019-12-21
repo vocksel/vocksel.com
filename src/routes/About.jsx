@@ -27,8 +27,8 @@ export default function About() {
 						<p>I’ve been programming for the past {getAge() - AGE_STARTED_PROGRAMMING} years, with most of my time spent working in Lua. I’ve also got a good hold on JavaScript and Python, and right now I’m most interested in learning a functional language, like Rust.</p>
 					</div>
 
-					<div className={classNames(bulma.column, bulma['is-one-third'])}>
-						<img className={style.face} src={require('blox.jpg').default} alt=""/>
+					<div className={classNames(bulma.column, bulma['is-narrow'])}>
+						<img className={style.face} src={require('god-i-love-art.jpg').default} alt=""/>
 					</div>
 				</div>
 

@@ -7,4 +7,5 @@ $lines: 8;
 .face {
 	object-fit: cover;
 	height: $body-line-height * $lines;
+	width: auto;
 }
