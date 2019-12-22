@@ -1,0 +1,27 @@
+@import "config.scss";
+
+.slider {
+	:global {
+		.slick-dots {
+			position: static;
+			margin-block-end: $body-font-size;
+			bottom: 0;
+			font-size: $body-font-size;
+			line-height: $body-font-size;
+
+			.slick-active {
+				button:before {
+					color: $text;
+				}
+			}
+
+			button:before {
+				color: $text;
+			}
+		}
+	}
+}
+
+.figure {
+	margin-bottom: 0;
+}
