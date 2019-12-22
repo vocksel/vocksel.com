@@ -1,5 +1,5 @@
 export default [
-	// require('./aquaman').default,
+	require('./aquaman').default,
 	require('./wild-revolvers').default,
 	require('./rhinebeck').default,
 	require('./mirage-isle').default,

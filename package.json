@@ -60,6 +60,8 @@
     "react-helmet": "^5.2.1",
     "react-responsive": "^8.0.1",
     "react-router-dom": "^5.1.2",
-    "react-twitter-embed": "^3.0.3"
+    "react-slick": "^0.25.2",
+    "react-twitter-embed": "^3.0.3",
+    "slick-carousel": "^1.8.1"
   }
 }
