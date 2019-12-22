@@ -133,12 +133,6 @@ export default {
 				{ src: require('./images/arena-ruins.jpg').default, caption: 'A shot of one of the spawn areas that players rush out from.' },
 			]} />
 
-			<p>We also decided that an in-game shop would be a good idea to bring in extra income for everyone. For this, I designed several 3D models to add to the shop. This included the Aqua-radio and Pearl Bomb, however most models didn’t make it into the final game due to time constraints.</p>
-
-			<ImageSlider images={[
-				// items
-			]} />
-
 			<h2>Conclusion</h2>
 
 			<p>I've been on Roblox since 2008 and seen many different events on the platform over the years. It was a great experience to get to participate in one, and work with the team to create something that Roblox hasn’t seen before. It’s also just cool as hell that I can say I was a subcontractor for Warner Bros.</p>
