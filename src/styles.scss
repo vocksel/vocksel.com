@@ -1,9 +1,14 @@
 @charset "utf-8";
 
 @import "config";
+@import "bulma.scss";
 
 html {
 	margin-bottom: $body-font-size * 4;
+
+	@media (max-width: $tablet) {
+		font-size: 14px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,5 +53,7 @@ figure {
 figcaption {
 	font-style: italic;
 	font-size: $body-font-size * 0.7;
+	margin-block-start: $body-font-size;
+	line-height: $body-font-size;
 	color: $text-faded;
 }
