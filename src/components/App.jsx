@@ -11,6 +11,7 @@ import ProjectList from 'routes/ProjectList';
 import NoMatch from 'routes/NoMatch';
 import BurgerMenu from './nav/BurgerMenu';
 import LineMenu from './nav/LineMenu';
+import Logo from './Logo';
 import ScrollToTop from './ScrollToTop';
 import TransFlag from './TransFlag';
 import generic from 'generic.scss';
@@ -28,9 +29,18 @@ export default function App() {
 
 			<header className={bulma.section}>
 				<div className={bulma.container}>
-					{!isTabletOrMobile &&
-						<LineMenu />
-					}
+					<div className={bulma.columns}>
+						<div className={bulma.column}>
+							<Logo />
+						</div>
+
+
+						{!isTabletOrMobile &&
+							<div className={bulma.column}>
+								<LineMenu />
+							</div>
+						}
+					</div>
 				</div>
 			</header>
 
