@@ -20,8 +20,14 @@ const config = require('./webpack.config.js');
 // Remote repositories for deploying the site. These can only be pushed to with
 // proper authorization.
 const REMOTES = {
-	staging: 'ssh://me@davidminnerly.com/var/repos/baby.davidminnerly.git',
-	production: 'ssh://me@davidminnerly.com/var/repos/davidminnerly.git',
+	staging: {
+		url: 'https://baby.davidminnerly.com',
+		repo: 'ssh://me@davidminnerly.com/var/repos/baby.davidminnerly.git',
+	},
+	production: {
+		url: 'https://davidminnerly.com',
+		repo: 'ssh://me@davidminnerly.com/var/repos/davidminnerly.git',
+	},
 }
 
 const OUTPUT_DIR = config.output.path || 'dist';
@@ -42,10 +48,10 @@ if (fs.existsSync(OUTPUT_DIR)) {
 
 	const remote = getRemote();
 
-	repo.addRemote('origin', remote);
+	repo.addRemote('origin', remote.repo);
 	repo.push(['-f', 'origin', 'master']);
 
-	console.log('Deployed to ' + remote);
+	console.log('Deployed to ' + remote.url);
 } else {
 	console.warn('Nothing has been built. Run `npm run build` first');
 }
