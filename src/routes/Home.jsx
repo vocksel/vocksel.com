@@ -43,7 +43,7 @@ export default class Home extends React.Component {
 					<div className={bulma.container}>
 						<div className={bulma.columns}>
 							<div className={bulma.column}>
-								<p className={generic.bigText}>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums.</p>
+								<p className={generic.bigText}>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
 
 								<HorizontalList>
 									<a href={urls.twitter} title='Follow on Twitter for updates'>Twitter</a>
