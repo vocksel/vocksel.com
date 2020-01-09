@@ -22,9 +22,9 @@ export default function About() {
 
 				<div className={bulma.columns}>
 					<div className={bulma.column}>
-						<p>So hey, my name's <Keyword>David Minnerly</Keyword>. I live in upstate New York, where I’m currently pursuing an associates degree in Computer Science at <a href={urls.dutchess}>Dutchess Community College</a>.</p>
+						<p>So hey, my name's <Keyword>David Minnerly</Keyword>. I live in upstate New York, where I’m currently pursuing an associates degree in Computer Science at <a href={urls.dutchess}>DCC</a>.</p>
 
-						<p>I’ve been programming for the past {getAge() - AGE_STARTED_PROGRAMMING} years, with most of my time spent working in Lua. I’ve also got a good hold on JavaScript and Python, and right now I’m most interested in learning a functional language, like Rust.</p>
+						<p>I have been programming for the past {getAge() - AGE_STARTED_PROGRAMMING} years, with most of my time spent working in Lua. I also have a solid grasp on JavaScript and Python, and right now I’m most interested in learning a functional language, like Rust.</p>
 					</div>
 
 					<div className={classNames(bulma.column, bulma['is-narrow'])}>
@@ -32,7 +32,7 @@ export default function About() {
 					</div>
 				</div>
 
-				<p>I’ve worked on many types of projects. A majority of what I do involves games, but I also do web development, work on Linux servers, and create command line tools. For examples of my work, check out my <a href={urls.github}>GitHub</a> for software, and the <Link to='/projects'>Projects</Link> page for everything else.</p>
+				<p>A majority of what I do involves games, but I also do web development, work on Linux servers, and create command line tools on occasion. For examples of the software I've worked on, check out my <a href={urls.github}>GitHub</a>. For everything else, check out the <Link to='/projects'>Projects</Link> page.</p>
 
 				<p>For the past 2 summers I've worked as an intern for <a href={urls.roblox}>Roblox</a>. Each time is always such an incredibly valuable experience, where I get to work with some of the brightest people I've ever met. I get to work towards helping the platform I grew up with be even greater for future generations, and I'm even able to help out newhires and other interns with my knowledge of Roblox and the tools used internally.</p>
 			</div>
