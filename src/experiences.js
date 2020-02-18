@@ -7,12 +7,21 @@ import urls from './urls';
 
 const novaly = new Company('Novaly Studios', urls.novaly);
 const roblox = new Company('Roblox Corporation', urls.roblox);
+const bitsquid = new Company('Bitsquid Games', urls.bitsquid);
 
 const experiences = [
 	{
+		job: 'Frontend Programmer',
+		company: bitsquid,
+		description: 'All-purpose programmer primarily writing React style code for frontend UI.',
+		wasInHouse: false,
+		startDate: new Date(2020, 0),
+	},
+
+	{
 		job: 'Level Designer',
 		company: novaly,
-		description: 'Working on our upcoming social racing game.',
+		description: 'Currently crafting an immersive city and world for a new hit social racing game.',
 		wasInHouse: false,
 		startDate: new Date(2017, 5),
 	},
@@ -29,7 +38,7 @@ const experiences = [
 	{
 		job: 'Programmer',
 		company: novaly,
-		description: <span>Created the Robbery feature for <a href='https://www.roblox.com/games/2563455047/Bandit-Simulator'>Bandit Simulator</a> and squashed bugs.</span>,
+		description: <span>Squashed bugs and created the Robbery feature for <a href='https://www.roblox.com/games/2563455047/Bandit-Simulator'>Bandit Simulator</a>, introducing a brand new way to play the game.</span>,
 		wasInHouse: false,
 		startDate: new Date(2018, 10),
 		endDate: new Date(2019, 0),
@@ -38,7 +47,7 @@ const experiences = [
 	{
 		job: 'Level Design contractor',
 		company: roblox,
-		description: <span>Worked for Roblox to create <Link to='/projects/aquaman'>Aquaman: City of Rolantis</Link> for a Warner Brother's sponsorship.</span>,
+		description: <span>Worked for Roblox to create <Link to='/projects/aquaman'>Aquaman: City of Rolantis</Link> for a Warner Bros. sponsorship.</span>,
 		wasInHouse: false,
 		startDate: new Date(2018, 6),
 		endDate: new Date(2018, 10),
