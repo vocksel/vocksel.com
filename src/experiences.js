@@ -7,16 +7,25 @@ import urls from './urls';
 
 const novaly = new Company('Novaly Studios', urls.novaly);
 const roblox = new Company('Roblox Corporation', urls.roblox);
-const bitsquid = new Company('Bitsquid Games', urls.bitsquid);
+// const bitsquid = new Company('Bitsquid Games', urls.bitsquid);
 
 const experiences = [
 	{
-		job: 'Frontend Programmer',
-		company: bitsquid,
-		description: 'All-purpose programmer primarily writing React style code for frontend UI.',
-		wasInHouse: false,
-		startDate: new Date(2020, 0),
+		job: 'Software Engineering Intern',
+		company: roblox,
+		description: 'Working remotely amindst the COVID-19 pandemic for 10 weeks to improve the Roblox platform.',
+		wasInHouse: true,
+		startDate: new Date(2020, 5),
+		// endDate: new Date(2020, 7),
 	},
+
+	// {
+	// 	job: 'Frontend Programmer',
+	// 	company: bitsquid,
+	// 	description: 'All-purpose programmer primarily writing React style code for frontend UI.',
+	// 	wasInHouse: false,
+	// 	startDate: new Date(2020, 0),
+	// },
 
 	{
 		job: 'Level Designer',
