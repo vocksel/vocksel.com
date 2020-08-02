@@ -9,6 +9,7 @@ import projects from 'projects';
 import { ProjectType } from 'types';
 import bulma from 'bulma.scss';
 import style from './ProjectDetail.scss';
+import formatDate from '../formatDate';
 
 const getProjectLink = (index, text) => {
 	const project = projects[index];
@@ -43,10 +44,12 @@ const ProjectDetail = () => {
 			</Helmet>
 
 			<div className={bulma.container}>
-				<h1 className={style.title}>{project.title} <span className={style.date}> &mdash; {project.releaseDate.getFullYear()}</span></h1>
+				<h1 className={style.title}>{project.title}</h1>
 				<p className={style.subtitle}>{project.subtitle}</p>
 
 				<img src={project.thumbnail} alt="" />
+
+				<p className={style.subtitle}>Released {formatDate(project.releaseDate)} &mdash; Authored {formatDate(project.authorDate)}</p>
 
 				<section>
 					{project.description}
