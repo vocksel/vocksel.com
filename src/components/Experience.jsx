@@ -5,10 +5,7 @@ import Company from '../Company';
 import bulma from '../bulma.scss';
 import generic from '../generic.scss';
 import style from './Experience.scss';
-
-function formatDate(date) {
-	return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
-}
+import formatDate from '../formatDate';
 
 export default class Experience extends React.Component {
 	static propTypes = {
