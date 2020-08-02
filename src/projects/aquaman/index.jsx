@@ -49,6 +49,7 @@ export default {
 	title: 'Aquaman: Home is Calling',
 	subtitle: 'A retrospective on the creation of Roblox\'s Aquaman event.',
 	slug: 'aquaman',
+	authorDate: new Date(2019, 11, 22),
 	startDate: new Date(2018, 6),
 	releaseDate: new Date(2018, 10),
 	type: ProjectType.Game,

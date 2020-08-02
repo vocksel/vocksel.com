@@ -8,6 +8,7 @@ export default {
 	title: 'Rhinebeck',
 	subtitle: 'An intimate, high-end apartment based in Rhinebeck, NY',
 	slug: 'rhinebeck',
+	authorDate: new Date(2017, 1, 27),
 	releaseDate: new Date(2016, 0),
 	type: ProjectType.Game,
 	thumbnail: thumbnail,

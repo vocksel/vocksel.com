@@ -9,6 +9,7 @@ export default {
 	subtitle: 'A tranquil desert at sea.',
 	slug: 'mirage-isle',
 	released: '2016',
+	authorDate: new Date(2017, 1, 28),
 	releaseDate: new Date(2016, 7),
 	type: ProjectType.Game,
 	thumbnail: thumbnail,
