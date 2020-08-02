@@ -5,8 +5,8 @@ export default [
 	require('./mirage-isle').default,
 	// require('./class-lua').default,
 	// require('./repo-import').default,
-	// require('./echo-ridge').default,
+	require('./echo-ridge').default,
 	// require('./elixir').default,
-	// require('./fireflies').default,
+	require('./fireflies').default,
 	// require('./snowy-mountain').default
 ];
