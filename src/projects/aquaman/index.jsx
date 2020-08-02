@@ -30,15 +30,15 @@ function getTeamNames() {
 		let name = member.name;
 
 		if (member.url) {
-			name = <a href={member.url}>{name}</a>;
+			name = <a key={index} href={member.url}>{name}</a>;
 		}
 
-		let element = <>{name} ({member.role})</>;
+		let element = <span key={index}>{name} ({member.role})</span>;
 
 		if (index + 1 === team.length) {
-			element = <>and {element}.</>;
+			element = <span key={index}>and {element}.</span>;
 		} else {
-			element = <>{element}, </>;
+			element = <span key={index}>{element}, </span>;
 		}
 
 		return element;

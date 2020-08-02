@@ -16,8 +16,8 @@ export default function ImageSlider({ images }) {
 
 	return (
 		<Slider className={style.slider} {...settings}>
-			{images.map(image => (
-				<figure className={style.figure}>
+			{images.map((image, index) => (
+				<figure key={index} className={style.figure}>
 					<img src={image.src} alt={image.alt} />
 					<figcaption>{image.caption}</figcaption>
 				</figure>
