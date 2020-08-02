@@ -33,6 +33,7 @@ const experiences = [
 		description: 'Currently crafting an immersive city and world for a new hit social racing game.',
 		wasInHouse: false,
 		startDate: new Date(2017, 5),
+		endDate: new Date(2020, 1),
 	},
 
 	{
