@@ -16,7 +16,7 @@ const experiences = [
 		description: 'Working remotely amindst the COVID-19 pandemic for 10 weeks to improve the Roblox platform.',
 		wasInHouse: true,
 		startDate: new Date(2020, 5),
-		// endDate: new Date(2020, 7),
+		endDate: new Date(2020, 7),
 	},
 
 	// {
