@@ -6,6 +6,7 @@ import Copyright from './Copyright';
 import HorizontalList from './HorizontalList';
 import Home from 'routes/Home';
 import About from 'routes/About';
+import Brand from 'routes/Brand';
 import ProjectDetail from 'routes/ProjectDetail';
 import ProjectList from 'routes/ProjectList';
 import NoMatch from 'routes/NoMatch';
@@ -48,6 +49,7 @@ export default function App() {
 				<Route path='/projects/:projectId'><ProjectDetail /></Route>
 				<Route path='/projects'><ProjectList /></Route>
 				<Route path='/about'><About /></Route>
+				<Route path='/brand'><Brand /></Route>
 				<Route exact path='/'><Home /></Route>
 				<Route path='*'><NoMatch /></Route>
 			</Switch>
