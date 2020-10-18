@@ -1,0 +1,20 @@
+%boy {
+	width: 64px;
+	height: 64px;
+}
+
+.rotato {
+	@extend %boy;
+	transform: rotate(190deg);
+}
+
+.skewed {
+	@extend %boy;
+	transform: skew(10deg, 50deg);
+}
+
+.fucked {
+	@extend %boy;
+	transform: scale(2, 2) skew(-20deg, -10deg) rotate(-20deg);
+	perspective: 20px;
+}
