@@ -16,7 +16,7 @@ export default function About() {
 			<div className={bulma.container}>
 				<h1>Brand</h1>
 
-				<p>david vocksel brand guidelines. if you intend to use any of my branding to refer to m work make sure to follow the rules defined in this document.</p>
+				<p>david vocksel brand guidelines. if you intend to use any of my branding to refer to my work make sure to follow the rules defined in this document.</p>
 
 				<h2>Me</h2>
 
