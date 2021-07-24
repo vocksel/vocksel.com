@@ -11,7 +11,7 @@ import { ProjectType } from 'types'
 import getAge from 'getAge'
 import experiences from 'experiences'
 import projects from 'projects'
-import boy from 'boy.jpg'
+import me from 'me.jpg'
 import urls from 'urls.json'
 
 export default class Home extends React.Component {
@@ -43,7 +43,7 @@ export default class Home extends React.Component {
 					<div className={bulma.container}>
 						<div className={bulma.columns}>
 							<div className={bulma.column}>
-								<p className={generic.bigText}>I'm <Keyword>David Minnerly</Keyword>&mdash;a {getAge()} year old freelance programmer and 3D modeler that loves creating new experiences through artistic mediums. 💖</p>
+								<p className={generic.bigText}>I'm <Keyword>David &ldquo;david vocksel&rdquo; Minnerly</Keyword>&mdash;a {getAge()} year old Software Engineer and hobbyist game developer that loves creating new experiences through artistic mediums 💖</p>
 
 								<HorizontalList>
 									<a href={urls.twitter} title='Follow on Twitter for updates'>Twitter</a>
@@ -54,7 +54,7 @@ export default class Home extends React.Component {
 							</div>
 
 							<div className={classNames(bulma.column, bulma['is-narrow'])}>
-								<img className={bulma.image} src={boy} alt="" />
+								<img className={bulma.image} src={me} alt="" />
 							</div>
 						</div>
 					</div>
