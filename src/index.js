@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './bulma.scss'
-import './styles.scss'
+import './css/bulma.scss'
+import './css/styles.scss'
 
 import App from './components/App'
 

@@ -15,8 +15,8 @@ import LineMenu from './nav/LineMenu'
 import Logo from './Logo'
 import ScrollToTop from './ScrollToTop'
 import TransFlag from './TransFlag'
-import generic from 'generic.scss'
-import bulma from 'bulma.scss'
+import generic from 'css/generic.scss'
+import bulma from 'css/bulma.scss'
 import urls from 'urls.json'
 
 export default function App() {
