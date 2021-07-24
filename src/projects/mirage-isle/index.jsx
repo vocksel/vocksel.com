@@ -1,8 +1,8 @@
-import React from 'react';
-import { ProjectType } from 'types';
-import thumbnail from './images/overview.jpg';
-import boat from './images/boat.jpg';
-import cattails from './images/cattails.jpg';
+import React from 'react'
+import { ProjectType } from 'types'
+import thumbnail from './images/overview.jpg'
+import boat from './images/boat.jpg'
+import cattails from './images/cattails.jpg'
 
 export default {
 	title: 'Mirage Isle',
@@ -23,4 +23,4 @@ export default {
 
 		<img src={cattails} alt="" />
 	</>
-};
+}

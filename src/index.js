@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import './bulma.scss';
-import './styles.scss';
+import './bulma.scss'
+import './styles.scss'
 
-import App from './components/App';
+import App from './components/App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))

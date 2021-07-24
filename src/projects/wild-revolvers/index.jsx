@@ -1,9 +1,9 @@
-import classNames from 'classnames';
-import React from 'react';
-import { ProjectType } from 'types';
-import { TwitterTweetEmbed } from 'react-twitter-embed';
-import thumbnail from './outpost/013.jpg';
-import bulma from 'bulma.scss';
+import classNames from 'classnames'
+import React from 'react'
+import { ProjectType } from 'types'
+import { TwitterTweetEmbed } from 'react-twitter-embed'
+import thumbnail from './outpost/013.jpg'
+import bulma from 'bulma.scss'
 
 export default {
 	title: 'Wild Revolvers',
@@ -107,4 +107,4 @@ export default {
 
 		<img src={require('./lobby/021.jpg').default}/>
 	</>
-};
+}

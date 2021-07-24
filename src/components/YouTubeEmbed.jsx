@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import style from './YoutubeEmbed.scss';
+import PropTypes from 'prop-types'
+import React from 'react'
+import style from './YoutubeEmbed.scss'
 
 export default class YoutubeEmbed extends React.Component {
 	static propTypes = {
@@ -15,6 +15,6 @@ export default class YoutubeEmbed extends React.Component {
 			<div className={style.videoContainer}>
 				<iframe className={style.video} src={'https://www.youtube.com/embed/' + this.props.id} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 			</div>
-		);
+		)
 	}
 }

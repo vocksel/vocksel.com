@@ -1,5 +1,5 @@
-import React from 'react';
-import { ProjectType } from 'types';
+import React from 'react'
+import { ProjectType } from 'types'
 
 export default {
 	title: 'Elixir',
@@ -69,4 +69,4 @@ export default {
 
 		<p>I've been using Elixir and Repo Import together for about a year, and they work great. There's still some limitations and tedium involved, but I can comfortably code my games and version control them along the way.</p>
 	</>
-};
+}

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from 'prop-types'
+import React from 'react'
 
 export default class TweetIntent extends React.Component {
 	BASE_URL = 'https://twitter.com/intent/tweet';
@@ -15,19 +15,19 @@ export default class TweetIntent extends React.Component {
 	}
 
 	render() {
-		const { text, via } = this.props;
+		const { text, via } = this.props
 
-		let url = this.props.url;
+		let url = this.props.url
 		if (!url) {
-			url = location.href;
+			url = location.href
 		}
 
-		let intentUrl = `${this.BASE_URL}?text=${text}&url=${url}`;
+		let intentUrl = `${this.BASE_URL}?text=${text}&url=${url}`
 
 		if (via) {
-			intentUrl = intentUrl + `&via=${via}`;
+			intentUrl = intentUrl + `&via=${via}`
 		}
 
-		return <a href={encodeURI(intentUrl)}>{this.props.children} <i className='fab fa-twitter' /></a>;
+		return <a href={encodeURI(intentUrl)}>{this.props.children} <i className='fab fa-twitter' /></a>
 	}
 }

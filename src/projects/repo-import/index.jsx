@@ -1,7 +1,7 @@
-import React from 'react';
-import { ProjectType } from 'types';
-import thumbnail from './images/thumbnail.jpg';
-import bulma from 'bulma.scss';
+import React from 'react'
+import { ProjectType } from 'types'
+import thumbnail from './images/thumbnail.jpg'
+import bulma from 'bulma.scss'
 
 export default {
 	title: 'Repo Import',
@@ -55,4 +55,4 @@ export default {
 
 		<p>The biggest flaw with this workflow is once you compile your code, you have to drag-and-drop the Model file into Studio. While we can automate compiling and what happens after importing, this is an unfortunate flaw that can't be avoided.</p>
 	</>
-};
+}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { ProjectType } from 'types';
+import React from 'react'
+import { ProjectType } from 'types'
 
 export default {
 	title: 'Fireflies',
@@ -19,4 +19,4 @@ export default {
 
 		<p>All of the backgrounds and quotes mean a lot to me, I picked ones that I personally liked, and because of that I hold Fireflies very near to my heart.</p>
 	</>
-};
+}

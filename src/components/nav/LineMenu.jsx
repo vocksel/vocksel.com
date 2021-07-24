@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import HorizontalList from '../HorizontalList';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import HorizontalList from '../HorizontalList'
 
 export default function LineMenu() {
 	return (
@@ -11,5 +11,5 @@ export default function LineMenu() {
 				<Link to='/about'>About</Link>
 			</HorizontalList>
 		</nav>
-	);
+	)
 }

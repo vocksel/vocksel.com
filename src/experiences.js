@@ -1,12 +1,12 @@
 // Contains data for past work experience
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Company from './Company';
-import urls from './urls';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Company from './Company'
+import urls from './urls'
 
-const novaly = new Company('Novaly Studios', urls.novaly);
-const roblox = new Company('Roblox Corporation', urls.roblox);
+const novaly = new Company('Novaly Studios', urls.novaly)
+const roblox = new Company('Roblox Corporation', urls.roblox)
 // const bitsquid = new Company('Bitsquid Games', urls.bitsquid);
 
 const experiences = [
@@ -71,6 +71,6 @@ const experiences = [
 		startDate: new Date(2018, 5),
 		endDate: new Date(2018, 7),
 	},
-];
+]
 
-export default experiences;
+export default experiences

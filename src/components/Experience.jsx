@@ -1,11 +1,11 @@
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import React from 'react';
-import Company from '../Company';
-import bulma from '../bulma.scss';
-import generic from '../generic.scss';
-import style from './Experience.scss';
-import formatDate from '../formatDate';
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import Company from '../Company'
+import bulma from '../bulma.scss'
+import generic from '../generic.scss'
+import style from './Experience.scss'
+import formatDate from '../formatDate'
 
 export default class Experience extends React.Component {
 	static propTypes = {
@@ -22,10 +22,10 @@ export default class Experience extends React.Component {
 		})
 	}
 	render() {
-		const { exp } = this.props;
-		const startDate = formatDate(exp.startDate);
-		const endDate = exp.endDate ? formatDate(exp.endDate) : 'Present';
-		const connector = exp.wasInHouse ? 'at' : 'for';
+		const { exp } = this.props
+		const startDate = formatDate(exp.startDate)
+		const endDate = exp.endDate ? formatDate(exp.endDate) : 'Present'
+		const connector = exp.wasInHouse ? 'at' : 'for'
 
 		return (
 			<div className={classNames(style.container, bulma.columns)}>
@@ -37,6 +37,6 @@ export default class Experience extends React.Component {
 					<p className={classNames(style.description, generic.tight)}>{exp.description}</p>
 				</div>
 			</div>
-		);
+		)
 	}
 }
