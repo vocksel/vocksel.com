@@ -9,9 +9,9 @@ export default function getAge() {
 	// convert that to years, so we're just rolling with the current solution.
 	// https://stackoverflow.com/a/15289883
 
-	const birthday = new Date('7/15/1996');
-	const today = new Date();
-	const diff = new Date(today.getTime() - birthday.getTime());
+	const birthday = new Date('7/15/1996')
+	const today = new Date()
+	const diff = new Date(today.getTime() - birthday.getTime())
 
-	return diff.getUTCFullYear()  - 1970;
+	return diff.getUTCFullYear()  - 1970
 }

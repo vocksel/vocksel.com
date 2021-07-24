@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import CaptionedImage from './CaptionedImage';
-import style from './ProjectTile.scss';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import CaptionedImage from './CaptionedImage'
+import style from './ProjectTile.scss'
 
 export default class ProjectTile extends React.Component {
 	static propTypes = {
@@ -26,13 +26,13 @@ export default class ProjectTile extends React.Component {
 	}
 
 	render() {
-		const { project, slide } = this.props;
+		const { project, slide } = this.props
 
-		let hoverClass;
+		let hoverClass
 		if (slide == 'x') {
-			hoverClass = style.hoverRight;
+			hoverClass = style.hoverRight
 		} else {
-			hoverClass = style.hoverUp;
+			hoverClass = style.hoverUp
 		}
 
 		return (
@@ -41,6 +41,6 @@ export default class ProjectTile extends React.Component {
 					<CaptionedImage className={classNames(style.image, hoverClass)} src={project.thumbnail} caption={project.title} />
 				</Link>
 			</div>
-		);
+		)
 	}
 }

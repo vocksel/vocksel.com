@@ -1,35 +1,35 @@
-import React from 'react';
-import  { Helmet } from 'react-helmet';
-import classNames from 'classnames';
-import Experience from '../components/Experience';
-import HorizontalList from '../components/HorizontalList';
-import Keyword from '../components/Keyword';
-import ProjectTile from '../components/ProjectTile';
-import bulma from 'bulma.scss';
-import generic from 'generic.scss';
-import { ProjectType } from 'types';
-import getAge from 'getAge';
-import experiences from 'experiences';
-import projects from 'projects';
-import boy from 'boy.jpg';
-import urls from 'urls.json';
+import React from 'react'
+import  { Helmet } from 'react-helmet'
+import classNames from 'classnames'
+import Experience from '../components/Experience'
+import HorizontalList from '../components/HorizontalList'
+import Keyword from '../components/Keyword'
+import ProjectTile from '../components/ProjectTile'
+import bulma from 'bulma.scss'
+import generic from 'generic.scss'
+import { ProjectType } from 'types'
+import getAge from 'getAge'
+import experiences from 'experiences'
+import projects from 'projects'
+import boy from 'boy.jpg'
+import urls from 'urls.json'
 
 export default class Home extends React.Component {
 	getFreelanceProjects() {
-		const freelance = projects.filter(project => project.type === ProjectType.Game);
+		const freelance = projects.filter(project => project.type === ProjectType.Game)
 
 		return freelance.map(project =>
 			<ProjectTile className={classNames(bulma.column, bulma['is-one-third'])}
-				key={project.slug} project={project} />);
+				key={project.slug} project={project} />)
 	}
 
 	getCodeProjects() {
-		const code = projects.filter(project => project.type === ProjectType.Code);
+		const code = projects.filter(project => project.type === ProjectType.Code)
 
 		// Need a new component to return. Should be just be a list of my code projects
 		return code.map(project =>
 			<ProjectTile className={classNames(bulma.column, bulma['is-one-third'])}
-				key={project.slug} project={project} />);
+				key={project.slug} project={project} />)
 	}
 
 	render() {
@@ -81,6 +81,6 @@ export default class Home extends React.Component {
 					</div>
 				</section>
 			</React.Fragment>
-		);
+		)
 	}
 }

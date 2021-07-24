@@ -1,8 +1,8 @@
-import React from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
-import style from './ImageSlider.scss';
+import React from 'react'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
+import style from './ImageSlider.scss'
 
 export default function ImageSlider({ images }) {
 	const settings = {
@@ -12,7 +12,7 @@ export default function ImageSlider({ images }) {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1
-	};
+	}
 
 	return (
 		<Slider className={style.slider} {...settings}>
@@ -23,5 +23,5 @@ export default function ImageSlider({ images }) {
 				</figure>
 			))}
 		</Slider>
-	);
+	)
 }

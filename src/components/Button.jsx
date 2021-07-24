@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-import React from 'react';
-import style from './Button.scss';
+import classNames from 'classnames'
+import React from 'react'
+import style from './Button.scss'
 
 export default class Button extends React.Component {
 	render() {
@@ -8,6 +8,6 @@ export default class Button extends React.Component {
 			<div className={classNames(style.button, style.outline )}>
 				{this.props.children}
 			</div>
-		);
+		)
 	}
 }

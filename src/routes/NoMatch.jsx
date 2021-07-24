@@ -1,8 +1,8 @@
-import React from 'react';
-import  { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
-import bulma from 'bulma.scss';
-import urls from 'urls.json';
+import React from 'react'
+import  { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom'
+import bulma from 'bulma.scss'
+import urls from 'urls.json'
 
 export default function NoMatch() {
 	return (
@@ -19,5 +19,5 @@ export default function NoMatch() {
 				</div>
 			</section>
 		</React.Fragment>
-	);
+	)
 }

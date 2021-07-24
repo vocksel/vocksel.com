@@ -1,9 +1,9 @@
-import React from 'react';
-import { ProjectType } from 'types';
-import YouTubeEmbed from 'components/YouTubeEmbed';
-import thumbnail from './images/hub-trench.jpg';
-import urls from 'urls';
-import ImageSlider from 'components/ImageSlider';
+import React from 'react'
+import { ProjectType } from 'types'
+import YouTubeEmbed from 'components/YouTubeEmbed'
+import thumbnail from './images/hub-trench.jpg'
+import urls from 'urls'
+import ImageSlider from 'components/ImageSlider'
 
 const team = [
 	{ name: 'Deepak Nair', role: 'Manager', url: 'https://www.linkedin.com/in/deepaknair3' },
@@ -21,28 +21,28 @@ const team = [
 	{ name: 'Nic', role: 'Programmer', url: 'https://www.linkedin.com/in/nicolas-markham-ba81ab196/' },
 	{ name: 'Paulius', role: 'Music composer', url: 'https://twitter.com/Director_1406' },
 	{ name: 'Will', role: 'Artist' },
-];
+]
 
 // Formats the team as an array of "Name (Role), " elements, ending with "and
 // Name (Role)." so it reads nicely when rendered.
 function getTeamNames() {
 	return team.map((member, index) => {
-		let name = member.name;
+		let name = member.name
 
 		if (member.url) {
-			name = <a key={index} href={member.url}>{name}</a>;
+			name = <a key={index} href={member.url}>{name}</a>
 		}
 
-		let element = <span key={index}>{name} ({member.role})</span>;
+		let element = <span key={index}>{name} ({member.role})</span>
 
 		if (index + 1 === team.length) {
-			element = <span key={index}>and {element}.</span>;
+			element = <span key={index}>and {element}.</span>
 		} else {
-			element = <span key={index}>{element}, </span>;
+			element = <span key={index}>{element}, </span>
 		}
 
-		return element;
-	});
+		return element
+	})
 }
 
 export default {
@@ -146,4 +146,4 @@ export default {
 
 		<p>If you're interested in checking out the game for yourself, you can find the link below. While the event is no longer active, you can play the game just like normal.</p>
 	</>
-};
+}

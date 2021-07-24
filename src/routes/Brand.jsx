@@ -1,10 +1,10 @@
-import classNames from 'classnames';
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import Keyword from '../components/Keyword';
-import bulma from 'bulma.scss';
-import logo from 'logo.png';
-import style from './Brand.scss';
+import classNames from 'classnames'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import Keyword from '../components/Keyword'
+import bulma from 'bulma.scss'
+import logo from 'logo.png'
+import style from './Brand.scss'
 
 export default function About() {
 	return (
@@ -78,5 +78,5 @@ export default function About() {
 				</div>
 			</div>
 		</section>
-	);
+	)
 }

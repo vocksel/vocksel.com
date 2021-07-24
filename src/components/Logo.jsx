@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from 'logo.png';
-import style from './Logo.scss';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from 'logo.png'
+import style from './Logo.scss'
 
 export default class Logo extends React.Component {
 	render() {
@@ -11,6 +11,6 @@ export default class Logo extends React.Component {
 					<img className={style.image} src={logo} alt='💖' />
 				</Link>
 			</div>
-		);
+		)
 	}
 }

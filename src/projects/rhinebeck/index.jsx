@@ -1,8 +1,8 @@
-import React from 'react';
-import { ProjectType } from 'types';
-import thumbnail from './images/living-room.jpg';
-import bedroom from './images/bedroom.jpg';
-import outside from './images/outside.jpg';
+import React from 'react'
+import { ProjectType } from 'types'
+import thumbnail from './images/living-room.jpg'
+import bedroom from './images/bedroom.jpg'
+import outside from './images/outside.jpg'
 
 export default {
 	title: 'Rhinebeck',
@@ -22,4 +22,4 @@ export default {
 
 		<img src={outside} alt='Outside view of the streets and other buildings in front of the apartment'/>
 	</>
-};
+}

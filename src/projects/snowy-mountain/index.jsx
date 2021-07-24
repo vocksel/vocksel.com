@@ -1,6 +1,6 @@
-import React from 'react';
-import { ProjectType } from 'types';
-import ImageSlider from 'components/ImageSlider';
+import React from 'react'
+import { ProjectType } from 'types'
+import ImageSlider from 'components/ImageSlider'
 
 export default {
 	title: 'Snowy Mountain',
@@ -23,4 +23,4 @@ export default {
 			{ src: require('./images/hill.jpg').default, caption: '' },
 		]} />
 	</>
-};
+}

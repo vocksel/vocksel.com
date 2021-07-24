@@ -1,6 +1,6 @@
-import React from 'react';
-import { ProjectType } from 'types';
-import ImageSlider from 'components/ImageSlider';
+import React from 'react'
+import { ProjectType } from 'types'
+import ImageSlider from 'components/ImageSlider'
 
 export default {
 	title: 'Echo Ridge',
@@ -24,4 +24,4 @@ export default {
 
 		<p>Thanks to Roblox's modeling system I was able to achieve a much higher level of detail. This also opened up the possibility to remove all of the seam lines, giving the map a much cleaner appearance.</p>
 	</>
-};
+}

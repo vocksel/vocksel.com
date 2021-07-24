@@ -1,40 +1,40 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import HorizontalList from '../components/HorizontalList';
-import Button from '../components/Button';
-import TweetIntent from '../components/TweetIntent';
-import NoMatch from './NoMatch';
-import projects from 'projects';
-import { ProjectType } from 'types';
-import bulma from 'bulma.scss';
-import style from './ProjectDetail.scss';
-import formatDate from '../formatDate';
+import React from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import HorizontalList from '../components/HorizontalList'
+import Button from '../components/Button'
+import TweetIntent from '../components/TweetIntent'
+import NoMatch from './NoMatch'
+import projects from 'projects'
+import { ProjectType } from 'types'
+import bulma from 'bulma.scss'
+import style from './ProjectDetail.scss'
+import formatDate from '../formatDate'
 
 const getProjectLink = (index, text) => {
-	const project = projects[index];
+	const project = projects[index]
 	if (project) {
-		return <Link to={`/projects/${project.slug}`}>{text}</Link>;
+		return <Link to={`/projects/${project.slug}`}>{text}</Link>
 	} else {
-		return <span>{text}</span>;
+		return <span>{text}</span>
 	}
-};
+}
 
 const ProjectDetail = () => {
-	const { projectId } = useParams();
+	const { projectId } = useParams()
 
-	const project = projects.find(project => project.slug == projectId);
-	const index = projects.indexOf(project);
+	const project = projects.find(project => project.slug == projectId)
+	const index = projects.indexOf(project)
 
 	if (!project) {
-		return <NoMatch />;
+		return <NoMatch />
 	}
 
-	let playButton;
+	let playButton
 	if (project.type === ProjectType.Game && project.url) {
 		playButton = <Button theme='play'>
 			<a href={project.url}>Play on Roblox <i className='fas fa-play'></i></a>
-		</Button>;
+		</Button>
 	}
 
 	return (
@@ -78,7 +78,7 @@ const ProjectDetail = () => {
 				</HorizontalList>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default ProjectDetail;
+export default ProjectDetail

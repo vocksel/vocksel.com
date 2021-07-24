@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import React from 'react';
-import PropTypes from 'prop-types';
-import style from './CaptionedImage.scss';
+import classNames from 'classnames'
+import React from 'react'
+import PropTypes from 'prop-types'
+import style from './CaptionedImage.scss'
 
 export default class CaptionedImage extends React.Component {
 	static propTypes = {
@@ -20,6 +20,6 @@ export default class CaptionedImage extends React.Component {
 					<p className={style.caption}>{this.props.caption}</p>
 				</div>
 			</div>
-		);
+		)
 	}
 }

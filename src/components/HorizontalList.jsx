@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import React from 'react';
-import PropTypes from 'prop-types';
-import style from './HorizontalList.scss';
+import classNames from 'classnames'
+import React from 'react'
+import PropTypes from 'prop-types'
+import style from './HorizontalList.scss'
 
 export default class HorizontalList extends React.Component {
 	static propTypes = {
@@ -10,13 +10,13 @@ export default class HorizontalList extends React.Component {
 	};
 
 	render() {
-		const isCentered = this.props.isCentered ? style.isCentered : '';
-		const isRightAligned = this.props.isRightAligned ? style.isRightAligned : '';
+		const isCentered = this.props.isCentered ? style.isCentered : ''
+		const isRightAligned = this.props.isRightAligned ? style.isRightAligned : ''
 
 		return (
 			<ul className={classNames(style.list, isCentered, isRightAligned)}>
 				{React.Children.map(this.props.children, item => <li>{item}</li>)}
 			</ul>
-		);
+		)
 	}
 }

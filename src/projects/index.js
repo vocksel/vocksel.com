@@ -9,4 +9,4 @@ export default [
 	// require('./elixir').default,
 	require('./fireflies').default,
 	// require('./snowy-mountain').default
-];
+]
