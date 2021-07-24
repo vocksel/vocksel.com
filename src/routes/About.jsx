@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import Keyword from '../components/Keyword'
 import getAge from 'getAge'
-import bulma from 'bulma.scss'
+import bulma from 'css/bulma.scss'
 import style from './About.scss'
 import urls from 'urls.json'
 

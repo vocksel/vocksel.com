@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-@import "config";
-@import "bulma.scss";
+@import "./config.scss";
+@import "./bulma.scss";
 
 html {
 	margin-bottom: $body-font-size * 4;

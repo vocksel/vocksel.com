@@ -3,7 +3,7 @@
 @charset "utf-8";
 
 // Needs to be imported before Bulma so that our variables override theirs.
-@import "config";
+@import "./config.scss";
 
 @import "~bulma/sass/utilities/initial-variables";
 @import "~bulma/sass/utilities/functions";

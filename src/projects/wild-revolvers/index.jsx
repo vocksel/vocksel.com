@@ -3,7 +3,7 @@ import React from 'react'
 import { ProjectType } from 'types'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import thumbnail from './outpost/013.jpg'
-import bulma from 'bulma.scss'
+import bulma from 'css/bulma.scss'
 
 export default {
 	title: 'Wild Revolvers',

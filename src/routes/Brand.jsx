@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Keyword from '../components/Keyword'
-import bulma from 'bulma.scss'
+import bulma from 'css/bulma.scss'
 import logo from 'logo.png'
 import style from './Brand.scss'
 

@@ -7,7 +7,7 @@ import TweetIntent from '../components/TweetIntent'
 import NoMatch from './NoMatch'
 import projects from 'projects'
 import { ProjectType } from 'types'
-import bulma from 'bulma.scss'
+import bulma from 'css/bulma.scss'
 import style from './ProjectDetail.scss'
 import formatDate from '../formatDate'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import  { Helmet } from 'react-helmet'
 import projects from 'projects'
 import ProjectTile from 'components/ProjectTile'
-import bulma from 'bulma.scss'
+import bulma from 'css/bulma.scss'
 import style from './ProjectList.scss'
 
 const ProjectList = () => {

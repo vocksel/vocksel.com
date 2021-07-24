@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProjectType } from 'types'
 import thumbnail from './images/thumbnail.jpg'
-import bulma from 'bulma.scss'
+import bulma from 'css/bulma.scss'
 
 export default {
 	title: 'Repo Import',
