@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -43,10 +42,12 @@ module.exports = {
 
 		new MiniCssExtractPlugin(),
 
-		new CopyWebpackPlugin([
-			path.resolve(__dirname, 'src/static/og-thumbnail.jpg'),
-			path.resolve(__dirname, 'src/static/oembed.json'),
-		]),
+		new CopyWebpackPlugin({
+			patterns: [
+				path.resolve(__dirname, 'src/static/og-thumbnail.jpg'),
+				path.resolve(__dirname, 'src/static/oembed.json'),
+			]
+		}),
 
 		new ImageminPlugin({
 			disable: !IS_PRODUCTION
@@ -97,11 +98,6 @@ module.exports = {
 	},
 
 	optimization: {
-		minimize: IS_PRODUCTION,
-		minimizer:  IS_PRODUCTION ? [
-			new UglifyJsPlugin(),
-		] : [],
-
 		splitChunks: {
 			chunks: 'all',
 		},
