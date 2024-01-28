@@ -1,16 +1,16 @@
 {
   "private": true,
-  "name": "my-website",
+  "name": "vocksel.com",
   "version": "8.0.0",
   "author": "Marin Minnerly",
   "license": "MIT",
   "homepage": "vocksel.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vocksel/my-website.git"
+    "url": "git://github.com/vocksel/vocksel.com.git"
   },
   "bugs": {
-    "url": "https://github.com/vocksel/my-website/issues"
+    "url": "https://github.com/vocksel/vocksel.com/issues"
   },
   "scripts": {
     "start": "webpack serve --port 8000",
