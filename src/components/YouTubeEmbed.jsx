@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import style from './YoutubeEmbed.scss'
+import style from './YouTubeEmbed.scss'
 
 export default class YoutubeEmbed extends React.Component {
 	static propTypes = {
