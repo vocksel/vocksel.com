@@ -1,0 +1,12 @@
+{
+	email tls@vocksel.com
+}
+
+localhost {
+	tls internal
+	reverse_proxy website:8000
+}
+
+www.vocksel.com, vocksel.com {
+	reverse_proxy website:8000
+}

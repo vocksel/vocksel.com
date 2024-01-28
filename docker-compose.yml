@@ -1,0 +1,25 @@
+version: "3"
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+
+services:
+  website:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "8000:3000"
+
+  router:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
