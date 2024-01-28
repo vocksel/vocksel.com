@@ -1,8 +1,8 @@
-# [davidminnerly.com](https://davidminnerly.com)
+# [vocksel.com](https://vocksel.com)
 
 This is the source code for my personal website. It leverages Webpack and React to create a multi-page site with a portfolio featuring my most recent projects, along with info about me.
 
-[![Screenshot of the site](screenshots/website.png)](https://davidminnerly.com)
+[![Screenshot of the site](screenshots/website.png)](https://vocksel.com)
 
 ## Contributing
 

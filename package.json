@@ -2,9 +2,9 @@
   "private": true,
   "name": "my-website",
   "version": "8.0.0",
-  "author": "David Minnerly",
+  "author": "Marin Minnerly",
   "license": "MIT",
-  "homepage": "davidminnerly.com",
+  "homepage": "vocksel.com",
   "repository": {
     "type": "git",
     "url": "git://github.com/vocksel/my-website.git"

@@ -9,7 +9,7 @@ export default {
 	releaseDate: new Date(2014, 2),
 	type: ProjectType.Code,
 	thumbnail: require('./images/perks.jpg').default,
-	url: 'http://fireflies.davidminnerly.com',
+	url: 'http://fireflies.vocksel.com',
 	description: <>
 		<p>Fireflies is a small application that displays a quote and background image at random every time the page is loaded.</p>
 

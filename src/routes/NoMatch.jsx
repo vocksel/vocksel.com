@@ -1,5 +1,5 @@
 import React from 'react'
-import  { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import bulma from 'css/bulma.scss'
 import urls from 'urls.json'
@@ -8,7 +8,7 @@ export default function NoMatch() {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>404 &mdash; David Minnerly</title>
+				<title>404 &mdash; Marin Minnerly</title>
 			</Helmet>
 
 			<section className={bulma.section}>

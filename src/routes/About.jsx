@@ -14,7 +14,7 @@ export default function About() {
 	return (
 		<section className={bulma.section}>
 			<Helmet>
-				<title>About &mdash; David Minnerly</title>
+				<title>About &mdash; Marin Minnerly</title>
 			</Helmet>
 
 			<div className={bulma.container}>
@@ -22,13 +22,13 @@ export default function About() {
 
 				<div className={bulma.columns}>
 					<div className={bulma.column}>
-						<p>So hey, my name's <Keyword>David Minnerly</Keyword>. I live in upstate New York, where I’m currently pursuing an associates degree in Computer Science at <a href={urls.dutchess}>DCC</a>.</p>
+						<p>So hey, my name's <Keyword>Marin Minnerly</Keyword>. I live in upstate New York, where I’m currently pursuing an associates degree in Computer Science at <a href={urls.dutchess}>DCC</a>.</p>
 
 						<p>I have been programming for the past {getAge() - AGE_STARTED_PROGRAMMING} years, with most of my time spent working in Lua. I also have a solid grasp on JavaScript and Python, and right now I’m most interested in learning a functional language, like Rust.</p>
 					</div>
 
 					<div className={classNames(bulma.column, bulma['is-narrow'])}>
-						<img className={style.face} src={require('god-i-love-art.jpg').default} alt=""/>
+						<img className={style.face} src={require('god-i-love-art.jpg').default} alt="" />
 					</div>
 				</div>
 

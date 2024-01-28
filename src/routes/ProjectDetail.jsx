@@ -40,7 +40,7 @@ const ProjectDetail = () => {
 	return (
 		<div className={bulma.section}>
 			<Helmet>
-				<title>{project.title} &mdash; David Minnerly</title>
+				<title>{project.title} &mdash; Marin Minnerly</title>
 			</Helmet>
 
 			<div className={bulma.container}>
@@ -72,9 +72,9 @@ const ProjectDetail = () => {
 				</div>
 
 				<HorizontalList isCentered>
-					{getProjectLink(index-1, '< Prev')}
+					{getProjectLink(index - 1, '< Prev')}
 					<Link to="/">Home</Link>
-					{getProjectLink(index+1, 'Next >')}
+					{getProjectLink(index + 1, 'Next >')}
 				</HorizontalList>
 			</div>
 		</div>

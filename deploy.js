@@ -5,10 +5,10 @@
 //
 // Usage:
 //
-//   # Deploys to the production environment (davidminnerly.com)
+//   # Deploys to the production environment (vocksel.com)
 //   $ npm run deploy:prod
 //
-//   # Deploys to the development environment (beta.davidminnerly.com).
+//   # Deploys to the development environment (beta.vocksel.com).
 //   # This is used commonly when you're testing out changes and want to see
 //   # how they'll look online before being fully ready to push to production.
 //   $ npm run deploy:dev
@@ -21,12 +21,12 @@ const config = require('./webpack.config.js')
 // proper authorization.
 const REMOTES = {
 	staging: {
-		url: 'https://baby.davidminnerly.com',
-		repo: 'ssh://me@davidminnerly.com/var/repos/baby.davidminnerly.git',
+		url: 'https://baby.vocksel.com',
+		repo: 'ssh://me@vocksel.com/var/repos/baby.vocksel.com.git',
 	},
 	production: {
-		url: 'https://davidminnerly.com',
-		repo: 'ssh://me@davidminnerly.com/var/repos/davidminnerly.git',
+		url: 'https://vocksel.com',
+		repo: 'ssh://me@vocksel.com/var/repos/vocksel.com.git',
 	},
 }
 

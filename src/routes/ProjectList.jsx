@@ -1,5 +1,5 @@
 import React from 'react'
-import  { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import projects from 'projects'
 import ProjectTile from 'components/ProjectTile'
 import bulma from 'css/bulma.scss'
@@ -13,7 +13,7 @@ const ProjectList = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>Projects &mdash; David Minnerly</title>
+				<title>Projects &mdash; Marin Minnerly</title>
 			</Helmet>
 
 			<div className={bulma.section}>

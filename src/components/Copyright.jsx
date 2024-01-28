@@ -6,6 +6,6 @@ export default class Copyright extends React.Component {
 	}
 
 	render() {
-		return <span>&copy; {this.getYear()} David Minnerly</span>
+		return <span>&copy; {this.getYear()} Marin Minnerly</span>
 	}
 }

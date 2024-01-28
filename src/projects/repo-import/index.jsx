@@ -17,7 +17,7 @@ export default {
 
 		<p>A little backstory: Roblox games are contained in a single file with all your source code and level geometry. This makes it incredibly difficult to version control your code, as you have to wade through thousands of lines of XML to do so.</p>
 
-		<p>I've worked extensively on another project called <a href="http://davidminnerly.com/projects/elixir">Elixir</a>, which allows you to code your games outside of Studio. It compiles Lua source code into a Roblox-compatible XML file, also known as a 'Model' file, that you can import into your game. This lets you write all of your code outside of Studio, using any third-party software you like.</p>
+		<p>I've worked extensively on another project called <a href="http://vocksel.com/projects/elixir">Elixir</a>, which allows you to code your games outside of Studio. It compiles Lua source code into a Roblox-compatible XML file, also known as a 'Model' file, that you can import into your game. This lets you write all of your code outside of Studio, using any third-party software you like.</p>
 
 		<div className={bulma.columns}>
 			<div className={bulma.column}>
@@ -51,7 +51,7 @@ export default {
 			</div>
 		</div>
 
-		<p>While there is still some tedium with this workflow, it's served me well for just about a year. <a href="http://davidminnerly.com/projects/echo-ridge">Echo Ridge</a> is my most notable game using this workflow. It's completely version controlled with Git, and even open-sourced on <a href="https://github.com/vocksel/echo-ridge">GitHub</a>.</p>
+		<p>While there is still some tedium with this workflow, it's served me well for just about a year. <a href="http://vocksel.com/projects/echo-ridge">Echo Ridge</a> is my most notable game using this workflow. It's completely version controlled with Git, and even open-sourced on <a href="https://github.com/vocksel/echo-ridge">GitHub</a>.</p>
 
 		<p>The biggest flaw with this workflow is once you compile your code, you have to drag-and-drop the Model file into Studio. While we can automate compiling and what happens after importing, this is an unfortunate flaw that can't be avoided.</p>
 	</>

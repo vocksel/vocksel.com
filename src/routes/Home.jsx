@@ -1,5 +1,5 @@
 import React from 'react'
-import  { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import classNames from 'classnames'
 import Experience from '../components/Experience'
 import HorizontalList from '../components/HorizontalList'
@@ -36,14 +36,14 @@ export default class Home extends React.Component {
 		return (
 			<React.Fragment>
 				<Helmet>
-					<title>David Minnerly</title>
+					<title>Marin Minnerly</title>
 				</Helmet>
 
 				<section className={bulma.section}>
 					<div className={bulma.container}>
 						<div className={bulma.columns}>
 							<div className={bulma.column}>
-								<p className={generic.bigText}>I'm <Keyword>David &ldquo;david vocksel&rdquo; Minnerly</Keyword>&mdash;a {getAge()} year old Software Engineer and hobbyist game developer that loves creating new experiences through artistic mediums 💖</p>
+								<p className={generic.bigText}>I'm <Keyword>Marin &ldquo;marin vocksel&rdquo; Minnerly</Keyword>&mdash;a {getAge()} year old Software Engineer and hobbyist game developer that loves creating new experiences through artistic mediums 💖</p>
 
 								<HorizontalList>
 									<a href={urls.twitter} title='Follow on Twitter for updates'>Twitter</a>
