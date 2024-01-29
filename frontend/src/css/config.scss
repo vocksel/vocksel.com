@@ -17,7 +17,7 @@ $primary: $accent-color;
 $body-background-color: $background;
 $strong-color: $accent-color;
 $link: $blueb;
-$link-hover: scale-color($blueb, $hue: -10%);
+$link-hover: scale-color($blueb, $saturation: -30%);
 
 // Forces the max width on these display types
 $desktop: 960px;
