@@ -4,9 +4,9 @@
 
 localhost {
 	tls internal
-	reverse_proxy website:8000
+	reverse_proxy /* website:3000
 }
 
 www.vocksel.com, vocksel.com {
-	reverse_proxy website:8000
+	reverse_proxy /* website:3000
 }
