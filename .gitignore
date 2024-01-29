@@ -1,3 +1,10 @@
+# Local variables
+.env
+
+# Build artifacts
+build/
 dist/
 node_modules/
+
+# Other
 *.log
