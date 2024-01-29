@@ -13,8 +13,6 @@ services:
   website:
     build: ./frontend
     restart: unless-stopped
-    ports:
-      - "8000:3000"
 
   router:
     image: caddy:2
