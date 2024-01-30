@@ -1,25 +1,7 @@
 # vocksel.com
 
-## Deploying
+All services for [vocksel.com](https://vocksel.com).
 
-Login to the droplet and pull latest changes
+The [frontend](./frontend/) gets deployed to `vocksel.com` and `www.vocksel.com`. See [the README](./frontend/README.md) for more info.
 
-```sh
-ssh me@vocksel.com
-cd vocksel.com
-git pull origin main
-```
-
-Adjust `docker-compose.yml` to use published image:
-
-```diff
-+ image: vocksel/vocksel.com:main
-- build: ./frontend
-```
-
-Then restart the services:
-
-```sh
-docker compose down
-docker compose up -d
-```
+All other services wind up on subdomains. See [Caddyfile](./Caddyfile) for mappings.
