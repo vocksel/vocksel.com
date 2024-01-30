@@ -19,6 +19,7 @@ Login to the droplet and pull latest changes
 ssh me@vocksel.com
 cd vocksel.com
 git pull origin main
+sudo docker pull vocksel/vocksel.com:main
 ```
 
 Adjust `docker-compose.yml` to use published image:
@@ -31,5 +32,5 @@ Adjust `docker-compose.yml` to use published image:
 Then restart the services:
 
 ```sh
-docker compose up -d --build router website
+sudo docker compose up -d --build router website
 ```
