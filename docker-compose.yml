@@ -7,6 +7,7 @@ volumes:
   loki_data:
   grafana_data:
 
+
 networks:
   logging:
     name: logging
@@ -34,6 +35,19 @@ services:
       - caddy_data:/data
       - caddy_config:/config
       - caddy_logs:/var/log/caddy
+    networks:
+      - logging
+    logging:
+      driver: "loki"
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
+
+  swatch:
+    container_name: swatch
+    build: ./swatch
+    restart: unless-stopped
+    ports:
+      - "8100:8080"
     networks:
       - logging
     logging:
