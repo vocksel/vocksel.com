@@ -11,8 +11,6 @@ RUN cargo build --release --manifest-path lune/Cargo.toml
 
 FROM ubuntu:24.04 AS server
 
-VOLUME [ "/app/server" ]
-
 # The server spawns processes for these commands
 RUN apt-get update && apt-get install -y curl unzip
 
