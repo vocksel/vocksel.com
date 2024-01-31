@@ -8,7 +8,7 @@ www.vocksel.com, vocksel.com {
 
 # API for Swatch: https://github.com/vocksel/swatch/
 swatch.vocksel.com {
-	reverse_proxy /* swatch:8100
+	reverse_proxy /* swatch:8080
 }
 
 grafana.vocksel.com {
