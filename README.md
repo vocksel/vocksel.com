@@ -21,6 +21,12 @@ If this is the first deployment, make sure to install `loki-docker-driver`:
 sudo docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
 ```
 
+Sometimes you'll also need to re-enable the Loki plugin. If you see the error `Error response from daemon: error looking up logging plugin loki: plugin loki found but disabled`, run the following:
+
+```sh
+sudo docker plugin enable loki
+```
+
 If deploying a new version of the frontend, adjust `~/vocksel.com/docker-compose.yml` to use the published image:
 
 ```diff
