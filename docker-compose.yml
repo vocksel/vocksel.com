@@ -3,18 +3,26 @@ version: "3"
 volumes:
   caddy_data:
   caddy_config:
-
+  caddy_logs:
+  loki_data:
+  grafana_data:
 
 networks:
-  loki:
-
+  logging:
+    name: logging
 
 services:
   website:
+    container_name: website
     build: ./frontend
     restart: unless-stopped
+    ports:
+      - "8080:3000"
+    networks:
+      - logging
 
-  router:
+  caddy:
+    container_name: caddy
     image: caddy:2
     restart: unless-stopped
     ports:
@@ -25,6 +33,13 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+      - caddy_logs:/var/log/caddy
+    networks:
+      - logging
+    logging:
+      driver: "loki"
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
 
   swatch:
     container_name: swatch
@@ -33,47 +48,40 @@ services:
       - "8100:8080"
 
   loki:
+    container_name: loki
     image: grafana/loki:2.9.4
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki.yml:/etc/loki-config.yml
+      - loki_data:/loki
+    command: -config.file=/etc/loki-config.yml
     networks:
-      - loki
+      - logging
 
   promtail:
+    container_name: promtail
     image: grafana/promtail:2.9.4
     volumes:
-      - /var/log:/var/log
+      - ./promtail.yml:/etc/promtail/config.yaml
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - caddy_logs:/var/log/caddy:ro
     command: -config.file=/etc/promtail/config.yml
     networks:
-      - loki
+      - logging
 
   grafana:
+    container_name: grafana
+    image: grafana/grafana:10.3.1
     environment:
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
-    entrypoint:
-      - sh
-      - -euc
-      - |
-        mkdir -p /etc/grafana/provisioning/datasources
-        cat <<EOF > /etc/grafana/provisioning/datasources/ds.yaml
-        apiVersion: 1
-        datasources:
-        - name: Loki
-          type: loki
-          access: proxy
-          orgId: 1
-          url: http://loki:3100
-          basicAuth: false
-          isDefault: true
-          version: 1
-          editable: false
-        EOF
-        /run.sh
-    image: grafana/grafana:latest
+    volumes:
+      - ./grafana.yml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
     networks:
-      - loki
+      - logging
