@@ -7,6 +7,6 @@ www.vocksel.com, vocksel.com {
 }
 
 # API for Swatch: https://github.com/vocksel/swatch/
-swatch-api.vocksel.com {
+swatch.vocksel.com {
 	reverse_proxy swatch:8100
 }
