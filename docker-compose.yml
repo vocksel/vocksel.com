@@ -44,7 +44,7 @@ services:
 
   swatch:
     container_name: swatch
-    build: ./swatch
+    image: vocksel/swatch:main
     restart: unless-stopped
     ports:
       - "8100:8080"
