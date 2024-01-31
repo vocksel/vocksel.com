@@ -3,17 +3,13 @@ version: "3"
 volumes:
   caddy_data:
   caddy_config:
+  caddy_logs:
+  loki_data:
+  grafana_data:
 
 networks:
   logging:
     name: logging
-
-x-logging: &default-logging
-  driver: "json-file"
-  options:
-    max-size: "1m"
-    max-file: "1"
-    tag: "{{.Name}}"
 
 services:
   website:
@@ -22,12 +18,8 @@ services:
     restart: unless-stopped
     ports:
       - "8080:3000"
-    labels:
-      logging: "promtail"
-      logging_jobname: "containerlogs"
     networks:
       - logging
-    logging: *default-logging
 
   caddy:
     container_name: caddy
@@ -41,19 +33,23 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-    labels:
-      logging: "promtail"
-      logging_jobname: "containerlogs"
+      - caddy_logs:/var/log/caddy
     networks:
       - logging
-    logging: *default-logging
+    logging:
+      driver: "loki"
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
 
   loki:
     container_name: loki
     image: grafana/loki:2.9.4
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki.yml:/etc/loki-config.yml
+      - loki_data:/loki
+    command: -config.file=/etc/loki-config.yml
     networks:
       - logging
 
@@ -64,10 +60,10 @@ services:
       - ./promtail.yml:/etc/promtail/config.yaml
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock
+      - caddy_logs:/var/log/caddy:ro
     command: -config.file=/etc/promtail/config.yml
     networks:
       - logging
-    logging: *default-logging
 
   grafana:
     container_name: grafana
@@ -78,8 +74,8 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
     volumes:
       - ./grafana.yml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
     networks:
       - logging
-    logging: *default-logging
