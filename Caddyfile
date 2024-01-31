@@ -10,3 +10,8 @@ localhost {
 www.vocksel.com, vocksel.com {
 	reverse_proxy /* website:3000
 }
+
+# API for Swatch: https://github.com/vocksel/swatch/
+swatch-api.vocksel.com {
+	reverse_proxy swatch:8100
+}

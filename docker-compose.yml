@@ -26,6 +26,12 @@ services:
       - caddy_data:/data
       - caddy_config:/config
 
+  swatch:
+    container_name: swatch
+    build: ./swatch
+    ports:
+      - "8100:8080"
+
   loki:
     image: grafana/loki:2.9.4
     ports:
