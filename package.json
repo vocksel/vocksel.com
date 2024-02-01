@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "vocksel.com",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "author": "Marin Minnerly",
   "license": "MIT",
   "homepage": "vocksel.com",
@@ -16,9 +16,7 @@
     "start": "webpack serve --port 8000",
     "test": "eslint",
     "build": "webpack",
-    "build:prod": "cross-env NODE_ENV=production webpack",
-    "deploy": "npm run build:prod && cross-env NODE_ENV=development node deploy.js",
-    "deploy:prod": "npm run build:prod && cross-env NODE_ENV=production node deploy.js"
+    "build:prod": "cross-env NODE_ENV=production webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
