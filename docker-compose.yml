@@ -3,7 +3,7 @@ version: "3"
 services:
   website:
     container_name: website
-    build: ./frontend
+    build: .
     restart: unless-stopped
     ports:
       - "8080:3000"
