@@ -20,6 +20,10 @@ services:
       - "8080:3000"
     networks:
       - logging
+    logging:
+      driver: "loki"
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
 
   swatch:
     container_name: swatch
@@ -29,6 +33,10 @@ services:
       - "8100:8080"
     networks:
       - logging
+    logging:
+      driver: "loki"
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
 
   caddy:
     container_name: caddy
