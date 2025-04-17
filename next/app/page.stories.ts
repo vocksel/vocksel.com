@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react'
+import { fn } from '@storybook/test'
 
-import Home from './page';
+import Home from './page'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -19,9 +19,9 @@ const meta = {
 	},
 	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
 	args: { onClick: fn() },
-} satisfies Meta<typeof Home>;
+} satisfies Meta<typeof Home>
 
-export default meta;
+export default meta
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
@@ -30,31 +30,31 @@ export const Primary: Story = {
 		primary: true,
 		label: 'Home',
 	},
-};
+}
 
 export const Secondary: Story = {
 	args: {
 		label: 'Home',
 	},
-};
+}
 
 export const Large: Story = {
 	args: {
 		size: 'large',
 		label: 'Home',
 	},
-};
+}
 
 export const Small: Story = {
 	args: {
 		size: 'small',
 		label: 'Home',
 	},
-};
+}
 
 export const Sample: Story = {
 	args: {
 		primary: false,
-		label: "Home"
+		label: 'Home'
 	}
-};
+}

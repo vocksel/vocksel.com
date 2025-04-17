@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import { jobs, skills } from './experience'
 
 export default function Home() {
+	const history = jobs.map((job) => <p key={`${job.job}-${job.startDate}`}>{job.job}</p>)
+	const skillset = skills.map((skill) => <p key={skill.name}>{skill.name}</p>)
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -107,7 +110,12 @@ export default function Home() {
 						Instantly deploy your Next.js site to a shareable URL with Vercel.
 					</p>
 				</a>
+
 			</div>
+
+			{history}
+
+			{skillset}
 		</main>
 	)
 }
