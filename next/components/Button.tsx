@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React from 'react'
 import style from './Button.scss'
 
@@ -8,7 +7,7 @@ type Props = {
 
 export default function Button({ children }: Props) {
 	return (
-		<div className={classNames(style.button, style.outline)}>
+		<div className={`${style.button} ${style.outline}`}>
 			{children}
 		</div>
 	)

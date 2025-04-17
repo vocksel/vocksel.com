@@ -1,7 +1,7 @@
+import bulma from '@/css/bulma.module.scss'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
-import bulma from 'css/bulma.scss'
 import urls from 'urls.json'
 
 export default function NoMatch() {

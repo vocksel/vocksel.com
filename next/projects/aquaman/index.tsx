@@ -3,7 +3,6 @@ import urls from '@/app/urls'
 import ImageSlider from '@/components/ImageSlider'
 import YouTubeEmbed from '@/components/YouTubeEmbed'
 import Image from 'next/image'
-import React from 'react'
 import thumbnail from './images/hub-trench.jpg'
 import team from './team'
 

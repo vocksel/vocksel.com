@@ -1,5 +1,4 @@
 import { Project } from '@/app/types'
-import React from 'react'
 
 const project: Project = {
 	title: 'Elixir',

@@ -1,6 +1,5 @@
 import { Project } from '@/app/projects/writing/types'
 import CaptionedImage from '@/components/CaptionedImage'
-import classNames from 'classnames'
 import Link from 'next/link'
 import style from './ProjectTile.scss'
 
@@ -19,9 +18,9 @@ export default function ProjectTile({ className, project, slide = 'y' }: Props) 
 	}
 
 	return (
-		<div className={classNames(style.container, className)}>
+		<div className={`${style.container} ${className}`}>
 			<Link href={`/projects/${project.slug}/`} className={style.link}>
-				<CaptionedImage className={classNames(style.image, hoverClass)} src={project.thumbnail} caption={project.title} />
+				<CaptionedImage className={`${style.image} ${hoverClass}`} src={project.thumbnail} caption={project.title} />
 			</Link>
 		</div>
 	)

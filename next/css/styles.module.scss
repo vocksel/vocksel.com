@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import "./config.scss";
+@import "./config.module.scss";
 @import "./bulma.scss";
 
 html {
@@ -11,21 +11,31 @@ html {
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-block-end: $body-font-size;
 }
 
 h1 {
 	font-size: $body-font-size * 1.6;
 }
+
 h2 {
 	font-size: $body-font-size * 1.4;
 }
+
 h3 {
 	font-size: $body-font-size * 1.2;
 }
 
-p, img, figure, ul {
+p,
+img,
+figure,
+ul {
 	margin-block-end: $body-line-height;
 }
 

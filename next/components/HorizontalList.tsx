@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React from 'react'
 import style from './HorizontalList.scss'
 
@@ -13,7 +12,7 @@ export default function HorizontalList(props: Props) {
 	const isRightAligned = props.isRightAligned ? style.isRightAligned : ''
 
 	return (
-		<ul className={classNames(style.list, isCentered, isRightAligned)}>
+		<ul className={`${style.list} ${isCentered} ${isRightAligned}`}>
 			{React.Children.map(props.children, item => <li>{item}</li>)}
 		</ul>
 	)

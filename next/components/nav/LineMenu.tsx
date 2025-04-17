@@ -1,6 +1,5 @@
 import HorizontalList from '@/components/HorizontalList'
 import Link from 'next/link'
-import React from 'react'
 
 export default function LineMenu() {
 	return (

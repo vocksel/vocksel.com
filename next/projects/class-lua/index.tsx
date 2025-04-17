@@ -1,5 +1,5 @@
 import { Project } from '@/app/types'
-import bulma from '@/css/bulma.scss'
+import bulma from '@/css/bulma.module.scss'
 import Image from 'next/image'
 import React from 'react'
 import afterImage from './images/after.png'

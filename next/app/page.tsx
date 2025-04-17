@@ -1,9 +1,38 @@
 import Image from 'next/image'
-import { jobs, skills } from './experience'
+import { jobs } from './experience'
+
+import getAge from '@/app/getAge'
+import urls from '@/app/urls'
+import Experience from '@/components/Experience'
+import HorizontalList from '@/components/HorizontalList'
+import Keyword from '@/components/Keyword'
+import ProjectTile from '@/components/ProjectTile'
+import bulma from '@/css/bulma.module.scss'
+import generic from '@/css/generic.module.scss'
+import projects from '@/projects'
+import { useMemo } from 'react'
+import me from './me.jpg'
 
 export default function Home() {
-	const history = jobs.map((job) => <p key={`${job.job}-${job.startDate}`}>{job.job}</p>)
-	const skillset = skills.map((skill) => <p key={skill.name}>{skill.name}</p>)
+	const age = useMemo(getAge, [])
+
+	const freelanceProjects = useMemo(() => {
+		const freelance = projects.filter(project => project.type === 'Game')
+
+		return freelance.map(project =>
+			<ProjectTile className={`${bulma.column} ${bulma['is-one-third']}`}
+				key={project.slug} project={project} />)
+	}, [])
+
+	const codeProjects = useMemo(() => {
+		const code = projects.filter(project => project.type === 'Code')
+
+		// Need a new component to return. Should be just be a list of my code projects
+		return code.map(project =>
+			<ProjectTile className={`${bulma.column} ${bulma['is-one-third']}`}
+				key={project.slug} project={project} />)
+	}, [])
+
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -113,9 +142,46 @@ export default function Home() {
 
 			</div>
 
-			{history}
+			<section className={bulma.section}>
+				<div className={bulma.container}>
+					<div className={bulma.columns}>
+						<div className={bulma.column}>
+							<p className={generic.bigText}>I&pos;m <Keyword>Marin Minnerly</Keyword>&mdash;a {age} year old Software Engineer and hobbyist game developer that loves creating new experiences through artistic mediums 💖</p>
 
-			{skillset}
+							<HorizontalList>
+								<a href={urls.twitter} title='Follow on Twitter for updates'>Twitter</a>
+								<a href={urls.github} title='Check out my code on GitHub'>GitHub</a>
+								<a href={urls.linkedin} title='Connect with me on LinkedIn'>LinkedIn</a>
+								<a href={urls.email} title='Shoot me an email'>Email</a>
+							</HorizontalList>
+						</div>
+
+						<div className={`${bulma.column} ${bulma['is-narrow']}`}>
+							<Image className={bulma.image} src={me} alt="" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className={bulma.section}>
+				<div className={bulma.container}>
+					<h1>Experience</h1>
+
+					{jobs.map((job, index) => <Experience key={index} exp={job} />)}
+				</div>
+			</section>
+
+			<section className={bulma.section}>
+				<div className={bulma.container}>
+					<h1>Projects</h1>
+
+					<div className={`${bulma.columns} ${bulma['is-multiline']}`}>
+						{freelanceProjects}
+
+						{codeProjects}
+					</div>
+				</div>
+			</section>
 		</main>
 	)
 }

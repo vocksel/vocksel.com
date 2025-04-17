@@ -1,6 +1,6 @@
 import { Project } from '@/app/types'
 import thumbnail from './images/thumbnail.jpg'
-import bulma from '@/css/bulma.scss'
+import bulma from '@/css/bulma.module.scss'
 
 const project: Project = {
 	title: 'Repo Import',

@@ -1,6 +1,5 @@
-import bulma from '@/css/bulma.scss'
-import generic from '@/css/generic.scss'
-import classNames from 'classnames'
+import bulma from '@/css/bulma.module.scss'
+import generic from '@/css/generic.module.scss'
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
@@ -54,7 +53,7 @@ export default function App() {
 				<Route path='*'><NoMatch /></Route>
 			</Switch>
 
-			<footer className={classNames(bulma.section, generic.finePrint)}>
+			<footer className={`${bulma.section} ${generic.finePrint}`}>
 				<HorizontalList isCentered>
 					<Copyright />
 

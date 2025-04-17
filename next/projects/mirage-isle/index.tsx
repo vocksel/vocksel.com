@@ -1,6 +1,5 @@
 import { Project } from '@/app/types'
 import Image from 'next/image'
-import React from 'react'
 import boat from './images/boat.jpg'
 import cattails from './images/cattails.jpg'
 import thumbnail from './images/overview.jpg'

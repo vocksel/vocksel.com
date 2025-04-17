@@ -1,9 +1,7 @@
-import { Job } from '@/app/experience'
-import classNames from 'classnames'
-import React from 'react'
-import bulma from '../css/bulma.scss'
-import generic from '../css/generic.scss'
-import formatDate from '../formatDate'
+import formatDate from '@/app/formatDate'
+import { Job } from '@/app/types'
+import bulma from '@/css/bulma.module.scss'
+import generic from '@/css/generic.module.scss'
 import style from './Experience.scss'
 
 type Props = {
@@ -16,13 +14,13 @@ export default function Experience({ exp }: Props) {
 	const connector = exp.wasInHouse ? 'at' : 'for'
 
 	return (
-		<div className={classNames(style.container, bulma.columns)}>
-			<p className={classNames(bulma.column, style.date)}>{startDate}&ndash;{endDate}</p>
+		<div className={`${style.container} ${bulma.columns}`}>
+			<p className={`${bulma.column} ${style.date}`}>{startDate}&ndash;{endDate}</p>
 
-			<div className={classNames(bulma.column, bulma['is-two-thirds'])}>
+			<div className={`${bulma.column} ${bulma['is-two-thirds']}`}>
 				<p className={style.job}>{exp.job} {connector} <a href={exp.company.url}>{exp.company.name}</a>.</p>
 
-				<p className={classNames(style.description, generic.tight)}>{exp.description}</p>
+				<p className={`${style.description} ${generic.tight}`}>{exp.description}</p>
 			</div>
 		</div>
 	)

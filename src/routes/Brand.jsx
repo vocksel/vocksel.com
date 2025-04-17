@@ -1,9 +1,8 @@
-import classNames from 'classnames'
+import bulma from '@/css/bulma.module.scss'
+import logo from 'logo.png'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Keyword from '../components/Keyword'
-import bulma from 'css/bulma.scss'
-import logo from 'logo.png'
 import style from './Brand.scss'
 
 export default function About() {
@@ -29,7 +28,7 @@ export default function About() {
 				<h2>Logo</h2>
 
 				<div className={bulma.columns}>
-					<div className={classNames(bulma.column)}>
+					<div className={bulma.column}>
 						<figure>
 							<img src={logo} width="64px" />
 							<figcaption>Glurrr</figcaption>
@@ -44,34 +43,34 @@ export default function About() {
 				<h2>Misuse</h2>
 
 				<div className={bulma.columns}>
-					<figure className={classNames(bulma.column, style.tile)}>
+					<figure className={`${bulma.column} ${style.tile}`}>
 						<p>Marin</p>
 						<figcaption>I'm not a capitalist, so do not use capital letters for my name</figcaption>
 					</figure>
 
-					<figure className={classNames(bulma.column, style.tile)}>
+					<figure className={`${bulma.column} ${style.tile}`}>
 						<p>Marin</p>
 						<figcaption>nope</figcaption>
 					</figure>
 
-					<figure className={classNames(bulma.column, style.tile)}>
+					<figure className={`${bulma.column} ${style.tile}`}>
 						<p>Dav</p>
 						<figcaption>we've been over this</figcaption>
 					</figure>
 				</div>
 
 				<div className={bulma.columns}>
-					<figure className={classNames(bulma.column, style.tile)}>
+					<figure className={`${bulma.column} ${style.tile}`}>
 						<p><img src={logo} className={style.rotato} /></p>
 						<figcaption>do not spin the boy. he does not like that</figcaption>
 					</figure>
 
-					<figure className={classNames(bulma.column, style.tile)}>
+					<figure className={`${bulma.column} ${style.tile}`}>
 						<p><img src={logo} className={style.skewed} /></p>
 						<figcaption>no stretching him either</figcaption>
 					</figure>
 
-					<figure className={classNames(bulma.column, style.tile)}>
+					<figure className={`${bulma.column} ${style.tile}`}>
 						<p><img src={logo} className={style.fucked} /></p>
 						<figcaption>please just leave him alone</figcaption>
 					</figure>

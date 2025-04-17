@@ -1,4 +1,4 @@
-@import "css/config.scss";
+@import "css/config.module.scss";
 
 .container {
 	position: relative;
@@ -16,7 +16,7 @@
 
 .gradient {
 	// Generated with https://cssgradient.io/
-	background: rgb(9,24,42);
+	background: rgb(9, 24, 42);
 	background: linear-gradient(0deg, rgba($background, 0.9) 0%, rgba($background, 0.6) 50%, rgba(#fff, 0) 100%);
 }
 

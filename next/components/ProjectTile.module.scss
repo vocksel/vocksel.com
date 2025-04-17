@@ -1,4 +1,4 @@
-@import "../css/config.scss";
+@import "../css/config.module.scss";
 
 // Dotted border effect inspired by:
 // https://codepen.io/markmead/pen/MqmOVB
@@ -17,6 +17,7 @@
 	outline: 4px solid $link-hover;
 	transform: translate(0, -($body-font-size / 2));
 }
+
 .container:hover .hoverRight {
 	outline: 4px solid $link-hover;
 	transform: translate($body-font-size / 2, 0);

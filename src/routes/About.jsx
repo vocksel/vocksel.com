@@ -1,12 +1,11 @@
-import classNames from 'classnames'
+import bulma from '@/css/bulma.module.scss'
+import getAge from 'getAge'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
-import Keyword from '../components/Keyword'
-import getAge from 'getAge'
-import bulma from 'css/bulma.scss'
-import style from './About.scss'
 import urls from 'urls.json'
+import Keyword from '../components/Keyword'
+import style from './About.scss'
 
 const AGE_STARTED_PROGRAMMING = 13
 
@@ -27,7 +26,7 @@ export default function About() {
 						<p>I have been programming for the past {getAge() - AGE_STARTED_PROGRAMMING} years, with most of my time spent working in Lua. I also have a solid grasp on JavaScript and Python, and right now I’m most interested in learning a functional language, like Rust.</p>
 					</div>
 
-					<div className={classNames(bulma.column, bulma['is-narrow'])}>
+					<div className={`${bulma.column} ${bulma['is-narrow']}`}>
 						<img className={style.face} src={require('god-i-love-art.jpg').default} alt="" />
 					</div>
 				</div>
