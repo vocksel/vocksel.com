@@ -30,7 +30,22 @@ export default function Home() {
 								<a href={job.company.url}>{job.company.name}</a>
 							</span>
 						),
-						description: job.description,
+						description: (
+							<div>
+								<p>{job.description}</p>
+								{job.projects && (
+									<ul>
+										{job.projects.map((project) => (
+											<li key={project.name}>
+												<a href={project.url}>
+													{project.name}
+												</a>
+											</li>
+										))}
+									</ul>
+								)}
+							</div>
+						),
 						startDate: job.startDate,
 						endDate: job.endDate,
 					}}

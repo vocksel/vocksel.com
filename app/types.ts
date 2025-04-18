@@ -6,6 +6,15 @@ export type Company = {
 	url: string;
 };
 
+// Eventually I want to collapse this and Project together. For now I just need
+// a way to jot down all of the projects I had at work
+export type WorkProject = {
+	name: string;
+	url: string;
+	startDate: Date;
+	endDate: Date;
+};
+
 export type Job = {
 	job: string;
 	company: Company;
@@ -13,6 +22,7 @@ export type Job = {
 	wasInHouse: boolean;
 	startDate: Date;
 	endDate?: Date;
+	projects?: WorkProject[];
 };
 
 export type Education = {

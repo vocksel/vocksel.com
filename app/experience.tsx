@@ -30,6 +30,14 @@ export const jobs: Job[] = [
 			"Employed full-time working on new and exciting projects with an incredible team to bring the world together through play.",
 		wasInHouse: true,
 		startDate: new Date(2025, 1),
+		projects: [
+			{
+				name: "Now Playing",
+				url: "https://devforum.roblox.com/t/amplify-your-experiences-with-new-music/3164792",
+				startDate: new Date(2024, 6, 1),
+				endDate: new Date(2025, 3, 13),
+			},
+		],
 	},
 
 	{
@@ -40,6 +48,32 @@ export const jobs: Job[] = [
 		wasInHouse: true,
 		startDate: new Date(2021, 5),
 		endDate: new Date(2025, 1),
+		projects: [
+			{
+				name: "Toolbox Audio UX",
+				url: "https://devforum.roblox.com/t/new-audio-discovery-features/2618235",
+				startDate: new Date(2023, 3, 7),
+				endDate: new Date(2023, 9, 6),
+			},
+			{
+				name: "Events Platform",
+				url: "https://devforum.roblox.com/t/events-platform-full-release/2226550",
+				startDate: new Date(2022, 8, 19),
+				endDate: new Date(2023, 3, 22),
+			},
+			{
+				name: "Verified Badge",
+				url: "https://devforum.roblox.com/t/introducing-the-verified-badge/1980978",
+				startDate: new Date(2022, 6, 26),
+				endDate: new Date(2022, 9, 12),
+			},
+			{
+				name: "Developer Modules",
+				url: "https://create.roblox.com/docs/resources/modules",
+				startDate: new Date(2021, 9, 23),
+				endDate: new Date(2022, 7, 14),
+			},
+		],
 	},
 
 	{
@@ -50,6 +84,14 @@ export const jobs: Job[] = [
 		wasInHouse: true,
 		startDate: new Date(2020, 5),
 		endDate: new Date(2020, 7),
+		projects: [
+			{
+				name: "Bubble Chat",
+				url: "https://devforum.roblox.com/t/the-big-bubble-chat-rework/819483",
+				startDate: new Date(2020, 6, 15),
+				endDate: new Date(2020, 10),
+			},
+		],
 	},
 
 	// {
