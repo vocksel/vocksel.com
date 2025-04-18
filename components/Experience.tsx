@@ -1,6 +1,6 @@
 import formatDate from "@/app/formatDate";
 import { Job } from "@/app/types";
-import generic from "@/css/generic.module.scss";
+import generic from "@/styles/generic.module.scss";
 import style from "./Experience.module.scss";
 
 type Props = {

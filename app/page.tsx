@@ -7,8 +7,8 @@ import Experience from "@/components/Experience";
 import HorizontalList from "@/components/HorizontalList";
 import Keyword from "@/components/Keyword";
 import ProjectTile from "@/components/ProjectTile";
-import generic from "@/css/generic.module.scss";
 import projects from "@/projects";
+import generic from "@/styles/generic.module.scss";
 import { useMemo } from "react";
 import me from "./me.jpg";
 
