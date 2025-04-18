@@ -4,12 +4,9 @@ import style from "./page.module.scss";
 
 export default function Page() {
 	const tiles = projects.map((project) => (
-		<ProjectTile
-			key={project.slug}
-			slide="x"
-			className={style.tile}
-			project={project}
-		/>
+		<li key={project.slug}>
+			<ProjectTile slide="x" className={style.tile} project={project} />
+		</li>
 	));
 
 	return (
@@ -17,7 +14,7 @@ export default function Page() {
 			<div className={"container"}>
 				<h1>Projects</h1>
 
-				{tiles}
+				<ul>{tiles}</ul>
 			</div>
 		</div>
 	);
