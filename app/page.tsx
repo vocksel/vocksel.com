@@ -6,11 +6,12 @@ import urls from "@/app/urls";
 import Experience from "@/components/Experience";
 import HorizontalList from "@/components/HorizontalList";
 import Keyword from "@/components/Keyword";
+import ProfilePicture from "@/components/ProfilePicture";
 import ProjectTile from "@/components/ProjectTile";
 import projects from "@/projects";
 import generic from "@/styles/generic.module.scss";
 import { useMemo } from "react";
-import me from "./me.jpg";
+import me from "./elevator.jpg";
 
 export default function Home() {
 	const age = useMemo(getAge, []);
@@ -122,7 +123,7 @@ export default function Home() {
 						</div>
 
 						<div className={"column is-narrow"}>
-							<Image className={"image"} src={me} alt="" />
+							<ProfilePicture src={me} alt="" />
 						</div>
 					</div>
 				</div>
