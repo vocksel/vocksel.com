@@ -1,5 +1,11 @@
 import { Project } from '@/app/types'
+import Image from 'next/image'
 import thumbnail from './images/thumbnail.jpg'
+
+import noRepoImportInGame from './images/no-repo-import-in-game.png'
+import noRepoImport from './images/no-repo-import.png'
+import withRepoImportInGame from './images/with-repo-import-in-game.png'
+import withRepoImport from './images/with-repo-import.png'
 
 const project: Project = {
 	title: 'Repo Import',
@@ -20,12 +26,12 @@ const project: Project = {
 		<div className={'columns'}>
 			<div className={'column'}>
 				<h2>Files</h2>
-				<img src={require('./images/no-repo-import.png').default} />
+				<Image src={noRepoImport} alt='' />
 			</div>
 
 			<div className={'column'}>
 				<h2>Roblox Studio</h2>
-				<img src={require('./images/no-repo-import-in-game.png').default} />
+				<Image src={noRepoImportInGame} alt='' />
 			</div>
 		</div>
 
@@ -33,19 +39,19 @@ const project: Project = {
 
 		<p>Roblox has specific locations where you store server, client, and shared code, so this becomes a problem when your entire codebase is grouped together with the geometry.</p>
 
-		<p>When using Elixir by itself, you run into the workflow of: code -> compile -> import into Studio -> put everything in the right place. Repo Import takes care of the last step for you.</p>
+		<p>When using Elixir by itself, you run into the workflow of: code -&gt; compile -&gt; import into Studio -&gt; put everything in the right place. Repo Import takes care of the last step for you.</p>
 
 		<p>With Repo Import, you create directories to match Studio's hierarchy. When compiled and imported, Repo Import automatically moves your files to the correct locations in your game. This is a major help, as having to drag-and-drop sections of your codebase each time you make a change is incredibly tedious.</p>
 
 		<div className={'columns'}>
 			<div className={'column'}>
 				<h2>Files</h2>
-				<img src={require('./images/with-repo-import.png').default} />
+				<Image src={withRepoImport} alt='' />
 			</div>
 
 			<div className={'column'}>
 				<h2>Roblox Studio</h2>
-				<img src={require('./images/with-repo-import-in-game.png').default} />
+				<Image src={withRepoImportInGame} alt='' />
 			</div>
 		</div>
 

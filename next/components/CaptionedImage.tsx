@@ -1,9 +1,9 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import style from './CaptionedImage.module.scss'
 
 type Props = {
 	caption: string,
-	src: string,
+	src: StaticImageData,
 	alt?: string,
 	className?: string,
 }
