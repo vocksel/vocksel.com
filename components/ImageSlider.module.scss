@@ -1,27 +1,5 @@
 @use "@/styles/config.module.scss";
 
-.slider {
-	:global {
-		.slick-dots {
-			position: static;
-			margin-block-end: config.$body-font-size;
-			bottom: 0;
-			font-size: config.$body-font-size;
-			line-height: config.$body-font-size;
-
-			.slick-active {
-				button:before {
-					color: config.$text;
-				}
-			}
-
-			button:before {
-				color: config.$text;
-			}
-		}
-	}
-}
-
 .figure {
 	margin-bottom: 0;
 }

@@ -13,7 +13,7 @@
     "url": "https://github.com/vocksel/vocksel.com/issues"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
