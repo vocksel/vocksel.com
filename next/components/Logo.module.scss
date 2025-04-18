@@ -1,7 +1,7 @@
-@import "css/config.module.scss";
+@use "@/css/config.module.scss";
 
 .base {
-	height: $body-line-height;
+	height: config.$body-line-height;
 	display: inline-block;
 
 	&:hover {

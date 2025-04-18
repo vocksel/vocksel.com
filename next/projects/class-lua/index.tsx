@@ -1,5 +1,4 @@
 import { Project } from '@/app/types'
-import bulma from '@/css/bulma.module.scss'
 import Image from 'next/image'
 import React from 'react'
 import afterImage from './images/after.png'
@@ -18,14 +17,14 @@ const project: Project = {
 	description: <>
 		<p>While Lua has support for OOP, their implementation is not the easiest to work with. Unlike other languages, there is no <code>class</code> keyword. What Lua uses instead are <code>metatables</code>, which can be confusing to work with for even seasoned Lua programmers. Every class definition comes with a heap of overhead because of the work you have to do with metatables. To fix this, I made a simple function that abstracts away the metatable overhead, which makes class definitions easier to parse and reason about.</p>
 
-		<div className={bulma.columns}>
-			<div className={bulma.column}>
+		<div className={'columns'}>
+			<div className={'column'}>
 				<h2>Before (Metatables)</h2>
 
 				<Image src={beforeImage} alt='' />
 			</div>
 
-			<div className={bulma.column}>
+			<div className={'column'}>
 				<h2>After (<code>class()</code>)</h2>
 
 				<Image src={afterImage} alt='' />

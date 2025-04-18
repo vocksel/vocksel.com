@@ -1,7 +1,7 @@
 import { Project } from '@/app/projects/writing/types'
 import CaptionedImage from '@/components/CaptionedImage'
 import Link from 'next/link'
-import style from './ProjectTile.scss'
+import style from './ProjectTile.module.scss'
 
 type Props = {
 	className: string,

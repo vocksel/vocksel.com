@@ -1,4 +1,3 @@
-import bulma from '@/css/bulma.module.scss'
 import projects from 'projects'
 import React from 'react'
 import { Helmet } from 'react-helmet'
@@ -9,7 +8,7 @@ import HorizontalList from '../components/HorizontalList'
 import TweetIntent from '../components/TweetIntent'
 import formatDate from '../formatDate'
 import NoMatch from './NoMatch'
-import style from './ProjectDetail.scss'
+import style from './ProjectDetail.module.scss'
 
 const getProjectLink = (index, text) => {
 	const project = projects[index]
@@ -38,12 +37,12 @@ const ProjectDetail = () => {
 	}
 
 	return (
-		<div className={bulma.section}>
+		<div className={'section'}>
 			<Helmet>
 				<title>{project.title} &mdash; Marin Minnerly</title>
 			</Helmet>
 
-			<div className={bulma.container}>
+			<div className={'container'}>
 				<h1 className={style.title}>{project.title}</h1>
 				<p className={style.subtitle}>{project.subtitle}</p>
 
@@ -55,14 +54,14 @@ const ProjectDetail = () => {
 					{project.description}
 				</section>
 
-				<div className={bulma.columns}>
+				<div className={'columns'}>
 					{playButton &&
-						<div className={bulma.column}>
+						<div className={'column'}>
 							{playButton}
 						</div>
 					}
 
-					<div className={bulma.column}>
+					<div className={'column'}>
 						<Button>
 							<TweetIntent text={`${project.title}: ${project.subtitle}`}>
 								Share on Twitter

@@ -2,7 +2,7 @@ import Image, { StaticImageData } from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-import style from './ImageSlider.scss'
+import style from './ImageSlider.module.scss'
 
 type Props = {
 	images: {

@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './HorizontalList.scss'
+import style from './HorizontalList.module.scss'
 
 type Props = {
 	isCentered?: boolean,

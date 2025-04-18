@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Button.scss'
+import style from './Button.module.scss'
 
 type Props = {
 	children: React.ReactNode

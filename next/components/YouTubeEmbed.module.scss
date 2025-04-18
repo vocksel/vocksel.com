@@ -1,10 +1,10 @@
-@import "css/config.module.scss";
+@use "@/css/config.module.scss";
 
 .videoContainer {
 	position: relative;
 	width: 100%;
 	padding-top: 56.25%; // 100/56.25 = 560/315 = 1.778
-	margin-block-end: $body-line-height;
+	margin-block-end: config.$body-line-height;
 }
 
 .video {

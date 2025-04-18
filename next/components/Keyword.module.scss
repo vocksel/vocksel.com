@@ -1,5 +1,5 @@
-@import "css/config";
+@use "@/css/config.module.scss";
 
 .keyword {
-	color: $accent-color;
+	color: config.$accent-color;
 }

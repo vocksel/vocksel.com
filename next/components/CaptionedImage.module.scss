@@ -1,8 +1,8 @@
-@import "css/config.module.scss";
+@use "@/css/config.module.scss";
 
 .container {
 	position: relative;
-	margin-block-end: $body-line-height;
+	margin-block-end: config.$body-line-height;
 	height: 100%;
 }
 
@@ -17,7 +17,7 @@
 .gradient {
 	// Generated with https://cssgradient.io/
 	background: rgb(9, 24, 42);
-	background: linear-gradient(0deg, rgba($background, 0.9) 0%, rgba($background, 0.6) 50%, rgba(#fff, 0) 100%);
+	background: linear-gradient(0deg, rgba(config.$background, 0.9) 0%, rgba(config.$background, 0.6) 50%, rgba(#fff, 0) 100%);
 }
 
 .captionContainer {
@@ -33,7 +33,7 @@
 }
 
 .caption {
-	font-size: $body-font-size * 1.2;
+	font-size: config.$body-font-size * 1.2;
 	align-self: flex-end;
 	margin-block-end: 0;
 }

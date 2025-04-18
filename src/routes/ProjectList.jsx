@@ -1,9 +1,8 @@
-import bulma from '@/css/bulma.module.scss'
 import ProjectTile from 'components/ProjectTile'
 import projects from 'projects'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import style from './ProjectList.scss'
+import style from './ProjectList.module.scss'
 
 const ProjectList = () => {
 	const tiles = projects.map(project =>
@@ -16,8 +15,8 @@ const ProjectList = () => {
 				<title>Projects &mdash; Marin Minnerly</title>
 			</Helmet>
 
-			<div className={bulma.section}>
-				<div className={bulma.container}>
+			<div className={'section'}>
+				<div className={'container'}>
 					<h1>Projects</h1>
 
 					{tiles}

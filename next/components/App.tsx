@@ -1,4 +1,3 @@
-import bulma from '@/css/bulma.module.scss'
 import generic from '@/css/generic.module.scss'
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
@@ -27,16 +26,16 @@ export default function App() {
 
 			{isTabletOrMobile && <BurgerMenu />}
 
-			<header className={bulma.section}>
-				<div className={bulma.container}>
-					<div className={bulma.columns}>
-						<div className={bulma.column}>
+			<header className={'section'}>
+				<div className={'container'}>
+					<div className={'columns'}>
+						<div className={'column'}>
 							<Logo />
 						</div>
 
 
 						{!isTabletOrMobile &&
-							<div className={bulma.column}>
+							<div className={'column'}>
 								<LineMenu />
 							</div>
 						}
@@ -53,7 +52,7 @@ export default function App() {
 				<Route path='*'><NoMatch /></Route>
 			</Switch>
 
-			<footer className={`${bulma.section} ${generic.finePrint}`}>
+			<footer className={`section ${generic.finePrint}`}>
 				<HorizontalList isCentered>
 					<Copyright />
 

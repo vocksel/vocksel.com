@@ -1,8 +1,8 @@
-@import "../css/config.module.scss";
+@use "@/css/config.module.scss";
 
 .list li {
 	display: inline-block;
-	padding-right: $body-font-size;
+	padding-right: config.$body-font-size;
 
 	&:last-of-type {
 		padding-right: 0;

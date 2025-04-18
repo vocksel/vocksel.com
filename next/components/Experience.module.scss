@@ -1,4 +1,4 @@
-@import "css/config.module.scss";
+@use "@/css/config.module.scss";
 
 .date {
 	margin-block-end: 0;
@@ -7,9 +7,9 @@
 
 .job,
 .description {
-	margin-block-end: $body-font-size / 2;
+	margin-block-end: config.$body-font-size / 2;
 }
 
 .description {
-	color: $text-faded;
+	color: config.$text-faded;
 }

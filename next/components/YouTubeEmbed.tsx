@@ -1,4 +1,4 @@
-import style from './YouTubeEmbed.scss'
+import style from './YouTubeEmbed.module.scss'
 
 type Props = {
 	// The end part of the YouTube video URL that acts as its ID. For example,

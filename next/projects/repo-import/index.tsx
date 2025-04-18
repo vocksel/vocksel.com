@@ -1,6 +1,5 @@
 import { Project } from '@/app/types'
 import thumbnail from './images/thumbnail.jpg'
-import bulma from '@/css/bulma.module.scss'
 
 const project: Project = {
 	title: 'Repo Import',
@@ -18,13 +17,13 @@ const project: Project = {
 
 		<p>I've worked extensively on another project called <a href="http://vocksel.com/projects/elixir">Elixir</a>, which allows you to code your games outside of Studio. It compiles Lua source code into a Roblox-compatible XML file, also known as a 'Model' file, that you can import into your game. This lets you write all of your code outside of Studio, using any third-party software you like.</p>
 
-		<div className={bulma.columns}>
-			<div className={bulma.column}>
+		<div className={'columns'}>
+			<div className={'column'}>
 				<h2>Files</h2>
 				<img src={require('./images/no-repo-import.png').default} />
 			</div>
 
-			<div className={bulma.column}>
+			<div className={'column'}>
 				<h2>Roblox Studio</h2>
 				<img src={require('./images/no-repo-import-in-game.png').default} />
 			</div>
@@ -38,13 +37,13 @@ const project: Project = {
 
 		<p>With Repo Import, you create directories to match Studio's hierarchy. When compiled and imported, Repo Import automatically moves your files to the correct locations in your game. This is a major help, as having to drag-and-drop sections of your codebase each time you make a change is incredibly tedious.</p>
 
-		<div className={bulma.columns}>
-			<div className={bulma.column}>
+		<div className={'columns'}>
+			<div className={'column'}>
 				<h2>Files</h2>
 				<img src={require('./images/with-repo-import.png').default} />
 			</div>
 
-			<div className={bulma.column}>
+			<div className={'column'}>
 				<h2>Roblox Studio</h2>
 				<img src={require('./images/with-repo-import-in-game.png').default} />
 			</div>

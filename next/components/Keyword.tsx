@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Keyword.scss'
+import style from './Keyword.module.scss'
 
 type Props = {
 	children: React.ReactNode

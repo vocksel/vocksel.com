@@ -1,18 +1,17 @@
-import bulma from '@/css/bulma.module.scss'
 import logo from 'logo.png'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Keyword from '../components/Keyword'
-import style from './Brand.scss'
+import style from './Brand.module.scss'
 
 export default function About() {
 	return (
-		<section className={bulma.section}>
+		<section className={'section'}>
 			<Helmet>
 				<title>Brand &mdash; Marin Minnerly</title>
 			</Helmet>
 
-			<div className={bulma.container}>
+			<div className={'container'}>
 				<h1>Brand</h1>
 
 				<p>marin vocksel brand guidelines. if you intend to use any of my branding to refer to my work make sure to follow the rules defined in this document.</p>
@@ -27,50 +26,50 @@ export default function About() {
 
 				<h2>Logo</h2>
 
-				<div className={bulma.columns}>
-					<div className={bulma.column}>
+				<div className={'columns'}>
+					<div className={'column'}>
 						<figure>
 							<img src={logo} width="64px" />
 							<figcaption>Glurrr</figcaption>
 						</figure>
 					</div>
 
-					<div className={bulma.column}>
+					<div className={'column'}>
 						<p>My lil mascot friend. Had this little dude for as long as I can remember. Literally just a Terraria slime with some antennae. Still hoping to not get sued.</p>
 					</div>
 				</div>
 
 				<h2>Misuse</h2>
 
-				<div className={bulma.columns}>
-					<figure className={`${bulma.column} ${style.tile}`}>
+				<div className={'columns'}>
+					<figure className={`column ${style.tile}`}>
 						<p>Marin</p>
 						<figcaption>I'm not a capitalist, so do not use capital letters for my name</figcaption>
 					</figure>
 
-					<figure className={`${bulma.column} ${style.tile}`}>
+					<figure className={`column ${style.tile}`}>
 						<p>Marin</p>
 						<figcaption>nope</figcaption>
 					</figure>
 
-					<figure className={`${bulma.column} ${style.tile}`}>
+					<figure className={`column ${style.tile}`}>
 						<p>Dav</p>
 						<figcaption>we've been over this</figcaption>
 					</figure>
 				</div>
 
-				<div className={bulma.columns}>
-					<figure className={`${bulma.column} ${style.tile}`}>
+				<div className={'columns'}>
+					<figure className={`column ${style.tile}`}>
 						<p><img src={logo} className={style.rotato} /></p>
 						<figcaption>do not spin the boy. he does not like that</figcaption>
 					</figure>
 
-					<figure className={`${bulma.column} ${style.tile}`}>
+					<figure className={`column ${style.tile}`}>
 						<p><img src={logo} className={style.skewed} /></p>
 						<figcaption>no stretching him either</figcaption>
 					</figure>
 
-					<figure className={`${bulma.column} ${style.tile}`}>
+					<figure className={`column ${style.tile}`}>
 						<p><img src={logo} className={style.fucked} /></p>
 						<figcaption>please just leave him alone</figcaption>
 					</figure>

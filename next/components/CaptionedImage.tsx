@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import style from './CaptionedImage.scss'
+import style from './CaptionedImage.module.scss'
 
 type Props = {
 	caption: string,

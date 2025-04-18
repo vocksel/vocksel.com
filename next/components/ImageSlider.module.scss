@@ -1,22 +1,22 @@
-@import "css/config.module.scss";
+@use "@/css/config.module.scss";
 
 .slider {
 	:global {
 		.slick-dots {
 			position: static;
-			margin-block-end: $body-font-size;
+			margin-block-end: config.$body-font-size;
 			bottom: 0;
-			font-size: $body-font-size;
-			line-height: $body-font-size;
+			font-size: config.$body-font-size;
+			line-height: config.$body-font-size;
 
 			.slick-active {
 				button:before {
-					color: $text;
+					color: config.$text;
 				}
 			}
 
 			button:before {
-				color: $text;
+				color: config.$text;
 			}
 		}
 	}

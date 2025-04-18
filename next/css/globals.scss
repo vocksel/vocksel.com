@@ -1,0 +1,83 @@
+// Bulma interface. Import this instead of the one under node_modules.
+
+// @charset "utf-8";
+
+// Needs to be imported before Bulma so that our variables override theirs.
+@use "./config.module.scss";
+
+@use "~bulma/sass/base";
+@use "~bulma/sass/themes";
+
+@use "~bulma/sass/utilities/initial-variables" as vars;
+@use "~bulma/sass/utilities/functions";
+@use "~bulma/sass/utilities/derived-variables";
+@use "~bulma/sass/utilities/mixins";
+
+@use "~bulma/sass/layout/container";
+@use "~bulma/sass/grid/columns";
+@use "~bulma/sass/layout/section";
+
+html {
+	margin-bottom: config.$body-font-size * 4;
+
+	@media (max-width: vars.$tablet) {
+		font-size: 14px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-block-end: config.$body-font-size;
+}
+
+h1 {
+	font-size: config.$body-font-size * 1.6;
+}
+
+h2 {
+	font-size: config.$body-font-size * 1.4;
+}
+
+h3 {
+	font-size: config.$body-font-size * 1.2;
+}
+
+p,
+img,
+figure,
+ul {
+	margin-block-end: config.$body-line-height;
+}
+
+a {
+	&:hover {
+		border-bottom: 2px solid config.$link-hover;
+	}
+}
+
+code {
+	background: none;
+	font-size: 1em;
+	padding: 0;
+	color: config.$accent-color;
+}
+
+figure {
+	text-align: center;
+
+	img {
+		margin-block-end: 0;
+	}
+}
+
+figcaption {
+	font-style: italic;
+	font-size: config.$body-font-size * 0.7;
+	margin-block-start: config.$body-font-size;
+	line-height: config.$body-font-size;
+	color: config.$text-faded;
+}

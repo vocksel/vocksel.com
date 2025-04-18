@@ -1,4 +1,4 @@
-@import "../css/config.module.scss";
+@use "@/css/config.module.scss";
 
 // Dotted border effect inspired by:
 // https://codepen.io/markmead/pen/MqmOVB
@@ -6,7 +6,7 @@
 // Holds the border and tile contents
 .container {
 	position: relative;
-	height: $body-font-size * 14;
+	height: config.$body-font-size * 14;
 }
 
 .image {
@@ -14,17 +14,17 @@
 }
 
 .container:hover .hoverUp {
-	outline: 4px solid $link-hover;
-	transform: translate(0, -($body-font-size / 2));
+	outline: 4px solid config.$link-hover;
+	transform: translate(0, -(config.$body-font-size / 2));
 }
 
 .container:hover .hoverRight {
-	outline: 4px solid $link-hover;
-	transform: translate($body-font-size / 2, 0);
+	outline: 4px solid config.$link-hover;
+	transform: translate(config.$body-font-size / 2, 0);
 }
 
 .link {
-	color: $text;
+	color: config.$text;
 }
 
 .border {
@@ -33,6 +33,6 @@
 	height: 100%;
 	left: 0;
 	top: 0;
-	border: 2px dashed $text;
+	border: 2px dashed config.$text;
 	z-index: -1;
 }

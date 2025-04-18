@@ -1,5 +1,4 @@
 import { Project } from '@/app/types'
-import bulma from '@/css/bulma.module.scss'
 import Image from 'next/image'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import thumbnail from './outpost/013.jpg'
@@ -28,12 +27,12 @@ const project: Project = {
 
 		<p>Since its release, Wild Revolvers has gained quite a bit of notoriety, and is still occasionally tweeted by Roblox to their 1.3 million followers.</p>
 
-		<div className={bulma.columns}>
-			<div className={`${bulma.column} ${bulma['is-half']}`}>
+		<div className={'columns'}>
+			<div className={'column is-half'}>
 				<TwitterTweetEmbed tweetId='1155145823824560135' options={{ theme: 'dark' }} />
 			</div>
 
-			<div className={`${bulma.column} ${bulma['is-half']}`}>
+			<div className={'column is-half'}>
 				<TwitterTweetEmbed tweetId='1020039549215420416' options={{ theme: 'dark' }} />
 			</div>
 		</div>

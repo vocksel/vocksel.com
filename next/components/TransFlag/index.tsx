@@ -2,7 +2,7 @@
 // aligned properly in the footer.
 
 import Image from 'next/image'
-import style from './style.scss'
+import style from './style.module.scss'
 import flag from './transflag.png'
 
 export default function TransFlag() {
