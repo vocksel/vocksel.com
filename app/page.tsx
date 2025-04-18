@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { education, jobs } from "./experience";
 
 import getAge from "@/app/getAge";
