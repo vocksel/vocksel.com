@@ -1,16 +1,14 @@
-import formatDate from "@/app/formatDate";
-import { Job } from "@/app/types";
+import { type Experience } from "@/app/types";
 import generic from "@/styles/generic.module.scss";
 import style from "./Experience.module.scss";
 
 type Props = {
-	exp: Job;
+	exp: Experience;
 };
 
 export default function Experience({ exp }: Props) {
-	const startDate = formatDate(exp.startDate);
-	const endDate = exp.endDate ? formatDate(exp.endDate) : "Present";
-	const connector = exp.wasInHouse ? "at" : "for";
+	const startDate = exp.startDate.getFullYear();
+	const endDate = exp.endDate ? exp.endDate.getFullYear() : "Present";
 
 	return (
 		<div className={`${style.container} columns`}>
@@ -18,13 +16,12 @@ export default function Experience({ exp }: Props) {
 				{startDate}&ndash;{endDate}
 			</p>
 
-			<div className={"column is-two-thirds"}>
-				<p className={style.job}>
-					{exp.job} {connector}{" "}
-					<a href={exp.company.url}>{exp.company.name}</a>.
-				</p>
+			<div className={"column is-three-quarters"}>
+				<p className={style.title}>{exp.title}</p>
 
-				<p className={`${style.description} ${generic.tight}`}>
+				<p
+					className={`${style.description} ${generic.finePrint} ${generic.tight}`}
+				>
 					{exp.description}
 				</p>
 			</div>

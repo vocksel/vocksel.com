@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { jobs } from "./experience";
+import { education, jobs } from "./experience";
 
 import getAge from "@/app/getAge";
 import urls from "@/app/urls";
@@ -14,6 +14,49 @@ import me from "./me.jpg";
 
 export default function Home() {
 	const age = useMemo(getAge, []);
+
+	const workHistory = useMemo(() => {
+		return jobs.map((job) => {
+			const connector = job.wasInHouse ? "at" : "for";
+
+			return (
+				<Experience
+					key={`${job.startDate.getFullYear()}-${job.company}`}
+					exp={{
+						title: (
+							<span>
+								{job.job} {connector}{" "}
+								<a href={job.company.url}>{job.company.name}</a>
+							</span>
+						),
+						description: job.description,
+						startDate: job.startDate,
+						endDate: job.endDate,
+					}}
+				/>
+			);
+		});
+	}, []);
+
+	const educationHistory = useMemo(() => {
+		return education.map((experience) => (
+			<Experience
+				key={`${experience.dates[0]}-${experience.institution}`}
+				exp={{
+					title: experience.award,
+					description: (
+						<span>
+							<p>{experience.institution}</p>
+							<p>{experience.location}</p>
+							<p>{experience.details}</p>
+						</span>
+					),
+					startDate: new Date(experience.dates[0], 1),
+					endDate: new Date(experience.dates[1], 1),
+				}}
+			/>
+		));
+	}, []);
 
 	const freelanceProjects = useMemo(() => {
 		const freelance = projects.filter((project) => project.type === "Game");
@@ -88,10 +131,14 @@ export default function Home() {
 			<section className={"section"}>
 				<div className={"container"}>
 					<h1>Experience</h1>
+					{workHistory}
+				</div>
+			</section>
 
-					{jobs.map((job, index) => (
-						<Experience key={index} exp={job} />
-					))}
+			<section className={"section"}>
+				<div className={"container"}>
+					<h1>Education</h1>
+					{educationHistory}
 				</div>
 			</section>
 

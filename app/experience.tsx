@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Company, Job, Skill } from "./types";
+import { Company, Education, Job, Skill } from "./types";
 
 const urls = {
 	dutchess: "https://sunydutchess.edu/",
@@ -144,6 +144,22 @@ export const jobs: Job[] = [
 		// https://www.roblox.com/games/417640647/Trade-Shop
 		startDate: new Date(2016, 4),
 		endDate: new Date(2018, 5),
+	},
+];
+
+export const education: Education[] = [
+	{
+		award: "AS in Computer Science",
+		institution: "Dutchess Community College",
+		location: "Poughkeepsie, NY",
+		details: "GPA 4.0",
+		dates: [2019, 2021],
+	},
+	{
+		award: "High School Equivalency Diploma",
+		institution: "Adult Learning Institute",
+		location: "Poughkeepsie, NY",
+		dates: [2018, 2018],
 	},
 ];
 

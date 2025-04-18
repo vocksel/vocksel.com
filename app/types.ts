@@ -15,6 +15,21 @@ export type Job = {
 	endDate?: Date;
 };
 
+export type Education = {
+	award: string;
+	institution: string;
+	location: string;
+	details?: string;
+	dates: number[];
+};
+
+export type Experience = {
+	title: React.ReactNode;
+	description?: React.ReactNode;
+	startDate: Date;
+	endDate?: Date;
+};
+
 export type SkillType = "Hard" | "Soft";
 
 export type Skill = {
