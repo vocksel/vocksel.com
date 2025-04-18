@@ -1,7 +1,7 @@
-import logo from 'logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import style from './Logo.module.scss'
+import logo from './logo.png'
+import style from './style.module.scss'
 
 export default function Logo() {
 	return (
