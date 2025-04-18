@@ -33,7 +33,7 @@ export default async function Page({ params }: Props) {
 
 	let playButton
 	if (project.type === 'Game' && project.url) {
-		playButton = <Button theme='play'>
+		playButton = <Button>
 			<a href={project.url}>Play on Roblox <i className='fas fa-play'></i></a>
 		</Button>
 	}
