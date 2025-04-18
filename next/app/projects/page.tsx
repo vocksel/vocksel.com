@@ -1,11 +1,19 @@
+import ProjectTile from '@/components/ProjectTile'
 import projects from '@/projects'
+import style from './page.module.scss'
 
 export default function Page() {
-	return <div>
-		<h1>My projects</h1>
+	const tiles = projects.map(project =>
+		<ProjectTile key={project.slug} slide='x' className={style.tile} project={project} />
+	)
 
-		{projects.map((project) => {
-			return <p key={project.slug}>{project.title} &ndash; {project.releaseDate.getFullYear()}</p>
-		})}
-	</div>
+	return (
+		<div className={'section'}>
+			<div className={'container'}>
+				<h1>Projects</h1>
+
+				{tiles}
+			</div>
+		</div>
+	)
 }

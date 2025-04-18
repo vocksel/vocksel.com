@@ -1,12 +1,12 @@
 @use "@/css/config.module.scss";
 
 .title {
-	margin-bottom: $body-font-size / 4;
+	margin-bottom: calc(config.$body-font-size / 4);
 }
 
 .subtitle {
 	font-style: italic;
-	color: $text-faded;
+	color: config.$text-faded;
 }
 
 .projectLink {

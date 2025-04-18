@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 const BASE_URL = 'https://twitter.com/intent/tweet'

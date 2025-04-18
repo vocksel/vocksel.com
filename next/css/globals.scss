@@ -3,19 +3,31 @@
 // @charset "utf-8";
 
 // Needs to be imported before Bulma so that our variables override theirs.
+
+
 @use "./config.module.scss";
 
-@use "~bulma/sass/base";
-@use "~bulma/sass/themes";
-
+@use "bulma/sass/utilities" with ($family-primary: config.$family-sans-serif,
+	$primary: config.$accent-color,
+	$link: config.$link,
+	$desktop: config.$desktop,
+	$widescreen: config.$widescreen,
+	$fullhd: config.$fullhd,
+);
 @use "~bulma/sass/utilities/initial-variables" as vars;
-@use "~bulma/sass/utilities/functions";
-@use "~bulma/sass/utilities/derived-variables";
-@use "~bulma/sass/utilities/mixins";
+
+@use "~bulma/sass/base" with ($body-font-size: config.$body-font-size,
+	$body-background-color: config.$body-background-color,
+	$body-color: config.$text,
+	$body-line-height: config.$body-line-height,
+);
+
 
 @use "~bulma/sass/layout/container";
 @use "~bulma/sass/grid/columns";
 @use "~bulma/sass/layout/section";
+
+@use "~bulma/sass/themes";
 
 html {
 	margin-bottom: config.$body-font-size * 4;

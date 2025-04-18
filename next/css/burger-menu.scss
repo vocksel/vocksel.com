@@ -1,0 +1,56 @@
+@use "@/css/config.module.scss";
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+	position: fixed;
+	width: 36px;
+	height: 30px;
+	right: 36px; // right or left, depending on which side the menu opens from
+	top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+	background: config.$text;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+	height: config.$body-line-height;
+	width: config.$body-line-height;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+	background: config.$text;
+}
+
+/* General sidebar styles */
+.bm-menu {
+	background: config.$background;
+	padding: config.$body-font-size;
+	// padding: 2.5em 1.5em 0;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+	color: #b8b7ad;
+}
+
+/* Individual item */
+.bm-item {
+	display: inline-block;
+
+	/* Our sidebar item styling */
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+
+.bm-item:hover {
+	border-bottom: none;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+	background: rgba(0, 0, 0, 0.3);
+}

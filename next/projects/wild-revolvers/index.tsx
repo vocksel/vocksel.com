@@ -1,3 +1,5 @@
+'use client'
+
 import { Project } from '@/app/types'
 import Image from 'next/image'
 import { TwitterTweetEmbed } from 'react-twitter-embed'

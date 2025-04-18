@@ -1,4 +1,5 @@
-import { Project } from '@/app/projects/writing/types'
+
+import { Project } from '@/app/types'
 import CaptionedImage from '@/components/CaptionedImage'
 import Link from 'next/link'
 import style from './ProjectTile.module.scss'
