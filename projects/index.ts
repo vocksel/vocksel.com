@@ -1,10 +1,10 @@
-import { Project } from '@/app/types'
-import aquaman from './aquaman'
-import echoRidge from './echo-ridge'
-import fireflies from './fireflies'
-import mirageIsle from './mirage-isle'
-import rhinebeck from './rhinebeck'
-import wildRevolvers from './wild-revolvers'
+import { Project } from "@/app/types";
+import aquaman from "./aquaman";
+import echoRidge from "./echo-ridge";
+import fireflies from "./fireflies";
+import mirageIsle from "./mirage-isle";
+import rhinebeck from "./rhinebeck";
+import wildRevolvers from "./wild-revolvers";
 
 const writing: Project[] = [
 	aquaman,
@@ -12,7 +12,7 @@ const writing: Project[] = [
 	rhinebeck,
 	mirageIsle,
 	echoRidge,
-	fireflies
-]
+	fireflies,
+];
 
-export default writing
+export default writing;

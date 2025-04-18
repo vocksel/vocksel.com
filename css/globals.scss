@@ -12,10 +12,8 @@
 	$body-font-size: config.$body-font-size,
 	$body-background-color: config.$body-background-color,
 	$body-color: config.$text,
-	$body-line-height: config.$body-line-height,
+	$body-line-height: config.$body-line-height
 );
-
-
 
 @use "~bulma/sass/layout/container";
 @use "~bulma/sass/grid/columns";

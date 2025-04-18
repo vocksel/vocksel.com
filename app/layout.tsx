@@ -1,27 +1,28 @@
-import Copyright from '@/components/Copyright'
-import HorizontalList from '@/components/HorizontalList'
-import Logo from '@/components/Logo'
+import Copyright from "@/components/Copyright";
+import HorizontalList from "@/components/HorizontalList";
+import Logo from "@/components/Logo";
 // import BurgerMenu from '@/components/nav/BurgerMenu'
-import LineMenu from '@/components/nav/LineMenu'
-import TransFlag from '@/components/TransFlag'
-import generic from '@/css/generic.module.scss'
-import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
-import React from 'react'
+import LineMenu from "@/components/nav/LineMenu";
+import TransFlag from "@/components/TransFlag";
+import generic from "@/css/generic.module.scss";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import React from "react";
 // import { useMediaQuery } from 'react-responsive'
-import urls from './urls'
+import urls from "./urls";
 
-import '@/css/globals.scss'
+import "@/css/globals.scss";
 
 const poppins = Poppins({
-	weight: '400',
-	subsets: ['latin']
-})
+	weight: "400",
+	subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-	title: 'Marin Minnerly',
-	description: 'The online resume of Marin Minnerly, showcasing various projects and work experience.',
-}
+	title: "Marin Minnerly",
+	description:
+		"The online resume of Marin Minnerly, showcasing various projects and work experience.",
+};
 
 export default function RootLayout({
 	children,
@@ -35,16 +36,15 @@ export default function RootLayout({
 			<body className={poppins.className}>
 				{/* {isTabletOrMobile && <BurgerMenu />} */}
 
-				<header className={'section'}>
-					<div className={'container'}>
-						<div className={'columns'}>
-							<div className={'column'}>
+				<header className={"section"}>
+					<div className={"container"}>
+						<div className={"columns"}>
+							<div className={"column"}>
 								<Logo />
 							</div>
 
-
 							{/* {!isTabletOrMobile && */}
-							<div className={'column'}>
+							<div className={"column"}>
 								<LineMenu />
 							</div>
 							{/* } */}
@@ -65,5 +65,5 @@ export default function RootLayout({
 				</footer>
 			</body>
 		</html>
-	)
+	);
 }
