@@ -1,3 +1,5 @@
+'use client'
+
 import Image, { StaticImageData } from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
@@ -22,14 +24,14 @@ const settings = {
 }
 
 export default function ImageSlider({ images }: Props) {
-	// return (
-	// 	<Slider className={style.slider} {...settings}>
-	// 		{images.map((image, index) => (
-	// 			<figure key={index} className={style.figure}>
-	// 				<Image src={image.src} alt={image.alt ? image.alt : image.caption} />
-	// 				<figcaption>{image.caption}</figcaption>
-	// 			</figure>
-	// 		))}
-	// 	</Slider>
-	// )
+	return (
+		<Slider className={style.slider} {...settings}>
+			{images.map((image, index) => (
+				<figure key={index} className={style.figure}>
+					<Image src={image.src} alt={image.alt ? image.alt : image.caption} />
+					<figcaption>{image.caption}</figcaption>
+				</figure>
+			))}
+		</Slider>
+	)
 }
