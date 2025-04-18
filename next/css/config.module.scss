@@ -1,3 +1,5 @@
+@use "sass:color" as color;
+
 // Brand colors
 $text: #DAD2D5;
 $text-faded: #94878C;
@@ -17,7 +19,7 @@ $primary: $accent-color;
 $body-background-color: $background;
 $strong-color: $accent-color;
 $link: $blueb;
-$link-hover: scale-color($blueb, $saturation: -30%);
+$link-hover: color.scale($blueb, $saturation: -30%);
 
 // Forces the max width on these display types
 $desktop: 960px;

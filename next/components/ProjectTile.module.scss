@@ -15,12 +15,12 @@
 
 .container:hover .hoverUp {
 	outline: 4px solid config.$link-hover;
-	transform: translate(0, -(config.$body-font-size / 2));
+	transform: translate(0, -(calc(config.$body-font-size / 2)));
 }
 
 .container:hover .hoverRight {
 	outline: 4px solid config.$link-hover;
-	transform: translate(config.$body-font-size / 2, 0);
+	transform: translate(calc(config.$body-font-size / 2), 0);
 }
 
 .link {

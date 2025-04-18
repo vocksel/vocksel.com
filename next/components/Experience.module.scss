@@ -7,7 +7,7 @@
 
 .job,
 .description {
-	margin-block-end: config.$body-font-size / 2;
+	margin-block-end: calc(config.$body-font-size / 2);
 }
 
 .description {
