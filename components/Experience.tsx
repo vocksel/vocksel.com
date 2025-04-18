@@ -17,13 +17,13 @@ export default function Experience({ exp }: Props) {
 			</p>
 
 			<div className={"column is-three-quarters"}>
-				<p className={style.title}>{exp.title}</p>
+				<div className={style.title}>{exp.title}</div>
 
-				<p
+				<div
 					className={`${style.description} ${generic.finePrint} ${generic.tight}`}
 				>
 					{exp.description}
-				</p>
+				</div>
 			</div>
 		</div>
 	);

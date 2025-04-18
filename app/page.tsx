@@ -22,7 +22,7 @@ export default function Home() {
 
 			return (
 				<Experience
-					key={`${job.startDate.getFullYear()}-${job.company}`}
+					key={`${job.startDate.getFullYear()}-${job.job}`}
 					exp={{
 						title: (
 							<span>
