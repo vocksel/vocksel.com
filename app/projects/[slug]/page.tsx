@@ -1,3 +1,5 @@
+"use client";
+
 import formatDate from "@/app/formatDate";
 import Button from "@/components/Button";
 import HorizontalList from "@/components/HorizontalList";
@@ -5,6 +7,7 @@ import TweetIntent from "@/components/TweetIntent";
 import projects from "@/projects";
 import Image from "next/image";
 import Link from "next/link";
+import { use } from "react";
 import style from "./page.module.scss";
 
 const getProjectLink = (index: number, text: string) => {
@@ -20,8 +23,8 @@ type Props = {
 	params: Promise<{ slug: string }>;
 };
 
-export default async function Page({ params }: Props) {
-	const { slug } = await params;
+export default function Page({ params }: Props) {
+	const { slug } = use(params);
 	const project = projects.find((project) => slug == project.slug);
 
 	if (!project) {
