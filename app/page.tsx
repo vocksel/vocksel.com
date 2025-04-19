@@ -17,48 +17,18 @@ export default function Home() {
 
 	const workHistory = useMemo(() => {
 		return jobs.map((job) => {
-			const connector = job.wasInHouse ? "at" : "for";
-
-			return (
-				<Experience
-					key={`${job.startDate.getFullYear()}-${job.job}`}
-					exp={{
-						title: (
-							<span>
-								{job.job} {connector}{" "}
-								<a href={job.company.url}>{job.company.name}</a>
-							</span>
-						),
-						description: (
-							<div>
-								<p>{job.description}</p>
-								{job.projects && (
-									<ul>
-										{job.projects.map((project) => (
-											<li key={project.name}>
-												<a href={project.url}>
-													{project.name}
-												</a>
-											</li>
-										))}
-									</ul>
-								)}
-							</div>
-						),
-						startDate: job.startDate,
-						endDate: job.endDate,
-					}}
-				/>
-			);
+			return <Experience key={job.title?.toString()} exp={job} />;
 		});
 	}, []);
 
 	const educationHistory = useMemo(() => {
 		return education.map((experience) => (
 			<Experience
-				key={`${experience.dates[0]}-${experience.institution}`}
+				key={experience.institution}
 				exp={{
 					title: experience.award,
+					startDate: experience.startDate,
+					endDate: experience.endDate,
 					description: (
 						<span>
 							<p>{experience.institution}</p>
@@ -66,8 +36,6 @@ export default function Home() {
 							<p>{experience.details}</p>
 						</span>
 					),
-					startDate: new Date(experience.dates[0], 1),
-					endDate: new Date(experience.dates[1], 1),
 				}}
 			/>
 		));

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Company, Education, Job, Skill } from "./types";
+import { Education, Experience, Skill } from "./types";
 
 const urls = {
 	dutchess: "https://sunydutchess.edu/",
@@ -9,27 +9,16 @@ const urls = {
 	bitsquid: "https://twitter.com/BitsquidGames",
 };
 
-const novaly: Company = {
-	name: "Novaly Studios",
-	url: urls.novaly,
-};
-const roblox: Company = {
-	name: "Roblox Corporation",
-	url: urls.roblox,
-};
-// const bitsquid: Company = {
-// 	name: 'Bitsquid Games',
-// 	url: urls.bitsquid
-// }
-
-export const jobs: Job[] = [
+export const jobs: Experience[] = [
 	{
-		job: "Senior Software Engineer",
-		company: roblox,
+		title: (
+			<span>
+				Roblox Corporation, Music Team &mdash; Senior Software Engineer
+			</span>
+		),
 		description:
 			"Employed full-time working on new and exciting projects with an incredible team to bring the world together through play.",
-		wasInHouse: true,
-		startDate: new Date(2025, 1),
+		startDate: new Date(2021, 5),
 		projects: [
 			{
 				name: "Now Playing",
@@ -37,18 +26,6 @@ export const jobs: Job[] = [
 				startDate: new Date(2024, 6, 1),
 				endDate: new Date(2025, 3, 13),
 			},
-		],
-	},
-
-	{
-		job: "Software Engineer",
-		company: roblox,
-		description:
-			"Employed full-time working on new and exciting projects with an incredible team to bring the world together through play.",
-		wasInHouse: true,
-		startDate: new Date(2021, 5),
-		endDate: new Date(2025, 1),
-		projects: [
 			{
 				name: "Toolbox Audio UX",
 				url: "https://devforum.roblox.com/t/new-audio-discovery-features/2618235",
@@ -75,15 +52,31 @@ export const jobs: Job[] = [
 			},
 		],
 	},
-
 	{
-		job: "Software Engineering Intern",
-		company: roblox,
-		description:
-			"Worked remotely amindst the COVID-19 pandemic for 10 weeks to rebuild Roblox's in-game Bubble Chat from the ground up using a React-like framework.",
-		wasInHouse: true,
-		startDate: new Date(2020, 5),
-		endDate: new Date(2020, 7),
+		title: (
+			<span>
+				Roblox Corporation, Apps Team &mdash; Software Engineering
+				Intern
+			</span>
+		),
+		customSubtitle: <span>Summer 2019 &amp; Summer 2020</span>,
+		startDate: new Date(2019, 5),
+		endDate: new Date(2020, 10),
+		milestones: [
+			{
+				description:
+					"Worked remotely amindst the COVID-19 pandemic for 10 weeks to rebuild Roblox's in-game Bubble Chat from the ground up using a React-like framework",
+				startDate: new Date(2020, 5),
+				endDate: new Date(2020, 7),
+			},
+			{
+				description:
+					"Worked in house at Roblox HQ on the apps layer. Removed bloat, established best practices, and collaborated with senior engineers to improve their existing workflows.",
+				startDate: new Date(2019, 5),
+				endDate: new Date(2019, 7),
+				projects: [],
+			},
+		],
 		projects: [
 			{
 				name: "Bubble Chat",
@@ -103,53 +96,42 @@ export const jobs: Job[] = [
 	// },
 
 	{
-		job: "Level Designer",
-		company: novaly,
-		description: (
-			<span>
-				Continued where we left off after being in the Accelerator
-				program.I worked with the team to create the world of
-				<a href="https://www.roblox.com/games/5000625666/NITRO-DELOREAN-Car-Tycoon-Demo">
-					Car Tycoon!
-				</a>
-			</span>
-		),
-		wasInHouse: false,
+		title: <span>Novaly Studios &mdash; Programmer, Level Designer</span>,
 		startDate: new Date(2017, 5),
 		endDate: new Date(2020, 1),
+		milestones: [
+			{
+				description: (
+					<span>
+						Continued where we left off after being in the
+						Accelerator program.I worked with the team to create the
+						world of{" "}
+						<a href="https://www.roblox.com/games/5000625666/NITRO-DELOREAN-Car-Tycoon-Demo">
+							Car Tycoon!
+						</a>
+					</span>
+				),
+				startDate: new Date(2017, 5),
+				endDate: new Date(2020, 1),
+			},
+			{
+				description: (
+					<span>
+						Squashed bugs and created the Robbery feature for{" "}
+						<a href="https://www.roblox.com/games/2563455047/Bandit-Simulator">
+							Bandit Simulator
+						</a>
+						, introducing a brand new way to play the game.
+					</span>
+				),
+				startDate: new Date(2018, 10),
+				endDate: new Date(2019, 0),
+			},
+		],
 	},
 
 	{
-		job: "Software Engineering Intern",
-		company: roblox,
-		description:
-			"10 weeks of working in house at Roblox HQ on the application layer of the platform. Removed bloat, helped set best practices, and worked with full-time employees to make their existing workflows better.",
-		wasInHouse: true,
-		startDate: new Date(2019, 5),
-		endDate: new Date(2019, 7),
-	},
-
-	{
-		job: "Programmer",
-		company: novaly,
-		description: (
-			<span>
-				Squashed bugs and created the Robbery feature for{" "}
-				<a href="https://www.roblox.com/games/2563455047/Bandit-Simulator">
-					{" "}
-					Bandit Simulator{" "}
-				</a>
-				, introducing a brand new way to play the game.
-			</span>
-		),
-		wasInHouse: false,
-		startDate: new Date(2018, 10),
-		endDate: new Date(2019, 0),
-	},
-
-	{
-		job: "Level Design contractor",
-		company: roblox,
+		title: <span>Roblox Corporation &mdash; Level Design contractor</span>,
 		description: (
 			<span>
 				Worked for Roblox to create{" "}
@@ -160,27 +142,22 @@ export const jobs: Job[] = [
 				for a Warner Bros. sponsorship.
 			</span>
 		),
-		wasInHouse: false,
 		startDate: new Date(2018, 6),
 		endDate: new Date(2018, 10),
 	},
 
 	{
-		job: "Accelerator Intern",
-		company: roblox,
+		title: <span>Roblox Corporation &mdash; Accelerator Program</span>,
 		description:
 			"The Accelerator program gave my team and I the opportunity to work in-house at Roblox HQ for 3 months to create a brand new game from the ground up.",
-		wasInHouse: true,
 		startDate: new Date(2018, 5),
 		endDate: new Date(2018, 7),
 	},
 
 	{
-		job: "Various freelance jobs",
-		company: roblox,
+		title: "Various freelance jobs",
 		description:
 			"A block of several years that I spent working with different studios on the Roblox platform as I built up my skillset.",
-		wasInHouse: false,
 		// This is around the time I made the Trade Shop for Anne, which was my
 		// first time getting my feet wet with a real project.
 		// https://www.roblox.com/games/417640647/Trade-Shop
@@ -195,13 +172,15 @@ export const education: Education[] = [
 		institution: "Dutchess Community College",
 		location: "Poughkeepsie, NY",
 		details: "GPA 4.0",
-		dates: [2019, 2021],
+		startDate: new Date(2019, 1),
+		endDate: new Date(2021, 1),
 	},
 	{
 		award: "High School Equivalency Diploma",
 		institution: "Adult Learning Institute",
 		location: "Poughkeepsie, NY",
-		dates: [2018, 2018],
+		startDate: new Date(2018, 1),
+		endDate: new Date(2018, 1),
 	},
 ];
 

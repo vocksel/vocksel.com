@@ -1,11 +1,6 @@
 import { StaticImageData } from "next/image";
 import React from "react";
 
-export type Company = {
-	name: string;
-	url: string;
-};
-
 // Eventually I want to collapse this and Project together. For now I just need
 // a way to jot down all of the projects I had at work
 export type WorkProject = {
@@ -15,29 +10,30 @@ export type WorkProject = {
 	endDate: Date;
 };
 
-export type Job = {
-	job: string;
-	company: Company;
-	description: React.ReactNode;
-	wasInHouse: boolean;
-	startDate: Date;
-	endDate?: Date;
-	projects?: WorkProject[];
-};
-
 export type Education = {
 	award: string;
 	institution: string;
 	location: string;
 	details?: string;
-	dates: number[];
+	startDate: Date;
+	endDate: Date;
+};
+
+export type Milestone = {
+	description: React.ReactNode;
+	startDate: Date;
+	endDate?: Date;
+	projects?: WorkProject[];
 };
 
 export type Experience = {
 	title: React.ReactNode;
 	description?: React.ReactNode;
+	customSubtitle?: React.ReactNode;
 	startDate: Date;
 	endDate?: Date;
+	projects?: WorkProject[];
+	milestones?: Milestone[];
 };
 
 export type SkillType = "Hard" | "Soft";

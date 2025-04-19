@@ -1,6 +1,7 @@
 @use "@/styles/config.module.scss";
 
-.date {
+
+.container p {
 	margin-block-end: 0;
 	padding-bottom: 0;
 }
@@ -9,12 +10,18 @@
 .description {
 	margin-block-end: calc(config.$body-font-size / 2);
 	margin-bottom: 0;
+
+	margin-block-end: 0;
+	padding-bottom: 0;
+}
+
+.subtitle {
+	color: config.$text-faded;
+
+	margin-block-end: 0;
+	padding-bottom: 0;
 }
 
 .description {
-	color: config.$text-faded;
-}
-
-.description p {
 	margin-bottom: 0;
 }
