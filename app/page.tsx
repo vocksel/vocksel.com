@@ -105,19 +105,13 @@ export default function Home() {
 					<div className={"columns"}>
 						<div className={"column"}>
 							<p className={generic.bigText}>
-								I&apos;m <Keyword>Marin Minnerly</Keyword>
-								&mdash;a {age} year old Software Engineer and
-								hobbyist game developer that loves creating new
-								experiences through artistic mediums 💖
+								<Keyword>Marin Minnerly</Keyword> is a {age}{" "}
+								year old software engineer and hobbyist game
+								developer that loves creating new experiences
+								through artistic mediums
 							</p>
 
 							<HorizontalList>
-								<a
-									href={urls.twitter}
-									title="Follow on Twitter for updates"
-								>
-									Twitter
-								</a>
 								<a
 									href={urls.github}
 									title="Check out my code on GitHub"
