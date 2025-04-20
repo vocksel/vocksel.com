@@ -50,21 +50,19 @@ export default function Experience({ exp }: Props) {
 	}, [exp]);
 
 	return (
-		<div className={`${style.container} columns`}>
-			<div className={"column is-three-quarters"}>
-				<h3 className={style.title}>{exp.title}</h3>
+		<div className={`${style.container}`}>
+			<h3 className={style.title}>{exp.title}</h3>
 
-				<div
-					className={`${style.subtitle} ${generic.finePrint} ${generic.tight}`}
-				>
-					{subtitle}
-				</div>
+			<div
+				className={`${style.subtitle} ${generic.finePrint} ${generic.tight}`}
+			>
+				{subtitle}
+			</div>
 
-				<div
-					className={`${style.description} ${generic.finePrint} ${generic.tight}`}
-				>
-					{description}
-				</div>
+			<div
+				className={`${style.description} ${generic.finePrint} ${generic.tight}`}
+			>
+				{description}
 			</div>
 		</div>
 	);

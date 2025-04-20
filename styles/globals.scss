@@ -2,7 +2,7 @@
 
 @use "./config.module.scss";
 
-@use "~bulma/sass" as vars with (
+@use "bulma/sass" as vars with (
 	$family-primary: config.$family-sans-serif,
 	$primary: config.$accent-color,
 	$link: config.$link,
@@ -15,11 +15,11 @@
 	$body-line-height: config.$body-line-height
 );
 
-@use "~bulma/sass/layout/container";
-@use "~bulma/sass/grid/columns";
-@use "~bulma/sass/layout/section";
+@use "bulma/sass/layout/container";
+@use "bulma/sass/grid/columns";
+@use "bulma/sass/layout/section";
 
-@use "~bulma/sass/themes";
+@use "bulma/sass/themes";
 
 html {
 	margin-bottom: config.$body-font-size * 4;
