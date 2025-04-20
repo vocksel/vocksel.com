@@ -1,27 +1,16 @@
 @use "@/styles/config.module.scss";
 
-
-.container p {
-	margin-block-end: 0;
-	padding-bottom: 0;
+.container {
+	margin-block-end: config.$body-line-height;
 }
 
 .title,
-.description {
-	margin-block-end: calc(config.$body-font-size / 2);
+.subtitle,
+.description,
+.projects {
 	margin-bottom: 0;
-
-	margin-block-end: 0;
-	padding-bottom: 0;
 }
 
 .subtitle {
 	color: config.$text-faded;
-
-	margin-block-end: 0;
-	padding-bottom: 0;
-}
-
-.description {
-	margin-bottom: 0;
 }

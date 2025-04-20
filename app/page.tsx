@@ -11,59 +11,22 @@ import projects from "@/projects";
 import generic from "@/styles/generic.module.scss";
 import { useMemo } from "react";
 import me from "./elevator.jpg";
+import { Project, ProjectType } from "./types";
 
 export default function Home() {
 	const age = useMemo(getAge, []);
 
-	const workHistory = useMemo(() => {
-		return jobs.map((job) => {
-			return <Experience key={job.title?.toString()} exp={job} />;
-		});
-	}, []);
-
-	const educationHistory = useMemo(() => {
-		return education.map((experience) => (
-			<Experience
-				key={experience.institution}
-				exp={{
-					title: experience.award,
-					startDate: experience.startDate,
-					endDate: experience.endDate,
-					description: (
-						<span>
-							<p>{experience.institution}</p>
-							<p>{experience.location}</p>
-							<p>{experience.details}</p>
-						</span>
-					),
-				}}
-			/>
-		));
-	}, []);
-
-	const freelanceProjects = useMemo(() => {
-		const freelance = projects.filter((project) => project.type === "Game");
-
-		return freelance.map((project) => (
-			<ProjectTile
-				className={"column is-one-third"}
-				key={project.slug}
-				project={project}
-			/>
-		));
-	}, []);
-
-	const codeProjects = useMemo(() => {
-		const code = projects.filter((project) => project.type === "Code");
-
-		// Need a new component to return. Should be just be a list of my code projects
-		return code.map((project) => (
-			<ProjectTile
-				className={"column is-one-third"}
-				key={project.slug}
-				project={project}
-			/>
-		));
+	const projectsByType = useMemo(() => {
+		return projects.reduce(
+			(acc, item) => {
+				if (!acc[item.type]) {
+					acc[item.type] = [];
+				}
+				acc[item.type].push(item);
+				return acc;
+			},
+			{} as Record<ProjectType, Project[]>,
+		);
 	}, []);
 
 	return (
@@ -108,14 +71,34 @@ export default function Home() {
 			<section className={"section"}>
 				<div className={"container"}>
 					<h1>Experience</h1>
-					{workHistory}
+
+					{jobs.map((job) => (
+						<Experience key={job.title?.toString()} exp={job} />
+					))}
 				</div>
 			</section>
 
 			<section className={"section"}>
 				<div className={"container"}>
 					<h1>Education</h1>
-					{educationHistory}
+
+					{education.map((experience) => (
+						<Experience
+							key={experience.institution}
+							exp={{
+								title: experience.award,
+								startDate: experience.startDate,
+								endDate: experience.endDate,
+								description: (
+									<ul>
+										<li>{experience.institution}</li>
+										<li>{experience.location}</li>
+										<li>{experience.details}</li>
+									</ul>
+								),
+							}}
+						/>
+					))}
 				</div>
 			</section>
 
@@ -124,9 +107,22 @@ export default function Home() {
 					<h1>Projects</h1>
 
 					<div className={"columns is-multiline"}>
-						{freelanceProjects}
+						{projectsByType.Game.map((project) => (
+							<ProjectTile
+								className={"column is-one-third"}
+								key={project.slug}
+								project={project}
+							/>
+						))}
 
-						{codeProjects}
+						{projectsByType.Code.map((project) => (
+							// Need a new component to return. Should be just be a list of my code projects
+							<ProjectTile
+								className={"column is-one-third"}
+								key={project.slug}
+								project={project}
+							/>
+						))}
 					</div>
 				</div>
 			</section>
