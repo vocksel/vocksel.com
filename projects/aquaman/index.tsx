@@ -146,7 +146,7 @@ const project: Project = {
 				]}
 			/>
 
-			<h2>The Team</h2>
+			<h2 className="text-3xl">The Team</h2>
 
 			<p>
 				The team was composed of 14 people in total, along with our
@@ -178,7 +178,7 @@ const project: Project = {
 				{getTeamNames()}
 			</p>
 
-			<h2>Creating the Trial of Power</h2>
+			<h2 className="text-3xl">Creating the Trial of Power</h2>
 
 			<p>
 				My job on the team was to create the Trial of Power, one of the
@@ -306,7 +306,7 @@ const project: Project = {
 				something together.
 			</p>
 
-			<h2>Going Where I'm Needed</h2>
+			<h2 className="text-3xl">Going Where I'm Needed</h2>
 
 			<p>
 				Our team was composed of many talented individuals, however for
@@ -410,7 +410,7 @@ const project: Project = {
 				]}
 			/>
 
-			<h2>Conclusion</h2>
+			<h2 className="text-3xl">Conclusion</h2>
 
 			<p>
 				I've been on Roblox since 2008 and seen many different events on

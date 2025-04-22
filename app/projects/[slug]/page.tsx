@@ -57,7 +57,7 @@ export default function Page({ params }: Props) {
 				{formatDate(project.authorDate)}
 			</p>
 
-			<section className="space-y-6">{project.description}</section>
+			<section className="space-y-8">{project.description}</section>
 
 			<footer className="space-y-3">
 				<div className="columns-2">

@@ -59,7 +59,9 @@ const project: Project = {
 				</div>
 			</div>
 
-			<h2 id="level-design">My Jobs</h2>
+			<h2 className="text-3xl" id="level-design">
+				My Jobs
+			</h2>
 
 			<p>
 				My work consisted of handling everything to do with the in-game
@@ -140,7 +142,9 @@ const project: Project = {
 				</figcaption>
 			</figure>
 
-			<h2 id="problem-areas">Problem Areas</h2>
+			<h2 className="text-3xl" id="problem-areas">
+				Problem Areas
+			</h2>
 
 			<p>
 				One of my biggest regrets is a lack of greyboxing and testing. I
@@ -193,7 +197,9 @@ const project: Project = {
 				</figcaption>
 			</figure>
 
-			<h2 id="game-design">Game Design</h2>
+			<h2 className="text-3xl" id="game-design">
+				Game Design
+			</h2>
 
 			<p>
 				One of the best decisions that was made for the game was the
@@ -232,7 +238,9 @@ const project: Project = {
 				spot and taking potshots at them.
 			</p>
 
-			<h2 id="events">Events</h2>
+			<h2 className="text-3xl" id="events">
+				Events
+			</h2>
 
 			<p>
 				For Halloween and Christmas of 2017, I was tasked with modifying
@@ -265,7 +273,9 @@ const project: Project = {
 				</figcaption>
 			</figure>
 
-			<h2 id="conclusion">Conclusion</h2>
+			<h2 className="text-3xl" id="conclusion">
+				Conclusion
+			</h2>
 
 			<p>
 				Despite any shortcomings, the work I did was super fun and was
