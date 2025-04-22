@@ -27,6 +27,7 @@ export type Milestone = {
 };
 
 export type Experience = {
+	id: string;
 	title: React.ReactNode;
 	description?: React.ReactNode;
 	customSubtitle?: React.ReactNode;

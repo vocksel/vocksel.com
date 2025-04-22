@@ -28,7 +28,7 @@ export default function Home() {
 				<h1 className="text-4xl">Experience</h1>
 
 				{jobs.map((job) => (
-					<Experience key={job.title?.toString()} exp={job} />
+					<Experience key={job.id} exp={job} />
 				))}
 			</section>
 
@@ -39,6 +39,7 @@ export default function Home() {
 					<Experience
 						key={experience.institution}
 						exp={{
+							id: experience.institution,
 							title: experience.award,
 							startDate: experience.startDate,
 							endDate: experience.endDate,

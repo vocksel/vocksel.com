@@ -11,11 +11,8 @@ const urls = {
 
 export const jobs: Experience[] = [
 	{
-		title: (
-			<span>
-				Roblox Corporation, Music Team &mdash; Senior Software Engineer
-			</span>
-		),
+		id: "roblox-fte",
+		title: "Roblox Corporation, Music Team — Senior Software Engineer",
 		description:
 			"Employed full-time working on new and exciting projects with an incredible team to bring the world together through play.",
 		startDate: new Date(2021, 5),
@@ -53,12 +50,8 @@ export const jobs: Experience[] = [
 		],
 	},
 	{
-		title: (
-			<span>
-				Roblox Corporation, Apps Team &mdash; Software Engineering
-				Intern
-			</span>
-		),
+		id: "roblox-apps-intern",
+		title: "Roblox Corporation, Apps Team — Software Engineering Intern",
 		customSubtitle: <span>Summer 2019 &amp; Summer 2020</span>,
 		startDate: new Date(2019, 5),
 		endDate: new Date(2020, 10),
@@ -96,33 +89,34 @@ export const jobs: Experience[] = [
 	// },
 
 	{
+		id: "novaly",
 		title: <span>Novaly Studios &mdash; Programmer, Level Designer</span>,
 		startDate: new Date(2017, 5),
 		endDate: new Date(2020, 1),
 		milestones: [
 			{
 				description: (
-					<span>
+					<p>
 						Continued where we left off after being in the
 						Accelerator program.I worked with the team to create the
 						world of{" "}
-						<a href="https://www.roblox.com/games/5000625666/NITRO-DELOREAN-Car-Tycoon-Demo">
+						<Link href="https://www.roblox.com/games/5000625666/NITRO-DELOREAN-Car-Tycoon-Demo">
 							Car Tycoon!
-						</a>
-					</span>
+						</Link>
+					</p>
 				),
 				startDate: new Date(2017, 5),
 				endDate: new Date(2020, 1),
 			},
 			{
 				description: (
-					<span>
+					<p>
 						Squashed bugs and created the Robbery feature for{" "}
-						<a href="https://www.roblox.com/games/2563455047/Bandit-Simulator">
+						<Link href="https://www.roblox.com/games/2563455047/Bandit-Simulator">
 							Bandit Simulator
-						</a>
+						</Link>
 						, introducing a brand new way to play the game.
-					</span>
+					</p>
 				),
 				startDate: new Date(2018, 10),
 				endDate: new Date(2019, 0),
@@ -131,23 +125,25 @@ export const jobs: Experience[] = [
 	},
 
 	{
+		id: "roblox-warner-bros",
 		title: <span>Roblox Corporation &mdash; Level Design contractor</span>,
 		description: (
-			<span>
+			<p>
 				Worked for Roblox to create{" "}
 				<Link href="/projects/aquaman">
 					{" "}
 					Aquaman: City of Rolantis{" "}
 				</Link>{" "}
 				for a Warner Bros. sponsorship.
-			</span>
+			</p>
 		),
 		startDate: new Date(2018, 6),
 		endDate: new Date(2018, 10),
 	},
 
 	{
-		title: <span>Roblox Corporation &mdash; Accelerator Program</span>,
+		id: "roblox-accelerator",
+		title: "Roblox Corporation — Accelerator Program",
 		description:
 			"The Accelerator program gave my team and I the opportunity to work in-house at Roblox HQ for 3 months to create a brand new game from the ground up.",
 		startDate: new Date(2018, 5),
@@ -155,6 +151,7 @@ export const jobs: Experience[] = [
 	},
 
 	{
+		id: "early-freelance",
 		title: "Various freelance jobs",
 		description:
 			"A block of several years that I spent working with different studios on the Roblox platform as I built up my skillset.",

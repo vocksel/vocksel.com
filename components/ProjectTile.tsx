@@ -9,11 +9,7 @@ type Props = {
 	project: Project;
 };
 
-export default function ProjectTile({
-	className,
-	project,
-	slide = "y",
-}: Props) {
+export default function ProjectTile({ project, slide = "y" }: Props) {
 	let hoverClass;
 	if (slide == "x") {
 		hoverClass = style.hoverRight;
@@ -22,7 +18,7 @@ export default function ProjectTile({
 	}
 
 	return (
-		<div className={`${style.container} ${className}`}>
+		<div className={`${style.container}`}>
 			<Link href={`/projects/${project.slug}/`} className={style.link}>
 				<CaptionedImage
 					className={`${style.image} ${hoverClass}`}

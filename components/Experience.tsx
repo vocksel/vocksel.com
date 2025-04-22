@@ -23,13 +23,20 @@ export default function Experience({ exp }: Props) {
 		}
 	}, [exp]);
 
+	const description: React.ReactNode =
+		typeof exp.description === "string" ? (
+			<p>{exp.description}</p>
+		) : (
+			exp.description
+		);
+
 	return (
 		<div className="flex flex-col space-y-2">
 			<h3 className="text-2xl">{exp.title}</h3>
 
 			<p className="text-stone-500">{subtitle}</p>
 
-			<p>{exp.description}</p>
+			{description}
 
 			{exp.projects && (
 				<ul className="flex flex-row gap-4">
