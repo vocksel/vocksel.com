@@ -10,12 +10,10 @@ export default function Page() {
 	));
 
 	return (
-		<div className={"section"}>
-			<div className={"container"}>
-				<h1>Projects</h1>
+		<div className="space-y-6">
+			<h1 className="text-3xl">Projects</h1>
 
-				<ul>{tiles}</ul>
-			</div>
+			<ul>{tiles}</ul>
 		</div>
 	);
 }

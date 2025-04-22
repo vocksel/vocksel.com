@@ -1,8 +1,7 @@
 import formatDate from "@/app/formatDate";
 import { type Experience } from "@/app/types";
-import generic from "@/styles/generic.module.scss";
+import Link from "@/components/generic/Link";
 import { useMemo } from "react";
-import style from "./Experience.module.scss";
 
 type Props = {
 	exp: Experience;
@@ -25,28 +24,18 @@ export default function Experience({ exp }: Props) {
 	}, [exp]);
 
 	return (
-		<div className={`${style.container}`}>
-			<h3 className={style.title}>{exp.title}</h3>
+		<div className="flex flex-col space-y-2">
+			<h3 className="text-2xl">{exp.title}</h3>
 
-			<p
-				className={`${style.subtitle} ${generic.finePrint} ${generic.tight}`}
-			>
-				{subtitle}
-			</p>
+			<p className="text-stone-500">{subtitle}</p>
 
-			<p
-				className={`${style.description} ${generic.finePrint} ${generic.tight}`}
-			>
-				{exp.description}
-			</p>
+			<p>{exp.description}</p>
 
 			{exp.projects && (
-				<ul
-					className={`${style.projects} ${generic.finePrint} ${generic.tight}`}
-				>
+				<ul className="flex flex-row gap-4">
 					{exp.projects.map((project) => (
 						<li key={project.name}>
-							<a href={project.url}>{project.name}</a>
+							<Link href={project.url}>{project.name}</Link>
 						</li>
 					))}
 				</ul>

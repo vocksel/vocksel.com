@@ -2,13 +2,11 @@
 
 import formatDate from "@/app/formatDate";
 import Button from "@/components/Button";
-import HorizontalList from "@/components/HorizontalList";
+import Link from "@/components/generic/Link";
 import TweetIntent from "@/components/TweetIntent";
 import projects from "@/projects";
 import Image from "next/image";
-import Link from "next/link";
 import { use } from "react";
-import style from "./page.module.scss";
 
 const getProjectLink = (index: number, text: string) => {
 	const project = projects[index];
@@ -45,40 +43,43 @@ export default function Page({ params }: Props) {
 	}
 
 	return (
-		<div className={"section"}>
-			<div className={"container"}>
-				<h1 className={style.title}>{project.title}</h1>
-				<p className={style.subtitle}>{project.subtitle}</p>
+		<div className="space-y-6">
+			<header className="space-y-3">
+				<h1 className="text-3xl">{project.title}</h1>
+
+				<p className="text-stone-500 italic">{project.subtitle}</p>
 
 				<Image src={project.thumbnail} alt="" />
+			</header>
 
-				<p className={style.subtitle}>
-					Released {formatDate(project.releaseDate)} &mdash; Authored{" "}
-					{formatDate(project.authorDate)}
-				</p>
+			<p className="text-stone-500 italic">
+				Released {formatDate(project.releaseDate)} &mdash; Authored{" "}
+				{formatDate(project.authorDate)}
+			</p>
 
-				<section>{project.description}</section>
+			<section className="space-y-6">{project.description}</section>
 
-				<div className={"columns"}>
-					{playButton && <div className={"column"}>{playButton}</div>}
+			<footer className="space-y-3">
+				<div className="columns-2">
+					{playButton}
 
-					<div className={"column"}>
-						<Button>
-							<TweetIntent
-								text={`${project.title}: ${project.subtitle}`}
-							>
-								Share on Twitter
-							</TweetIntent>
-						</Button>
-					</div>
+					<Button>
+						<TweetIntent
+							text={`${project.title}: ${project.subtitle}`}
+						>
+							Share on Twitter
+						</TweetIntent>
+					</Button>
 				</div>
 
-				<HorizontalList isCentered>
-					{getProjectLink(index - 1, "< Prev")}
-					<Link href="/">Home</Link>
-					{getProjectLink(index + 1, "Next >")}
-				</HorizontalList>
-			</div>
+				<ul className="flex flex-row justify-center space-x-4">
+					<li>{getProjectLink(index - 1, "< Prev")}</li>
+					<li>
+						<Link href="/">Home</Link>
+					</li>
+					<li>{getProjectLink(index + 1, "Next >")}</li>
+				</ul>
+			</footer>
 		</div>
 	);
 }

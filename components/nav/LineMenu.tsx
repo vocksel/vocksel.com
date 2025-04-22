@@ -1,5 +1,5 @@
 import HorizontalList from "@/components/HorizontalList";
-import Link from "next/link";
+import Link from "@/components/generic/Link";
 
 export default function LineMenu() {
 	return (

@@ -4,14 +4,14 @@ import Logo from "@/components/Logo";
 // import BurgerMenu from '@/components/nav/BurgerMenu'
 import LineMenu from "@/components/nav/LineMenu";
 import TransFlag from "@/components/TransFlag";
-import generic from "@/styles/generic.module.scss";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import React from "react";
 // import { useMediaQuery } from 'react-responsive'
-import urls from "./urls";
+import urls from "@/app/urls";
 
-import "@/styles/globals.scss";
+import "@/app/globals.css";
+import Link from "@/components/generic/Link";
 
 const poppins = Poppins({
 	weight: "400",
@@ -33,32 +33,26 @@ export default function RootLayout({
 
 	return (
 		<html lang="en">
-			<body className={poppins.className}>
+			<body
+				className={`${poppins.className} mx-auto px-8 max-w-5xl space-y-10`}
+			>
 				{/* {isTabletOrMobile && <BurgerMenu />} */}
 
-				<header className={"section"}>
-					<div className={"container"}>
-						<div className={"columns"}>
-							<div className={"column"}>
-								<Logo />
-							</div>
+				<header className="columns-2 space-y-10">
+					<Logo />
 
-							{/* {!isTabletOrMobile && */}
-							<div className={"column"}>
-								<LineMenu />
-							</div>
-							{/* } */}
-						</div>
-					</div>
+					{/* {!isTabletOrMobile && */}
+					<LineMenu />
+					{/* } */}
 				</header>
 
 				{children}
 
-				<footer className={`section ${generic.finePrint}`}>
+				<footer className="py-20">
 					<HorizontalList isCentered>
 						<Copyright />
 
-						<a href={urls.repo}>Source</a>
+						<Link href={urls.repo}>Source</Link>
 
 						<TransFlag />
 					</HorizontalList>
