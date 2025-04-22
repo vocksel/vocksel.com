@@ -34,11 +34,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${poppins.className} mx-auto px-8 max-w-5xl space-y-10`}
+				className={`${poppins.className} mx-auto px-8  max-w-5xl space-y-10`}
 			>
 				{/* {isTabletOrMobile && <BurgerMenu />} */}
 
-				<header className="columns-2 space-y-10">
+				<header className="columns-2 py-8">
 					<Logo />
 
 					{/* {!isTabletOrMobile && */}
@@ -48,7 +48,7 @@ export default function RootLayout({
 
 				{children}
 
-				<footer className="py-20">
+				<footer className="py-16">
 					<HorizontalList isCentered>
 						<Copyright />
 

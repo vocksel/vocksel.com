@@ -7,7 +7,7 @@ import marinCar from "./img/marin-car.jpg";
 export default function Page() {
 	return (
 		<section className="flex flex-col space-y-6">
-			<h1 className="text-3xl">About</h1>
+			<h1 className="text-4xl">About</h1>
 
 			<div className="flex columns-2">
 				<p className="flex-shrink">

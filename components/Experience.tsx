@@ -32,11 +32,11 @@ export default function Experience({ exp }: Props) {
 
 	return (
 		<div className="flex flex-col space-y-2">
-			<h3 className="text-2xl">{exp.title}</h3>
+			<h3 className="text-2xl text-zinc-300">{exp.title}</h3>
 
-			<p className="text-stone-500">{subtitle}</p>
+			<p className="text-zinc-500">{subtitle}</p>
 
-			{description}
+			<div className="text-zinc-300">{description}</div>
 
 			{exp.projects && (
 				<ul className="flex flex-row gap-4">

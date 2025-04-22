@@ -45,14 +45,14 @@ export default function Page({ params }: Props) {
 	return (
 		<div className="space-y-6">
 			<header className="space-y-3">
-				<h1 className="text-3xl">{project.title}</h1>
+				<h1 className="text-4xl">{project.title}</h1>
 
-				<p className="text-stone-500 italic">{project.subtitle}</p>
+				<p className="text-zinc-500 italic">{project.subtitle}</p>
 
 				<Image src={project.thumbnail} alt="" />
 			</header>
 
-			<p className="text-stone-500 italic">
+			<p className="text-zinc-500 italic">
 				Released {formatDate(project.releaseDate)} &mdash; Authored{" "}
 				{formatDate(project.authorDate)}
 			</p>

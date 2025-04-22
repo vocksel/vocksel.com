@@ -21,44 +21,48 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className="flex flex-col space-y-10">
+		<main className="flex flex-col space-y-16">
 			<Headline />
 
-			<section className="space-y-6">
-				<h1 className="text-4xl">Experience</h1>
+			<section className="space-y-8">
+				<h1 className="text-4xl text-zinc-100">Experience</h1>
 
-				{jobs.map((job) => (
-					<Experience key={job.id} exp={job} />
-				))}
+				<div className="space-y-12">
+					{jobs.map((job) => (
+						<Experience key={job.id} exp={job} />
+					))}
+				</div>
 			</section>
 
-			<section className="space-y-6">
+			<section className="space-y-8">
 				<h1 className="text-4xl">Education</h1>
 
-				{education.map((experience) => (
-					<Experience
-						key={experience.institution}
-						exp={{
-							id: experience.institution,
-							title: experience.award,
-							startDate: experience.startDate,
-							endDate: experience.endDate,
-							description: (
-								<ul className="space-y-2">
-									<li>{experience.institution}</li>
-									<li>{experience.location}</li>
-									<li>{experience.details}</li>
-								</ul>
-							),
-						}}
-					/>
-				))}
+				<div className="space-y-12">
+					{education.map((experience) => (
+						<Experience
+							key={experience.institution}
+							exp={{
+								id: experience.institution,
+								title: experience.award,
+								startDate: experience.startDate,
+								endDate: experience.endDate,
+								description: (
+									<ul className="space-y-2">
+										<li>{experience.institution}</li>
+										<li>{experience.location}</li>
+										<li>{experience.details}</li>
+									</ul>
+								),
+							}}
+						/>
+					))}
+				</div>
 			</section>
 
-			<section>
+			<section className="space-y-8">
 				<h1 className="text-4xl">Projects</h1>
 
-				<div className="columns-3">
+				<div className="columns-3 space-y-4 gap-4">
 					{projectsByType.Game.map((project) => (
 						<ProjectTile key={project.slug} project={project} />
 					))}

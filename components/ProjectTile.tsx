@@ -4,9 +4,8 @@ import Link from "next/link";
 import style from "./ProjectTile.module.scss";
 
 type Props = {
-	className: string;
-	slide?: "x" | "y";
 	project: Project;
+	slide?: "x" | "y";
 };
 
 export default function ProjectTile({ project, slide = "y" }: Props) {
