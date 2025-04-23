@@ -6,6 +6,7 @@ const meta = {
 	component: Experience,
 	args: {
 		exp: {
+			id: "sample",
 			title: (
 				<span>
 					Roblox Corporation, Music Team &mdash; Senior Software
