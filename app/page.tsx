@@ -62,7 +62,7 @@ export default function Home() {
 			<section className="space-y-8">
 				<h1 className="text-4xl">Projects</h1>
 
-				<div className="columns-3 space-y-4 gap-4">
+				<div className="grid md:grid-cols-3 gap-4">
 					{projectsByType.Game.map((project) => (
 						<ProjectTile key={project.slug} project={project} />
 					))}
