@@ -30,15 +30,15 @@ const project: Project = {
 
 			<div className={"columns"}>
 				<div className={"column"}>
-					<h2>Before (Metatables)</h2>
+					<h1>Before (Metatables)</h1>
 
 					<Image src={beforeImage} alt="" />
 				</div>
 
 				<div className={"column"}>
-					<h2>
+					<h1>
 						After (<code>class()</code>)
-					</h2>
+					</h1>
 
 					<Image src={afterImage} alt="" />
 				</div>

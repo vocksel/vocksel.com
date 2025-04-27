@@ -6,11 +6,11 @@ import marinCar from "./img/marin-car.jpg";
 
 export default function Page() {
 	return (
-		<section className="flex flex-col space-y-6">
-			<h1 className="text-4xl">About</h1>
+		<section className="flex flex-col space-y-8">
+			<h1>About</h1>
 
-			<div className="flex columns-2">
-				<p className="flex-shrink">
+			<div className="flex columns-2 gap-8">
+				<p className="flex-shrink text-zinc-300">
 					<Keyword>Marin Minnerly</Keyword> is a curious soul with a
 					deep love for life&lsquo;s simple joys and creative sparks.
 					Whether it&lsquo;s spending time with their spouse, doting
@@ -27,13 +27,13 @@ export default function Page() {
 				<Image
 					className="flex-none w-1/3"
 					src={marinCar}
-					alt="Marin sitting and holding a baby goat while another one climbs up their leg. They have a big smile on their face"
+					alt="Marin sitting in the car with a beige jacket, cute earrings, and some lip gloss"
 				/>
 			</div>
 
 			<p>The bunny in question:</p>
 
-			<div className="flex flex-row space-x-10">
+			<div className="flex flex-row space-x-8">
 				<Image
 					className="flex-grow"
 					src={bunnyCamp}

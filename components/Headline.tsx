@@ -13,8 +13,8 @@ export default function Headline() {
 
 	return (
 		<div className="flex columns-2 gap-4">
-			<div className="flex-1">
-				<p className="font-poppins text-2xl my-4">
+			<div className="flex-1 space-y-4">
+				<p className="text-2xl">
 					<Keyword>Marin Minnerly</Keyword> is a {age} year old
 					software engineer and hobbyist game developer that loves
 					creating new experiences through artistic mediums

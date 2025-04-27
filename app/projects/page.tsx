@@ -10,7 +10,7 @@ export default function Page() {
 
 	return (
 		<div className="space-y-8">
-			<h1 className="text-4xl">Projects</h1>
+			<h1>Projects</h1>
 
 			<ul className="grid md:grid-cols-2 gap-4">{tiles}</ul>
 		</div>

@@ -45,7 +45,7 @@ export default function Page({ params }: Props) {
 	return (
 		<div className="space-y-6">
 			<header className="space-y-3">
-				<h1 className="text-4xl">{project.title}</h1>
+				<h1>{project.title}</h1>
 
 				<p className="text-zinc-500 italic">{project.subtitle}</p>
 

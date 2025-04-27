@@ -14,7 +14,7 @@ import "@/app/globals.css";
 import Link from "@/components/generic/Link";
 
 const poppins = Poppins({
-	weight: "400",
+	weight: ["300"],
 	subsets: ["latin"],
 });
 

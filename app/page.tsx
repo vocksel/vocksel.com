@@ -25,7 +25,7 @@ export default function Home() {
 			<Headline />
 
 			<section className="space-y-8">
-				<h1 className="text-4xl text-zinc-100">Experience</h1>
+				<h1>Experience</h1>
 
 				<div className="space-y-12">
 					{jobs.map((job) => (
@@ -35,7 +35,7 @@ export default function Home() {
 			</section>
 
 			<section className="space-y-8">
-				<h1 className="text-4xl">Education</h1>
+				<h1>Education</h1>
 
 				<div className="space-y-12">
 					{education.map((experience) => (
@@ -60,7 +60,7 @@ export default function Home() {
 			</section>
 
 			<section className="space-y-8">
-				<h1 className="text-4xl">Projects</h1>
+				<h1>Projects</h1>
 
 				<div className="grid md:grid-cols-3 gap-4">
 					{projectsByType.Game.map((project) => (

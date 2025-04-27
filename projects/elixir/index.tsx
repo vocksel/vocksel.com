@@ -39,7 +39,7 @@ const project: Project = {
 				or Git for version control.
 			</p>
 
-			<h2>At the Beginning</h2>
+			<h1>At the Beginning</h1>
 
 			<p>
 				Back in late 2014 I discovered{" "}
@@ -70,7 +70,7 @@ const project: Project = {
 				became Elixir.
 			</p>
 
-			<h2>Shortcomings</h2>
+			<h1>Shortcomings</h1>
 
 			<p>
 				A year after its conception, I was using Elixir in all of my
@@ -105,7 +105,7 @@ const project: Project = {
 
 			<p>While it worked in its current state, it was far from ideal.</p>
 
-			<h2>Making the Switch</h2>
+			<h1>Making the Switch</h1>
 
 			<p>
 				After much deliberation, I made the decision to rewrite Elixir
@@ -142,7 +142,7 @@ const project: Project = {
 				</li>
 			</ul>
 
-			<h2>Struggles With Workflow</h2>
+			<h1>Struggles With Workflow</h1>
 
 			<p>
 				Despite my best efforts, Elixir still has a lot of problems with
@@ -171,7 +171,7 @@ const project: Project = {
 				significantly less painful
 			</p>
 
-			<h2>Conclusion</h2>
+			<h1>Conclusion</h1>
 
 			<p>
 				I've been using Elixir and Repo Import together for about a

@@ -3,7 +3,7 @@ import Link from "@/components/generic/Link";
 
 export default function LineMenu() {
 	return (
-		<nav>
+		<nav className="text-md">
 			<HorizontalList isRightAligned>
 				<Link href="/">Home</Link>
 				<Link href="/projects">Projects</Link>

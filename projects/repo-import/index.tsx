@@ -42,12 +42,12 @@ const project: Project = {
 
 			<div className={"columns"}>
 				<div className={"column"}>
-					<h2>Files</h2>
+					<h1>Files</h1>
 					<Image src={noRepoImport} alt="" />
 				</div>
 
 				<div className={"column"}>
-					<h2>Roblox Studio</h2>
+					<h1>Roblox Studio</h1>
 					<Image src={noRepoImportInGame} alt="" />
 				</div>
 			</div>
@@ -82,12 +82,12 @@ const project: Project = {
 
 			<div className={"columns"}>
 				<div className={"column"}>
-					<h2>Files</h2>
+					<h1>Files</h1>
 					<Image src={withRepoImport} alt="" />
 				</div>
 
 				<div className={"column"}>
-					<h2>Roblox Studio</h2>
+					<h1>Roblox Studio</h1>
 					<Image src={withRepoImportInGame} alt="" />
 				</div>
 			</div>
