@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/generic/Link";
 import React from "react";
 import { Education, Experience, Skill } from "./types";
 
@@ -122,23 +122,37 @@ export const jobs: Experience[] = [
 				endDate: new Date(2019, 0),
 			},
 		],
+		projects: [
+			{
+				name: "Bandit Simulator",
+				url: "https://www.roblox.com/games/2563455047/Bandit-Simulator",
+				startDate: new Date(2018, 10),
+				endDate: new Date(2019, 0),
+			},
+			{
+				name: "Wild Revolvers",
+				url: "/projects/wild-revolvers",
+				startDate: new Date(2017, 8),
+				endDate: new Date(2018, 0),
+			},
+		],
 	},
 
 	{
 		id: "roblox-warner-bros",
 		title: <span>Roblox Corporation &mdash; Level Design contractor</span>,
-		description: (
-			<p>
-				Worked for Roblox to create{" "}
-				<Link href="/projects/aquaman">
-					{" "}
-					Aquaman: City of Rolantis{" "}
-				</Link>{" "}
-				for a Warner Bros. sponsorship.
-			</p>
-		),
+		description:
+			"Remote contract position for Roblox to create the Aquaman event experience for a Warner Bros. sponsorship",
 		startDate: new Date(2018, 6),
 		endDate: new Date(2018, 10),
+		projects: [
+			{
+				name: "Aquaman: Home is Calling",
+				url: "/projects/aquaman",
+				startDate: new Date(2018, 6),
+				endDate: new Date(2018, 10),
+			},
+		],
 	},
 
 	{
