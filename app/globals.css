@@ -7,7 +7,7 @@
 	h2,
 	h3,
 	p {
-		@apply text-zinc-200;
+		@apply text-zinc-300;
 	}
 
 	h1 {
@@ -18,7 +18,7 @@
 	}
 
 	p {
-		@apply text-xl;
+		@apply leading-8;
 	}
 }
 
