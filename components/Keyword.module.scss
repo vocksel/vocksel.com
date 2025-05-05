@@ -1,0 +1,5 @@
+@use "@/styles/config.module.scss";
+
+.keyword {
+	color: config.$accent-color;
+}

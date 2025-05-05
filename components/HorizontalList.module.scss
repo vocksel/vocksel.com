@@ -1,0 +1,18 @@
+@use "@/styles/config.module.scss";
+
+.list li {
+	display: inline-block;
+	padding-right: config.$body-font-size;
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+}
+
+.isCentered {
+	text-align: center;
+}
+
+.isRightAligned {
+	text-align: right;
+}

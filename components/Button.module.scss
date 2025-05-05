@@ -1,0 +1,29 @@
+@use "@/styles/config.module.scss";
+
+.button {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+
+	margin-bottom: config.$body-line-height;
+
+	a {
+		display: block;
+		margin: 0;
+		padding: calc(config.$body-font-size / 4);
+
+		&:hover {
+			// Override default link styles
+			border: 0;
+		}
+	}
+}
+
+.outline {
+	color: config.$link;
+	border: 2px solid config.$link;
+
+	&:hover {
+		border-color: config.$link-hover;
+	}
+}

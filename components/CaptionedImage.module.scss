@@ -1,0 +1,44 @@
+@use "@/styles/config.module.scss";
+
+.container {
+	position: relative;
+	margin-block-end: config.$body-line-height;
+	height: 100%;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	margin-block-end: 0;
+}
+
+.gradient {
+	// Generated with https://cssgradient.io/
+	background: rgb(9, 24, 42);
+	background: linear-gradient(
+		0deg,
+		rgba(config.$background, 0.9) 0%,
+		rgba(config.$background, 0.6) 50%,
+		rgba(#fff, 0) 100%
+	);
+}
+
+.captionContainer {
+	width: 100%;
+	padding: 0.5em;
+	height: 30%;
+	display: flex;
+
+	// Mount to the bottom of the container
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.caption {
+	font-size: config.$body-font-size * 1.2;
+	align-self: flex-end;
+	margin-block-end: 0;
+}

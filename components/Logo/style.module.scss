@@ -1,0 +1,24 @@
+@use "@/styles/config.module.scss";
+
+.base {
+	height: config.$body-line-height;
+	display: inline-block;
+
+	&:hover {
+		.image {
+			transform: rotate(-10deg);
+		}
+	}
+}
+
+.image {
+	margin-bottom: 0;
+	transition: all 0.2s;
+	transition-timing-function: easeOutElastic;
+}
+
+.link {
+	&:hover {
+		border: none;
+	}
+}

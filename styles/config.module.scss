@@ -1,0 +1,27 @@
+@use "sass:color" as color;
+
+// Brand colors
+$text: #dad2d5;
+$text-faded: #94878c;
+$background: #22181c;
+$accent-color: #ff3685;
+$blueb: #6093f3;
+$lello: #ffd254;
+$greeb: #7ace5c;
+
+// Bulma overrides
+$family-sans-serif: Poppins, sans-serif;
+
+$body-font-size: 1.25em;
+$body-line-height: $body-font-size * 1.8;
+
+$primary: $accent-color;
+$body-background-color: $background;
+$strong-color: $accent-color;
+$link: $blueb;
+$link-hover: color.scale($blueb, $saturation: -30%);
+
+// Forces the max width on these display types
+$desktop: 960px;
+$widescreen: 960px;
+$fullhd: 960px;
