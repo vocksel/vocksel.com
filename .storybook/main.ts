@@ -24,7 +24,7 @@ const config: StorybookConfig = {
 			...config,
 			resolve: {
 				alias: {
-					"@": path.resolve(__dirname, "../"),
+					"@": path.resolve(process.cwd()),
 				},
 			},
 		};
