@@ -7,7 +7,7 @@ export default class HorizontalList extends React.Component {
 	static propTypes = {
 		isCentered: PropTypes.bool,
 		isRightAligned: PropTypes.bool,
-	};
+	}
 
 	render() {
 		const isCentered = this.props.isCentered ? style.isCentered : ''
