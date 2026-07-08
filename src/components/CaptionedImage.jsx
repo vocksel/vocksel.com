@@ -9,7 +9,7 @@ export default class CaptionedImage extends React.Component {
 		caption: PropTypes.string.isRequired,
 		src: PropTypes.string.isRequired,
 		alt: PropTypes.string,
-	};
+	}
 
 	render() {
 		return (

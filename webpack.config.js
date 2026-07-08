@@ -2,7 +2,7 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ESLintPlugin = require('eslint-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
@@ -35,6 +35,11 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 
+		new ESLintPlugin({
+			configType: 'flat',
+			extensions: [ 'js', 'jsx' ],
+		}),
+
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/static/index.html'),
 			favicon: path.resolve(__dirname, 'src/static/favicon.ico'),
@@ -48,10 +53,6 @@ module.exports = {
 				path.resolve(__dirname, 'src/static/oembed.json'),
 			]
 		}),
-
-		new ImageminPlugin({
-			disable: !IS_PRODUCTION
-		})
 	],
 
 	module: {
@@ -61,7 +62,6 @@ module.exports = {
 				exclude: /node_modules/,
 				use: [
 					'babel-loader',
-					'eslint-loader',
 				]
 			},
 

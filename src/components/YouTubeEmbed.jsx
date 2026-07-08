@@ -8,7 +8,7 @@ export default class YoutubeEmbed extends React.Component {
 		// example, if you have the YouTube URL youtube.com/watch?v=d0uBuSYCD4g
 		// then "d0uBuSYCD4g" is the ID to use.
 		id: PropTypes.string
-	};
+	}
 
 	render() {
 		return (

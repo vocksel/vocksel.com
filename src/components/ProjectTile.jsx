@@ -19,7 +19,7 @@ export default class ProjectTile extends React.Component {
 			thumbnail: PropTypes.string,
 			description: PropTypes.element,
 		}),
-	};
+	}
 
 	static defaultProps = {
 		slide: 'y',

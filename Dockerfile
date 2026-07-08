@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:21
+FROM node:24
 
 EXPOSE 3000
 

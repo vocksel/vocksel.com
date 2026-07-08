@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 export default class TweetIntent extends React.Component {
-	BASE_URL = 'https://twitter.com/intent/tweet';
+	BASE_URL = 'https://twitter.com/intent/tweet'
 
 	static propTypes = {
 		text: PropTypes.string.isRequired,
