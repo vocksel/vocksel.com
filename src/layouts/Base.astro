@@ -3,6 +3,7 @@ import '~/styles/global.css'
 import Nav from '~/components/Nav.astro'
 import Footer from '~/components/Footer.astro'
 import { site } from '~/data/site'
+import { googleFontsHref } from '~/data/fonts'
 
 interface Props {
 	title?: string
@@ -28,20 +29,19 @@ const fullTitle = title ? `${title} — ${site.name}` : site.name
 		<meta name="theme-color" content="#121215" />
 
 		<script is:inline>
-			// Apply the saved theme before first paint so the page doesn't flash
-			// the default theme. Nav.astro owns the switcher.
+			// Apply the saved theme and font before first paint so the page
+			// doesn't flash the defaults. Nav.astro owns both switchers.
 			try {
 				const theme = localStorage.getItem('theme')
 				if (theme) document.documentElement.dataset.theme = theme
+				const font = localStorage.getItem('font')
+				if (font) document.documentElement.style.setProperty('--font-override', `'${font}', system-ui, sans-serif`)
 			} catch {}
 		</script>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
-		/>
+		<link rel="stylesheet" href={googleFontsHref} />
 	</head>
 	<body>
 		<a class="skip" href="#main">Skip to content</a>

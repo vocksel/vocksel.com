@@ -86,7 +86,8 @@
 	--color-content-emphasis: #f7f7f8;
 	--color-content-default: #d5d7dd;
 	--color-content-muted: #bcbec8;
-	--color-content-link: #ff6ba6;
+	--color-content-link: #528bff; /* Foundation's link blue */
+	--color-content-link-hover: #7aa6ff;
 
 	--color-stroke-muted: rgba(208, 217, 251, 0.08);
 	--color-stroke-default: rgba(208, 217, 251, 0.12);
@@ -96,6 +97,7 @@
 	--color-state-press: rgba(208, 217, 251, 0.12);
 
 	--color-accent: #ff3685; /* the brand pink; Foundation uses #335fff here */
+	--color-accent-soft: #ff6ba6; /* pink text that isn't a link */
 	--color-accent-alt: #528bff;
 	--color-action-emphasis-background: var(--color-accent);
 	--color-action-emphasis-foreground: #121215;
@@ -126,7 +128,8 @@
 	--color-content-emphasis: #f1e9ed;
 	--color-content-default: #e4dadf;
 	--color-content-muted: #9a8b92;
-	--color-content-link: #ff6ba6;
+	--color-content-link: #8fb4ff;
+	--color-content-link-hover: #b3ccff;
 
 	--color-stroke-muted: rgba(255, 255, 255, 0.06);
 	--color-stroke-default: rgba(255, 255, 255, 0.09);
@@ -136,6 +139,7 @@
 	--color-state-press: rgba(255, 255, 255, 0.09);
 
 	--color-accent: #ff3685;
+	--color-accent-soft: #ff6ba6;
 	--color-accent-alt: #8fb4ff;
 	--color-action-emphasis-background: var(--color-accent);
 	--color-action-emphasis-foreground: #1b1217;
@@ -174,7 +178,8 @@ body {
 	min-height: 100%;
 	background: var(--color-surface-0);
 	color: var(--color-content-default);
-	font-family: var(--font-sans);
+	/* --font-override comes from the temporary font switcher in the nav. */
+	font-family: var(--font-override, var(--font-sans));
 	font-size: var(--body-size);
 	line-height: var(--body-leading);
 	-webkit-font-smoothing: antialiased;
@@ -184,7 +189,7 @@ body {
 img { max-width: 100%; display: block; }
 
 a { color: var(--color-content-link); text-decoration: none; }
-a:hover { color: var(--color-accent); }
+a:hover { color: var(--color-content-link-hover); }
 
 :focus-visible {
 	outline: 2px solid var(--color-accent);
@@ -228,7 +233,7 @@ h1, h2, h3 {
 	padding: 0.2rem 0.55rem;
 	border-radius: var(--radius-circle);
 }
-.tag--game { background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-content-link); }
+.tag--game { background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-accent-soft); }
 .tag--code { background: color-mix(in srgb, var(--color-accent-alt) 16%, transparent); color: var(--color-accent-alt); }
 
 .visually-hidden {

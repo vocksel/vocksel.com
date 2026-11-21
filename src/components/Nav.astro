@@ -1,5 +1,6 @@
 ---
 import { site } from '~/data/site'
+import { fontOptions } from '~/data/fonts'
 
 const links = [
 	{ label: 'Home', href: '/' },
@@ -33,6 +34,12 @@ const isActive = (href: string) =>
 					))
 				}
 				<li>
+					<select class="nav__theme nav__font" id="font-picker" aria-label="Font" hidden>
+						<option value="">Theme font</option>
+						{fontOptions.map((f) => <option value={f.name}>{f.name}</option>)}
+					</select>
+				</li>
+				<li>
 					<button class="nav__theme" type="button" id="theme-toggle" hidden>
 						<span class="visually-hidden">Theme: </span><span id="theme-name"></span>
 					</button>
@@ -61,6 +68,27 @@ const isActive = (href: string) =>
 		const next = themes[(themes.indexOf(theme) + 1) % themes.length]
 		button.title = `Switch to the ${next.label} theme`
 	}
+
+	// Temporary font switcher: overrides the theme's font on every page until a
+	// font is picked. See src/data/fonts.ts.
+	const picker = document.getElementById('font-picker') as HTMLSelectElement
+	const setFont = (font: string) => {
+		const root = document.documentElement.style
+		if (font) root.setProperty('--font-override', `'${font}', system-ui, sans-serif`)
+		else root.removeProperty('--font-override')
+		picker.value = font
+	}
+	try {
+		setFont(localStorage.getItem('font') ?? '')
+	} catch {}
+	picker.hidden = false
+	picker.addEventListener('change', () => {
+		try {
+			if (picker.value) localStorage.setItem('font', picker.value)
+			else localStorage.removeItem('font')
+		} catch {}
+		setFont(picker.value)
+	})
 
 	apply(document.documentElement.dataset.theme ?? themes[0].id)
 	button.hidden = false
@@ -142,6 +170,17 @@ const isActive = (href: string) =>
 	}
 	.nav__theme[hidden] {
 		display: none;
+	}
+	.nav__font {
+		appearance: none;
+		color: var(--color-content-emphasis);
+		padding-right: var(--padding-xlarge);
+		background: var(--color-surface-100)
+			url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23bcbec8' stroke-width='1.5'/%3E%3C/svg%3E")
+			no-repeat right 8px center;
+	}
+	.nav__font option {
+		background: var(--color-surface-100);
 	}
 
 	:global([data-theme='dusk']) .nav__links a,
