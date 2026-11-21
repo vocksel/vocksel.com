@@ -1,0 +1,15 @@
+# Installed per-platform inside the image, never copied from the host
+node_modules
+
+# Build artifacts and caches
+dist
+.astro
+
+# VCS and the old stack
+.git
+legacy
+
+# Local tooling
+.claude
+npm-debug.log*
+.DS_Store
