@@ -1,0 +1,96 @@
+---
+import type { Repo } from '~/lib/github'
+
+interface Props {
+	repo: Repo
+}
+
+const { repo } = Astro.props
+
+// A few language colors (GitHub-ish) with a neutral fallback.
+const langColors: Record<string, string> = {
+	Lua: '#000080',
+	TypeScript: '#3178c6',
+	JavaScript: '#f1e05a',
+	Python: '#3572a5',
+	Rust: '#dea584',
+	Shell: '#89e051',
+	HTML: '#e34c26',
+	CSS: '#563d7c',
+	Astro: '#ff5a03',
+}
+const dot = (repo.language && langColors[repo.language]) || '#8b8b8b'
+---
+
+<a class="repo" href={repo.url}>
+	<span class="repo__head">
+		<span class="repo__name">{repo.name}</span>
+		{repo.stars > 0 && <span class="repo__stars">★ {repo.stars}</span>}
+	</span>
+	{repo.description && <span class="repo__desc">{repo.description}</span>}
+	{
+		repo.language && (
+			<span class="repo__lang">
+				<span class="repo__dot" style={`background:${dot}`}></span>
+				{repo.language}
+			</span>
+		)
+	}
+</a>
+
+<style>
+	.repo {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1.1rem 1.2rem;
+		background: linear-gradient(170deg, var(--bg-raised), rgba(36, 24, 33, 0.4));
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		color: var(--fg);
+		transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+	}
+	.repo:hover {
+		color: var(--fg);
+		transform: translateY(-3px);
+		border-color: rgba(96, 147, 243, 0.45);
+		box-shadow: 0 16px 36px -22px rgba(96, 147, 243, 0.6);
+	}
+	.repo__head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.6rem;
+	}
+	.repo__name {
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--blue-soft);
+		word-break: break-word;
+	}
+	.repo__stars {
+		color: var(--fg-dim);
+		font-size: 0.8rem;
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+	.repo__desc {
+		color: var(--fg-dim);
+		font-size: 0.85rem;
+		line-height: 1.5;
+		flex: 1;
+	}
+	.repo__lang {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		color: var(--fg-dim);
+		font-size: 0.78rem;
+	}
+	.repo__dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+</style>

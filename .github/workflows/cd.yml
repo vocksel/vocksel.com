@@ -8,6 +8,10 @@ on:
       - "main"
     tags:
       - "v*"
+  schedule:
+    # Rebuild daily so the build-time GitHub projects feed stays current
+    # without a manual push. Scheduled runs only fire on the default branch.
+    - cron: "0 12 * * *"
 
 env:
   DOCKERHUB_USERNAME: vocksel
