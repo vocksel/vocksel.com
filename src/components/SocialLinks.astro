@@ -1,0 +1,39 @@
+---
+import { socials } from '~/data/site'
+---
+
+<nav class="socials" aria-label="Social links">
+	{
+		socials.map((s) => (
+			<a href={s.href} rel="me">
+				{s.label}
+			</a>
+		))
+	}
+</nav>
+
+<style>
+	.socials {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+	.socials a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		border: 1px solid var(--line);
+		padding: 0.5rem 0.95rem;
+		border-radius: 999px;
+		color: var(--fg);
+		font-size: 0.86rem;
+		font-weight: 500;
+		transition: border-color 0.18s, background 0.18s, transform 0.18s;
+	}
+	.socials a:hover {
+		color: var(--fg);
+		border-color: var(--pink);
+		background: rgba(255, 54, 133, 0.08);
+		transform: translateY(-1px);
+	}
+</style>

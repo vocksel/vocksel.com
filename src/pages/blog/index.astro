@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '~/layouts/Base.astro'
+
+const posts = (await getCollection('blog'))
+	.filter((p) => !p.data.draft)
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
+const fmt = (d: Date) =>
+	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+---
+
+<Base title="Writing" description="Notes, devlogs, and the occasional deep dive.">
+	<section class="wrap section">
+		<header class="page-head">
+			<h1>Writing</h1>
+			<p>Notes, devlogs, and the occasional deep dive.</p>
+		</header>
+
+		{
+			posts.length === 0 ? (
+				<div class="empty">
+					<p class="empty__title">No posts yet.</p>
+					<p class="empty__sub">
+						Something's coming. Check back soon, or find me on{' '}
+						<a href="https://twitter.com/vocksel_">Twitter</a> in the meantime.
+					</p>
+				</div>
+			) : (
+				<ul class="posts">
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}`}>
+								<time datetime={post.data.date.toISOString()}>
+									{fmt(post.data.date)}
+								</time>
+								<span class="posts__title">{post.data.title}</span>
+								<span class="posts__desc">{post.data.description}</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</section>
+</Base>
+
+<style>
+	.page-head {
+		padding-block: 3rem 2rem;
+	}
+	.page-head h1 {
+		font-size: clamp(2rem, 5vw, 2.8rem);
+		margin: 0 0 0.5rem;
+	}
+	.page-head p {
+		color: var(--fg-dim);
+		margin: 0;
+	}
+	.empty {
+		border: 1px dashed var(--line);
+		border-radius: var(--radius);
+		padding: 3rem 1.5rem;
+		text-align: center;
+	}
+	.empty__title {
+		font-size: 1.3rem;
+		font-weight: 600;
+		margin: 0 0 0.4rem;
+	}
+	.empty__sub {
+		color: var(--fg-dim);
+		margin: 0;
+	}
+	.posts {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+	}
+	.posts a {
+		display: grid;
+		gap: 0.2rem;
+		padding: 1.3rem 0;
+		border-top: 1px solid var(--line);
+		color: var(--fg);
+	}
+	.posts time {
+		color: var(--fg-dim);
+		font-size: 0.8rem;
+	}
+	.posts__title {
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+	.posts a:hover .posts__title {
+		color: var(--pink);
+	}
+	.posts__desc {
+		color: var(--fg-dim);
+		font-size: 0.92rem;
+	}
+</style>

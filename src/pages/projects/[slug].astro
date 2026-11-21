@@ -1,0 +1,77 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '~/layouts/Base.astro'
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects')
+	return projects.map((p) => ({
+		params: { slug: p.id },
+		props: { project: p },
+	}))
+}
+
+const { project } = Astro.props
+const { Content } = await render(project)
+const { title, subtitle, type, year, url } = project.data
+const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
+---
+
+<Base title={title} description={subtitle}>
+	<article class="wrap section">
+		<a class="back" href="/projects">← All projects</a>
+
+		<header class="detail-head">
+			<span class={`tag ${tagClass}`}>{type} · {year}</span>
+			<h1>{title}</h1>
+			<p class="detail-sub">{subtitle}</p>
+			{url && <a class="detail-link" href={url}>Visit project →</a>}
+		</header>
+
+		<div class="prose">
+			<Content />
+		</div>
+	</article>
+</Base>
+
+<style>
+	.back {
+		display: inline-block;
+		margin-top: 2rem;
+		font-size: 0.88rem;
+		color: var(--fg-dim);
+	}
+	.back:hover {
+		color: var(--pink);
+	}
+	.detail-head {
+		padding-block: 1.5rem 2rem;
+		border-bottom: 1px solid var(--line);
+		margin-bottom: 2rem;
+	}
+	.detail-head h1 {
+		font-size: clamp(2rem, 6vw, 3rem);
+		margin: 0.6rem 0 0.4rem;
+	}
+	.detail-sub {
+		color: var(--fg-dim);
+		font-size: 1.1rem;
+		margin: 0 0 1rem;
+		max-width: 55ch;
+	}
+	.detail-link {
+		font-weight: 500;
+	}
+	.prose {
+		max-width: 65ch;
+	}
+	.prose :global(p) {
+		margin: 0 0 1.2rem;
+	}
+	.prose :global(strong) {
+		color: var(--pink-soft);
+	}
+	.prose :global(img) {
+		border-radius: var(--radius);
+		margin: 1.5rem 0;
+	}
+</style>

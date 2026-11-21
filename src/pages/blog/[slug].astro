@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '~/layouts/Base.astro'
+
+export async function getStaticPaths() {
+	const posts = (await getCollection('blog')).filter((p) => !p.data.draft)
+	return posts.map((p) => ({
+		params: { slug: p.id },
+		props: { post: p },
+	}))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+const fmt = (d: Date) =>
+	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+---
+
+<Base title={post.data.title} description={post.data.description}>
+	<article class="wrap section">
+		<a class="back" href="/blog">← Writing</a>
+		<header class="post-head">
+			<time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+			<h1>{post.data.title}</h1>
+		</header>
+		<div class="prose">
+			<Content />
+		</div>
+	</article>
+</Base>
+
+<style>
+	.back {
+		display: inline-block;
+		margin-top: 2rem;
+		font-size: 0.88rem;
+		color: var(--fg-dim);
+	}
+	.back:hover {
+		color: var(--pink);
+	}
+	.post-head {
+		padding-block: 1.5rem 2rem;
+	}
+	.post-head time {
+		color: var(--fg-dim);
+		font-size: 0.85rem;
+	}
+	.post-head h1 {
+		font-size: clamp(2rem, 6vw, 3rem);
+		margin: 0.4rem 0 0;
+	}
+	.prose {
+		max-width: 65ch;
+	}
+	.prose :global(p) {
+		margin: 0 0 1.2rem;
+	}
+	.prose :global(a) {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+</style>

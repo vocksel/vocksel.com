@@ -1,0 +1,195 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '~/layouts/Base.astro'
+import SocialLinks from '~/components/SocialLinks.astro'
+import ProjectCard from '~/components/ProjectCard.astro'
+import { site } from '~/data/site'
+import { experience } from '~/data/experience'
+
+const projects = (await getCollection('projects'))
+	.filter((p) => p.data.featured)
+	.sort((a, b) => b.data.order - a.data.order || b.data.year - a.data.year)
+	.slice(0, 6)
+---
+
+<Base>
+	<section class="wrap hero">
+		<div class="hero__text">
+			<h1>
+				I'm <span class="hl">{site.name}</span> — a software engineer &amp;
+				game developer. <span class="heart">💖</span>
+			</h1>
+			<p class="lede">{site.blurb} Based in {site.location}.</p>
+			<SocialLinks />
+		</div>
+		<div class="avatar" aria-hidden="true"><span>your photo</span></div>
+	</section>
+
+	<section class="wrap section">
+		<div class="section-head">
+			<h2>Experience</h2>
+			<span class="rule"></span>
+		</div>
+		<div class="timeline">
+			{
+				experience.map((job) => (
+					<article class="job">
+						<div class="job__when">{job.period}</div>
+						<div class="job__body">
+							<h3>{job.role}</h3>
+							<p class="job__co">{job.company}</p>
+							<p class="job__desc">{job.description}</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="wrap section">
+		<div class="section-head">
+			<h2>Projects</h2>
+			<span class="rule"></span>
+			<a class="see-all" href="/projects">See all →</a>
+		</div>
+		<div class="grid">
+			{
+				projects.map((p) => (
+					<ProjectCard
+						slug={p.id}
+						title={p.data.title}
+						subtitle={p.data.subtitle}
+						type={p.data.type}
+						year={p.data.year}
+					/>
+				))
+			}
+		</div>
+	</section>
+</Base>
+
+<style>
+	.hero {
+		display: grid;
+		grid-template-columns: 1.6fr 0.9fr;
+		gap: 2.5rem;
+		align-items: center;
+		padding-block: 4.5rem 2.5rem;
+	}
+	.hero__text h1 {
+		font-size: clamp(2rem, 5vw, 3.3rem);
+		font-weight: 600;
+		margin: 0 0 1.4rem;
+	}
+	.hl {
+		color: var(--pink);
+		position: relative;
+		white-space: nowrap;
+	}
+	.hl::after {
+		content: '';
+		position: absolute;
+		left: -0.05em;
+		right: -0.05em;
+		bottom: 0.06em;
+		height: 0.34em;
+		background: rgba(255, 54, 133, 0.2);
+		z-index: -1;
+		border-radius: 3px;
+	}
+	.heart {
+		white-space: nowrap;
+	}
+	.lede {
+		color: var(--fg-dim);
+		font-size: 1.05rem;
+		max-width: 46ch;
+		margin: 0 0 1.8rem;
+	}
+	.avatar {
+		aspect-ratio: 1;
+		border-radius: 26px;
+		background: linear-gradient(145deg, var(--pink), #8e3bd1);
+		padding: 4px;
+	}
+	.avatar span {
+		display: grid;
+		place-items: center;
+		width: 100%;
+		height: 100%;
+		border-radius: 22px;
+		background: linear-gradient(160deg, #2b1c28, var(--bg));
+		color: var(--fg-dim);
+		font-size: 0.8rem;
+	}
+
+	.see-all {
+		font-size: 0.88rem;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+
+	.timeline {
+		display: grid;
+	}
+	.job {
+		display: grid;
+		grid-template-columns: 130px 1fr;
+		gap: 1.4rem;
+		padding: 1.1rem 0;
+		border-top: 1px solid var(--line);
+	}
+	.job:first-child {
+		border-top: 0;
+	}
+	.job__when {
+		color: var(--fg-dim);
+		font-size: 0.82rem;
+		font-variant-numeric: tabular-nums;
+		padding-top: 0.15rem;
+	}
+	.job__body h3 {
+		margin: 0 0 0.2rem;
+		font-size: 1.02rem;
+	}
+	.job__co {
+		color: var(--pink-soft);
+		font-weight: 500;
+		margin: 0;
+	}
+	.job__desc {
+		margin: 0.4rem 0 0;
+		color: var(--fg-dim);
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.1rem;
+	}
+
+	@media (max-width: 780px) {
+		.hero {
+			grid-template-columns: 1fr;
+			gap: 1.6rem;
+			padding-block: 3rem 1.5rem;
+		}
+		.avatar {
+			max-width: 220px;
+		}
+		.grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (max-width: 520px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+		.job {
+			grid-template-columns: 1fr;
+			gap: 0.3rem;
+		}
+	}
+</style>

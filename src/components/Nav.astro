@@ -1,0 +1,98 @@
+---
+import { site } from '~/data/site'
+
+const links = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Projects', href: '/projects' },
+	{ label: 'Writing', href: '/blog' },
+	{ label: 'About', href: '/about' },
+]
+
+const path = Astro.url.pathname
+const isActive = (href: string) =>
+	href === '/' ? path === '/' : path.startsWith(href)
+---
+
+<header class="nav">
+	<div class="wrap nav__in">
+		<a class="nav__brand" href="/">
+			{site.name.split(' ')[0]}<span>.com</span>
+		</a>
+		<nav aria-label="Primary">
+			<ul class="nav__links">
+				{
+					links.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								aria-current={isActive(link.href) ? 'page' : undefined}
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.nav {
+		position: sticky;
+		top: env(safe-area-inset-top, 0px);
+		z-index: 30;
+		background: rgba(27, 18, 23, 0.72);
+		backdrop-filter: blur(14px);
+		border-bottom: 1px solid var(--line);
+	}
+	.nav__in {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding-block: 0.85rem;
+	}
+	.nav__brand {
+		font-weight: 700;
+		font-size: 1.05rem;
+		letter-spacing: -0.02em;
+		color: var(--fg);
+	}
+	.nav__brand span {
+		color: var(--pink);
+	}
+	.nav__brand:hover {
+		color: var(--fg);
+	}
+	.nav__links {
+		display: flex;
+		gap: 0.3rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		flex-wrap: wrap;
+	}
+	.nav__links a {
+		display: inline-block;
+		padding: 0.4rem 0.75rem;
+		border-radius: 999px;
+		color: var(--fg-dim);
+		font-size: 0.92rem;
+		font-weight: 500;
+		transition: color 0.16s, background 0.16s;
+	}
+	.nav__links a:hover {
+		color: var(--fg);
+		background: rgba(255, 255, 255, 0.05);
+	}
+	.nav__links a[aria-current='page'] {
+		color: var(--pink);
+	}
+	@media (max-width: 420px) {
+		.nav__links a {
+			padding: 0.4rem 0.55rem;
+			font-size: 0.86rem;
+		}
+	}
+</style>

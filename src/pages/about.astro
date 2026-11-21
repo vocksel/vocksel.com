@@ -1,0 +1,76 @@
+---
+import Base from '~/layouts/Base.astro'
+import SocialLinks from '~/components/SocialLinks.astro'
+import { site } from '~/data/site'
+
+// TODO(#33): full content rewrite pending. Facts here are current
+// (California, full-time at Roblox); prose is intentionally light.
+---
+
+<Base title="About" description="A little about Marin Minnerly.">
+	<section class="wrap section about">
+		<div class="about__main">
+			<h1>About</h1>
+			<p>
+				Hey — I'm {site.name}. I'm a software engineer and hobbyist game
+				developer living in {site.location}, where I've been for about five
+				years. I work full-time at <a href="https://corp.roblox.com">Roblox</a>.
+			</p>
+			<p>
+				I've been programming since I was a teenager, most of it in Lua, with a
+				solid footing in JavaScript and Python too. Most of what I make is games,
+				but I also do web development, work on Linux servers, and build command
+				line tools now and then.
+			</p>
+			<p>
+				For the software side of things, my <a href="https://github.com/vocksel"
+					>GitHub</a
+				> is the best place to look. For everything else, there's the
+				<a href="/projects">projects</a> page.
+			</p>
+			<div class="about__links">
+				<SocialLinks />
+			</div>
+		</div>
+		<div class="about__photo" aria-hidden="true"><span>your photo</span></div>
+	</section>
+</Base>
+
+<style>
+	.about {
+		display: grid;
+		grid-template-columns: 1fr 0.7fr;
+		gap: 2.5rem;
+		align-items: start;
+		padding-block: 3rem;
+	}
+	.about__main h1 {
+		font-size: clamp(2rem, 5vw, 2.8rem);
+		margin: 0 0 1.2rem;
+	}
+	.about__main p {
+		max-width: 60ch;
+	}
+	.about__links {
+		margin-top: 1.8rem;
+	}
+	.about__photo {
+		aspect-ratio: 4 / 5;
+		border-radius: 20px;
+		background: linear-gradient(160deg, #2b1c28, var(--bg));
+		border: 1px solid var(--line);
+		display: grid;
+		place-items: center;
+		color: var(--fg-dim);
+		font-size: 0.8rem;
+	}
+	@media (max-width: 720px) {
+		.about {
+			grid-template-columns: 1fr;
+		}
+		.about__photo {
+			max-width: 240px;
+			order: -1;
+		}
+	}
+</style>

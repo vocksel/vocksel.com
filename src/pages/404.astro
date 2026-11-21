@@ -1,0 +1,42 @@
+---
+import Base from '~/layouts/Base.astro'
+---
+
+<Base title="Not found" description="This page doesn't exist.">
+	<section class="wrap nf">
+		<p class="nf__code">404</p>
+		<h1>This page wandered off.</h1>
+		<p class="nf__sub">The thing you were looking for isn't here.</p>
+		<a class="nf__home" href="/">← Back home</a>
+	</section>
+</Base>
+
+<style>
+	.nf {
+		min-height: 55vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: 0.5rem;
+	}
+	.nf__code {
+		font-size: 4rem;
+		font-weight: 700;
+		color: var(--pink);
+		margin: 0;
+		line-height: 1;
+	}
+	.nf h1 {
+		margin: 0.5rem 0 0;
+		font-size: 1.6rem;
+	}
+	.nf__sub {
+		color: var(--fg-dim);
+		margin: 0.2rem 0 1.4rem;
+	}
+	.nf__home {
+		font-weight: 500;
+	}
+</style>

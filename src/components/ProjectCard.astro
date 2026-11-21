@@ -1,0 +1,70 @@
+---
+interface Props {
+	slug: string
+	title: string
+	subtitle: string
+	type: 'Game' | 'Code'
+	year: number
+}
+
+const { slug, title, subtitle, type, year } = Astro.props
+
+// Placeholder thumbnail until real screenshots are migrated (issue #33).
+// Hue is driven by project type so Games and Code read differently.
+const hue = type === 'Game' ? 330 : 215
+const thumb = `linear-gradient(165deg, hsl(${hue} 55% 32%), hsl(${(hue + 40) % 360} 45% 26%))`
+const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
+---
+
+<a class="card" href={`/projects/${slug}`}>
+	<span class="card__thumb" style={`background:${thumb}`} aria-hidden="true"></span>
+	<span class="card__body">
+		<span class={`tag ${tagClass}`}>{type} · {year}</span>
+		<span class="card__title">{title}</span>
+		<span class="card__sub">{subtitle}</span>
+	</span>
+</a>
+
+<style>
+	.card {
+		display: flex;
+		flex-direction: column;
+		background: linear-gradient(170deg, var(--bg-raised), rgba(36, 24, 33, 0.4));
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		overflow: hidden;
+		color: var(--fg);
+		transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+	}
+	.card:hover {
+		color: var(--fg);
+		transform: translateY(-4px);
+		border-color: rgba(255, 54, 133, 0.4);
+		box-shadow: 0 18px 40px -22px rgba(255, 54, 133, 0.6);
+	}
+	.card__thumb {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 10;
+	}
+	.card__body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		padding: 1rem 1.1rem 1.2rem;
+	}
+	.tag {
+		align-self: flex-start;
+		margin-bottom: 0.25rem;
+	}
+	.card__title {
+		font-size: 1.05rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+	.card__sub {
+		color: var(--fg-dim);
+		font-size: 0.85rem;
+		line-height: 1.5;
+	}
+</style>
