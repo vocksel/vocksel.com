@@ -178,8 +178,7 @@ body {
 	min-height: 100%;
 	background: var(--color-surface-0);
 	color: var(--color-content-default);
-	/* --font-override comes from the temporary font switcher in the nav. */
-	font-family: var(--font-override, var(--font-sans));
+	font-family: var(--font-sans);
 	font-size: var(--body-size);
 	line-height: var(--body-leading);
 	-webkit-font-smoothing: antialiased;
