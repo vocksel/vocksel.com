@@ -106,7 +106,7 @@
 
 	--color-nav: color-mix(in srgb, #121215 92%, transparent);
 
-	--font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 	--font-weight-heading: 700;
 	--letter-spacing-heading: -0.01em;
 	--body-size: var(--text-body-large);
