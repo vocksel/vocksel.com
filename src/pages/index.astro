@@ -16,13 +16,11 @@ const projects = (await getCollection('projects'))
 	<section class="wrap hero">
 		<div class="hero__text">
 			<h1>
-				I'm <span class="hl">{site.name}</span> — a software engineer &amp;
-				game developer. <span class="heart">💖</span>
+				I'm <span class="hl">{site.name}</span> — a senior software engineer.
 			</h1>
 			<p class="lede">{site.blurb} Based in {site.location}.</p>
 			<SocialLinks />
 		</div>
-		<div class="avatar" aria-hidden="true"><span>your photo</span></div>
 	</section>
 
 	<section class="wrap section">
@@ -71,10 +69,7 @@ const projects = (await getCollection('projects'))
 
 <style>
 	.hero {
-		display: grid;
-		grid-template-columns: 1.6fr 0.9fr;
-		gap: 2.5rem;
-		align-items: center;
+		max-width: 42rem;
 		padding-block: 4.5rem 2.5rem;
 	}
 	.hero__text h1 {
@@ -98,30 +93,11 @@ const projects = (await getCollection('projects'))
 		z-index: -1;
 		border-radius: 3px;
 	}
-	.heart {
-		white-space: nowrap;
-	}
 	.lede {
 		color: var(--fg-dim);
 		font-size: 1.05rem;
 		max-width: 46ch;
 		margin: 0 0 1.8rem;
-	}
-	.avatar {
-		aspect-ratio: 1;
-		border-radius: 26px;
-		background: linear-gradient(145deg, var(--pink), #8e3bd1);
-		padding: 4px;
-	}
-	.avatar span {
-		display: grid;
-		place-items: center;
-		width: 100%;
-		height: 100%;
-		border-radius: 22px;
-		background: linear-gradient(160deg, #2b1c28, var(--bg));
-		color: var(--fg-dim);
-		font-size: 0.8rem;
 	}
 
 	.see-all {
@@ -173,12 +149,7 @@ const projects = (await getCollection('projects'))
 
 	@media (max-width: 780px) {
 		.hero {
-			grid-template-columns: 1fr;
-			gap: 1.6rem;
 			padding-block: 3rem 1.5rem;
-		}
-		.avatar {
-			max-width: 220px;
 		}
 		.grid {
 			grid-template-columns: 1fr 1fr;

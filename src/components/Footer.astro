@@ -5,9 +5,7 @@ const year = new Date().getFullYear()
 
 <footer class="footer">
 	<div class="wrap footer__in">
-		<p>Made with love in {site.location}.</p>
-		<span class="pride-bar" aria-hidden="true"></span>
-		<p class="footer__meta">© {year} {site.name}</p>
+		<p>© {year} {site.name}</p>
 	</div>
 </footer>
 
@@ -17,14 +15,10 @@ const year = new Date().getFullYear()
 		margin-top: 2rem;
 	}
 	.footer__in {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.6rem;
-		padding-block: 2.5rem 3.5rem;
+		padding-block: 2rem 3rem;
 		text-align: center;
 		color: var(--fg-dim);
-		font-size: 0.85rem;
+		font-size: 0.82rem;
 	}
 	.footer__in p {
 		margin: 0;
