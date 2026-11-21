@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content'
+import { Image } from 'astro:assets'
 import Base from '~/layouts/Base.astro'
 
 export async function getStaticPaths() {
@@ -12,7 +13,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props
 const { Content } = await render(project)
-const { title, subtitle, type, year, url } = project.data
+const { title, subtitle, type, year, url, thumbnail, gallery } = project.data
 const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 ---
 
@@ -27,9 +28,32 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 			{url && <a class="detail-link" href={url}>Visit project →</a>}
 		</header>
 
+		<figure class="hero-shot">
+			<Image src={thumbnail} alt={`${title} — cover image`} widths={[640, 1040]} sizes="(max-width: 1040px) 100vw, 1040px" />
+		</figure>
+
 		<div class="prose">
 			<Content />
 		</div>
+
+		{
+			gallery.length > 0 && (
+				<section class="gallery" aria-label="Screenshots">
+					{gallery.map((shot) => (
+						<figure class="shot">
+							<Image
+								src={shot.src}
+								alt={shot.alt}
+								widths={[480, 960]}
+								sizes="(max-width: 760px) 100vw, 500px"
+								loading="lazy"
+							/>
+							{shot.caption && <figcaption>{shot.caption}</figcaption>}
+						</figure>
+					))}
+				</section>
+			)
+		}
 	</article>
 </Base>
 
@@ -44,9 +68,7 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 		color: var(--pink);
 	}
 	.detail-head {
-		padding-block: 1.5rem 2rem;
-		border-bottom: 1px solid var(--line);
-		margin-bottom: 2rem;
+		padding-block: 1.5rem 1.5rem;
 	}
 	.detail-head h1 {
 		font-size: clamp(2rem, 6vw, 3rem);
@@ -61,6 +83,17 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 	.detail-link {
 		font-weight: 500;
 	}
+
+	.hero-shot {
+		margin: 0 0 2.5rem;
+	}
+	.hero-shot :global(img) {
+		width: 100%;
+		height: auto;
+		border-radius: var(--radius);
+		border: 1px solid var(--line);
+	}
+
 	.prose {
 		max-width: 65ch;
 	}
@@ -70,8 +103,32 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 	.prose :global(strong) {
 		color: var(--pink-soft);
 	}
-	.prose :global(img) {
+
+	.gallery {
+		margin-top: 3rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.2rem;
+	}
+	.shot {
+		margin: 0;
+	}
+	.shot :global(img) {
+		width: 100%;
+		height: auto;
 		border-radius: var(--radius);
-		margin: 1.5rem 0;
+		border: 1px solid var(--line);
+		display: block;
+	}
+	.shot figcaption {
+		margin-top: 0.6rem;
+		color: var(--fg-dim);
+		font-size: 0.85rem;
+		line-height: 1.5;
+	}
+	@media (max-width: 640px) {
+		.gallery {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

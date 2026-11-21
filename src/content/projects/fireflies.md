@@ -6,6 +6,9 @@ year: 2014
 url: 'http://fireflies.vocksel.com'
 order: 50
 featured: true
+thumbnail: ./fireflies/images/perks.jpg
+gallery:
+  - src: ./fireflies/images/stars.jpg
 ---
 
 Fireflies is a small application that displays a quote and background image at random every time the page is loaded.

@@ -1,23 +1,30 @@
 ---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
 interface Props {
 	slug: string
 	title: string
 	subtitle: string
 	type: 'Game' | 'Code'
 	year: number
+	thumbnail: ImageMetadata
 }
 
-const { slug, title, subtitle, type, year } = Astro.props
-
-// Placeholder thumbnail until real screenshots are migrated (issue #33).
-// Hue is driven by project type so Games and Code read differently.
-const hue = type === 'Game' ? 330 : 215
-const thumb = `linear-gradient(165deg, hsl(${hue} 55% 32%), hsl(${(hue + 40) % 360} 45% 26%))`
+const { slug, title, subtitle, type, year, thumbnail } = Astro.props
 const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 ---
 
 <a class="card" href={`/projects/${slug}`}>
-	<span class="card__thumb" style={`background:${thumb}`} aria-hidden="true"></span>
+	<span class="card__thumb">
+		<Image
+			src={thumbnail}
+			alt=""
+			widths={[320, 640]}
+			sizes="(max-width: 520px) 100vw, 360px"
+			loading="lazy"
+		/>
+	</span>
 	<span class="card__body">
 		<span class={`tag ${tagClass}`}>{type} · {year}</span>
 		<span class="card__title">{title}</span>
@@ -44,8 +51,18 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 	}
 	.card__thumb {
 		display: block;
-		width: 100%;
 		aspect-ratio: 16 / 10;
+		overflow: hidden;
+		background: var(--bg-raised);
+	}
+	.card__thumb :global(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+	.card:hover .card__thumb :global(img) {
+		transform: scale(1.04);
 	}
 	.card__body {
 		display: flex;
@@ -66,5 +83,10 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 		color: var(--fg-dim);
 		font-size: 0.85rem;
 		line-height: 1.5;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.card:hover .card__thumb :global(img) {
+			transform: none;
+		}
 	}
 </style>
