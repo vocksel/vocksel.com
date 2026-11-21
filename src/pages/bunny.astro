@@ -9,16 +9,28 @@ const modules = import.meta.glob<{ default: ImageMetadata }>(
 	'../assets/bunny/*.{jpg,jpeg,png,webp,avif}',
 	{ eager: true }
 )
+// Optional alt text per photo, keyed by filename without extension. Photos
+// without an entry get a generic description.
+const alts: Record<string, string> = {
+	'01-camp':
+		'Ciabatta the bunny sitting in a hutch looking compact, in front of a leafy green',
+	'02-size-comparison':
+		'Ciabatta the bunny sitting next to a bottle, showing off how small she is',
+}
+
 const photos = Object.entries(modules)
 	.sort(([a], [b]) => a.localeCompare(b))
-	.map(([, m]) => m.default)
+	.map(([path, m], i) => {
+		const key = path.split('/').pop()!.replace(/\.[^.]+$/, '')
+		return { src: m.default, alt: alts[key] ?? `Ciabatta the bunny, photo ${i + 1}` }
+	})
 ---
 
-<Base title="Bunny" description="A gallery of my bunny.">
+<Base title="Ciabatta" description="Photos of Ciabatta the bunny.">
 	<section class="wrap section">
 		<header class="page-head">
-			<h1>Bunny 🐰</h1>
-			<p>The most important section of the whole site.</p>
+			<h1>Ciabatta 🐰</h1>
+			<p>The bunny in question. The most important section of the whole site.</p>
 		</header>
 
 		{
@@ -35,8 +47,8 @@ const photos = Object.entries(modules)
 					{photos.map((photo, i) => (
 						<Image
 							class="shot"
-							src={photo}
-							alt={`My bunny, photo ${i + 1}`}
+							src={photo.src}
+							alt={photo.alt}
 							widths={[320, 640]}
 							sizes="(max-width: 520px) 100vw, 320px"
 							loading={i < 4 ? 'eager' : 'lazy'}
