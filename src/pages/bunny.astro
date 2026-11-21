@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Image, getImage } from 'astro:assets'
 import type { ImageMetadata } from 'astro'
 import Base from '~/layouts/Base.astro'
 
@@ -18,12 +18,20 @@ const alts: Record<string, string> = {
 		'Ciabatta the bunny sitting next to a bottle, showing off how small she is',
 }
 
-const photos = Object.entries(modules)
-	.sort(([a], [b]) => a.localeCompare(b))
-	.map(([path, m], i) => {
-		const key = path.split('/').pop()!.replace(/\.[^.]+$/, '')
-		return { src: m.default, alt: alts[key] ?? `Ciabatta the bunny, photo ${i + 1}` }
-	})
+const photos = await Promise.all(
+	Object.entries(modules)
+		.sort(([a], [b]) => a.localeCompare(b))
+		.map(async ([path, m], i) => {
+			const key = path.split('/').pop()!.replace(/\.[^.]+$/, '')
+			// The full-size WebP that opens when a photo is clicked.
+			const full = await getImage({ src: m.default, format: 'webp' })
+			return {
+				src: m.default,
+				full: full.src,
+				alt: alts[key] ?? `Ciabatta the bunny, photo ${i + 1}`,
+			}
+		})
+)
 ---
 
 <Base title="Ciabatta" description="Photos of Ciabatta the bunny.">
@@ -43,22 +51,87 @@ const photos = Object.entries(modules)
 					</p>
 				</div>
 			) : (
-				<div class="masonry">
+				<div class="masonry" id="masonry">
 					{photos.map((photo, i) => (
-						<Image
-							class="shot"
-							src={photo.src}
-							alt={photo.alt}
-							widths={[320, 640]}
-							sizes="(max-width: 520px) 100vw, 320px"
-							loading={i < 4 ? 'eager' : 'lazy'}
-						/>
+						<a class="shot-link" href={photo.full} data-index={i}>
+							<Image
+								class="shot"
+								src={photo.src}
+								alt={photo.alt}
+								widths={[320, 640]}
+								sizes="(max-width: 520px) 100vw, 320px"
+								loading={i < 4 ? 'eager' : 'lazy'}
+							/>
+						</a>
 					))}
 				</div>
 			)
 		}
 	</section>
+
+	<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+		<img class="lightbox__img" alt="" />
+		<button class="lightbox__btn lightbox__close" data-action="close" aria-label="Close">✕</button>
+		<button class="lightbox__btn lightbox__prev" data-action="prev" aria-label="Previous photo">‹</button>
+		<button class="lightbox__btn lightbox__next" data-action="next" aria-label="Next photo">›</button>
+	</dialog>
 </Base>
+
+<script>
+	const masonry = document.getElementById('masonry')
+	const lightbox = document.getElementById('lightbox') as HTMLDialogElement | null
+
+	if (masonry && lightbox) {
+		const links = [...masonry.querySelectorAll<HTMLAnchorElement>('.shot-link')]
+
+		// CSS columns fill top to bottom, so the first column would hold the
+		// oldest third of the photos. This deals them out left to right instead,
+		// one per column in turn, so each row reads in date order. Without
+		// JavaScript the page keeps the plain CSS columns.
+		const queries = [matchMedia('(max-width: 480px)'), matchMedia('(max-width: 780px)')]
+		const layout = () => {
+			const count = queries[0].matches ? 1 : queries[1].matches ? 2 : 3
+			const columns = Array.from({ length: count }, () => {
+				const el = document.createElement('div')
+				el.className = 'masonry__col'
+				return el
+			})
+			links.forEach((link, i) => columns[i % count].appendChild(link))
+			masonry.replaceChildren(...columns)
+			masonry.classList.add('masonry--js')
+		}
+		layout()
+		for (const q of queries) q.addEventListener('change', layout)
+
+		// Clicking a photo opens it full size. Without JavaScript the link opens
+		// the image on its own.
+		const big = lightbox.querySelector('img')!
+		let current = 0
+		const show = (i: number) => {
+			current = (i + links.length) % links.length
+			const link = links[current]
+			big.src = link.href
+			big.alt = link.querySelector('img')!.alt
+		}
+		masonry.addEventListener('click', (e) => {
+			const link = (e.target as Element).closest<HTMLAnchorElement>('.shot-link')
+			if (!link) return
+			e.preventDefault()
+			show(Number(link.dataset.index))
+			lightbox.showModal()
+		})
+		lightbox.addEventListener('click', (e) => {
+			const action = (e.target as HTMLElement).dataset.action
+			if (action === 'prev') show(current - 1)
+			else if (action === 'next') show(current + 1)
+			else if (action === 'close' || e.target === lightbox) lightbox.close()
+		})
+		lightbox.addEventListener('keydown', (e) => {
+			if (e.key === 'ArrowLeft') show(current - 1)
+			if (e.key === 'ArrowRight') show(current + 1)
+		})
+	}
+</script>
 
 <style>
 	.page-head {
@@ -106,6 +179,77 @@ const photos = Object.entries(modules)
 		margin-bottom: 1rem;
 		break-inside: avoid;
 		display: block;
+	}
+	.shot-link {
+		display: block;
+		break-inside: avoid;
+		cursor: zoom-in;
+	}
+	.lightbox {
+		width: 100vw;
+		height: 100dvh;
+		max-width: none;
+		max-height: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: transparent;
+	}
+	.lightbox[open] {
+		display: grid;
+		place-items: center;
+	}
+	.lightbox::backdrop {
+		background: rgba(10, 4, 14, 0.9);
+	}
+	.lightbox__img {
+		max-width: min(92vw, 1100px);
+		max-height: 88dvh;
+		width: auto;
+		height: auto;
+		border-radius: var(--radius);
+	}
+	.lightbox__btn {
+		position: fixed;
+		display: grid;
+		place-items: center;
+		width: 2.75rem;
+		height: 2.75rem;
+		border: 1px solid var(--line);
+		border-radius: 50%;
+		background: var(--bg-raised);
+		color: var(--fg);
+		font-size: 1.4rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+	.lightbox__btn:hover {
+		border-color: var(--pink);
+	}
+	.lightbox__close {
+		top: 1rem;
+		right: 1rem;
+		font-size: 1rem;
+	}
+	.lightbox__prev,
+	.lightbox__next {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.lightbox__prev {
+		left: 1rem;
+	}
+	.lightbox__next {
+		right: 1rem;
+	}
+	.masonry--js {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+	.masonry--js :global(.masonry__col) {
+		flex: 1;
+		min-width: 0;
 	}
 	@media (max-width: 780px) {
 		.masonry {
