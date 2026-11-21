@@ -1,0 +1,66 @@
+---
+import '~/styles/global.css'
+import Nav from '~/components/Nav.astro'
+import Footer from '~/components/Footer.astro'
+import { site } from '~/data/site'
+
+interface Props {
+	title?: string
+	description?: string
+}
+
+const { title, description = site.blurb } = Astro.props
+const fullTitle = title ? `${title} — ${site.name}` : site.name
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<link rel="icon" href="/favicon.ico" sizes="16x16" />
+		<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="theme-color" content="#1b1217" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+		/>
+	</head>
+	<body>
+		<a class="skip" href="#main">Skip to content</a>
+		<Nav />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+
+		<style>
+			.skip {
+				position: absolute;
+				left: -9999px;
+				top: 0;
+				background: var(--pink);
+				color: #1b1217;
+				padding: 0.6rem 1rem;
+				border-radius: 0 0 8px 0;
+				z-index: 100;
+				font-weight: 600;
+			}
+			.skip:focus {
+				left: 0;
+			}
+			main {
+				display: block;
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '~/layouts/Base.astro'
+import ProjectCard from '~/components/ProjectCard.astro'
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => b.data.order - a.data.order || b.data.year - a.data.year
+)
+---
+
+<Base title="Projects" description="Games, tools, and experiments by Marin Minnerly.">
+	<section class="wrap section">
+		<header class="page-head">
+			<h1>Projects</h1>
+			<p>Games, tools, and experiments — mostly built on Roblox.</p>
+		</header>
+
+		<div class="grid">
+			{
+				projects.map((p) => (
+					<ProjectCard
+						slug={p.id}
+						title={p.data.title}
+						subtitle={p.data.subtitle}
+						type={p.data.type}
+						year={p.data.year}
+						thumbnail={p.data.thumbnail}
+					/>
+				))
+			}
+		</div>
+	</section>
+</Base>
+
+<style>
+	.page-head {
+		padding-block: 3rem 2rem;
+	}
+	.page-head h1 {
+		font-size: clamp(2rem, 5vw, 2.8rem);
+		margin: 0 0 0.5rem;
+	}
+	.page-head p {
+		color: var(--fg-dim);
+		margin: 0;
+		max-width: 50ch;
+	}
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.1rem;
+	}
+	@media (max-width: 780px) {
+		.grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (max-width: 520px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

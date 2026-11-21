@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets'
+import Base from '~/layouts/Base.astro'
+import SocialLinks from '~/components/SocialLinks.astro'
+import car from '~/assets/me/car.jpg'
+---
+
+<Base title="About" description="A little about Marin Minnerly.">
+	<section class="wrap section about">
+		<div class="about__main">
+			<h1>About</h1>
+			<p>
+				<span class="kw">Marin Minnerly</span> is a curious soul with a deep love for
+				life’s simple joys and creative sparks. Whether it’s doting on their bunny or
+				watching the birds,
+				<span class="kw">Marin</span> finds magic in the natural world and quiet moments.
+				They thrive on tinkering and creating, especially in the digital world, and love
+				to learn more about the latest technologies.
+			</p>
+			<p>
+				<span class="kw">Marin’s</span> happy place is behind the wheel on an open
+				road — or just lounging with good shows and videogames.
+			</p>
+			<div class="about__links">
+				<SocialLinks />
+			</div>
+		</div>
+		<Image
+			class="about__photo"
+			src={car}
+			alt="Marin sitting in the car with a beige jacket, cute earrings, and some lip gloss"
+			width={360}
+		/>
+	</section>
+</Base>
+
+<style>
+	.about {
+		display: grid;
+		grid-template-columns: 1fr 260px;
+		gap: 2.5rem;
+		align-items: start;
+		padding-block: 3rem;
+	}
+	.about__main {
+		min-width: 0;
+	}
+	.about h1 {
+		font-size: clamp(2rem, 5vw, 2.8rem);
+		margin: 0 0 1.2rem;
+	}
+	.about p {
+		max-width: 60ch;
+	}
+	.kw {
+		color: var(--pink);
+		font-weight: 500;
+	}
+	.about__links {
+		margin-top: 1.8rem;
+	}
+	.about :global(.about__photo) {
+		width: 100%;
+		height: auto;
+		border-radius: 20px;
+		border: 1px solid var(--line);
+	}
+	@media (max-width: 720px) {
+		.about {
+			grid-template-columns: 1fr;
+		}
+		.about :global(.about__photo) {
+			max-width: 240px;
+			order: -1;
+		}
+	}
+</style>

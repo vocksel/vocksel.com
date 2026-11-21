@@ -1,0 +1,26 @@
+---
+import { site } from '~/data/site'
+const year = new Date().getFullYear()
+---
+
+<footer class="footer">
+	<div class="wrap footer__in">
+		<p>© {year} {site.name}</p>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		border-top: 1px solid var(--line);
+		margin-top: 2rem;
+	}
+	.footer__in {
+		padding-block: 2rem 3rem;
+		text-align: center;
+		color: var(--fg-dim);
+		font-size: 0.82rem;
+	}
+	.footer__in p {
+		margin: 0;
+	}
+</style>
