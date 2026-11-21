@@ -30,15 +30,4 @@ const projects = defineCollection({
 		}),
 })
 
-// Writing / devlog. Empty to start; drop a .md file to publish.
-const blog = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		date: z.coerce.date(),
-		draft: z.boolean().default(false),
-	}),
-})
-
-export const collections = { projects, blog }
+export const collections = { projects }
