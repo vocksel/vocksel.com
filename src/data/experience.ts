@@ -1,55 +1,102 @@
-// Work history, migrated from the legacy site (legacy/src/experiences.js).
-// Ordered most-recent first.
+// Work history and education, most recent first.
+
+export type ProjectLink = {
+	name: string
+	url: string
+}
 
 export type Experience = {
 	role: string
 	company: string
 	period: string
-	description: string
+	description?: string
+	highlights?: string[]
+	projects?: ProjectLink[]
+}
+
+export type Education = {
+	award: string
+	institution: string
+	location: string
+	period: string
+	details?: string
 }
 
 export const experience: Experience[] = [
 	{
-		// TODO(#33): confirm current employer alongside the Senior title.
 		role: 'Senior Software Engineer',
-		company: 'Roblox',
+		company: 'Roblox · Music Team',
 		period: '2021 — Now',
 		description:
-			'Full-time, building new projects with an incredible team to bring the world together through play.',
+			'Building new and exciting projects with an incredible team to bring the world together through play.',
+		projects: [
+			{
+				name: 'Now Playing',
+				url: 'https://devforum.roblox.com/t/amplify-your-experiences-with-new-music/3164792',
+			},
+			{
+				name: 'Toolbox Audio UX',
+				url: 'https://devforum.roblox.com/t/new-audio-discovery-features/2618235',
+			},
+			{
+				name: 'Events Platform',
+				url: 'https://devforum.roblox.com/t/events-platform-full-release/2226550',
+			},
+			{
+				name: 'Verified Badge',
+				url: 'https://devforum.roblox.com/t/introducing-the-verified-badge/1980978',
+			},
+			{
+				name: 'Developer Modules',
+				url: 'https://create.roblox.com/docs/resources/modules',
+			},
+		],
 	},
 	{
 		role: 'Software Engineering Intern',
-		company: 'Roblox',
-		period: '2020',
-		description:
-			"Rebuilt Roblox's in-game Bubble Chat from the ground up using a React-like framework.",
+		company: 'Roblox · Apps Team',
+		period: 'Summer 2019 & 2020',
+		highlights: [
+			"Worked remotely amidst the COVID-19 pandemic to rebuild Roblox's in-game Bubble Chat from the ground up using a React-like framework.",
+			'Worked in house at Roblox HQ on the apps layer. Removed bloat, established best practices, and collaborated with senior engineers to improve their existing workflows.',
+		],
+		projects: [
+			{
+				name: 'Bubble Chat',
+				url: 'https://devforum.roblox.com/t/the-big-bubble-chat-rework/819483',
+			},
+		],
 	},
 	{
-		role: 'Level Designer',
+		role: 'Programmer, Level Designer',
 		company: 'Novaly Studios',
 		period: '2017 — 2020',
-		description: 'Worked with the team to create the world of Car Tycoon.',
-	},
-	{
-		role: 'Software Engineering Intern',
-		company: 'Roblox',
-		period: '2019',
-		description:
-			'Ten weeks on the application layer of the platform — removing bloat and helping set best practices.',
+		highlights: [
+			'Continued where we left off after the Accelerator program, creating the world of Car Tycoon.',
+			'Squashed bugs and created the Robbery feature for Bandit Simulator, introducing a brand new way to play the game.',
+		],
+		projects: [
+			{
+				name: 'Bandit Simulator',
+				url: 'https://www.roblox.com/games/2563455047/Bandit-Simulator',
+			},
+			{ name: 'Wild Revolvers', url: '/projects/wild-revolvers' },
+		],
 	},
 	{
 		role: 'Level Design Contractor',
 		company: 'Roblox',
 		period: '2018',
 		description:
-			'Built Aquaman: City of Rolantis for a Warner Bros. sponsorship.',
+			'Remote contract position creating the Aquaman event experience for a Warner Bros. sponsorship.',
+		projects: [{ name: 'Aquaman', url: '/projects/aquaman' }],
 	},
 	{
-		role: 'Accelerator Intern',
+		role: 'Accelerator Program',
 		company: 'Roblox',
 		period: '2018',
 		description:
-			'Three months in-house at Roblox HQ creating a brand new game from the ground up.',
+			'Three months in house at Roblox HQ with my team, creating a brand new game from the ground up.',
 	},
 	{
 		role: 'Freelance developer',
@@ -57,5 +104,21 @@ export const experience: Experience[] = [
 		period: '2016 — 2018',
 		description:
 			'Several years working with different studios on the Roblox platform as I built up my skillset.',
+	},
+]
+
+export const education: Education[] = [
+	{
+		award: 'AS in Computer Science',
+		institution: 'Dutchess Community College',
+		location: 'Poughkeepsie, NY',
+		period: '2019 — 2021',
+		details: 'GPA 4.0',
+	},
+	{
+		award: 'High School Equivalency Diploma',
+		institution: 'Adult Learning Institute',
+		location: 'Poughkeepsie, NY',
+		period: '2018',
 	},
 ]

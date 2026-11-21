@@ -1,10 +1,12 @@
 ---
 import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
 import Base from '~/layouts/Base.astro'
 import SocialLinks from '~/components/SocialLinks.astro'
 import ProjectCard from '~/components/ProjectCard.astro'
 import { site } from '~/data/site'
-import { experience } from '~/data/experience'
+import { experience, education } from '~/data/experience'
+import profile from '~/assets/me/profile.jpg'
 
 const projects = (await getCollection('projects'))
 	.filter((p) => p.data.featured)
@@ -21,6 +23,9 @@ const projects = (await getCollection('projects'))
 			<p class="lede">{site.blurb} Based in {site.location}.</p>
 			<SocialLinks />
 		</div>
+		<div class="avatar">
+			<Image src={profile} alt={`Photo of ${site.name}`} width={240} loading="eager" />
+		</div>
 	</section>
 
 	<section class="wrap section">
@@ -36,7 +41,47 @@ const projects = (await getCollection('projects'))
 						<div class="job__body">
 							<h3>{job.role}</h3>
 							<p class="job__co">{job.company}</p>
-							<p class="job__desc">{job.description}</p>
+							{job.description && <p class="job__desc">{job.description}</p>}
+							{job.highlights && (
+								<ul class="job__highlights">
+									{job.highlights.map((h) => (
+										<li>{h}</li>
+									))}
+								</ul>
+							)}
+							{job.projects && (
+								<ul class="job__projects" aria-label="Projects">
+									{job.projects.map((p) => (
+										<li>
+											<a href={p.url}>{p.name}</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="wrap section">
+		<div class="section-head">
+			<h2>Education</h2>
+			<span class="rule"></span>
+		</div>
+		<div class="timeline">
+			{
+				education.map((ed) => (
+					<article class="job">
+						<div class="job__when">{ed.period}</div>
+						<div class="job__body">
+							<h3>{ed.award}</h3>
+							<p class="job__co">{ed.institution}</p>
+							<p class="job__desc">
+								{ed.location}
+								{ed.details && <> · {ed.details}</>}
+							</p>
 						</div>
 					</article>
 				))
@@ -69,8 +114,14 @@ const projects = (await getCollection('projects'))
 
 <style>
 	.hero {
-		max-width: 42rem;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 2.5rem;
+		align-items: center;
 		padding-block: 4.5rem 2.5rem;
+	}
+	.hero__text {
+		max-width: 42rem;
 	}
 	.hero__text h1 {
 		font-size: clamp(2rem, 5vw, 3.3rem);
@@ -99,6 +150,21 @@ const projects = (await getCollection('projects'))
 		max-width: 46ch;
 		margin: 0 0 1.8rem;
 	}
+	.avatar {
+		width: 200px;
+		max-width: 100%;
+		padding: 4px;
+		border-radius: 28px;
+		background: linear-gradient(145deg, var(--pink), #8e3bd1);
+	}
+	.avatar :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 24px;
+	}
 
 	.see-all {
 		font-size: 0.88rem;
@@ -125,6 +191,9 @@ const projects = (await getCollection('projects'))
 		font-variant-numeric: tabular-nums;
 		padding-top: 0.15rem;
 	}
+	.job__body {
+		min-width: 0;
+	}
 	.job__body h3 {
 		margin: 0 0 0.2rem;
 		font-size: 1.02rem;
@@ -140,6 +209,37 @@ const projects = (await getCollection('projects'))
 		font-size: 0.9rem;
 		line-height: 1.6;
 	}
+	.job__highlights {
+		margin: 0.5rem 0 0;
+		padding-left: 1.1rem;
+		color: var(--fg-dim);
+		font-size: 0.9rem;
+		line-height: 1.6;
+		display: grid;
+		gap: 0.3rem;
+	}
+	.job__projects {
+		list-style: none;
+		margin: 0.7rem 0 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.job__projects a {
+		display: inline-block;
+		font-size: 0.78rem;
+		font-weight: 500;
+		padding: 0.2rem 0.6rem;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		color: var(--fg);
+		transition: border-color 0.16s, color 0.16s;
+	}
+	.job__projects a:hover {
+		color: var(--pink);
+		border-color: var(--pink);
+	}
 
 	.grid {
 		display: grid;
@@ -149,7 +249,13 @@ const projects = (await getCollection('projects'))
 
 	@media (max-width: 780px) {
 		.hero {
+			grid-template-columns: 1fr;
+			gap: 1.6rem;
 			padding-block: 3rem 1.5rem;
+		}
+		.avatar {
+			width: 160px;
+			order: -1;
 		}
 		.grid {
 			grid-template-columns: 1fr 1fr;

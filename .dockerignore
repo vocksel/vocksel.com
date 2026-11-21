@@ -5,9 +5,8 @@ node_modules
 dist
 .astro
 
-# VCS and the old stack
+# VCS
 .git
-legacy
 
 # Local tooling
 .claude

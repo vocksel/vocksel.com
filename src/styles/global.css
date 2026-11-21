@@ -12,7 +12,7 @@
 	--fg-dim:    #9a8b92;   /* muted / secondary text */
 	--line:      rgba(255, 255, 255, 0.09);
 
-	--pink:      #ff3685;   /* brand accent (source: legacy config.scss) */
+	--pink:      #ff3685;   /* brand accent, carried over from the original site */
 	--pink-soft: #ff6ba6;   /* lighter tint for links / hover */
 	--blue:      #6093f3;   /* secondary accent (code projects) */
 	--blue-soft: #8fb4ff;
