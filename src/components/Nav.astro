@@ -4,6 +4,7 @@ import { site } from '~/data/site'
 const links = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Projects', href: '/projects' },
+	{ label: 'Bunny', href: '/bunny' },
 	{ label: 'About', href: '/about' },
 ]
 
@@ -31,66 +32,132 @@ const isActive = (href: string) =>
 						</li>
 					))
 				}
+				<li>
+					<button class="nav__theme" type="button" id="theme-toggle" hidden>
+						<span class="visually-hidden">Theme: </span><span id="theme-name"></span>
+					</button>
+				</li>
 			</ul>
 		</nav>
 	</div>
 </header>
+
+<script>
+	// Cycles between the themes defined in global.css. The choice is saved, and
+	// an inline script in Base.astro applies it before the page paints.
+	const themes = [
+		{ id: 'foundation', label: 'Foundation', color: '#121215' },
+		{ id: 'dusk', label: 'Dusk', color: '#1b1217' },
+	]
+	const button = document.getElementById('theme-toggle')!
+	const name = document.getElementById('theme-name')!
+	const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')
+
+	const apply = (id: string) => {
+		const theme = themes.find((t) => t.id === id) ?? themes[0]
+		document.documentElement.dataset.theme = theme.id
+		name.textContent = theme.label
+		meta?.setAttribute('content', theme.color)
+		const next = themes[(themes.indexOf(theme) + 1) % themes.length]
+		button.title = `Switch to the ${next.label} theme`
+	}
+
+	apply(document.documentElement.dataset.theme ?? themes[0].id)
+	button.hidden = false
+	button.addEventListener('click', () => {
+		const i = themes.findIndex((t) => t.id === document.documentElement.dataset.theme)
+		const next = themes[(i + 1) % themes.length].id
+		try {
+			localStorage.setItem('theme', next)
+		} catch {}
+		apply(next)
+	})
+</script>
 
 <style>
 	.nav {
 		position: sticky;
 		top: env(safe-area-inset-top, 0px);
 		z-index: 30;
-		background: rgba(27, 18, 23, 0.72);
+		background: var(--color-nav);
 		backdrop-filter: blur(14px);
-		border-bottom: 1px solid var(--line);
+		border-bottom: var(--stroke-standard) solid var(--color-stroke-default);
 	}
 	.nav__in {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1rem;
-		padding-block: 0.85rem;
+		gap: var(--gap-large);
+		padding-block: var(--padding-medium);
 	}
 	.nav__brand {
 		font-weight: 700;
 		font-size: 1.05rem;
 		letter-spacing: -0.02em;
-		color: var(--fg);
+		color: var(--color-content-emphasis);
 	}
 	.nav__brand span {
-		color: var(--pink);
+		color: var(--color-accent);
 	}
 	.nav__brand:hover {
-		color: var(--fg);
+		color: var(--color-content-emphasis);
 	}
 	.nav__links {
 		display: flex;
-		gap: 0.3rem;
+		align-items: center;
+		gap: var(--gap-xsmall);
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		flex-wrap: wrap;
 	}
-	.nav__links a {
+	.nav__links a,
+	.nav__theme {
 		display: inline-block;
-		padding: 0.4rem 0.75rem;
-		border-radius: 999px;
-		color: var(--fg-dim);
-		font-size: 0.92rem;
-		font-weight: 500;
-		transition: color 0.16s, background 0.16s;
+		padding: var(--padding-small) var(--padding-medium);
+		border-radius: var(--radius-control);
+		color: var(--color-content-muted);
+		font-size: var(--text-title-medium);
+		font-weight: 600;
+		line-height: 1.2;
+		transition:
+			color var(--time-200) var(--ease-standard-out),
+			background var(--time-200) var(--ease-standard-out);
 	}
-	.nav__links a:hover {
-		color: var(--fg);
-		background: rgba(255, 255, 255, 0.05);
+	.nav__links a:hover,
+	.nav__theme:hover {
+		color: var(--color-content-emphasis);
+		background: var(--color-state-hover);
 	}
 	.nav__links a[aria-current='page'] {
-		color: var(--pink);
+		color: var(--color-content-emphasis);
+		background: var(--color-action-standard-background);
 	}
+	.nav__theme {
+		font-family: inherit;
+		background: none;
+		border: var(--stroke-standard) solid var(--color-stroke-default);
+		cursor: pointer;
+		margin-left: var(--gap-small);
+	}
+	.nav__theme[hidden] {
+		display: none;
+	}
+
+	:global([data-theme='dusk']) .nav__links a,
+	:global([data-theme='dusk']) .nav__theme {
+		border-radius: var(--radius-circle);
+		font-weight: 500;
+	}
+	:global([data-theme='dusk']) .nav__links a[aria-current='page'] {
+		color: var(--color-accent);
+		background: none;
+	}
+
 	@media (max-width: 420px) {
-		.nav__links a {
-			padding: 0.4rem 0.55rem;
+		.nav__links a,
+		.nav__theme {
+			padding: var(--padding-small);
 			font-size: 0.86rem;
 		}
 	}

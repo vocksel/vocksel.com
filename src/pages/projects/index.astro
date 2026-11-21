@@ -2,10 +2,17 @@
 import { getCollection } from 'astro:content'
 import Base from '~/layouts/Base.astro'
 import ProjectCard from '~/components/ProjectCard.astro'
+import RepoCard from '~/components/RepoCard.astro'
+import { getRepos } from '~/lib/github'
 
 const projects = (await getCollection('projects')).sort(
 	(a, b) => b.data.order - a.data.order || b.data.year - a.data.year
 )
+
+// Pulled from GitHub at build time — refreshes on each rebuild (see the
+// scheduled rebuild in .github/workflows/cd.yml), so the long tail of code
+// projects shows up without hand-writing an entry for each one.
+const repos = await getRepos(6)
 ---
 
 <Base title="Projects" description="Games, tools, and experiments by Marin Minnerly.">
@@ -29,6 +36,28 @@ const projects = (await getCollection('projects')).sort(
 				))
 			}
 		</div>
+
+		{
+			repos.length > 0 && (
+				<div class="repos">
+					<div class="section-head">
+						<h2>From GitHub</h2>
+						<span class="rule" />
+						<a class="see-all" href="https://github.com/vocksel">
+							github.com/vocksel →
+						</a>
+					</div>
+					<p class="repos__note">
+						Pulled automatically from my public repositories.
+					</p>
+					<div class="repo-grid">
+						{repos.map((repo) => (
+							<RepoCard repo={repo} />
+						))}
+					</div>
+				</div>
+			)
+		}
 	</section>
 </Base>
 
@@ -41,7 +70,7 @@ const projects = (await getCollection('projects')).sort(
 		margin: 0 0 0.5rem;
 	}
 	.page-head p {
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		margin: 0;
 		max-width: 50ch;
 	}
@@ -50,13 +79,33 @@ const projects = (await getCollection('projects')).sort(
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1.1rem;
 	}
+	.repos {
+		margin-top: 3.5rem;
+	}
+	.see-all {
+		font-size: 0.88rem;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+	.repos__note {
+		color: var(--color-content-muted);
+		font-size: 0.9rem;
+		margin: -0.8rem 0 1.5rem;
+	}
+	.repo-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.1rem;
+	}
 	@media (max-width: 780px) {
-		.grid {
+		.grid,
+		.repo-grid {
 			grid-template-columns: 1fr 1fr;
 		}
 	}
 	@media (max-width: 520px) {
-		.grid {
+		.grid,
+		.repo-grid {
 			grid-template-columns: 1fr;
 		}
 	}

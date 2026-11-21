@@ -62,10 +62,10 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 		display: inline-block;
 		margin-top: 2rem;
 		font-size: 0.88rem;
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 	}
 	.back:hover {
-		color: var(--pink);
+		color: var(--color-content-link);
 	}
 	.detail-head {
 		padding-block: 1.5rem 1.5rem;
@@ -75,7 +75,7 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 		margin: 0.6rem 0 0.4rem;
 	}
 	.detail-sub {
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		font-size: 1.1rem;
 		margin: 0 0 1rem;
 		max-width: 55ch;
@@ -90,8 +90,8 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 	.hero-shot :global(img) {
 		width: 100%;
 		height: auto;
-		border-radius: var(--radius);
-		border: 1px solid var(--line);
+		border-radius: var(--radius-card);
+		border: 1px solid var(--color-stroke-default);
 	}
 
 	.prose {
@@ -101,7 +101,7 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 		margin: 0 0 1.2rem;
 	}
 	.prose :global(strong) {
-		color: var(--pink-soft);
+		color: var(--color-accent-soft);
 	}
 
 	.gallery {
@@ -116,13 +116,13 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 	.shot :global(img) {
 		width: 100%;
 		height: auto;
-		border-radius: var(--radius);
-		border: 1px solid var(--line);
+		border-radius: var(--radius-card);
+		border: 1px solid var(--color-stroke-default);
 		display: block;
 	}
 	.shot figcaption {
 		margin-top: 0.6rem;
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		font-size: 0.85rem;
 		line-height: 1.5;
 	}

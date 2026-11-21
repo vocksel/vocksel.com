@@ -125,27 +125,14 @@ const projects = (await getCollection('projects'))
 	}
 	.hero__text h1 {
 		font-size: clamp(2rem, 5vw, 3.3rem);
-		font-weight: 600;
 		margin: 0 0 1.4rem;
 	}
 	.hl {
-		color: var(--pink);
-		position: relative;
+		color: var(--color-accent);
 		white-space: nowrap;
 	}
-	.hl::after {
-		content: '';
-		position: absolute;
-		left: -0.05em;
-		right: -0.05em;
-		bottom: 0.06em;
-		height: 0.34em;
-		background: rgba(255, 54, 133, 0.2);
-		z-index: -1;
-		border-radius: 3px;
-	}
 	.lede {
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		font-size: 1.05rem;
 		max-width: 46ch;
 		margin: 0 0 1.8rem;
@@ -153,9 +140,10 @@ const projects = (await getCollection('projects'))
 	.avatar {
 		width: 200px;
 		max-width: 100%;
-		padding: 4px;
-		border-radius: 28px;
-		background: linear-gradient(145deg, var(--pink), #8e3bd1);
+		border-radius: var(--radius-circle);
+		border: var(--stroke-thick) solid var(--color-stroke-emphasis);
+		padding: var(--padding-xsmall);
+		background: var(--color-surface-100);
 	}
 	.avatar :global(img) {
 		display: block;
@@ -163,6 +151,31 @@ const projects = (await getCollection('projects'))
 		height: auto;
 		aspect-ratio: 1;
 		object-fit: cover;
+		border-radius: var(--radius-circle);
+	}
+
+	/* Dusk keeps its highlighter underline and gradient photo ring. */
+	:global([data-theme='dusk']) .hl {
+		position: relative;
+	}
+	:global([data-theme='dusk']) .hl::after {
+		content: '';
+		position: absolute;
+		left: -0.05em;
+		right: -0.05em;
+		bottom: 0.06em;
+		height: 0.34em;
+		background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+		z-index: -1;
+		border-radius: 3px;
+	}
+	:global([data-theme='dusk']) .avatar {
+		padding: 4px;
+		border: 0;
+		border-radius: 28px;
+		background: linear-gradient(145deg, var(--color-accent), #8e3bd1);
+	}
+	:global([data-theme='dusk']) .avatar :global(img) {
 		border-radius: 24px;
 	}
 
@@ -180,13 +193,13 @@ const projects = (await getCollection('projects'))
 		grid-template-columns: 130px 1fr;
 		gap: 1.4rem;
 		padding: 1.1rem 0;
-		border-top: 1px solid var(--line);
+		border-top: 1px solid var(--color-stroke-default);
 	}
 	.job:first-child {
 		border-top: 0;
 	}
 	.job__when {
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		font-size: 0.82rem;
 		font-variant-numeric: tabular-nums;
 		padding-top: 0.15rem;
@@ -199,20 +212,20 @@ const projects = (await getCollection('projects'))
 		font-size: 1.02rem;
 	}
 	.job__co {
-		color: var(--pink-soft);
+		color: var(--color-accent-soft);
 		font-weight: 500;
 		margin: 0;
 	}
 	.job__desc {
 		margin: 0.4rem 0 0;
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		font-size: 0.9rem;
 		line-height: 1.6;
 	}
 	.job__highlights {
 		margin: 0.5rem 0 0;
 		padding-left: 1.1rem;
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		font-size: 0.9rem;
 		line-height: 1.6;
 		display: grid;
@@ -231,14 +244,14 @@ const projects = (await getCollection('projects'))
 		font-size: 0.78rem;
 		font-weight: 500;
 		padding: 0.2rem 0.6rem;
-		border: 1px solid var(--line);
+		border: 1px solid var(--color-stroke-default);
 		border-radius: 999px;
-		color: var(--fg);
+		color: var(--color-content-emphasis);
 		transition: border-color 0.16s, color 0.16s;
 	}
 	.job__projects a:hover {
-		color: var(--pink);
-		border-color: var(--pink);
+		color: var(--color-content-link);
+		border-color: var(--color-content-link);
 	}
 
 	.grid {
