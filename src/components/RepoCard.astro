@@ -23,6 +23,7 @@ const dot = (repo.language && langColors[repo.language]) || '#8b8b8b'
 ---
 
 <a class="repo" href={repo.url}>
+	<span class="repo__owner">{repo.owner}</span>
 	<span class="repo__head">
 		<span class="repo__name">{repo.name}</span>
 		{repo.stars > 0 && <span class="repo__stars">★ {repo.stars}</span>}
@@ -55,6 +56,13 @@ const dot = (repo.language && langColors[repo.language]) || '#8b8b8b'
 		transform: translateY(-3px);
 		border-color: rgba(96, 147, 243, 0.45);
 		box-shadow: 0 16px 36px -22px rgba(96, 147, 243, 0.6);
+	}
+	.repo__owner {
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--fg-dim);
 	}
 	.repo__head {
 		display: flex;
