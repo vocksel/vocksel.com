@@ -36,24 +36,36 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 	.card {
 		display: flex;
 		flex-direction: column;
-		background: linear-gradient(170deg, var(--bg-raised), rgba(36, 24, 33, 0.4));
-		border: 1px solid var(--line);
-		border-radius: var(--radius);
+		background: var(--color-surface-100);
+		border: var(--stroke-standard) solid var(--color-stroke-muted);
+		border-radius: var(--radius-card);
 		overflow: hidden;
-		color: var(--fg);
-		transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+		color: var(--color-content-emphasis);
+		transition:
+			transform var(--time-200) var(--ease-standard-out),
+			background var(--time-200) var(--ease-standard-out),
+			border-color var(--time-200) var(--ease-standard-out),
+			box-shadow var(--time-200) var(--ease-standard-out);
 	}
 	.card:hover {
-		color: var(--fg);
+		color: var(--color-content-emphasis);
+		background: var(--color-surface-200);
+		border-color: var(--color-stroke-emphasis);
+	}
+	:global([data-theme='dusk']) .card {
+		background: linear-gradient(170deg, var(--color-surface-100), rgba(36, 24, 33, 0.4));
+		border-color: var(--color-stroke-default);
+	}
+	:global([data-theme='dusk']) .card:hover {
 		transform: translateY(-4px);
-		border-color: rgba(255, 54, 133, 0.4);
-		box-shadow: 0 18px 40px -22px rgba(255, 54, 133, 0.6);
+		border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+		box-shadow: 0 18px 40px -22px color-mix(in srgb, var(--color-accent) 60%, transparent);
 	}
 	.card__thumb {
 		display: block;
 		aspect-ratio: 16 / 10;
 		overflow: hidden;
-		background: var(--bg-raised);
+		background: var(--color-surface-100);
 	}
 	.card__thumb :global(img) {
 		width: 100%;
@@ -75,14 +87,14 @@ const tagClass = type === 'Game' ? 'tag--game' : 'tag--code'
 		margin-bottom: 0.25rem;
 	}
 	.card__title {
-		font-size: 1.05rem;
-		font-weight: 600;
+		font-size: var(--text-title-large);
+		font-weight: var(--font-weight-heading);
 		letter-spacing: -0.01em;
 	}
 	.card__sub {
-		color: var(--fg-dim);
-		font-size: 0.85rem;
-		line-height: 1.5;
+		color: var(--color-content-muted);
+		font-size: var(--text-body-medium);
+		line-height: 1.45;
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.card:hover .card__thumb :global(img) {

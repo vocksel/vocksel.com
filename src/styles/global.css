@@ -1,32 +1,157 @@
 /* ============================================================
-   Vocksel.com — "Dusk" design system
-   Evolves the original identity: deep plum, hot-pink, Poppins.
-   Single source of truth for color, type, and spacing tokens.
+   vocksel.com design tokens
+
+   Tokens come in two tiers, borrowing the structure of Roblox's Foundation
+   design system:
+
+   1. Scales: spacing, radius, stroke, motion, and type. These are the same
+      in every theme.
+   2. Roles: what a color or shape is for (a surface, body text, the main
+      action). Each theme fills these in, and components only use roles.
+
+   Two themes exist for now:
+   - foundation (default): Foundation's dark mode, with the brand pink in
+     the emphasis slot where Roblox uses blue.
+   - dusk: the original plum, pink, and Poppins look.
+
+   The theme switcher in the nav sets data-theme on <html>.
    ============================================================ */
 
 :root {
-	/* ---- Color: Dusk is a committed dark theme ---- */
-	--bg:        #1b1217;   /* deep plum base */
-	--bg-raised: #241821;   /* cards / raised surfaces */
-	--fg:        #e4dadf;   /* warm off-white text */
-	--fg-dim:    #9a8b92;   /* muted / secondary text */
-	--line:      rgba(255, 255, 255, 0.09);
+	/* ---- Scale: spacing on a 4px grid ---- */
+	--size-50: 2px;
+	--size-100: 4px;
+	--size-150: 6px;
+	--size-200: 8px;
+	--size-300: 12px;
+	--size-400: 16px;
+	--size-500: 20px;
+	--size-600: 24px;
+	--size-800: 32px;
+	--size-1200: 48px;
 
-	--pink:      #ff3685;   /* brand accent, carried over from the original site */
-	--pink-soft: #ff6ba6;   /* lighter tint for links / hover */
-	--blue:      #6093f3;   /* secondary accent (code projects) */
-	--blue-soft: #8fb4ff;
-	--yellow:    #ffd254;
-	--green:     #7ace5c;
+	--gap-xsmall: var(--size-100);
+	--gap-small: var(--size-200);
+	--gap-medium: var(--size-300);
+	--gap-large: var(--size-400);
+	--gap-xlarge: var(--size-500);
+	--gap-xxlarge: var(--size-600);
 
-	/* ---- Type ---- */
-	--font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+	--padding-xsmall: var(--size-100);
+	--padding-small: var(--size-200);
+	--padding-medium: var(--size-300);
+	--padding-large: var(--size-400);
+	--padding-xlarge: var(--size-500);
+	--padding-xxlarge: var(--size-600);
+
+	/* ---- Scale: radius and stroke ---- */
+	--radius-xsmall: var(--size-50);
+	--radius-small: var(--size-100);
+	--radius-medium: var(--size-200);
+	--radius-large: var(--size-400);
+	--radius-circle: 9999px;
+
+	--stroke-standard: 1px;
+	--stroke-thick: 1.5px;
+
+	/* ---- Scale: motion ---- */
+	--time-100: 0.1s;
+	--time-200: 0.2s;
+	--time-300: 0.3s;
+	--ease-standard-out: cubic-bezier(0.2, 0, 0, 1);
+
+	/* ---- Scale: type sizes (size / line height) ---- */
+	--text-display-small: 40px;
+	--text-heading-large: 28px;
+	--text-heading-medium: 24px;
+	--text-heading-small: 20px;
+	--text-title-large: 16px;
+	--text-title-medium: 14px;
+	--text-body-large: 16px;
+	--text-body-medium: 14px;
+	--text-caption-medium: 12px;
 
 	/* ---- Layout ---- */
 	--measure: 1040px;
-	--radius:  16px;
+}
+
+/* ---- Theme: foundation (default) ---- */
+:root,
+[data-theme='foundation'] {
+	--color-surface-0: #121215;
+	--color-surface-100: #191a1f;
+	--color-surface-200: #202227;
+	--color-surface-300: #272930;
+
+	--color-content-emphasis: #f7f7f8;
+	--color-content-default: #d5d7dd;
+	--color-content-muted: #bcbec8;
+	--color-content-link: #ff6ba6;
+
+	--color-stroke-muted: rgba(208, 217, 251, 0.08);
+	--color-stroke-default: rgba(208, 217, 251, 0.12);
+	--color-stroke-emphasis: rgba(208, 217, 251, 0.16);
+
+	--color-state-hover: rgba(208, 217, 251, 0.08);
+	--color-state-press: rgba(208, 217, 251, 0.12);
+
+	--color-accent: #ff3685; /* the brand pink; Foundation uses #335fff here */
+	--color-accent-alt: #528bff;
+	--color-action-emphasis-background: var(--color-accent);
+	--color-action-emphasis-foreground: #121215;
+	--color-action-standard-background: rgba(208, 217, 251, 0.12);
+	--color-action-standard-foreground: #f7f7f8;
+
+	--color-nav: color-mix(in srgb, #121215 92%, transparent);
+
+	--font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+	--font-weight-heading: 700;
+	--letter-spacing-heading: -0.01em;
+	--body-size: var(--text-body-large);
+	--body-leading: 1.55;
+
+	--radius-card: var(--radius-medium);
+	--radius-control: var(--radius-medium);
 
 	color-scheme: dark;
+}
+
+/* ---- Theme: dusk ---- */
+[data-theme='dusk'] {
+	--color-surface-0: #1b1217;
+	--color-surface-100: #241821;
+	--color-surface-200: #2d1f29;
+	--color-surface-300: #362631;
+
+	--color-content-emphasis: #f1e9ed;
+	--color-content-default: #e4dadf;
+	--color-content-muted: #9a8b92;
+	--color-content-link: #ff6ba6;
+
+	--color-stroke-muted: rgba(255, 255, 255, 0.06);
+	--color-stroke-default: rgba(255, 255, 255, 0.09);
+	--color-stroke-emphasis: rgba(255, 255, 255, 0.14);
+
+	--color-state-hover: rgba(255, 255, 255, 0.05);
+	--color-state-press: rgba(255, 255, 255, 0.09);
+
+	--color-accent: #ff3685;
+	--color-accent-alt: #8fb4ff;
+	--color-action-emphasis-background: var(--color-accent);
+	--color-action-emphasis-foreground: #1b1217;
+	--color-action-standard-background: rgba(255, 255, 255, 0.08);
+	--color-action-standard-foreground: #e4dadf;
+
+	--color-nav: rgba(27, 18, 23, 0.72);
+
+	--font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+	--font-weight-heading: 600;
+	--letter-spacing-heading: -0.02em;
+	--body-size: 1.0625rem;
+	--body-leading: 1.7;
+
+	--radius-card: var(--radius-large);
+	--radius-control: 12px;
 }
 
 /* ---- Reset / base ---- */
@@ -47,31 +172,32 @@ html { scroll-behavior: smooth; }
 body {
 	margin: 0;
 	min-height: 100%;
-	background: var(--bg);
-	color: var(--fg);
+	background: var(--color-surface-0);
+	color: var(--color-content-default);
 	font-family: var(--font-sans);
-	font-size: 1.0625rem;
-	line-height: 1.7;
+	font-size: var(--body-size);
+	line-height: var(--body-leading);
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
 
 img { max-width: 100%; display: block; }
 
-a { color: var(--pink-soft); text-decoration: none; }
-a:hover { color: var(--pink); }
+a { color: var(--color-content-link); text-decoration: none; }
+a:hover { color: var(--color-accent); }
 
 :focus-visible {
-	outline: 2px solid var(--pink);
+	outline: 2px solid var(--color-accent);
 	outline-offset: 3px;
-	border-radius: 3px;
+	border-radius: var(--radius-small);
 }
 
 h1, h2, h3 {
+	color: var(--color-content-emphasis);
 	line-height: 1.15;
-	letter-spacing: -0.02em;
+	letter-spacing: var(--letter-spacing-heading);
 	text-wrap: balance;
-	font-weight: 600;
+	font-weight: var(--font-weight-heading);
 }
 
 /* ---- Layout helpers ---- */
@@ -86,11 +212,11 @@ h1, h2, h3 {
 .section-head {
 	display: flex;
 	align-items: baseline;
-	gap: 0.9rem;
+	gap: var(--gap-medium);
 	margin: 0 0 1.8rem;
 }
-.section-head h2 { margin: 0; font-size: 1.5rem; }
-.section-head .rule { flex: 1; height: 1px; background: var(--line); }
+.section-head h2 { margin: 0; font-size: var(--text-heading-medium); }
+.section-head .rule { flex: 1; height: var(--stroke-standard); background: var(--color-stroke-default); }
 
 /* ---- Reusable tag / chip ---- */
 .tag {
@@ -100,21 +226,10 @@ h1, h2, h3 {
 	letter-spacing: 0.09em;
 	text-transform: uppercase;
 	padding: 0.2rem 0.55rem;
-	border-radius: 999px;
+	border-radius: var(--radius-circle);
 }
-.tag--game { background: rgba(255, 54, 133, 0.16); color: var(--pink-soft); }
-.tag--code { background: rgba(96, 147, 243, 0.16); color: var(--blue-soft); }
-
-/* ---- Trans pride accent (used in footer) ---- */
-.pride-bar {
-	display: inline-block;
-	width: 46px;
-	height: 8px;
-	border-radius: 2px;
-	background: linear-gradient(
-		#5bcefa 0 20%, #f5a9b8 20% 40%, #fff 40% 60%,
-		#f5a9b8 60% 80%, #5bcefa 80% 100%);
-}
+.tag--game { background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-content-link); }
+.tag--code { background: color-mix(in srgb, var(--color-accent-alt) 16%, transparent); color: var(--color-accent-alt); }
 
 .visually-hidden {
 	position: absolute;

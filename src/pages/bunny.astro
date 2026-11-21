@@ -142,12 +142,12 @@ const photos = await Promise.all(
 		margin: 0 0 0.5rem;
 	}
 	.page-head p {
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		margin: 0;
 	}
 	.empty {
-		border: 1px dashed var(--line);
-		border-radius: var(--radius);
+		border: 1px dashed var(--color-stroke-default);
+		border-radius: var(--radius-card);
 		padding: 3rem 1.5rem;
 		text-align: center;
 	}
@@ -157,11 +157,11 @@ const photos = await Promise.all(
 		margin: 0 0 0.4rem;
 	}
 	.empty__sub {
-		color: var(--fg-dim);
+		color: var(--color-content-muted);
 		margin: 0;
 	}
 	.empty code {
-		background: var(--bg-raised);
+		background: var(--color-surface-100);
 		padding: 0.1rem 0.4rem;
 		border-radius: 5px;
 		font-size: 0.85em;
@@ -174,8 +174,8 @@ const photos = await Promise.all(
 	.masonry :global(.shot) {
 		width: 100%;
 		height: auto;
-		border-radius: var(--radius);
-		border: 1px solid var(--line);
+		border-radius: var(--radius-card);
+		border: 1px solid var(--color-stroke-default);
 		margin-bottom: 1rem;
 		break-inside: avoid;
 		display: block;
@@ -207,7 +207,7 @@ const photos = await Promise.all(
 		max-height: 88dvh;
 		width: auto;
 		height: auto;
-		border-radius: var(--radius);
+		border-radius: var(--radius-card);
 	}
 	.lightbox__btn {
 		position: fixed;
@@ -215,16 +215,16 @@ const photos = await Promise.all(
 		place-items: center;
 		width: 2.75rem;
 		height: 2.75rem;
-		border: 1px solid var(--line);
+		border: 1px solid var(--color-stroke-default);
 		border-radius: 50%;
-		background: var(--bg-raised);
-		color: var(--fg);
+		background: var(--color-surface-100);
+		color: var(--color-content-emphasis);
 		font-size: 1.4rem;
 		line-height: 1;
 		cursor: pointer;
 	}
 	.lightbox__btn:hover {
-		border-color: var(--pink);
+		border-color: var(--color-accent);
 	}
 	.lightbox__close {
 		top: 1rem;
