@@ -4,7 +4,6 @@ import { site } from '~/data/site'
 const links = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Projects', href: '/projects' },
-	{ label: 'Writing', href: '/blog' },
 	{ label: 'About', href: '/about' },
 ]
 
@@ -16,7 +15,7 @@ const isActive = (href: string) =>
 <header class="nav">
 	<div class="wrap nav__in">
 		<a class="nav__brand" href="/">
-			{site.name.split(' ')[0]}<span>.com</span>
+			{site.brand}<span>.com</span>
 		</a>
 		<nav aria-label="Primary">
 			<ul class="nav__links">

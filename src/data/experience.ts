@@ -10,7 +10,8 @@ export type Experience = {
 
 export const experience: Experience[] = [
 	{
-		role: 'Software Engineer',
+		// TODO(#33): confirm current employer alongside the Senior title.
+		role: 'Senior Software Engineer',
 		company: 'Roblox',
 		period: '2021 — Now',
 		description:
